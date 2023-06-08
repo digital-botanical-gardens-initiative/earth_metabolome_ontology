@@ -19,17 +19,18 @@
                        owl:imports <http://www.w3.org/2004/02/skos/core> ,
                                    <https://purl.org/npc> ;
                        dcterms:contributor <http://orcid.org/0000-0001-9292-9463> ,
+                                           <http://orcid.org/0000-0002-3648-7362> ,
                                            <http://orcid.org/0000-0002-9619-1707> ,
-                                           <http://orcid.org/0000-0003-3389-2191> ,
-                                           <http://orcid.org/0000-0002-3648-7362> ;
-                       dcterms:creator  <https://www.wikidata.org/wiki/Q58893866>, <https://orcid.org/0000-0002-3175-5372> ;
+                                           <http://orcid.org/0000-0003-3389-2191> ;
+                       dcterms:creator <https://orcid.org/0000-0002-3175-5372> ,
+                                       <https://www.wikidata.org/wiki/Q58893866> ;
                        dcterms:description "The Earth Metabolome Initiative (EMI) vocabulary. EMI is a global effort to profile the metabolic content of all currently known species on our planet." ;
                        dcterms:license <https://creativecommons.org/publicdomain/zero/1.0/> ;
+                       dcterms:replaces <https://enpkg.commons-lab.org/kg> ;
                        dcterms:title "The Earth Metabolome semantic model." ;
                        vann:preferredNamespacePrefix "em" ;
                        vann:preferredNamespaceUri "https://purl.org/em#" ;
-                       owl:versionInfo 0.1 ;
-                       dcterms:replaces <https://enpkg.commons-lab.org/kg> .
+                       owl:versionInfo 0.1 .
 
 #################################################################
 #    Annotation properties
@@ -38,13 +39,6 @@
 ###  http://purl.org/dc/terms/contributor
 dcterms:contributor rdf:type owl:AnnotationProperty .
 
-dcterms:replaces
-    dcterms:description "This property is intended to be used with non-literal values. This property is an inverse property of Is Replaced By."@en ;
-    dcterms:issued "2000-07-11"^^<http://www.w3.org/2001/XMLSchema#date> ;
-    a rdf:Property, owl:AnnotationProperty ;
-    rdfs:comment "A related resource that is supplanted, displaced, or superseded by the described resource."@en ;
-    rdfs:isDefinedBy <http://purl.org/dc/terms/> ;
-    rdfs:label "Replaces"@en  .
 
 ###  http://purl.org/dc/terms/creator
 dcterms:creator rdf:type owl:AnnotationProperty .
@@ -54,8 +48,21 @@ dcterms:creator rdf:type owl:AnnotationProperty .
 dcterms:description rdf:type owl:AnnotationProperty .
 
 
+###  http://purl.org/dc/terms/issued
+dcterms:issued rdf:type owl:AnnotationProperty .
+
+
 ###  http://purl.org/dc/terms/license
 dcterms:license rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/replaces
+dcterms:replaces rdf:type owl:AnnotationProperty ;
+                 dcterms:description "This property is intended to be used with non-literal values. This property is an inverse property of Is Replaced By."@en ;
+                 dcterms:issued "2000-07-11"^^xsd:date ;
+                 rdfs:comment "A related resource that is supplanted, displaced, or superseded by the described resource."@en ;
+                 rdfs:isDefinedBy dcterms: ;
+                 rdfs:label "Replaces"@en .
 
 
 ###  http://purl.org/dc/terms/title
@@ -108,7 +115,15 @@ foaf:logo rdf:type owl:AnnotationProperty .
 ###  https://purl.org/em#hasIonization
 :hasIonization rdf:type owl:AnnotationProperty ;
                rdfs:range xsd:string ;
-               rdfs:domain _:genid-nodeid-node1h2dlp3a3x24 .
+               rdfs:domain _:genid-nodeid-genid-385594033d2f4add9bddbbba0a2f6e3f-genid-nodeid-node1h2dlp3a3x24 .
+
+
+#################################################################
+#    Datatypes
+#################################################################
+
+###  http://www.w3.org/2001/XMLSchema#date
+xsd:date rdf:type rdfs:Datatype .
 
 
 #################################################################
@@ -841,7 +856,7 @@ wd:Q16521 rdf:type owl:Class ;
                                                               <https://purl.org/npc#Superclass>
                                                             )
                                               ] ;
-                             rdfs:comment "A chemical class classification. For instance, from the NPClassifier, a deep-learning tool for the automated structural classification of natural products (NP) from their counted Morgan fingerprints." ;
+                             rdfs:comment "The Superclasses are subdivided into Classes that represent specific compound families (e.g., erythromycins, penicillins, or cannabinoids), characteristic functional groups (e.g., chromones, azaphilones, indole alkaloids, or 3-spiro tetramic acids), or scaffold diversity within a Superclass (e.g., flavans, flavones, and chalcones from flavonoids)." ;
                              rdfs:label "Natural product class" .
 
 
@@ -854,7 +869,7 @@ wd:Q16521 rdf:type owl:Class ;
                                                                 <https://purl.org/npc#Superclass>
                                                               )
                                                 ] ;
-                               rdfs:comment "A chemical pathway classification. For instance, from the NPClassifier, a deep-learning tool for the automated structural classification of natural products (NP) from their counted Morgan fingerprints." ;
+                               rdfs:comment "The highest level of a hierarchical chemical structure classification such as those defined with the NPClassifier, a deep-learning tool for the automated structural classification of natural products (NP) from their counted Morgan fingerprints. The Pathways of NPClassifier consist of seven categories: fatty acids, polyketides, shikimates–phenylpropanoids, terpenoids, alkaloids, amino acids/peptides, and carbohydrates." ;
                                rdfs:label "Natural product pathway" .
 
 
@@ -871,7 +886,7 @@ wd:Q16521 rdf:type owl:Class ;
                                                                    <https://purl.org/npc#Pathway>
                                                                  )
                                                    ] ;
-                                  rdfs:comment "A chemical superclass derived from a natural product classifier." ;
+                                  rdfs:comment "The Superclasses represent subcategories within the Pathways. The categories in the Superclass originate from the general classes of metabolites (e.g., flavonoids, meroterpenoids, or steroids), the general chemical or molecular shapes (e.g., chromanes, phloroglucinols, or macrolides), or biosynthetic information (e.g., tryptophan alkaloids, aromatic polyketides, or pseudo alkaloids)." ;
                                   rdfs:label "Natural product superclass" .
 
 
