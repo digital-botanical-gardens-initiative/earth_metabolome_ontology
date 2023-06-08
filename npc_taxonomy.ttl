@@ -2987,6 +2987,10 @@ npc:ISOFLAVONOIDS a npc:Superclass ;
     rdfs:label "Isoflavonoids" ;
     skos:broader npc:SHIKIMATES_AND_PHENYLPROPANOIDS .
 
+npc:Pathway rdfs:label "Natural product pathway" ;
+    rdfs:comment "The highest level of a hierarchical chemical structure classification such as those defined with the NPClassifier, a deep-learning tool for the automated structural classification of natural products (NP) from their counted Morgan fingerprints. The Pathways of NPClassifier consist of seven categories: fatty acids, polyketides, shikimates–phenylpropanoids, terpenoids, alkaloids, amino acids/peptides, and carbohydrates." ;
+    rdfs:subClassOf skos:Concept .
+
 npc:FATTY_ACYLS a npc:Superclass ;
     rdfs:label "Fatty acyls" ;
     skos:broader npc:FATTY_ACIDS .
@@ -3101,6 +3105,10 @@ npc:TRITERPENOIDS a npc:Superclass ;
     rdfs:label "Triterpenoids" ;
     skos:broader npc:TERPENOIDS .
 
+npc:Superclass rdfs:label "Natural product superclass" ;
+    rdfs:comment "The Superclasses represent subcategories within the Pathways. The categories in the Superclass originate from the general classes of metabolites (e.g., flavonoids, meroterpenoids, or steroids), the general chemical or molecular shapes (e.g., chromanes, phloroglucinols, or macrolides), or biosynthetic information (e.g., tryptophan alkaloids, aromatic polyketides, or pseudo alkaloids)." ;
+    rdfs:subClassOf skos:Concept .
+
 npc:DITERPENOIDS a npc:Superclass ;
     rdfs:label "Diterpenoids" ;
     skos:broader npc:TERPENOIDS .
@@ -3108,4 +3116,8 @@ npc:DITERPENOIDS a npc:Superclass ;
 npc:SESQUITERPENOIDS a npc:Superclass ;
     rdfs:label "Sesquiterpenoids" ;
     skos:broader npc:TERPENOIDS .
+
+npc:Class rdfs:label "Natural product class" ;
+    rdfs:comment "The Superclasses are subdivided into Classes that represent specific compound families (e.g., erythromycins, penicillins, or cannabinoids), characteristic functional groups (e.g., chromones, azaphilones, indole alkaloids, or 3-spiro tetramic acids), or scaffold diversity within a Superclass (e.g., flavans, flavones, and chalcones from flavonoids)." ;
+    rdfs:subClassOf skos:Concept .
 
