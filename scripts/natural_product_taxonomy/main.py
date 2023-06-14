@@ -53,7 +53,7 @@ def generate_rdf_graph(subtaxonomy_list: [], prefix: str) -> Graph:
             tax_superclass = subtaxonomy[1].strip()
             tax_superclass_label = tax_superclass
             if tax_superclass == tax_pathway:
-                tax_class = tax_class + "_SUPERCLASS"
+                tax_superclass = tax_superclass + "_SUPERCLASS"
             tax_superclass_uri = URIRef(prefix +
                                         urllib.parse.quote(tax_superclass.replace(" ", "_").upper(), safe=''))
             graph.add((tax_superclass_uri, SKOS.broader, tax_pathway_uri))
