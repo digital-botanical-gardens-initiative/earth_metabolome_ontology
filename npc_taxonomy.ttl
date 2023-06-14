@@ -1674,6 +1674,10 @@ npc:MINOR_LIGNANS a npc:Class ;
     rdfs:label "Minor lignans" ;
     skos:broader npc:LIGNANS .
 
+npc:MISCELLANEOUS_ALKALOIDS_CLASS a npc:Class ;
+    rdfs:label "Miscellaneous alkaloids" ;
+    skos:broader npc:MISCELLANEOUS_ALKALOIDS .
+
 npc:MISCELLANEOUS_APOCAROTENOIDS a npc:Class ;
     rdfs:label "Miscellaneous apocarotenoids" ;
     skos:broader npc:APOCAROTENOIDS .
@@ -1681,6 +1685,10 @@ npc:MISCELLANEOUS_APOCAROTENOIDS a npc:Class ;
 npc:MISCELLANEOUS_MEROTERPENOIDS a npc:Class ;
     rdfs:label "Miscellaneous meroterpenoids" ;
     skos:broader npc:MEROTERPENOIDS .
+
+npc:MISCELLANEOUS_POLYKETIDES_CLASS a npc:Class ;
+    rdfs:label "Miscellaneous polyketides" ;
+    skos:broader npc:MISCELLANEOUS_POLYKETIDES .
 
 npc:MITOMYCINS a npc:Class ;
     rdfs:label "Mitomycins" ;
@@ -2779,17 +2787,13 @@ npc:HISTIDINE_ALKALOIDS a npc:Superclass ;
     rdfs:label "Histidine alkaloids" ;
     skos:broader npc:ALKALOIDS .
 
-npc:MISCELLANEOUS_ALKALOIDS a npc:Class,
-        npc:Superclass ;
+npc:MISCELLANEOUS_ALKALOIDS a npc:Superclass ;
     rdfs:label "Miscellaneous alkaloids" ;
-    skos:broader npc:ALKALOIDS,
-        npc:MISCELLANEOUS_ALKALOIDS .
+    skos:broader npc:ALKALOIDS .
 
-npc:MISCELLANEOUS_POLYKETIDES a npc:Class,
-        npc:Superclass ;
+npc:MISCELLANEOUS_POLYKETIDES a npc:Superclass ;
     rdfs:label "Miscellaneous polyketides" ;
-    skos:broader npc:MISCELLANEOUS_POLYKETIDES,
-        npc:POLYKETIDES .
+    skos:broader npc:POLYKETIDES .
 
 npc:MITOMYCIN_DERIVATIVES a npc:Superclass ;
     rdfs:label "Mitomycin derivatives" ;

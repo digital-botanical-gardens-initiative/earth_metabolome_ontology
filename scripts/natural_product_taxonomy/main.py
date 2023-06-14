@@ -51,17 +51,23 @@ def generate_rdf_graph(subtaxonomy_list: [], prefix: str) -> Graph:
             graph.add((tax_pathway_uri, RDF.type, npc_pathway))
         if len(subtaxonomy) >= 2:
             tax_superclass = subtaxonomy[1].strip()
+            tax_superclass_label = tax_superclass
+            if tax_superclass == tax_pathway:
+                tax_class = tax_class + "_SUPERCLASS"
             tax_superclass_uri = URIRef(prefix +
                                         urllib.parse.quote(tax_superclass.replace(" ", "_").upper(), safe=''))
             graph.add((tax_superclass_uri, SKOS.broader, tax_pathway_uri))
-            graph.add((tax_superclass_uri, RDFS.label, Literal(tax_superclass)))
+            graph.add((tax_superclass_uri, RDFS.label, Literal(tax_superclass_label)))
             graph.add((tax_superclass_uri, RDF.type, npc_superclass))
         if len(subtaxonomy) == 3:
             tax_class = subtaxonomy[2].strip()
+            tax_class_label = tax_class
+            if tax_class == tax_superclass:
+                tax_class = tax_class + "_CLASS"
             tax_class_uri = URIRef(prefix +
                                    urllib.parse.quote(tax_class.replace(" ", "_").upper(), safe=''))
             graph.add((tax_class_uri, SKOS.broader, tax_superclass_uri))
-            graph.add((tax_class_uri, RDFS.label, Literal(tax_class)))
+            graph.add((tax_class_uri, RDFS.label, Literal(tax_class_label)))
             graph.add((tax_class_uri, RDF.type, npc_class))
     graph.bind("rdf", RDF)
     graph.bind("rdfs", RDFS)

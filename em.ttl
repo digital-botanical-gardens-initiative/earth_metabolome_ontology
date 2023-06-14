@@ -115,7 +115,7 @@ foaf:logo rdf:type owl:AnnotationProperty .
 ###  https://purl.org/em#hasIonization
 :hasIonization rdf:type owl:AnnotationProperty ;
                rdfs:range xsd:string ;
-               rdfs:domain _:genid-nodeid-genid-385594033d2f4add9bddbbba0a2f6e3f-genid-nodeid-node1h2dlp3a3x24 .
+               rdfs:domain _:genid-nodeid-genid-43744234d9d5407480c4cbb55f7ba559-13AFC2953E4D943C9C292649540245FD .
 
 
 #################################################################
@@ -138,7 +138,8 @@ foaf:depiction rdf:type owl:ObjectProperty ;
 ###  https://purl.org/em#hasAnnotation
 :hasAnnotation rdf:type owl:ObjectProperty ;
                rdfs:domain :MS2Spectrum ;
-               rdfs:range :SpectrumAnnotation .
+               rdfs:range :SpectrumAnnotation ;
+               rdfs:label "has annotation" .
 
 
 ###  https://purl.org/em#hasClass
@@ -150,7 +151,8 @@ foaf:depiction rdf:type owl:ObjectProperty ;
                                     )
                       ] ;
           rdfs:range <https://purl.org/npc#Class> ;
-          owl:propertyDisjointWith :hasSuperClass .
+          owl:propertyDisjointWith :hasSuperClass ;
+          rdfs:label "has class" .
 
 
 ###  https://purl.org/em#hasConsensusSpectrum
@@ -158,12 +160,13 @@ foaf:depiction rdf:type owl:ObjectProperty ;
                       rdfs:subPropertyOf :hasSpectrum ;
                       rdf:type owl:FunctionalProperty ;
                       rdfs:domain :LCMSFeature ;
-                      rdfs:range :GNPSConsensusSpectrum .
+                      rdfs:range :GNPSConsensusSpectrum ;
+                      rdfs:label "has consensus spectrum" .
 
 
 ###  https://purl.org/em#hasFBMNComponentIndex
 :hasFBMNComponentIndex rdf:type owl:ObjectProperty ;
-                       rdfs:comment "TODO" .
+                       rdfs:comment "TODO this looks like a data property has_fbmn_ci" .
 
 
 ###  https://purl.org/em#hasFirstMember
@@ -188,7 +191,8 @@ foaf:depiction rdf:type owl:ObjectProperty ;
              rdfs:range :InChIKey ;
              owl:propertyChainAxiom ( :hasInChIKeySet
                                       :isInChIKey2DOf
-                                    ) .
+                                    ) ;
+             rdfs:label "has InChIKey" .
 
 
 ###  https://purl.org/em#hasInChIKey2D
@@ -197,27 +201,32 @@ foaf:depiction rdf:type owl:ObjectProperty ;
                owl:inverseOf :isInChIKey2DOf ;
                rdf:type owl:FunctionalProperty ;
                rdfs:domain :InChIKey ;
-               rdfs:range :InChIKey2D .
+               rdfs:range :InChIKey2D ;
+               rdfs:label "has InChIKey2D" .
 
 
 ###  https://purl.org/em#hasInChIKeySet
 :hasInChIKeySet rdf:type owl:ObjectProperty ;
                 rdfs:domain :StructuralAnnotation ;
-                rdfs:range :InChIKey2D .
+                rdfs:range :ChemicalStructure ;
+                rdfs:comment "Recommendation: prefer the chemical structure representation 2D InChIKey that also represents a collection of InChIKeys (i.e. chemicals) with common attributes. As a result, we can reduce the number of triples and redundacy to represent the same information that are common to many chemicals." ;
+                rdfs:label "has chemical structure representation" .
 
 
 ###  https://purl.org/em#hasLCMS
 :hasLCMS rdf:type owl:ObjectProperty ,
                   owl:FunctionalProperty ;
          rdfs:domain :Sample ;
-         rdfs:range :LCMSAnalysis .
+         rdfs:range :LCMSAnalysis ;
+         rdfs:label "has LCMS" .
 
 
 ###  https://purl.org/em#hasLCMSFeature
 :hasLCMSFeature rdf:type owl:ObjectProperty ;
                 rdfs:subPropertyOf :hasSpectrum ;
                 rdfs:domain :LCMSFeatureSet ;
-                rdfs:range :LCMSFeature .
+                rdfs:range :LCMSFeature ;
+                rdfs:label "has LCMS feature" .
 
 
 ###  https://purl.org/em#hasLCMSFeatureSet
@@ -228,7 +237,8 @@ foaf:depiction rdf:type owl:ObjectProperty ;
 :hasLabProcess rdf:type owl:ObjectProperty ,
                         owl:FunctionalProperty ;
                rdfs:domain :RawMaterial ;
-               rdfs:range :ExtractSample .
+               rdfs:range :ExtractSample ;
+               rdfs:label "has lab process" .
 
 
 ###  https://purl.org/em#hasPairMember
@@ -247,7 +257,8 @@ foaf:depiction rdf:type owl:ObjectProperty ;
                                         :ChemicalStructure
                                       )
                         ] ;
-            rdfs:range <https://purl.org/npc#Pathway> .
+            rdfs:range <https://purl.org/npc#Pathway> ;
+            rdfs:label "has pathway" .
 
 
 ###  https://purl.org/em#hasSecondMember
@@ -264,12 +275,14 @@ foaf:depiction rdf:type owl:ObjectProperty ;
 :hasSpec2VecDoc rdf:type owl:ObjectProperty ;
                 rdfs:subPropertyOf owl:topObjectProperty ;
                 rdfs:domain :LCMSFeature ;
-                rdfs:range :Spec2VecDoc .
+                rdfs:range :Spec2VecDoc ;
+                rdfs:label "has spec2vec documentation" .
 
 
 ###  https://purl.org/em#hasSpectrum
 :hasSpectrum rdf:type owl:ObjectProperty ;
-             rdfs:range :MS2Spectrum .
+             rdfs:range :MS2Spectrum ;
+             rdfs:label "has spectrum" .
 
 
 ###  https://purl.org/em#hasSuperClass
@@ -280,7 +293,8 @@ foaf:depiction rdf:type owl:ObjectProperty ;
                                            :ChemicalStructure
                                          )
                            ] ;
-               rdfs:range <https://purl.org/npc#Superclass> .
+               rdfs:range <https://purl.org/npc#Superclass> ;
+               rdfs:label "has super class" .
 
 
 ###  https://purl.org/em#inTaxon
@@ -301,14 +315,16 @@ foaf:depiction rdf:type owl:ObjectProperty ;
                                               :ChemicalStructure
                                             )
                               ] ;
-                  rdfs:range :NaturalProductTaxon .
+                  rdfs:range :NaturalProductTaxon ;
+                  rdfs:label "is classified with" .
 
 
 ###  https://purl.org/em#isInChIKey2DOf
 :isInChIKey2DOf rdf:type owl:ObjectProperty ,
                          owl:InverseFunctionalProperty ;
                 rdfs:domain :InChIKey2D ;
-                rdfs:range :InChIKey .
+                rdfs:range :InChIKey ;
+                rdfs:label "is InChIKey2D of" .
 
 
 ###  https://purl.org/em#isInChIKeyOf
@@ -318,13 +334,15 @@ foaf:depiction rdf:type owl:ObjectProperty ;
                            owl:unionOf ( :Chemical
                                          :SpectrumAnnotation
                                        )
-                         ] .
+                         ] ;
+              rdfs:label "is InChIKey of" .
 
 
 ###  https://purl.org/em#source
 :source rdf:type owl:ObjectProperty ;
         rdfs:domain :SpectrumAnnotation ;
-        rdfs:range :InformationSource .
+        rdfs:range :InformationSource ;
+        rdfs:label "has source" .
 
 
 #################################################################
@@ -335,13 +353,15 @@ foaf:depiction rdf:type owl:ObjectProperty ;
 :componentLink rdf:type owl:DatatypeProperty ,
                         owl:FunctionalProperty ;
                rdfs:domain :GNPSConsensusSpectrum ;
-               rdfs:range xsd:anyURI .
+               rdfs:range xsd:anyURI ;
+               rdfs:label "component link" .
 
 
 ###  https://purl.org/em#hasAdduct
 :hasAdduct rdf:type owl:DatatypeProperty ;
            rdfs:domain :StructuralAnnotation ;
-           rdfs:range xsd:string .
+           rdfs:range xsd:string ;
+           rdfs:label "has adduct" .
 
 
 ###  https://purl.org/em#hasClassProbability
@@ -356,31 +376,36 @@ foaf:depiction rdf:type owl:ObjectProperty ;
                      rdfs:subPropertyOf :hasScore ;
                      rdfs:domain :StructuralAnnotation ;
                      rdfs:range xsd:integer ;
-                     rdfs:comment "An ISDB score." .
+                     rdfs:comment "An ISDB score." ;
+                     rdfs:label "has consistency score" .
 
 
 ###  https://purl.org/em#hasCosine
 :hasCosine rdf:type owl:DatatypeProperty ,
                     owl:FunctionalProperty ;
            rdfs:domain :SpectralPair ;
-           rdfs:range xsd:double .
+           rdfs:range xsd:double ;
+           rdfs:label "has cosine" .
 
 
 ###  https://purl.org/em#hasCosmicScore
 :hasCosmicScore rdf:type owl:DatatypeProperty ;
                 rdfs:subPropertyOf :hasScore ;
                 rdfs:domain :StructuralAnnotation ;
-                rdfs:range xsd:double .
+                rdfs:range xsd:double ;
+                rdfs:label "has cosmic score" .
 
 
 ###  https://purl.org/em#hasDOI
 :hasDOI rdf:type owl:DatatypeProperty ;
-        rdfs:range xsd:anyURI .
+        rdfs:range xsd:anyURI ;
+        rdfs:label "has DOI" .
 
 
 ###  https://purl.org/em#hasFeatureArea
 :hasFeatureArea rdf:type owl:DatatypeProperty ;
-                rdfs:range xsd:double .
+                rdfs:range xsd:double ;
+                rdfs:label "has feature area" .
 
 
 ###  https://purl.org/em#hasFinalScore
@@ -389,13 +414,15 @@ foaf:depiction rdf:type owl:ObjectProperty ;
                rdf:type owl:FunctionalProperty ;
                rdfs:domain :StructuralAnnotation ;
                rdfs:range xsd:double ;
-               rdfs:comment "An ISDB score." .
+               rdfs:comment "An ISDB score." ;
+               rdfs:label "has final score" .
 
 
 ###  https://purl.org/em#hasGNPSLCMSLink
 :hasGNPSLCMSLink rdf:type owl:DatatypeProperty ;
                  rdfs:domain :LCMSAnalysis ;
-                 rdfs:range xsd:anyURI .
+                 rdfs:range xsd:anyURI ;
+                 rdfs:label "has GNPS LCMS link" .
 
 
 ###  https://purl.org/em#hasIonization
@@ -405,14 +432,16 @@ foaf:depiction rdf:type owl:ObjectProperty ;
 
 ###  https://purl.org/em#hasLicense
 :hasLicense rdf:type owl:DatatypeProperty ;
-            rdfs:range xsd:anyURI .
+            rdfs:range xsd:anyURI ;
+            rdfs:label "has license" .
 
 
 ###  https://purl.org/em#hasMassDifference
 :hasMassDifference rdf:type owl:DatatypeProperty ,
                             owl:FunctionalProperty ;
                    rdfs:domain :SpectralPair ;
-                   rdfs:range xsd:double .
+                   rdfs:range xsd:double ;
+                   rdfs:label "has Mass difference" .
 
 
 ###  https://purl.org/em#hasMassiveDOI
@@ -426,13 +455,15 @@ foaf:depiction rdf:type owl:ObjectProperty ;
 :hasMassiveLicense rdf:type owl:DatatypeProperty ;
                    rdfs:subPropertyOf :hasLicense ;
                    rdfs:domain :LCMSAnalysis ;
-                   rdfs:range xsd:anyURI .
+                   rdfs:range xsd:anyURI ;
+                   rdfs:label "has Massive license" .
 
 
 ###  https://purl.org/em#hasParentMass
 :hasParentMass rdf:type owl:DatatypeProperty ;
                rdfs:domain :LCMSFeature ;
-               rdfs:range xsd:double .
+               rdfs:range xsd:double ;
+               rdfs:label "has parent mass" .
 
 
 ###  https://purl.org/em#hasPathwayProbability
@@ -444,25 +475,29 @@ foaf:depiction rdf:type owl:ObjectProperty ;
 
 ###  https://purl.org/em#hasProbability
 :hasProbability rdf:type owl:DatatypeProperty ;
-                rdfs:range xsd:double .
+                rdfs:range xsd:double ;
+                rdfs:label "has probability" .
 
 
 ###  https://purl.org/em#hasRelativeFeatureArea
 :hasRelativeFeatureArea rdf:type owl:DatatypeProperty ;
                         rdfs:domain :LCMSFeature ;
-                        rdfs:range xsd:double .
+                        rdfs:range xsd:double ;
+                        rdfs:label "has relative feature area" .
 
 
 ###  https://purl.org/em#hasRetentionTime
 :hasRetentionTime rdf:type owl:DatatypeProperty ;
                   rdfs:domain :LCMSFeature ;
-                  rdfs:range xsd:double .
+                  rdfs:range xsd:double ;
+                  rdfs:label "has retention time" .
 
 
 ###  https://purl.org/em#hasRowId
 :hasRowId rdf:type owl:DatatypeProperty ;
           rdfs:domain :LCMSFeature ;
-          rdfs:range xsd:integer .
+          rdfs:range xsd:integer ;
+          rdfs:label "has row id" .
 
 
 ###  https://purl.org/em#hasSMILES
@@ -476,27 +511,37 @@ foaf:depiction rdf:type owl:ObjectProperty ;
 
 ###  https://purl.org/em#hasScore
 :hasScore rdf:type owl:DatatypeProperty ;
-          rdfs:domain :StructuralAnnotation ;
-          rdfs:range xsd:double .
+          rdfs:domain [ rdf:type owl:Class ;
+                        owl:unionOf ( :Spec2VecDoc
+                                      :StructuralAnnotation
+                                    )
+                      ] ;
+          rdfs:label "has score" .
 
 
 ###  https://purl.org/em#hasSpec2VecLoss
 :hasSpec2VecLoss rdf:type owl:DatatypeProperty ;
                  rdfs:subPropertyOf :hasSpec2VecValue ;
                  rdfs:domain :Spec2VecDoc ;
-                 rdfs:range xsd:double .
+                 rdfs:range xsd:double ;
+                 rdfs:label "has spec2vec loss" .
 
 
 ###  https://purl.org/em#hasSpec2VecPeak
 :hasSpec2VecPeak rdf:type owl:DatatypeProperty ;
                  rdfs:subPropertyOf :hasSpec2VecValue ;
                  rdfs:domain :Spec2VecDoc ;
-                 rdfs:range xsd:double .
+                 rdfs:range xsd:double ;
+                 rdfs:label "has spec2vec peak" .
 
 
 ###  https://purl.org/em#hasSpec2VecValue
 :hasSpec2VecValue rdf:type owl:DatatypeProperty ;
-                  rdfs:domain :Spec2VecDoc .
+                  rdfs:subPropertyOf :hasScore ;
+                  rdfs:domain :Spec2VecDoc ;
+                  rdfs:range xsd:double ;
+                  rdfs:comment "A mass spectral similarity scoring through learning of structural relationships. Spec2vec is a novel spectral similarity score inspired by a natural language processing algorithm -- Word2Vec. Where Word2Vec learns relationships between words in sentences, spec2vec does so for mass fragments and neutral losses in MS/MS spectra. The spectral similarity score is based on spectral embeddings learnt from the fragmental relationships within a large set of spectral data. Analysis and benchmarking of mass spectra similarity measures using gnps data set." ;
+                  rdfs:label "has spec2vec value" .
 
 
 ###  https://purl.org/em#hasSpectralScore
@@ -505,7 +550,8 @@ foaf:depiction rdf:type owl:ObjectProperty ;
                   rdf:type owl:FunctionalProperty ;
                   rdfs:domain :StructuralAnnotation ;
                   rdfs:range xsd:double ;
-                  rdfs:comment "An ISDB score." .
+                  rdfs:comment "An ISDB score." ;
+                  rdfs:label "has spectral score" .
 
 
 ###  https://purl.org/em#hasSuperClassProbability
@@ -521,7 +567,8 @@ foaf:depiction rdf:type owl:ObjectProperty ;
               rdf:type owl:FunctionalProperty ;
               rdfs:domain :StructuralAnnotation ;
               rdfs:range xsd:integer ;
-              rdfs:comment "An ISDB score." .
+              rdfs:comment "An ISDB score." ;
+              rdfs:label "has taxo score" .
 
 
 ###  https://purl.org/em#hasUSI
@@ -542,7 +589,8 @@ foaf:depiction rdf:type owl:ObjectProperty ;
 :hasZodiacScore rdf:type owl:DatatypeProperty ;
                 rdfs:subPropertyOf :hasScore ;
                 rdfs:domain :StructuralAnnotation ;
-                rdfs:range xsd:double .
+                rdfs:range xsd:double ;
+                rdfs:label "has zodiac score" .
 
 
 ###  https://purl.org/em#inChIKey
@@ -566,14 +614,16 @@ foaf:depiction rdf:type owl:ObjectProperty ;
 ###  https://purl.org/em#scientificName
 :scientificName rdf:type owl:DatatypeProperty ;
                 rdfs:domain :Taxon ;
-                rdfs:range xsd:string .
+                rdfs:range xsd:string ;
+                rdfs:label "scientific name" .
 
 
 ###  https://purl.org/em#spectrumLink
 :spectrumLink rdf:type owl:DatatypeProperty ,
                        owl:FunctionalProperty ;
               rdfs:domain :GNPSConsensusSpectrum ;
-              rdfs:range xsd:anyURI .
+              rdfs:range xsd:anyURI ;
+              rdfs:label "spectrum link" .
 
 
 #################################################################
@@ -692,7 +742,9 @@ wd:Q16521 rdf:type owl:Class ;
 
 
 ###  https://purl.org/em#InformationSource
-:InformationSource rdf:type owl:Class .
+:InformationSource rdf:type owl:Class ;
+                   rdfs:comment "The source of information. For example, the source of a given annotation that might be a bioinformatics database or machine learning classification model." ;
+                   rdfs:label "Information source" .
 
 
 ###  https://purl.org/em#LCMSAnalysis
@@ -790,7 +842,9 @@ wd:Q16521 rdf:type owl:Class ;
 
 
 ###  https://purl.org/em#Spec2VecDoc
-:Spec2VecDoc rdf:type owl:Class .
+:Spec2VecDoc rdf:type owl:Class ;
+             rdfs:comment "Document about improved mass spectral similarity scoring through learning of structural relationships. Spec2vec is a novel spectral similarity score inspired by a natural language processing algorithm -- Word2Vec. Where Word2Vec learns relationships between words in sentences, spec2vec does so for mass fragments and neutral losses in MS/MS spectra. The spectral similarity score is based on spectral embeddings learnt from the fragmental relationships within a large set of spectral data. Analysis and benchmarking of mass spectra similarity measures using GNPS data set." ;
+             rdfs:label "Spec2vec document" .
 
 
 ###  https://purl.org/em#SpectralPair
@@ -809,7 +863,7 @@ wd:Q16521 rdf:type owl:Class ;
 :StructuralAnnotation rdf:type owl:Class ;
                       rdfs:subClassOf :SpectrumAnnotation ,
                                       [ rdf:type owl:Restriction ;
-                                        owl:onProperty :hasInChIKey2D ;
+                                        owl:onProperty :hasInChIKeySet ;
                                         owl:someValuesFrom :InChIKey2D
                                       ] ;
                       rdfs:comment "" .
