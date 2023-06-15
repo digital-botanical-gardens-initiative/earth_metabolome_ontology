@@ -21,14 +21,15 @@
                        dcterms:contributor <http://orcid.org/0000-0001-9292-9463> ,
                                            <http://orcid.org/0000-0002-3648-7362> ,
                                            <http://orcid.org/0000-0002-9619-1707> ,
-                                           <http://orcid.org/0000-0003-3389-2191> ;
-                       dcterms:creator <https://orcid.org/0000-0002-3175-5372> ,
-                                       <https://www.wikidata.org/wiki/Q58893866> ;
+                                           <http://orcid.org/0000-0003-3389-2191> ,
+                                           "https://orcid.org/0000-0002-1269-2038" ,
+                                           "https://orcid.org/0000-0002-3175-5372" ,
+                                           "https://orcid.org/0000-0003-3213-4495" ;
                        dcterms:description "The Earth Metabolome Initiative (EMI) vocabulary. EMI is a global effort to profile the metabolic content of all currently known species on our planet." ;
                        dcterms:license <https://creativecommons.org/publicdomain/zero/1.0/> ;
                        dcterms:replaces <https://enpkg.commons-lab.org/kg> ;
                        dcterms:title "The Earth Metabolome semantic model." ;
-                       vann:preferredNamespacePrefix "em" ;
+                       vann:preferredNamespacePrefix "emi" ;
                        vann:preferredNamespaceUri "https://purl.org/em#" ;
                        owl:versionInfo 0.1 .
 
@@ -115,7 +116,7 @@ foaf:logo rdf:type owl:AnnotationProperty .
 ###  https://purl.org/em#hasIonization
 :hasIonization rdf:type owl:AnnotationProperty ;
                rdfs:range xsd:string ;
-               rdfs:domain _:genid-nodeid-genid-43744234d9d5407480c4cbb55f7ba559-13AFC2953E4D943C9C292649540245FD .
+               rdfs:domain _:genid-nodeid-genid-f76180f0229a40abb7d43c66a59ee8b7-410F49217A046AC0049AB02A5F23F5F9 .
 
 
 #################################################################
@@ -164,9 +165,10 @@ foaf:depiction rdf:type owl:ObjectProperty ;
                       rdfs:label "has consensus spectrum" .
 
 
-###  https://purl.org/em#hasFBMNComponentIndex
-:hasFBMNComponentIndex rdf:type owl:ObjectProperty ;
-                       rdfs:comment "TODO this looks like a data property has_fbmn_ci" .
+###  https://purl.org/em#hasFBMNComponent
+:hasFBMNComponent rdf:type owl:ObjectProperty ;
+                  rdfs:domain :LCMSFeature ;
+                  rdfs:comment "Feature-based molecular network component." .
 
 
 ###  https://purl.org/em#hasFirstMember
@@ -688,6 +690,12 @@ wd:Q16521 rdf:type owl:Class ;
                rdfs:subClassOf :Sample ;
                rdfs:comment "A natural extract obtained from the processing of a RawMaterial" ;
                rdfs:label "Extract sample" .
+
+
+###  https://purl.org/em#FBMNComponent
+:FBMNComponent rdf:type owl:Class ;
+               rdfs:comment "Feature-based molecular network component." ;
+               rdfs:label "FBMN component" .
 
 
 ###  https://purl.org/em#GNPSAnnotation
