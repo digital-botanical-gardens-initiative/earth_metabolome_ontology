@@ -15,25 +15,24 @@
 @base <https://purl.org/emi> .
 
 <https://purl.org/emi> rdf:type owl:Ontology ;
-                       owl:versionIRI <https://purl.org/emi/version/0.1> ;
-                       owl:imports <http://www.w3.org/2004/02/skos/core> ,
-                                   <https://purl.org/npc> ;
-                       dcterms:contributor "http://orcid.org/0000-0001-9292-9463" ,
-                                           "http://orcid.org/0000-0002-3648-7362" ,
-                                           "http://orcid.org/0000-0002-9619-1707" ,
-                                           "http://orcid.org/0000-0003-3389-2191" ,
-                                           "https://orcid.org/0000-0002-1269-2038" ,
-                                           "https://orcid.org/0000-0002-3175-5372" ,
-                                           "https://orcid.org/0000-0003-3213-4495" ;
-                       dcterms:description "The Earth Metabolome Initiative (EMI) vocabulary. EMI is a global effort to profile the metabolic content of all currently known species on our planet." ;
-                       dcterms:license <https://creativecommons.org/publicdomain/zero/1.0/> ;
-                       dcterms:replaces <https://enpkg.commons-lab.org/kg> ;
-                       dcterms:title "The Earth Metabolome semantic model." ;
-                       vann:preferredNamespacePrefix "emi" ;
-                       vann:preferredNamespaceUri "https://purl.org/emi#" ;
-                       owl:versionInfo 0.1 .
-
-
+                        owl:versionIRI <https://purl.org/emi/version/0.1> ;
+                        owl:imports <http://www.w3.org/2004/02/skos/core> ,
+                                    <http://www.w3.org/ns/prov-o-20130430> ,
+                                    <https://purl.org/npc> ;
+                        dcterms:contributor "http://orcid.org/0000-0001-9292-9463" ,
+                                            "http://orcid.org/0000-0002-3648-7362" ,
+                                            "http://orcid.org/0000-0002-9619-1707" ,
+                                            "http://orcid.org/0000-0003-3389-2191" ,
+                                            "https://orcid.org/0000-0002-1269-2038" ,
+                                            "https://orcid.org/0000-0002-3175-5372" ,
+                                            "https://orcid.org/0000-0003-3213-4495" ;
+                        dcterms:description "The Earth Metabolome Initiative (EMI) vocabulary. EMI is a global effort to profile the metabolic content of all currently known species on our planet." ;
+                        dcterms:license <https://creativecommons.org/publicdomain/zero/1.0/> ;
+                        dcterms:replaces <https://enpkg.commons-lab.org/kg> ;
+                        dcterms:title "The Earth Metabolome semantic model." ;
+                        vann:preferredNamespacePrefix "emi" ;
+                        vann:preferredNamespaceUri "https://purl.org/emi#" ;
+                        owl:versionInfo 0.1 .
 
 #################################################################
 #    Annotation properties
@@ -118,7 +117,7 @@ foaf:logo rdf:type owl:AnnotationProperty .
 ###  https://purl.org/emi#hasIonization
 :hasIonization rdf:type owl:AnnotationProperty ;
                rdfs:range xsd:string ;
-               rdfs:domain _:genid-nodeid-genid-f76180f0229a40abb7d43c66a59ee8b7-410F49217A046AC0049AB02A5F23F5F9 .
+               rdfs:domain _:genid-nodeid-genid-d98463b3fffe489a8ebf987e5d807cb6-51671FBB88D4CC27A66538E24A26F0D6 .
 
 
 #################################################################
@@ -143,6 +142,14 @@ foaf:depiction rdf:type owl:ObjectProperty ;
                rdfs:domain :MS2Spectrum ;
                rdfs:range :SpectrumAnnotation ;
                rdfs:label "has annotation" .
+
+
+###  https://purl.org/emi#hasChemicalStructure
+:hasChemicalStructure rdf:type owl:ObjectProperty ;
+                      rdfs:domain :StructuralAnnotation ;
+                      rdfs:range :ChemicalStructure ;
+                      rdfs:comment "Recommendation: prefer the chemical structure representation 2D InChIKey that also represents a collection of InChIKeys (i.e. chemicals) with common attributes. As a result, we can reduce the number of triples and redundacy to represent the same information that are common to many chemicals." ;
+                      rdfs:label "has chemical structure representation" .
 
 
 ###  https://purl.org/emi#hasClass
@@ -207,14 +214,6 @@ foaf:depiction rdf:type owl:ObjectProperty ;
                rdfs:domain :InChIKey ;
                rdfs:range :InChIKey2D ;
                rdfs:label "has InChIKey2D" .
-
-
-###  https://purl.org/emi#hasChemicalStructure
-:hasChemicalStructure rdf:type owl:ObjectProperty ;
-                rdfs:domain :StructuralAnnotation ;
-                rdfs:range :ChemicalStructure ;
-                rdfs:comment "Recommendation: prefer the chemical structure representation 2D InChIKey that also represents a collection of InChIKeys (i.e. chemicals) with common attributes. As a result, we can reduce the number of triples and redundacy to represent the same information that are common to many chemicals." ;
-                rdfs:label "has chemical structure representation" .
 
 
 ###  https://purl.org/emi#hasLCMS
@@ -346,7 +345,8 @@ foaf:depiction rdf:type owl:ObjectProperty ;
 :source rdf:type owl:ObjectProperty ;
         rdfs:domain :SpectrumAnnotation ;
         rdfs:range :InformationSource ;
-        rdfs:label "has source" .
+        rdfs:label "has source" ;
+        owl:deprecated "to delete. if we decide to rely on the prov ontology." .
 
 
 #################################################################
@@ -754,7 +754,9 @@ wd:Q16521 rdf:type owl:Class ;
 ###  https://purl.org/emi#InformationSource
 :InformationSource rdf:type owl:Class ;
                    rdfs:comment "The source of information. For example, the source of a given annotation that might be a bioinformatics database or machine learning classification model." ;
-                   rdfs:label "Information source" .
+                   rdfs:label "Information source" ;
+                   skos:note """This can be replaced by or related with the provenance ontology (W3C recommendation).
+https://www.w3.org/TR/prov-o/""" .
 
 
 ###  https://purl.org/emi#LCMSAnalysis
@@ -865,6 +867,14 @@ wd:Q16521 rdf:type owl:Class ;
 
 ###  https://purl.org/emi#SpectrumAnnotation
 :SpectrumAnnotation rdf:type owl:Class ;
+                    rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                      owl:onProperty <http://www.w3.org/ns/prov#wasAttributedTo> ;
+                                      owl:allValuesFrom <http://www.w3.org/ns/prov#Agent>
+                                    ] ,
+                                    [ rdf:type owl:Restriction ;
+                                      owl:onProperty <http://www.w3.org/ns/prov#wasDerivedFrom> ;
+                                      owl:allValuesFrom :InformationSource
+                                    ] ;
                     rdfs:comment "A spectral annotation" ;
                     rdfs:label "Spectrum annotation" .
 
