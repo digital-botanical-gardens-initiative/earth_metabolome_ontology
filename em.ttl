@@ -117,7 +117,7 @@ foaf:logo rdf:type owl:AnnotationProperty .
 ###  https://purl.org/emi#hasIonization
 :hasIonization rdf:type owl:AnnotationProperty ;
                rdfs:range xsd:string ;
-               rdfs:domain _:genid-nodeid-genid-d98463b3fffe489a8ebf987e5d807cb6-51671FBB88D4CC27A66538E24A26F0D6 .
+               rdfs:domain _:genid-nodeid-genid-2ba9d48565b64916af2c343c7ba464ca-F422FD23BED7CD3D23346DB17EC3C00B .
 
 
 #################################################################
@@ -233,7 +233,9 @@ foaf:depiction rdf:type owl:ObjectProperty ;
 
 
 ###  https://purl.org/emi#hasLCMSFeatureSet
-:hasLCMSFeatureSet rdf:type owl:ObjectProperty .
+:hasLCMSFeatureSet rdf:type owl:ObjectProperty ;
+                   rdfs:domain :LCMSAnalysis ;
+                   rdfs:range :LCMSFeatureSet .
 
 
 ###  https://purl.org/emi#hasLabProcess
@@ -761,7 +763,7 @@ https://www.w3.org/TR/prov-o/""" .
 
 ###  https://purl.org/emi#LCMSAnalysis
 :LCMSAnalysis rdf:type owl:Class ;
-              rdfs:comment "An LCMS analysis in a given ionization mode (pos or neg)" ;
+              rdfs:comment "A liquid chromatography–mass spectrometry (LCMS) analysis in a given ionization mode (pos or neg)" ;
               rdfs:label "LCMS analysis" .
 
 
@@ -790,8 +792,8 @@ https://www.w3.org/TR/prov-o/""" .
 
 ###  https://purl.org/emi#LCMSFeatureSet
 :LCMSFeatureSet rdf:type owl:Class ;
-                rdfs:comment "A set of LCMS features obtained from the processing of a given LCMS analysis" ;
-                rdfs:label "Feature set" .
+                rdfs:comment "A set of Liquid chromatography–mass spectrometry (LCMS) features obtained from the processing of a given LCMS analysis" ;
+                rdfs:label "LCMS feature set" .
 
 
 ###  https://purl.org/emi#LFpair
