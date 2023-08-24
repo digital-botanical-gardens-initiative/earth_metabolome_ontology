@@ -117,7 +117,7 @@ foaf:logo rdf:type owl:AnnotationProperty .
 ###  https://purl.org/emi#hasIonization
 :hasIonization rdf:type owl:AnnotationProperty ;
                rdfs:range xsd:string ;
-               rdfs:domain _:genid-nodeid-genid-2ba9d48565b64916af2c343c7ba464ca-F422FD23BED7CD3D23346DB17EC3C00B .
+               rdfs:domain _:genid-nodeid-genid-38dacf7f69594909a3bb55cb4f5adf85-0A5234A7970C993E2AA7C6D9EE8BAB2E .
 
 
 #################################################################
@@ -221,7 +221,7 @@ foaf:depiction rdf:type owl:ObjectProperty ;
                   owl:FunctionalProperty ;
          rdfs:domain :Sample ;
          rdfs:range :LCMSAnalysis ;
-         rdfs:label "has LCMS" .
+         rdfs:label "has LCMS analysis" .
 
 
 ###  https://purl.org/emi#hasLCMSFeature
@@ -320,7 +320,7 @@ foaf:depiction rdf:type owl:ObjectProperty ;
                                               :ChemicalStructure
                                             )
                               ] ;
-                  rdfs:range :NaturalProductTaxon ;
+                  rdfs:range :ChemicalTaxon ;
                   rdfs:label "is classified with" .
 
 
@@ -643,10 +643,31 @@ wd:Q16521 rdf:type owl:Class ;
           rdfs:label "Wikidata taxon" .
 
 
+###  https://purl.org/emi#Analysis
+:Analysis rdf:type owl:Class ;
+          rdfs:subClassOf [ rdf:type owl:Restriction ;
+                            owl:onProperty <http://www.w3.org/ns/prov#used> ;
+                            owl:allValuesFrom <http://www.w3.org/ns/prov#Entity>
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty <http://www.w3.org/ns/prov#wasAssociatedWith> ;
+                            owl:allValuesFrom <http://www.w3.org/ns/prov#Agent>
+                          ] ;
+          rdfs:comment "Any analysis performed over a sample." .
+
+
 ###  https://purl.org/emi#BioAssayResults
 :BioAssayResults rdf:type owl:Class ;
                  rdfs:comment "An object to store bioactivity results." ;
                  rdfs:label "Bioassay result" .
+
+
+###  https://purl.org/emi#BioassayAnalysis
+:BioassayAnalysis rdf:type owl:Class ;
+                  rdfs:subClassOf :Analysis ;
+                  rdfs:comment "A bioassay is an analytical method to determine the concentration or potency of a substance by its effect on living animals or plants (in vivo), or on living cells or tissues(in vitro)." ;
+                  rdfs:isDefinedBy "https://en.wikipedia.org/wiki/Bioassay" ;
+                  rdfs:label "Bioassay analysis" .
 
 
 ###  https://purl.org/emi#Blank
@@ -666,7 +687,7 @@ wd:Q16521 rdf:type owl:Class ;
 ###  https://purl.org/emi#Chemical
 :Chemical rdf:type owl:Class ;
           rdfs:subClassOf :ChemicalEntity ;
-          rdfs:comment "A chemical. Recommendation: the instances of this class are ideally Wikidata chemical entries." ;
+          rdfs:comment "A chemical. Recommendation: the instances of this class are ideally Wikidata chemical entries. If it is not a Wikidata entry we recommend to be as much as possible consistent in the whole dataset. Metadata can also be provided in order to describe the provenance of the instance (a chemical), for example, by stating the property prov-o:wasDerivedFrom (PROV-Ontology)." ;
           rdfs:label "Chemical" .
 
 
@@ -687,6 +708,11 @@ wd:Q16521 rdf:type owl:Class ;
                    rdfs:subClassOf :ChemicalEntity ;
                    rdfs:comment "A representation of one or more chemical structures. This representation can be defined as molecular information encodings, compact encoding representations, chemical formulas and graphical representations." ;
                    rdfs:label "Chemical structure representation" .
+
+
+###  https://purl.org/emi#ComputationalAnalysis
+:ComputationalAnalysis rdf:type owl:Class ;
+                       rdfs:subClassOf :Analysis .
 
 
 ###  https://purl.org/emi#ExtractSample
@@ -763,6 +789,7 @@ https://www.w3.org/TR/prov-o/""" .
 
 ###  https://purl.org/emi#LCMSAnalysis
 :LCMSAnalysis rdf:type owl:Class ;
+              rdfs:subClassOf :Analysis ;
               rdfs:comment "A liquid chromatography–mass spectrometry (LCMS) analysis in a given ionization mode (pos or neg)" ;
               rdfs:label "LCMS analysis" .
 
@@ -815,9 +842,16 @@ https://www.w3.org/TR/prov-o/""" .
              rdfs:label "MS2 spectrum" .
 
 
-###  https://purl.org/emi#NaturalProductTaxon
-:NaturalProductTaxon rdf:type owl:Class ;
-                     rdfs:subClassOf :ChemicalEntity .
+###  https://purl.org/emi#ChemicalTaxon
+:ChemicalTaxon rdf:type owl:Class ;
+                     rdfs:subClassOf :ChemicalEntity ;
+                     rdfs:label "Chemical taxon" ;
+                     rdfs:comment "As a taxonomy for chemicals such as natural products, we recommend to use the taxonomy derived from NPClassifier (i.e. https://purl.org/npc)." .
+
+
+###  https://purl.org/emi#Observation
+:Observation rdf:type owl:Class ;
+             rdfs:subClassOf <http://www.w3.org/ns/prov#Activity> .
 
 
 ###  https://purl.org/emi#QCSample
@@ -844,7 +878,8 @@ https://www.w3.org/TR/prov-o/""" .
 
 ###  https://purl.org/emi#Sample
 :Sample rdf:type owl:Class ;
-        rdfs:subClassOf :LabObject .
+        rdfs:subClassOf :LabObject ;
+        rdfs:comment "PROV-O metadata for observations modelled as Activities, 1 sample <-> 1 observation" .
 
 
 ###  https://purl.org/emi#SiriusCanopusAnnotation
@@ -870,12 +905,12 @@ https://www.w3.org/TR/prov-o/""" .
 ###  https://purl.org/emi#SpectrumAnnotation
 :SpectrumAnnotation rdf:type owl:Class ;
                     rdfs:subClassOf [ rdf:type owl:Restriction ;
-                                      owl:onProperty <http://www.w3.org/ns/prov#wasAttributedTo> ;
-                                      owl:allValuesFrom <http://www.w3.org/ns/prov#Agent>
-                                    ] ,
-                                    [ rdf:type owl:Restriction ;
                                       owl:onProperty <http://www.w3.org/ns/prov#wasDerivedFrom> ;
                                       owl:allValuesFrom :InformationSource
+                                    ] ,
+                                    [ rdf:type owl:Restriction ;
+                                      owl:onProperty <http://www.w3.org/ns/prov#wasGeneratedBy> ;
+                                      owl:allValuesFrom :Analysis
                                     ] ;
                     rdfs:comment "A spectral annotation" ;
                     rdfs:label "Spectrum annotation" .
@@ -922,7 +957,7 @@ https://www.w3.org/TR/prov-o/""" .
 ###  https://purl.org/npc#Class
 <https://purl.org/npc#Class> rdf:type owl:Class ;
                              rdfs:subClassOf skos:Concept ,
-                                             :NaturalProductTaxon ,
+                                             :ChemicalTaxon ,
                                              [ rdf:type owl:Restriction ;
                                                owl:onProperty skos:broader ;
                                                owl:someValuesFrom <https://purl.org/npc#Superclass>
@@ -939,7 +974,7 @@ https://www.w3.org/TR/prov-o/""" .
 ###  https://purl.org/npc#Pathway
 <https://purl.org/npc#Pathway> rdf:type owl:Class ;
                                rdfs:subClassOf skos:Concept ,
-                                               :NaturalProductTaxon ;
+                                               :ChemicalTaxon ;
                                owl:disjointWith [ rdf:type owl:Class ;
                                                   owl:unionOf ( <https://purl.org/npc#Class>
                                                                 <https://purl.org/npc#Superclass>
@@ -952,7 +987,7 @@ https://www.w3.org/TR/prov-o/""" .
 ###  https://purl.org/npc#Superclass
 <https://purl.org/npc#Superclass> rdf:type owl:Class ;
                                   rdfs:subClassOf skos:Concept ,
-                                                  :NaturalProductTaxon ,
+                                                  :ChemicalTaxon ,
                                                   [ rdf:type owl:Restriction ;
                                                     owl:onProperty skos:broader ;
                                                     owl:someValuesFrom <https://purl.org/npc#Pathway>
