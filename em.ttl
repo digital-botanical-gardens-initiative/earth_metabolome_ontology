@@ -8,6 +8,7 @@
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix sosa: <http://www.w3.org/ns/sosa/> .
 @prefix vann: <http://purl.org/vocab/vann/> .
 @prefix void: <http://rdfs.org/ns/void#> .
 @prefix orcid: <http://orcid.org/> .
@@ -18,6 +19,7 @@
                         owl:versionIRI <https://purl.org/emi/version/0.1> ;
                         owl:imports <http://www.w3.org/2004/02/skos/core> ,
                                     <http://www.w3.org/ns/prov-o-20130430> ,
+                                    sosa: ,
                                     <https://purl.org/npc> ;
                         dcterms:contributor "http://orcid.org/0000-0001-9292-9463" ,
                                             "http://orcid.org/0000-0002-3648-7362" ,
@@ -117,7 +119,7 @@ foaf:logo rdf:type owl:AnnotationProperty .
 ###  https://purl.org/emi#hasIonization
 :hasIonization rdf:type owl:AnnotationProperty ;
                rdfs:range xsd:string ;
-               rdfs:domain _:genid-nodeid-genid-38dacf7f69594909a3bb55cb4f5adf85-0A5234A7970C993E2AA7C6D9EE8BAB2E .
+               rdfs:domain _:genid-nodeid-genid-cf9d88afd3a04670a51b71033975a192-7E2EEE474E41AE08393A9FCB4BA39CC3 .
 
 
 #################################################################
@@ -219,7 +221,7 @@ foaf:depiction rdf:type owl:ObjectProperty ;
 ###  https://purl.org/emi#hasLCMS
 :hasLCMS rdf:type owl:ObjectProperty ,
                   owl:FunctionalProperty ;
-         rdfs:domain :Sample ;
+         rdfs:domain sosa:Sample ;
          rdfs:range :LCMSAnalysis ;
          rdfs:label "has LCMS analysis" .
 
@@ -318,6 +320,7 @@ foaf:depiction rdf:type owl:ObjectProperty ;
                   rdfs:domain [ rdf:type owl:Class ;
                                 owl:unionOf ( :ChemicalClassAnnotation
                                               :ChemicalStructure
+                                              :RawMaterial
                                             )
                               ] ;
                   rdfs:range :ChemicalTaxon ;
@@ -645,7 +648,8 @@ wd:Q16521 rdf:type owl:Class ;
 
 ###  https://purl.org/emi#Analysis
 :Analysis rdf:type owl:Class ;
-          rdfs:subClassOf [ rdf:type owl:Restriction ;
+          rdfs:subClassOf sosa:Observation ,
+                          [ rdf:type owl:Restriction ;
                             owl:onProperty <http://www.w3.org/ns/prov#used> ;
                             owl:allValuesFrom <http://www.w3.org/ns/prov#Entity>
                           ] ,
@@ -672,7 +676,7 @@ wd:Q16521 rdf:type owl:Class ;
 
 ###  https://purl.org/emi#Blank
 :Blank rdf:type owl:Class ;
-       rdfs:subClassOf :Sample ;
+       rdfs:subClassOf sosa:Sample ;
        rdfs:comment "A blank sample" ;
        rdfs:label "Blank sample" .
 
@@ -710,6 +714,13 @@ wd:Q16521 rdf:type owl:Class ;
                    rdfs:label "Chemical structure representation" .
 
 
+###  https://purl.org/emi#ChemicalTaxon
+:ChemicalTaxon rdf:type owl:Class ;
+               rdfs:subClassOf :ChemicalEntity ;
+               rdfs:comment "As a taxonomy for chemicals such as natural products, we recommend to use the taxonomy derived from NPClassifier (i.e. https://purl.org/npc)." ;
+               rdfs:label "Chemical taxon" .
+
+
 ###  https://purl.org/emi#ComputationalAnalysis
 :ComputationalAnalysis rdf:type owl:Class ;
                        rdfs:subClassOf :Analysis .
@@ -717,9 +728,9 @@ wd:Q16521 rdf:type owl:Class ;
 
 ###  https://purl.org/emi#ExtractSample
 :ExtractSample rdf:type owl:Class ;
-               rdfs:subClassOf :Sample ;
+               rdfs:subClassOf sosa:Sample ;
                rdfs:comment "A natural extract obtained from the processing of a RawMaterial" ;
-               rdfs:label "Extract sample" .
+               rdfs:label "Extracted sample" .
 
 
 ###  https://purl.org/emi#FBMNComponent
@@ -833,20 +844,14 @@ https://www.w3.org/TR/prov-o/""" .
 ###  https://purl.org/emi#LabObject
 :LabObject rdf:type owl:Class ;
            rdfs:comment "An object that correspond to a physical laboratory object" ;
-           rdfs:label "Laboratory object" .
+           rdfs:label "Laboratory object" ;
+           owl:deprecated "To remove, it was replaced with Sample from Sosa, because the Lab Objcts in the EMI model so far are only kind of samples. Hence, there is no need of generalizing to any lab object or making it specific to a \"lab\"." .
 
 
 ###  https://purl.org/emi#MS2Spectrum
 :MS2Spectrum rdf:type owl:Class ;
              rdfs:comment "A fragmentation mass spectrometry (or MS2) spectrum" ;
              rdfs:label "MS2 spectrum" .
-
-
-###  https://purl.org/emi#ChemicalTaxon
-:ChemicalTaxon rdf:type owl:Class ;
-                     rdfs:subClassOf :ChemicalEntity ;
-                     rdfs:label "Chemical taxon" ;
-                     rdfs:comment "As a taxonomy for chemicals such as natural products, we recommend to use the taxonomy derived from NPClassifier (i.e. https://purl.org/npc)." .
 
 
 ###  https://purl.org/emi#Observation
@@ -856,14 +861,14 @@ https://www.w3.org/TR/prov-o/""" .
 
 ###  https://purl.org/emi#QCSample
 :QCSample rdf:type owl:Class ;
-          rdfs:subClassOf :Sample ;
+          rdfs:subClassOf sosa:Sample ;
           rdfs:comment "A quality control (QC) sample" ;
           rdfs:label "Quality control sample" .
 
 
 ###  https://purl.org/emi#RawMaterial
 :RawMaterial rdf:type owl:Class ;
-             rdfs:subClassOf :LabObject ;
+             rdfs:subClassOf sosa:Sample ;
              rdfs:comment "A raw laboratory biological material, i.e. before extraction" ;
              rdfs:label "Raw material" .
 
@@ -874,12 +879,6 @@ https://www.w3.org/TR/prov-o/""" .
                   rdfs:comment "A spectrum structural annotation by SIRIUS" ;
                   rdfs:label "SIRIUS structural annotation" ;
                   owl:deprecated "delete it, it is better to model the source separately becuase otherwise it would require to add a new class each time a new source of annotation appears. the only advantage of keeping the model like this is to reduce the number of triples." .
-
-
-###  https://purl.org/emi#Sample
-:Sample rdf:type owl:Class ;
-        rdfs:subClassOf :LabObject ;
-        rdfs:comment "PROV-O metadata for observations modelled as Activities, 1 sample <-> 1 observation" .
 
 
 ###  https://purl.org/emi#SiriusCanopusAnnotation
