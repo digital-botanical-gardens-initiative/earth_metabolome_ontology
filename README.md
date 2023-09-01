@@ -33,7 +33,7 @@ graph TD
 		d-->|sosa:hosts|d2["MS-Detector-A"]
 		d2-->|rdf:type|sosa:Sensor
 		d2-->|sosa:madeObservation|oo["LCMS Analysis"]
-        d2-->|sosa:observes|pp[<a href="http://purl.obolibrary.org/obo/CHMO_0000806">" a Mass Spectrum"</a>]
+        d2-->|sosa:observes|pp["<a href='http://purl.obolibrary.org/obo/CHMO_0000806'>a Mass Spectrum</a>"]
         oo-->|rdf:type|a["prov:Activity, sosa:Observation, emi:Analysis"]
         oo-->|"sosa:hasFeatureOfInterest -> prov:used"|s["Sample-S1"]
         s-->|rdf:type|sosa:Sample
