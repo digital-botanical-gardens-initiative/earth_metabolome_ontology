@@ -119,7 +119,7 @@ foaf:logo rdf:type owl:AnnotationProperty .
 ###  https://purl.org/emi#hasIonization
 :hasIonization rdf:type owl:AnnotationProperty ;
                rdfs:range xsd:string ;
-               rdfs:domain _:genid-nodeid-genid-cf9d88afd3a04670a51b71033975a192-7E2EEE474E41AE08393A9FCB4BA39CC3 .
+               rdfs:domain _:genid-nodeid-genid-5b0e038e26e34ca08c1eca05ce99481f-D00C7B5FCC799EE6A068F90767D9A97A .
 
 
 #################################################################
@@ -236,16 +236,19 @@ foaf:depiction rdf:type owl:ObjectProperty ;
 
 ###  https://purl.org/emi#hasLCMSFeatureSet
 :hasLCMSFeatureSet rdf:type owl:ObjectProperty ;
+                   rdfs:subPropertyOf sosa:hasResult ;
                    rdfs:domain :LCMSAnalysis ;
-                   rdfs:range :LCMSFeatureSet .
+                   rdfs:range :LCMSFeatureSet ;
+                   rdfs:comment "Relates a LCMS analysis to a set of features." ;
+                   rdfs:label "has LCMS feature set" .
 
 
 ###  https://purl.org/emi#hasLabProcess
-:hasLabProcess rdf:type owl:ObjectProperty ,
-                        owl:FunctionalProperty ;
+:hasLabProcess rdf:type owl:ObjectProperty ;
                rdfs:domain :RawMaterial ;
                rdfs:range :ExtractSample ;
-               rdfs:label "has lab process" .
+               rdfs:comment "The resulted extract after performing a sampling (e.g., a lab process)." ;
+               rdfs:label "has processed sample" .
 
 
 ###  https://purl.org/emi#hasPairMember
@@ -306,11 +309,7 @@ foaf:depiction rdf:type owl:ObjectProperty ;
 
 ###  https://purl.org/emi#inTaxon
 :inTaxon rdf:type owl:ObjectProperty ;
-         rdfs:domain [ rdf:type owl:Class ;
-                       owl:unionOf ( :InChIKey
-                                     :RawMaterial
-                                   )
-                     ] ;
+         rdfs:domain :InChIKey ;
          rdfs:range :Taxon ;
          rdfs:label "found in taxon" .
 
@@ -730,7 +729,7 @@ wd:Q16521 rdf:type owl:Class ;
 :ExtractSample rdf:type owl:Class ;
                rdfs:subClassOf sosa:Sample ;
                rdfs:comment "A natural extract obtained from the processing of a RawMaterial" ;
-               rdfs:label "Extracted sample" .
+               rdfs:label "Extract sample" .
 
 
 ###  https://purl.org/emi#FBMNComponent
