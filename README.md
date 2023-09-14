@@ -23,47 +23,51 @@ As a suggestion, we can apply the [SOSA ontology](https://www.w3.org/TR/vocab-ss
 ## Data modelling proposal
 Below, we show a concrete suggestion of how we could use this ontology for the EMI use case.
 
+### Actuator-Sensor
 We consider a Mass Spectrometer as a sosa:Platform. We interpret the MS detector that belongs to a Mass Spectrometer as being a Sensor. This sensor (a MS detector) is able to make an obervation by observing a Mass Spectrum (recommendation: to use the [CHMO controlled vocabulary]( http://purl.obolibrary.org/obo/CHMO_0000806)  as instances of the sosa:ObservableProperty).  Note that if we do not want to capture the equipment (Mass Spectrometer for provenance) of the generated LCMS analysis we can ignore/ommit them. The observation is interpreted as a [prov:Activity](https://www.w3.org/TR/prov-o/#Activity)/[sosa:Observation](https://www.w3.org/TR/vocab-ssn/#Observation)/emi:Analysis (the Analysis as defined in the Earth Metabolome Intiative model). This observation (aka LCMS Analysis) uses (prov:use/sosa:hasFeatureOfInterest) some sample. This sample comes from some Taxon (species or we can detail more here to be another sample like a Raw Material, a broader specimen). In addition, the LCMS analysis uses a Procedure (we can detail here the parameters etc used in the analysis). Finally, we can classify each Specimen by using some Specimen taxonomy such as in https://isamplesorg.github.io/models/generated/vocabularies/specimenType.html that relies on SKOS, similar to our other taxonomies in the project (NPClassifier) !
 
 Moreover, we can also classify a sample with an external material taxonomy https://isamplesorg.github.io/models/generated/vocabularies/materialType.html#organicmaterial. All EMI model classes related to samples are subclasses of sosa:Sample, notably  emi:BlankSample, emi:ExtractSample and emi:QualityControlSample. 
 
 ```mermaid
 graph TD
-		d[":Mass-Spectrometer-A"]-->|rdf:type|sosa:Platform
-		d-->|sosa:hosts|d2["MS-Detector-A"]
-		d2-->|rdf:type|sosa:Sensor
-		d2-->|sosa:madeObservation|oo["LCMS Analysis"]
-        d2-->|sosa:observes|pp["<a href='http://purl.obolibrary.org/obo/CHMO_0000806'>a Mass Spectrum</a>"]
-        oo-->|rdf:type|a["prov:Activity, sosa:Observation, emi:Analysis"]
-        oo-->|"sosa:hasFeatureOfInterest -> prov:used"|s["Sample-S1"]
+	d[":Mass-Spectrometer-A"]-->|rdf:type|sosa:Platform
+	d-->|sosa:hosts|samp["Sampler-A"]
+	d-->|sosa:hosts|d2["Detector-A"]
+	d2-->|rdf:type|sosa:Sensor
+	d2-->|sosa:observes|pp["<a href='http://purl.obolibrary.org/obo/CHMO_0000806'>a Mass Spectrum</a>"]
+	d2-->|sosa:madeObservation|oo["LCMS Analysis"]  
+	d-->|sosa:hosts|act["Actuator-A"]
+	act-->|rdf:type|sosa:Actuator
+	act-->|sosa:madeActuation|oo["LCMS Analysis"]
+	oo-->|sosa:hasResult|res["Mass_Spectrometry_results"]
+	oo-->|sosa:resultTime|xsd:dateTime
+        oo-->|rdf:type|a["prov:Activity, sosa:Observation,<br/> sosa:Actuation, emi:Analysis"]
+        oo-->|"sosa:hasFeatureOfInterest -> prov:used"|s["Extracted-Sample-S1"]
         s-->|rdf:type|sosa:Sample
-        s-->|sosa:isSampleOf|t["a broader Specimen"]
+        s-->|sosa:isSampleOf|t["Raw-Material-S1"]
         t-->|"emi:isClassifiedWith (optional)"|w2["Specimen Type Vocabulary"]
-        oo-->|sosa:usedProcedure|proc["a procedure"]
+        oo-->|sosa:usedProcedure|proc["Mass_Spectrometry_Analysis_Procedure"]
         proc-->|rdf:type|sosa:Procedure
-        
-
 ```
 
 To simplify the model semantics, the raw material (emi:RawMaterial) is also a sample/specimen. A sosa:Sampler (:Sampler-A) hosted by the :Mass-Spectrometer-A makes the sampling that resuts on Extracted samples (emi:ExtractSample). This raw material can be classified with an external taxonomy [such as the Specimen taxonomy ](https://isamplesorg.github.io/models/generated/vocabularies/specimenType.html) with the term emi:isClassifiedWith .
 
 ```mermaid
 graph TD
-		d[":Mass-Spectrometer-A"]-->|rdf:type|sosa:Platform
-		d-->|sosa:hosts|d2["Sampler-A"]
-		d2-->|rdf:type|sosa:Sampler
-		d2-->|sosa:madeSampling|oo["Sampling-S1"]
+	d[":Mass-Spectrometer-A"]-->|rdf:type|sosa:Platform
+	d-->|sosa:hosts|d2["Sampler-A"]
+	d2-->|rdf:type|sosa:Sampler
+	d2-->|sosa:madeSampling|oo["Sampling-S1"]
         oo-->|rdf:type|a["sosa:Sampling"]
         oo-->|"sosa:hasFeatureOfInterest -> prov:used"|s["Raw-Material-S1"]
         oo-->|sosa:hasResult|es1["Extracted-Sample-S1"]
 	es1-->|rdf:type|emi:ExtractSample
         s-->|rdf:type|sSample["sosa:Sample, emi:RawMaterial"]
-        s-->|sosa:isSampleOf|t["a Taxon"]
-        t-->|rdf:type|w["<a href=http://www.wikidata.org/entity/Q16521>wikidata:Q16521</a>"]
+        s-->|sosa:isSampleOf|t["an Organism"]
+        t-->|emi:isClassifiedWith|w["<a href=http://www.wikidata.org/entity/Q16521>wikidata:Q16521</a>"]
         s-->|"emi:isClassifiedWith (optional)"|w2["Specimen Type Vocabulary"]
         oo-->|sosa:usedProcedure|proc["Sampling-procedure-S1"]
-        proc-->|rdf:type|sosa:Procedure
-        
+        proc-->|rdf:type|sosa:Procedure   
 
 ```
 
@@ -71,7 +75,7 @@ Detailed modelling of EMI actions
 
 
 
-#### Schema of an EMI Observation procedure
+### Schema of an EMI Observation procedure
 
 ```mermaid
 graph TD
@@ -102,7 +106,7 @@ o_a -->|"emi:isClassifiedWith"|w2["Organism Taxon (<a href=http://www.wikidata.o
     o_b -->|"emi:isClassifiedWith (optional)"|w2["Organism Taxon (<a href=http://www.wikidata.org/entity/Q16521>wikidata:Q16521</a>)"]
 ```
 
-#### Schema of an EMI Collection procedure
+### Schema of an EMI Collection procedure
 
 ```mermaid
 graph TD
@@ -114,15 +118,13 @@ graph TD
     Field_Sampling -->|sosa:resultTime|xsd:dateTime
     Field_Sampling -->|"sosa:hasFeatureOfInterest"|Living_System["Living_System"]
     Field_Sampling -->|sosa:hasResult|Field_Sample["Field_Sample"]
-    Living_System -->|skos:narrower|t_a["ex:Taxon_a"]
-    Living_System -->|skos:narrower|t_b["ex:Taxon_b"]
-    t_a -->|rdf:type|w["<a href=http://www.wikidata.org/entity/Q16521>wikidata:Q16521</a>"]
-    t_b -->|rdf:type|w["<a href=http://www.wikidata.org/entity/Q16521>wikidata:Q16521</a>"]
-    t_a -->|"emi:isClassifiedWith (optional)"|w2["Specimen Type Vocabulary"]
-    t_b -->|"emi:isClassifiedWith (optional)"|w2["Specimen Type Vocabulary"]
+    Living_System -->|emi:hasPart|o_a["ex:Part_a"]
+    Living_System -->|emi:hasPart|o_b["ex:Part_b"]
+    o_a -->|"emi:isClassifiedWith (optional)"|w2["Specimen Vocabulary or Organism Taxonomy (<a href=http://www.wikidata.org/entity/Q16521>wikidata:Q16521</a>)"]
+    o_b -->|"emi:isClassifiedWith (optional)"|w2["Specimen Type or Organism Taxonomy (<a href=http://www.wikidata.org/entity/Q16521>wikidata:Q16521</a>)"]
 ```
 
-#### Schema of an EMI Extraction procedure
+### Schema of an EMI Extraction procedure
 
 ```mermaid
 graph TD
@@ -138,7 +140,8 @@ graph TD
 ```
 
 
-#### Schema of an EMI Mass Spectrometry analysis procedure
+### Schema of an EMI Mass Spectrometry analysis procedure
+Please refer to [Actuator/Sensor modelling](#Actuator-Sensor)
 
 ```mermaid
 graph TD
@@ -156,7 +159,7 @@ graph TD
 ```
 
 
-### Schema of an EMI overall procedure
+### Schema of an EMI overall procedure (Under review)
 
 
 ```mermaid
