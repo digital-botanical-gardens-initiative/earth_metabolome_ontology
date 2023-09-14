@@ -76,22 +76,30 @@ Detailed modelling of EMI actions
 ```mermaid
 graph TD
 
-		Smartphone -->|rdf:type|sosa:Sensor
-		Smartphone -->|sosa:madeObservation|Field_Observation["Field_Observation"]
-		Smartphone -->|sosa:observes|Pictures["Pictures"]
+		Camera-A -->|rdf:type|sosa:Sensor
+		Camera-A -->|sosa:madeObservation|Field_Observation["Field_Observation"]
+		Camera-A -->|sosa:observes|Pictures["Pictures"]
     Field_Observation -->|rdf:type|sosa:Observation["sosa:Observation"]
     Field_Observation -->|sosa:observedProperty|Pictures["Pictures"]
-    Pictures --> |rdf:type|sosa:Observable_property["sosa:Observable_property"]
+    Pictures --> |rdf:type|sosa:Observable_property["sosa:ObservableProperty"]
     Field_Observation -->|sosa:usedProcedure|Observation_Procedure["Observation_Procedure"]
     Field_Observation -->|sosa:resultTime|xsd:dateTime
     Field_Observation -->|"sosa:hasFeatureOfInterest"|Living_System["Living_System"]
     Field_Observation -->|sosa:hasResult|iNaturalist_Observation["iNaturalist_Observation"]
-    Living_System -->|skos:narrower|t_a["ex:Taxon_a"]
-    Living_System -->|skos:narrower|t_b["ex:Taxon_b"]
-    t_a -->|rdf:type|w["<a href=http://www.wikidata.org/entity/Q16521>wikidata:Q16521</a>"]
-    t_b -->|rdf:type|w["<a href=http://www.wikidata.org/entity/Q16521>wikidata:Q16521</a>"]
-    t_a -->|"emi:isClassifiedWith (optional)"|w2["Specimen Type Vocabulary"]
-    t_b -->|"emi:isClassifiedWith (optional)"|w2["Specimen Type Vocabulary"]
+    Living_System -->|emi:hasPart|o_a["ex:Part_a"]
+    Living_System -->|emi:hasPart|o_b["ex:Part_b"]
+    o_a -->|"emi:isClassifiedWith (optional)"|w2["Specimen Vocabulary or Organism Taxonomy (<a href=http://www.wikidata.org/entity/Q16521>wikidata:Q16521</a>)"]
+    o_b -->|"emi:isClassifiedWith (optional)"|w2["Specimen Type or Organism Taxonomy (<a href=http://www.wikidata.org/entity/Q16521>wikidata:Q16521</a>)"]
+```
+For example, a part of a living system can be an organism that is classified with a Taxonomy. Note that (emi:hasPart skos:closeMatch dcterms:hasPart)
+```mermaid
+graph TD
+Living_System -->|emi:hasPart|p_a["ex:Part_a"]
+Living_System -->|emi:hasPart|p_b["ex:Part_b"]
+p_a["ex:Part_a"]-->|rdf:type|o_a["emi:Organism"]
+p_b["ex:Part_b"]-->|rdf:type|o_b["emi:Organism"]
+o_a -->|"emi:isClassifiedWith"|w2["Organism Taxon (<a href=http://www.wikidata.org/entity/Q16521>wikidata:Q16521</a>)"]
+    o_b -->|"emi:isClassifiedWith (optional)"|w2["Organism Taxon (<a href=http://www.wikidata.org/entity/Q16521>wikidata:Q16521</a>)"]
 ```
 
 #### Schema of an EMI Collection procedure
