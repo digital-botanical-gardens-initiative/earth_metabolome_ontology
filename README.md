@@ -36,7 +36,7 @@ graph TD
 	d2-->|rdf:type|sosa:Sensor
 	d2-->|sosa:observes|pp["<a href='http://purl.obolibrary.org/obo/CHMO_0000806'>a Mass Spectrum</a>"]
 	d2-->|sosa:madeObservation|oo["LCMS Analysis"]
-d2-->|sosa:madeSampling|oo["LCMS Analysis"]  
+samp-->|sosa:madeSampling|oo["LCMS Analysis"]  
 	d-->|sosa:hosts|act["Actuator-A"]
 	act-->|rdf:type|sosa:Actuator
 	act-->|sosa:madeActuation|oo["LCMS Analysis"]
