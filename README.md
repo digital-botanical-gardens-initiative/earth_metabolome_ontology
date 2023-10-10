@@ -88,10 +88,11 @@ graph TD
     Pictures --> |rdf:type|sosa:Observable_property["sosa:ObservableProperty"]
     Field_Observation -->|sosa:usedProcedure|Observation_Procedure["Observation_Procedure"]
     Field_Observation -->|sosa:resultTime|xsd:dateTime
-    Field_Observation -->|"sosa:hasFeatureOfInterest"|Living_System["Living_System"]
+    Field_Observation -->|"sosa:hasFeatureOfInterest"|System["System"]
     Field_Observation -->|sosa:hasResult|iNaturalist_Observation["iNaturalist_Observation"]
-    Living_System -->|emi:hasPart|o_a["ex:Part_a"]
-    Living_System -->|emi:hasPart|o_b["ex:Part_b"]
+    System -->|emi:subSystem|o_a["ex:Part_a"]
+    System -->|emi:subSystem|o_b["ex:Part_b"]
+    o_a -->|rdf:type|emi:System
     o_a -->|"emi:isClassifiedWith (optional)"|w2["Specimen Vocabulary or Organism Taxonomy (<a href=http://www.wikidata.org/entity/Q16521>wikidata:Q16521</a>)"]
     o_b -->|"emi:isClassifiedWith (optional)"|w2["Specimen Type or Organism Taxonomy (<a href=http://www.wikidata.org/entity/Q16521>wikidata:Q16521</a>)"]
 ```
