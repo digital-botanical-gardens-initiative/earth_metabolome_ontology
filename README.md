@@ -97,7 +97,7 @@ graph TD
     o_a-->|sosa:hasSample|org["a Subsystem"]
     org-->|sosa:isSampleOf|o_a
 
-   org-->|rdf:type|os["emi:Taxon, sosa:Sample"]
+   org-->|rdf:type|os["emi:System, sosa:Sample"]
 ```
 
 ### Schema of an EMI Collection procedure
@@ -114,9 +114,9 @@ graph TD
     Field_Sampling -->|sosa:hasResult|Field_Sample["Raw-Sample-R1"]
     Field_Sample -->|"emi:isClassifiedWith (optional)"|w2["Specimen Vocabulary"]
 ```
-
-### Schema of an EMI Extraction procedure
-
+## Deprecated data modelling patterns
+###  Schema of an EMI Extraction procedure (DEPRECATED)
+(DEPRECATED: the same patterns from previous section can be applied by replacing the collector with the extractor. The extraction procedure is also a sampling procedure (i.e., it transforms one sample into another).
 ```mermaid
 graph TD
 
@@ -130,8 +130,8 @@ graph TD
 ```
 
 
-### Schema of an EMI Mass Spectrometry analysis procedure
-Please refer to [Actuator/Sensor modelling](#Actuator-Sensor)
+### Schema of an EMI Mass Spectrometry analysis procedure (DEPRECATED)
+DEPRECATED - Please refer to [Actuator/Sensor modelling](#Actuator-Sensor)
 
 ```mermaid
 graph TD
@@ -149,7 +149,7 @@ graph TD
 ```
 
 
-### Schema of an EMI overall procedure (Under review)
+### Schema of an EMI overall procedure (DEPRECATED)
 
 
 ```mermaid
