@@ -24,7 +24,7 @@ As a suggestion, we can apply the [SOSA ontology](https://www.w3.org/TR/vocab-ss
 Below, we show a concrete suggestion of how we could use this ontology for the EMI use case.
 
 ### Actuator-Sensor
-We consider a Mass Spectrometer as a sosa:Platform. We interpret the MS detector that belongs to a Mass Spectrometer as being a Sensor. This sensor (a MS detector) is able to make an obervation by observing a Mass Spectrum (recommendation: to use the [CHMO controlled vocabulary]( http://purl.obolibrary.org/obo/CHMO_0000806)  as instances of the sosa:ObservableProperty).  Note that if we do not want to capture the equipment (Mass Spectrometer for provenance) of the generated LCMS analysis we can ignore/ommit them. The observation is interpreted as a [prov:Activity](https://www.w3.org/TR/prov-o/#Activity)/[sosa:Observation](https://www.w3.org/TR/vocab-ssn/#Observation)/emi:Analysis (the Analysis as defined in the Earth Metabolome Intiative model). This observation (aka LCMS Analysis) uses (prov:use/sosa:hasFeatureOfInterest) some sample. This sample comes from some Taxon (species or we can detail more here to be another sample like a Raw Material, a broader specimen). In addition, the LCMS analysis uses a Procedure (we can detail here the parameters etc used in the analysis). Finally, we can classify each Specimen by using some Specimen taxonomy such as in https://isamplesorg.github.io/models/generated/vocabularies/specimenType.html that relies on SKOS, similar to our other taxonomies in the project (NPClassifier) !
+We consider a Mass Spectrometer as a sosa:Platform. We interpret the MS detector that belongs to a Mass Spectrometer as being a Sensor. This sensor (a MS detector) is able to make an obervation by observing a Mass Spectrum (recommendation: to use the [CHMO controlled vocabulary]( http://purl.obolibrary.org/obo/CHMO_0000806)  as instances of the sosa:ObservableProperty).  Note that if we do not want to capture the equipment (Mass Spectrometer for provenance) of the generated LCMS analysis we can ignore/ommit them. The observation is interpreted as a [prov:Activity](https://www.w3.org/TR/prov-o/#Activity)/[sosa:Observation](https://www.w3.org/TR/vocab-ssn/#Observation)/emi:Analysis (the Analysis as defined in the Earth Metabolome Intiative model). This observation (aka LCMS Analysis) uses (prov:use/sosa:hasFeatureOfInterest) some sample. This sample comes from some emi:System (e.g. species or we can detail more here to be another sample like a Raw Material, a broader specimen). In addition, the LCMS analysis uses a Procedure (we can detail here the parameters etc used in the analysis). Finally, we can classify each Specimen by using some Specimen taxonomy such as in https://isamplesorg.github.io/models/generated/vocabularies/specimenType.html that relies on SKOS, similar to our other taxonomies in the project (NPClassifier) !
 
 Moreover, we can also classify a sample with an external material taxonomy https://isamplesorg.github.io/models/generated/vocabularies/materialType.html#organicmaterial. All EMI model classes related to samples are subclasses of sosa:Sample, notably  emi:BlankSample, emi:ExtractSample and emi:QualityControlSample. 
 
@@ -42,15 +42,19 @@ graph TD
 	oo-->|sosa:hasResult|res["Mass_Spectrometry_results"]
 	oo-->|sosa:resultTime|xsd:dateTime
         oo-->|rdf:type|a["prov:Activity, sosa:Observation,<br/> sosa:Actuation, emi:Analysis"]
-        oo-->|"sosa:hasFeatureOfInterest -> prov:used"|s["Extracted-Sample-S1"]
-        s-->|rdf:type|sosa:Sample
-        s-->|sosa:isSampleOf|t["Raw-Material-S1"]
+        oo-->|"sosa:hasFeatureOfInterest -> prov:used"|s["Aliquot-S1"]
+        s-->|rdf:type|aliq["sosa:Sample <- emi:Aliquot"]
+        s-->|sosa:isSampleOf|t["Extract-sample-S1"]
+        t-->|sosa:isSampleOf|rs["Raw-Sample-R1"]
+	rs-->|rdf:type|emi:RawMaterial
+	rs-->|sosa:isSampleOf|sys["System-S1"]
+	sys-->|rdf:type|sosa:System
         t-->|"emi:isClassifiedWith (optional)"|w2["Specimen Type Vocabulary"]
         oo-->|sosa:usedProcedure|proc["Mass_Spectrometry_Analysis_Procedure"]
         proc-->|rdf:type|sosa:Procedure
 ```
 
-To simplify the model semantics, the raw material (emi:RawMaterial) is also a sample/specimen. A sosa:Sampler (:Sampler-A) hosted by the :Mass-Spectrometer-A makes the sampling that resuts on Extracted samples (emi:ExtractSample). This raw material can be classified with an external taxonomy [such as the Specimen taxonomy ](https://isamplesorg.github.io/models/generated/vocabularies/specimenType.html) with the term emi:isClassifiedWith .
+The raw material (emi:RawMaterial) is also a sample/specimen. In case it is needed to describe the "Mass Spectrometer" as a sampler too, we can use the  sosa:Sampler class to define it as suggested below. (:Sampler-A) hosted by the :Mass-Spectrometer-A makes the sampling that resuts on subsamples (emi:Aliquot). The extract sample can be classified with an external taxonomy [such as the Specimen taxonomy ](https://isamplesorg.github.io/models/generated/vocabularies/specimenType.html) with the term emi:isClassifiedWith .
 
 ```mermaid
 graph TD
@@ -59,13 +63,12 @@ graph TD
 	d2-->|rdf:type|sosa:Sampler
 	d2-->|sosa:madeSampling|oo["Sampling-S1"]
         oo-->|rdf:type|a["sosa:Sampling"]
-        oo-->|"sosa:hasFeatureOfInterest -> prov:used"|s["Raw-Material-S1"]
-        oo-->|sosa:hasResult|es1["Extracted-Sample-S1"]
-	es1-->|rdf:type|emi:ExtractSample
-        s-->|rdf:type|sSample["sosa:Sample, emi:RawMaterial"]
-        s-->|sosa:isSampleOf|t["an Organism"]
-        t-->|emi:isClassifiedWith|w["<a href=http://www.wikidata.org/entity/Q16521>wikidata:Q16521</a>"]
-        s-->|"emi:isClassifiedWith (optional)"|w2["Specimen Type Vocabulary"]
+        oo-->|"sosa:hasFeatureOfInterest -> prov:used"|s["Extract-S1"]
+        oo-->|sosa:hasResult|es1["Aliquot-S1"]
+	es1-->|rdf:type|emi:Aliquot
+        s-->|rdf:type|sSample["sosa:Sample, emi:ExtractSample"]
+        s-->|sosa:isSampleOf|t["Extract-S0"]
+	t-->|rdf:type|emi:ExtractSample
         oo-->|sosa:usedProcedure|proc["Sampling-procedure-S1"]
         proc-->|rdf:type|sosa:Procedure   
 
@@ -88,23 +91,11 @@ graph TD
     Pictures --> |rdf:type|sosa:Observable_property["sosa:ObservableProperty"]
     Field_Observation -->|sosa:usedProcedure|Observation_Procedure["Observation_Procedure"]
     Field_Observation -->|sosa:resultTime|xsd:dateTime
-    Field_Observation -->|"sosa:hasFeatureOfInterest"|System["System"]
+    Field_Observation -->|"sosa:hasFeatureOfInterest"|o_a["System-1"]
     Field_Observation -->|sosa:hasResult|iNaturalist_Observation["iNaturalist_Observation"]
-    System -->|emi:subSystem|o_a["ex:Part_a"]
-    System -->|emi:subSystem|o_b["ex:Part_b"]
-    o_a -->|rdf:type|emi:System
-    o_a -->|"emi:isClassifiedWith (optional)"|w2["Specimen Vocabulary or Organism Taxonomy (<a href=http://www.wikidata.org/entity/Q16521>wikidata:Q16521</a>)"]
-    o_b -->|"emi:isClassifiedWith (optional)"|w2["Specimen Type or Organism Taxonomy (<a href=http://www.wikidata.org/entity/Q16521>wikidata:Q16521</a>)"]
-```
-For example, a part of a living system can be an organism that is classified with a Taxonomy. Note that (emi:hasPart skos:closeMatch dcterms:hasPart)
-```mermaid
-graph TD
-Living_System -->|emi:hasPart|p_a["ex:Part_a"]
-Living_System -->|emi:hasPart|p_b["ex:Part_b"]
-p_a["ex:Part_a"]-->|rdf:type|o_a["emi:Organism"]
-p_b["ex:Part_b"]-->|rdf:type|o_b["emi:Organism"]
-o_a -->|"emi:isClassifiedWith"|w2["Organism Taxon (<a href=http://www.wikidata.org/entity/Q16521>wikidata:Q16521</a>)"]
-    o_b -->|"emi:isClassifiedWith (optional)"|w2["Organism Taxon (<a href=http://www.wikidata.org/entity/Q16521>wikidata:Q16521</a>)"]
+    o_a-->|rdf:type|emi:System
+    o_a-->|sosa:hasSample|org["an Organism"]
+   org-->|rdf:type|os["emi:Taxon, sosa:Sample"]
 ```
 
 ### Schema of an EMI Collection procedure
@@ -137,7 +128,6 @@ graph TD
     Lab_Extraction -->|sosa:resultTime|xsd:dateTime
     Lab_Extraction -->|"sosa:hasFeatureOfInterest"|Field_Sample["Field_Sample"]
     Lab_Extraction -->|sosa:hasResult|Lab_Extract["Lab_Extract"]
-
 ```
 
 
