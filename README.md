@@ -13,6 +13,15 @@ To describe annotation provenace (i.e., information source), we are importing an
 `prov:wasAttributedTo` (range `prov:Agent`)
 `prov:wasDerivedFrom`  (range `emi:InformationSource`)
 
+```mermaid
+graph TD
+	d[":ChemicalTaxonAnnotation-A"]-->|rdf:type|emi:SpectrumAnnotation/prov:Entity
+	d-->|prov:wasGeneratedBy|a["CANOPUS analysis/activity"]
+	a-->|prov:used|d2["any input"]
+	a-->|rdf:type|prov:Activity
+        a-->|prov:wasAssociatedWith|:SIRIUS-CANOPUS
+	:SIRIUS-CANOPUS-->|rdf:type|prov:Agent
+```
 
 # Organising Sample and Observation data
 
