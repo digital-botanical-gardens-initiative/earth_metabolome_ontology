@@ -94,7 +94,9 @@ graph TD
     Field_Observation -->|"sosa:hasFeatureOfInterest"|o_a["System-1"]
     Field_Observation -->|sosa:hasResult|iNaturalist_Observation["iNaturalist_Observation"]
     o_a-->|rdf:type|emi:System
-    o_a-->|sosa:hasSample|org["an Organism"]
+    o_a-->|sosa:hasSample|org["a Subsystem"]
+    org-->|sosa:isSampleOf|o_a
+
    org-->|rdf:type|os["emi:Taxon, sosa:Sample"]
 ```
 
@@ -108,12 +110,9 @@ graph TD
     Field_Sampling -->|rdf:type|sosa:Sampling["sosa:Sampling"]
     Field_Sampling -->|sosa:usedProcedure|Sampling_Procedure["Sampling_Procedure"]
     Field_Sampling -->|sosa:resultTime|xsd:dateTime
-    Field_Sampling -->|"sosa:hasFeatureOfInterest"|Living_System["Living_System"]
-    Field_Sampling -->|sosa:hasResult|Field_Sample["Field_Sample"]
-    Living_System -->|emi:hasPart|o_a["ex:Part_a"]
-    Living_System -->|emi:hasPart|o_b["ex:Part_b"]
-    o_a -->|"emi:isClassifiedWith (optional)"|w2["Specimen Vocabulary or Organism Taxonomy (<a href=http://www.wikidata.org/entity/Q16521>wikidata:Q16521</a>)"]
-    o_b -->|"emi:isClassifiedWith (optional)"|w2["Specimen Type or Organism Taxonomy (<a href=http://www.wikidata.org/entity/Q16521>wikidata:Q16521</a>)"]
+    Field_Sampling -->|"sosa:hasFeatureOfInterest"|System["System-1"]
+    Field_Sampling -->|sosa:hasResult|Field_Sample["Raw-Sample-R1"]
+    Field_Sample -->|"emi:isClassifiedWith (optional)"|w2["Specimen Vocabulary"]
 ```
 
 ### Schema of an EMI Extraction procedure
