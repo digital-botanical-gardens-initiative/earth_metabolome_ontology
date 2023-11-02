@@ -1,5 +1,5 @@
 # Earth Metabolome Semantic Model
-The first version of a draft of the Earth Metabolome semantic model is available in [`em.ttl`](em.ttl) that can replace the enpkg vocabulary. This model should import the [Natural Product taxonomy](#Natural_Product_taxonomy) described below. 
+The first version of a draft of the Earth Metabolome semantic model is available in [`emi.ttl`](emi.ttl) that can replace the enpkg vocabulary. This model should import the [Natural Product taxonomy](#Natural_Product_taxonomy) described below. 
 
 ## Natural Product taxonomy
 The [`npc_taxonomy.ttl`](npc_taxonomy.ttl) file is an SKOS-based OWL ontology for the structural classification of natural products derived from the [NPClassifier tool](https://pubs.acs.org/doi/10.1021/acs.jnatprod.1c00399). This OWL ontology was generated with the script in [`scripts`](scripts/natural_product_taxonomy).
@@ -53,7 +53,7 @@ graph TD
         t-->|sosa:isSampleOf|rs["Raw-Sample-R1"]
 	rs-->|rdf:type|emi:RawMaterial
 	rs-->|sosa:isSampleOf|sys["System-S1"]
-	sys-->|rdf:type|sosa:System
+	sys-->|rdf:type|emi:System
         t-->|"emi:isClassifiedWith (optional)"|w2["Specimen Type Vocabulary"]
         oo-->|sosa:usedProcedure|proc["Mass_Spectrometry_Analysis_Procedure"]
         proc-->|rdf:type|sosa:Procedure

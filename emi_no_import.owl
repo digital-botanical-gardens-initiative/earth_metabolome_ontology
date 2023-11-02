@@ -17,10 +17,6 @@
 
 <https://purl.org/emi> rdf:type owl:Ontology ;
                         owl:versionIRI <https://purl.org/emi/version/0.1> ;
-                        owl:imports <http://www.w3.org/2004/02/skos/core> ,
-                                    <http://www.w3.org/ns/prov-o-20130430> ,
-                                    sosa: ,
-                                    <https://purl.org/npc> ;
                         dcterms:contributor "http://orcid.org/0000-0001-9292-9463" ,
                                             "http://orcid.org/0000-0002-3648-7362" ,
                                             "http://orcid.org/0000-0002-9619-1707" ,
@@ -100,6 +96,10 @@ skos:definition rdf:type owl:AnnotationProperty .
 skos:example rdf:type owl:AnnotationProperty .
 
 
+###  http://www.w3.org/2004/02/skos/core#note
+skos:note rdf:type owl:AnnotationProperty .
+
+
 ###  http://www.w3.org/2004/02/skos/core#prefLabel
 skos:prefLabel rdf:type owl:AnnotationProperty ;
                rdfs:comment "A resource has no more than one value of skos:prefLabel per language tag, and no more than one value of skos:prefLabel without language tag."@en ,
@@ -119,7 +119,7 @@ foaf:logo rdf:type owl:AnnotationProperty .
 ###  https://purl.org/emi#hasIonization
 :hasIonization rdf:type owl:AnnotationProperty ;
                rdfs:range xsd:string ;
-               rdfs:domain _:genid-nodeid-genid-5b0e038e26e34ca08c1eca05ce99481f-D00C7B5FCC799EE6A068F90767D9A97A .
+               rdfs:domain _:genid-nodeid-genid-3719389adacd4bc3b133acd0cf541297-E9E213EBB9434A7973AC872B704B0043 .
 
 
 #################################################################
@@ -133,6 +133,30 @@ xsd:date rdf:type rdfs:Datatype .
 #################################################################
 #    Object Properties
 #################################################################
+
+###  http://www.w3.org/2004/02/skos/core#broader
+skos:broader rdf:type owl:ObjectProperty .
+
+
+###  http://www.w3.org/ns/prov#used
+<http://www.w3.org/ns/prov#used> rdf:type owl:ObjectProperty .
+
+
+###  http://www.w3.org/ns/prov#wasAssociatedWith
+<http://www.w3.org/ns/prov#wasAssociatedWith> rdf:type owl:ObjectProperty .
+
+
+###  http://www.w3.org/ns/prov#wasDerivedFrom
+<http://www.w3.org/ns/prov#wasDerivedFrom> rdf:type owl:ObjectProperty .
+
+
+###  http://www.w3.org/ns/prov#wasGeneratedBy
+<http://www.w3.org/ns/prov#wasGeneratedBy> rdf:type owl:ObjectProperty .
+
+
+###  http://www.w3.org/ns/sosa/hasResult
+sosa:hasResult rdf:type owl:ObjectProperty .
+
 
 ###  http://xmlns.com/foaf/0.1/depiction
 foaf:depiction rdf:type owl:ObjectProperty ;
@@ -158,8 +182,8 @@ foaf:depiction rdf:type owl:ObjectProperty ;
 :hasClass rdf:type owl:ObjectProperty ;
           rdfs:subPropertyOf :isClassifiedWith ;
           rdfs:domain [ rdf:type owl:Class ;
-                        owl:unionOf ( :ChemicalClassAnnotation
-                                      :ChemicalStructure
+                        owl:unionOf ( :ChemicalStructure
+                                      :ChemicalTaxonAnnotation
                                     )
                       ] ;
           rdfs:range <https://purl.org/npc#Class> ;
@@ -223,7 +247,8 @@ foaf:depiction rdf:type owl:ObjectProperty ;
                   owl:FunctionalProperty ;
          rdfs:domain sosa:Sample ;
          rdfs:range :LCMSAnalysis ;
-         rdfs:label "has LCMS analysis" .
+         rdfs:label "has LCMS analysis" ;
+         owl:deprecated "replaced by sosa:isFeatureOfInterestOf and its inverse property sosa:hasFeatureOfInterest" .
 
 
 ###  https://purl.org/emi#hasLCMSFeature
@@ -248,7 +273,8 @@ foaf:depiction rdf:type owl:ObjectProperty ;
                rdfs:domain :RawMaterial ;
                rdfs:range :ExtractSample ;
                rdfs:comment "The resulted extract after performing a sampling (e.g., a lab process)." ;
-               rdfs:label "has processed sample" .
+               rdfs:label "has processed sample" ;
+               owl:deprecated "replaced by \"sosa:hasSample\" and its inverse property \"sosa:isSampleOf\"" .
 
 
 ###  https://purl.org/emi#hasPairMember
@@ -263,8 +289,8 @@ foaf:depiction rdf:type owl:ObjectProperty ;
 :hasPathway rdf:type owl:ObjectProperty ;
             rdfs:subPropertyOf :isClassifiedWith ;
             rdfs:domain [ rdf:type owl:Class ;
-                          owl:unionOf ( :ChemicalClassAnnotation
-                                        :ChemicalStructure
+                          owl:unionOf ( :ChemicalStructure
+                                        :ChemicalTaxonAnnotation
                                       )
                         ] ;
             rdfs:range <https://purl.org/npc#Pathway> ;
@@ -299,8 +325,8 @@ foaf:depiction rdf:type owl:ObjectProperty ;
 :hasSuperClass rdf:type owl:ObjectProperty ;
                rdfs:subPropertyOf :isClassifiedWith ;
                rdfs:domain [ rdf:type owl:Class ;
-                             owl:unionOf ( :ChemicalClassAnnotation
-                                           :ChemicalStructure
+                             owl:unionOf ( :ChemicalStructure
+                                           :ChemicalTaxonAnnotation
                                          )
                            ] ;
                rdfs:range <https://purl.org/npc#Superclass> ;
@@ -316,13 +342,11 @@ foaf:depiction rdf:type owl:ObjectProperty ;
 
 ###  https://purl.org/emi#isClassifiedWith
 :isClassifiedWith rdf:type owl:ObjectProperty ;
-                  rdfs:domain [ rdf:type owl:Class ;
-                                owl:unionOf ( :ChemicalClassAnnotation
-                                              :ChemicalStructure
-                                              :RawMaterial
-                                            )
-                              ] ;
-                  rdfs:range :ChemicalTaxon ;
+                  rdfs:range [ rdf:type owl:Class ;
+                               owl:unionOf ( :ChemicalTaxon
+                                             :Taxon
+                                           )
+                             ] ;
                   rdfs:label "is classified with" .
 
 
@@ -375,7 +399,7 @@ foaf:depiction rdf:type owl:ObjectProperty ;
 ###  https://purl.org/emi#hasClassProbability
 :hasClassProbability rdf:type owl:DatatypeProperty ;
                      rdfs:subPropertyOf :hasProbability ;
-                     rdfs:domain :ChemicalClassAnnotation ;
+                     rdfs:domain :ChemicalTaxonAnnotation ;
                      rdfs:range xsd:double .
 
 
@@ -477,7 +501,7 @@ foaf:depiction rdf:type owl:ObjectProperty ;
 ###  https://purl.org/emi#hasPathwayProbability
 :hasPathwayProbability rdf:type owl:DatatypeProperty ;
                        rdfs:subPropertyOf :hasProbability ;
-                       rdfs:domain :ChemicalClassAnnotation ;
+                       rdfs:domain :ChemicalTaxonAnnotation ;
                        rdfs:range xsd:double .
 
 
@@ -565,7 +589,7 @@ foaf:depiction rdf:type owl:ObjectProperty ;
 ###  https://purl.org/emi#hasSuperClassProbability
 :hasSuperClassProbability rdf:type owl:DatatypeProperty ;
                           rdfs:subPropertyOf :hasProbability ;
-                          rdfs:domain :ChemicalClassAnnotation ;
+                          rdfs:domain :ChemicalTaxonAnnotation ;
                           rdfs:range xsd:double .
 
 
@@ -638,11 +662,38 @@ foaf:depiction rdf:type owl:ObjectProperty ;
 #    Classes
 #################################################################
 
+###  http://www.w3.org/2004/02/skos/core#Concept
+skos:Concept rdf:type owl:Class .
+
+
+###  http://www.w3.org/ns/prov#Agent
+<http://www.w3.org/ns/prov#Agent> rdf:type owl:Class .
+
+
+###  http://www.w3.org/ns/prov#Entity
+<http://www.w3.org/ns/prov#Entity> rdf:type owl:Class .
+
+
+###  http://www.w3.org/ns/sosa/Observation
+sosa:Observation rdf:type owl:Class .
+
+
+###  http://www.w3.org/ns/sosa/Sample
+sosa:Sample rdf:type owl:Class .
+
+
 ###  http://www.wikidata.org/entity/Q16521
 wd:Q16521 rdf:type owl:Class ;
           rdfs:subClassOf :Taxon ;
           rdfs:comment "An organism taxon in Wikidata." ;
           rdfs:label "Wikidata taxon" .
+
+
+###  https://purl.org/emi#Aliquot
+:Aliquot rdf:type owl:Class ;
+         rdfs:subClassOf sosa:Sample ;
+         rdfs:comment "A sample taken from an extract sample for chemical analysis or other treatment." ;
+         rdfs:label "Aliquot" .
 
 
 ###  https://purl.org/emi#Analysis
@@ -694,12 +745,6 @@ wd:Q16521 rdf:type owl:Class ;
           rdfs:label "Chemical" .
 
 
-###  https://purl.org/emi#ChemicalClassAnnotation
-:ChemicalClassAnnotation rdf:type owl:Class ;
-                         rdfs:subClassOf :SpectrumAnnotation ;
-                         owl:disjointWith :StructuralAnnotation .
-
-
 ###  https://purl.org/emi#ChemicalEntity
 :ChemicalEntity rdf:type owl:Class ;
                 rdfs:comment "A chemical entity (chemical structure or class)." ;
@@ -718,6 +763,14 @@ wd:Q16521 rdf:type owl:Class ;
                rdfs:subClassOf :ChemicalEntity ;
                rdfs:comment "As a taxonomy for chemicals such as natural products, we recommend to use the taxonomy derived from NPClassifier (i.e. https://purl.org/npc)." ;
                rdfs:label "Chemical taxon" .
+
+
+###  https://purl.org/emi#ChemicalTaxonAnnotation
+:ChemicalTaxonAnnotation rdf:type owl:Class ;
+                         rdfs:subClassOf :SpectrumAnnotation ;
+                         owl:disjointWith :StructuralAnnotation ;
+                         rdfs:comment "This class is used to annotate a spectrum feature with a chemical taxon. Prefer the Chemical structure annotation class, if the annotation is mainly to assign a chemical representation structure as defined in the emi:ChemicalStructure." ;
+                         rdfs:label "Chemical taxon annotation" .
 
 
 ###  https://purl.org/emi#ComputationalAnalysis
@@ -853,9 +906,13 @@ https://www.w3.org/TR/prov-o/""" .
              rdfs:label "MS2 spectrum" .
 
 
-###  https://purl.org/emi#Observation
-:Observation rdf:type owl:Class ;
-             rdfs:subClassOf <http://www.w3.org/ns/prov#Activity> .
+###  https://purl.org/emi#Organism
+:Organism rdf:type owl:Class ;
+          rdfs:subClassOf :System ;
+          rdfs:comment "A living being, such as an animal, a plant, a bacterium, or a fungus., Any individual living (or previously living) being. Example: animal, human being. An organim is associated to a taxon such as \"Homo Sapiens\", NCBI taxonomy identifier: 9606." ;
+          rdfs:label "Organism" ;
+          rdfs:seeAlso <http://purl.org/net/orth#Organism> ;
+          skos:altLabel "Living being" .
 
 
 ###  https://purl.org/emi#QCSample
@@ -882,7 +939,7 @@ https://www.w3.org/TR/prov-o/""" .
 
 ###  https://purl.org/emi#SiriusCanopusAnnotation
 :SiriusCanopusAnnotation rdf:type owl:Class ;
-                         rdfs:subClassOf :ChemicalClassAnnotation ;
+                         rdfs:subClassOf :ChemicalTaxonAnnotation ;
                          rdfs:comment "A spectrum chemical class annotation by SIRIUS-CANOPUS" ;
                          rdfs:label "CANOPUS chemical class annotation" ;
                          owl:deprecated "to delete?" .
@@ -921,7 +978,14 @@ https://www.w3.org/TR/prov-o/""" .
                                         owl:onProperty :hasChemicalStructure ;
                                         owl:someValuesFrom :InChIKey2D
                                       ] ;
-                      rdfs:comment "" .
+                      rdfs:comment "This class is used to annotate a spectrum feature with a chemical representation structure as defined in the emi:ChemicalStructure. Prefer the  Chemical taxon annotation class, if the annotation is mainly to assign taxa to a spectrum feature." ;
+                      rdfs:label "Chemical structure annotation" .
+
+
+###  https://purl.org/emi#System
+:System rdf:type owl:Class ;
+        rdfs:comment "Any part of the observable universe. A system is often composed of subsystems, for example, the Earth system contains a biome that contains  a population that contains organisms that contains organs and so on." ;
+        rdfs:label "System" .
 
 
 ###  https://purl.org/emi#Taxon
