@@ -13,3 +13,4 @@ venv/
 env/
 
 *.properties
+query_tests.sql
