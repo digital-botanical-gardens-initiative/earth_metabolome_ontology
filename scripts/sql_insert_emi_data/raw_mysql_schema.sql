@@ -221,8 +221,7 @@ CREATE TABLE `molecular_network_metadata` (
 DROP TABLE IF EXISTS spec2vec_doc ;
 CREATE TABLE `spec2vec_doc` (
 	word TEXT,
-    spectrum_mz DOUBLE,
-    spectrum_intensities DOUBLE ,
+    raw_spectrum TEXT,
     sample_id VARCHAR(1000),
 	ionization VARCHAR(255)
     );
