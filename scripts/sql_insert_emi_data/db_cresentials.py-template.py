@@ -1,0 +1,5 @@
+host = "localhost"
+user = ""
+password = ""
+database = "emi_db"
+port = "3306"
