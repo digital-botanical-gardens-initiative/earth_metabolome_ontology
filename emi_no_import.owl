@@ -13,7 +13,7 @@
 @prefix void: <http://rdfs.org/ns/void#> .
 @prefix orcid: <http://orcid.org/> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@base <https://purl.org/emi> .
+@base <https://purl.org/emi#> .
 
 <https://purl.org/emi> rdf:type owl:Ontology ;
                         owl:versionIRI <https://purl.org/emi/version/0.1> ;
@@ -96,10 +96,6 @@ skos:definition rdf:type owl:AnnotationProperty .
 skos:example rdf:type owl:AnnotationProperty .
 
 
-###  http://www.w3.org/2004/02/skos/core#note
-skos:note rdf:type owl:AnnotationProperty .
-
-
 ###  http://www.w3.org/2004/02/skos/core#prefLabel
 skos:prefLabel rdf:type owl:AnnotationProperty ;
                rdfs:comment "A resource has no more than one value of skos:prefLabel per language tag, and no more than one value of skos:prefLabel without language tag."@en ,
@@ -118,8 +114,7 @@ foaf:logo rdf:type owl:AnnotationProperty .
 
 ###  https://purl.org/emi#hasIonization
 :hasIonization rdf:type owl:AnnotationProperty ;
-               rdfs:range xsd:string ;
-               rdfs:domain _:genid-nodeid-genid-3719389adacd4bc3b133acd0cf541297-E9E213EBB9434A7973AC872B704B0043 .
+               rdfs:range xsd:string .
 
 
 #################################################################
@@ -133,30 +128,6 @@ xsd:date rdf:type rdfs:Datatype .
 #################################################################
 #    Object Properties
 #################################################################
-
-###  http://www.w3.org/2004/02/skos/core#broader
-skos:broader rdf:type owl:ObjectProperty .
-
-
-###  http://www.w3.org/ns/prov#used
-<http://www.w3.org/ns/prov#used> rdf:type owl:ObjectProperty .
-
-
-###  http://www.w3.org/ns/prov#wasAssociatedWith
-<http://www.w3.org/ns/prov#wasAssociatedWith> rdf:type owl:ObjectProperty .
-
-
-###  http://www.w3.org/ns/prov#wasDerivedFrom
-<http://www.w3.org/ns/prov#wasDerivedFrom> rdf:type owl:ObjectProperty .
-
-
-###  http://www.w3.org/ns/prov#wasGeneratedBy
-<http://www.w3.org/ns/prov#wasGeneratedBy> rdf:type owl:ObjectProperty .
-
-
-###  http://www.w3.org/ns/sosa/hasResult
-sosa:hasResult rdf:type owl:ObjectProperty .
-
 
 ###  http://xmlns.com/foaf/0.1/depiction
 foaf:depiction rdf:type owl:ObjectProperty ;
@@ -277,6 +248,11 @@ foaf:depiction rdf:type owl:ObjectProperty ;
                owl:deprecated "replaced by \"sosa:hasSample\" and its inverse property \"sosa:isSampleOf\"" .
 
 
+###  https://purl.org/emi#hasMassiveDOI
+:hasMassiveDOI rdf:type owl:ObjectProperty ;
+               rdfs:domain :LCMSAnalysis .
+
+
 ###  https://purl.org/emi#hasPairMember
 :hasPairMember rdf:type owl:ObjectProperty ;
                rdfs:domain :SpectralPair ;
@@ -335,18 +311,17 @@ foaf:depiction rdf:type owl:ObjectProperty ;
 
 ###  https://purl.org/emi#inTaxon
 :inTaxon rdf:type owl:ObjectProperty ;
-         rdfs:domain :InChIKey ;
+         rdfs:domain [ rdf:type owl:Class ;
+                       owl:unionOf ( sosa:Sample
+                                     :InChIKey
+                                   )
+                     ] ;
          rdfs:range :Taxon ;
          rdfs:label "found in taxon" .
 
 
 ###  https://purl.org/emi#isClassifiedWith
 :isClassifiedWith rdf:type owl:ObjectProperty ;
-                  rdfs:range [ rdf:type owl:Class ;
-                               owl:unionOf ( :ChemicalTaxon
-                                             :Taxon
-                                           )
-                             ] ;
                   rdfs:label "is classified with" .
 
 
@@ -428,12 +403,6 @@ foaf:depiction rdf:type owl:ObjectProperty ;
                 rdfs:label "has cosmic score" .
 
 
-###  https://purl.org/emi#hasDOI
-:hasDOI rdf:type owl:DatatypeProperty ;
-        rdfs:range xsd:anyURI ;
-        rdfs:label "has DOI" .
-
-
 ###  https://purl.org/emi#hasFeatureArea
 :hasFeatureArea rdf:type owl:DatatypeProperty ;
                 rdfs:range xsd:double ;
@@ -459,13 +428,8 @@ foaf:depiction rdf:type owl:ObjectProperty ;
 
 ###  https://purl.org/emi#hasIonization
 :hasIonization rdf:type owl:DatatypeProperty ,
-                        owl:FunctionalProperty .
-
-
-###  https://purl.org/emi#hasLicense
-:hasLicense rdf:type owl:DatatypeProperty ;
-            rdfs:range xsd:anyURI ;
-            rdfs:label "has license" .
+                        owl:FunctionalProperty ;
+               rdfs:domain <http://org.semanticweb.owlapi/error#Error1> .
 
 
 ###  https://purl.org/emi#hasMassDifference
@@ -474,21 +438,6 @@ foaf:depiction rdf:type owl:ObjectProperty ;
                    rdfs:domain :SpectralPair ;
                    rdfs:range xsd:double ;
                    rdfs:label "has Mass difference" .
-
-
-###  https://purl.org/emi#hasMassiveDOI
-:hasMassiveDOI rdf:type owl:DatatypeProperty ;
-               rdfs:subPropertyOf :hasDOI ;
-               rdfs:domain :LCMSAnalysis ;
-               rdfs:range xsd:anyURI .
-
-
-###  https://purl.org/emi#hasMassiveLicense
-:hasMassiveLicense rdf:type owl:DatatypeProperty ;
-                   rdfs:subPropertyOf :hasLicense ;
-                   rdfs:domain :LCMSAnalysis ;
-                   rdfs:range xsd:anyURI ;
-                   rdfs:label "has Massive license" .
 
 
 ###  https://purl.org/emi#hasParentMass
@@ -509,6 +458,12 @@ foaf:depiction rdf:type owl:ObjectProperty ;
 :hasProbability rdf:type owl:DatatypeProperty ;
                 rdfs:range xsd:double ;
                 rdfs:label "has probability" .
+
+
+###  https://purl.org/emi#hasRawSpectrum
+:hasRawSpectrum rdf:type owl:DatatypeProperty ;
+                rdfs:domain :LCMSFeature ;
+                rdfs:range xsd:string .
 
 
 ###  https://purl.org/emi#hasRelativeFeatureArea
@@ -662,24 +617,8 @@ foaf:depiction rdf:type owl:ObjectProperty ;
 #    Classes
 #################################################################
 
-###  http://www.w3.org/2004/02/skos/core#Concept
-skos:Concept rdf:type owl:Class .
-
-
-###  http://www.w3.org/ns/prov#Agent
-<http://www.w3.org/ns/prov#Agent> rdf:type owl:Class .
-
-
-###  http://www.w3.org/ns/prov#Entity
-<http://www.w3.org/ns/prov#Entity> rdf:type owl:Class .
-
-
-###  http://www.w3.org/ns/sosa/Observation
-sosa:Observation rdf:type owl:Class .
-
-
-###  http://www.w3.org/ns/sosa/Sample
-sosa:Sample rdf:type owl:Class .
+###  http://org.semanticweb.owlapi/error#Error1
+<http://org.semanticweb.owlapi/error#Error1> rdf:type owl:Class .
 
 
 ###  http://www.wikidata.org/entity/Q16521
@@ -1070,4 +1009,4 @@ https://www.w3.org/TR/prov-o/""" .
 :hasIonization owl:deprecated "delete? already defined in LCMS pos and neg" .
 
 
-###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi
+###  Generated by the OWL API (version 4.5.25.2023-02-15T19:15:49Z) https://github.com/owlcs/owlapi

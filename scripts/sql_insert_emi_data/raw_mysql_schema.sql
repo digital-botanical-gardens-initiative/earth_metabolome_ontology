@@ -220,8 +220,9 @@ CREATE TABLE `molecular_network_metadata` (
     
 DROP TABLE IF EXISTS spec2vec_doc ;
 CREATE TABLE `spec2vec_doc` (
-	word TEXT,
+	feature_id INT,
     raw_spectrum TEXT,
+    word TEXT,
     sample_id VARCHAR(1000),
 	ionization VARCHAR(255)
     );

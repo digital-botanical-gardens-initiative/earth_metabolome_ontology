@@ -2,9 +2,11 @@ from typing import Union
 from mysql.connector import *
 from mysql.connector.pooling import PooledMySQLConnection
 from tqdm import tqdm
+from matchms.importing import load_from_mgf
+from matchms.filtering import add_precursor_mz, add_losses, normalize_intensities, reduce_to_number_of_peaks
+from spec2vec import SpectrumDocument
 import os
 import networkx as nx
-
 
 
 class SQLDataInsertion:
@@ -46,10 +48,22 @@ class SQLDataInsertion:
                                          + sample_folder + "','" + ionization + "'),\n"
                     sql_statement = sql_statement[:-2] + ";"
                     db_cursor.execute(sql_statement)
+                elif table_name == "spec2vec_doc":
+                    spectra = Spectra(absolut_file_path)
+                    for spectrum, document in spectra.spectrum_document_list:
+                        feature_id = str(spectrum.metadata['feature_id'])
+                        raw_spectrum = str(tuple(zip(spectrum.mz, spectrum.intensities)))
+                        sql_statement = "INSERT INTO " + table_name + "(feature_id, raw_spectrum, word," \
+                                                                      " sample_id, ionization)  VALUES \n"
+                        for word in document:
+                            sql_statement += "('" + feature_id + "','" + raw_spectrum + "','" + str(word) + "','" \
+                                             + sample_folder + "','" + ionization + "'),\n"
+                    sql_statement = sql_statement[:-2] + ";"
+                    db_cursor.execute(sql_statement)
                 else:
                     sql_statement = "LOAD DATA LOCAL INFILE '" + absolut_file_path + \
-                                "'  INTO TABLE " + table_name + " FIELDS terminated by '" + terminated_by \
-                                + "' optionally enclosed by '\"' IGNORE 1 LINES;\n"
+                                    "'  INTO TABLE " + table_name + " FIELDS terminated by '" + terminated_by \
+                                    + "' optionally enclosed by '\"' IGNORE 1 LINES;\n"
                     db_cursor.execute(sql_statement)
                     if table_name == "sample_metadata":
                         method_file_name = sample_folder + '_lcms_method_params_' + ionization + '.txt'
@@ -59,11 +73,43 @@ class SQLDataInsertion:
                         else:
                             lcms_method_params = ''
                         sql_statement = "UPDATE " + table_name + " SET ionization = '" + ionization + \
-                                           "' " + lcms_method_params + "where sample_id = '" \
-                                           + sample_folder + "' AND ionization is NULL ;"
+                                        "' " + lcms_method_params + "where sample_id = '" \
+                                        + sample_folder + "' AND ionization is NULL ;"
                         db_cursor.execute(sql_statement)
                     elif table_name != "taxon_metadata":
                         sql_statement = "UPDATE " + table_name + " SET sample_id = '" + sample_folder + "'," + \
-                                               "ionization = '" + ionization + "' WHERE sample_id is NULL ;"
+                                        "ionization = '" + ionization + "' WHERE sample_id is NULL ;"
                         db_cursor.execute(sql_statement)
         db_cursor.close()
+
+
+class Spectra:
+
+    def __init__(self, mgf_file_path) -> None:
+        super().__init__()
+        self.spectra = self.load_and_filter_from_mgf(mgf_file_path)
+        self.spectrum_document_list = list(self.get_spectrum_document_zip())
+
+    @staticmethod
+    def apply_filters(spectrum):
+        spectrum = add_precursor_mz(spectrum)
+        spectrum = normalize_intensities(spectrum)
+        spectrum = reduce_to_number_of_peaks(spectrum, n_required=1, n_max=100)
+        spectrum = add_precursor_mz(spectrum)
+        spectrum = add_losses(spectrum, loss_mz_from=10, loss_mz_to=250)
+        return spectrum
+
+    def load_and_filter_from_mgf(self, path) -> list:
+        """Load and filter spectra from mgf file
+        Returns:
+            spectrums (list of matchms.spectrum): a list of matchms.spectrum objects
+        """
+        spectra_list = [self.apply_filters(s) for s in load_from_mgf(path)]
+        spectra_list = [s for s in spectra_list if s is not None]
+        return spectra_list
+
+    def get_spectrum_document_zip(self) -> zip:
+        spectra_list = self.spectra
+        reference_documents = [SpectrumDocument(s, n_decimals=2) for s in spectra_list]
+        list_peaks_losses = list(doc.words for doc in reference_documents)
+        return zip(spectra_list, list_peaks_losses)
