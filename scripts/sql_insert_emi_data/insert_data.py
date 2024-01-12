@@ -7,7 +7,7 @@ from matchms.filtering import add_precursor_mz, add_losses, normalize_intensitie
 from spec2vec import SpectrumDocument
 import os
 import networkx as nx
-
+from config import table_canonical_names
 
 class SQLDataInsertion:
 
@@ -36,7 +36,7 @@ class SQLDataInsertion:
                 relative_file_path = name_prefix + sample_folder + name_suffix
                 absolut_file_path = os.path.join(sample_dir, relative_file_path)
             if os.path.isfile(absolut_file_path):
-                if table_name == "molecular_network":
+                if table_name == table_canonical_names["molecular_network"]:
                     graph = nx.read_graphml(absolut_file_path)
                     sql_statement = "INSERT INTO " + table_name + "(source_id, target_id, weight," \
                                                                   " sample_id, ionization)  VALUES \n"
@@ -48,7 +48,7 @@ class SQLDataInsertion:
                                          + sample_folder + "','" + ionization + "'),\n"
                     sql_statement = sql_statement[:-2] + ";"
                     db_cursor.execute(sql_statement)
-                elif table_name == "spec2vec_doc":
+                elif table_name == table_canonical_names["spec2vec_doc"]:
                     spectra = Spectra(absolut_file_path)
                     for spectrum, document in spectra.spectrum_document_list:
                         feature_id = str(spectrum.metadata['feature_id'])
@@ -65,7 +65,7 @@ class SQLDataInsertion:
                                     "'  INTO TABLE " + table_name + " FIELDS terminated by '" + terminated_by \
                                     + "' optionally enclosed by '\"' IGNORE 1 LINES;\n"
                     db_cursor.execute(sql_statement)
-                    if table_name == "sample_metadata":
+                    if table_name == table_canonical_names["sample_metadata"]:
                         method_file_name = sample_folder + '_lcms_method_params_' + ionization + '.txt'
                         params = SQLDataInsertion.read_file(os.path.join(sample_dir, ionization, method_file_name))
                         if params:
@@ -76,7 +76,7 @@ class SQLDataInsertion:
                                         "' " + lcms_method_params + "where sample_id = '" \
                                         + sample_folder + "' AND ionization is NULL ;"
                         db_cursor.execute(sql_statement)
-                    elif table_name != "taxon_metadata":
+                    elif table_name != table_canonical_names["taxon_metadata"]:
                         sql_statement = "UPDATE " + table_name + " SET sample_id = '" + sample_folder + "'," + \
                                         "ionization = '" + ionization + "' WHERE sample_id is NULL ;"
                         db_cursor.execute(sql_statement)
