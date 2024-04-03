@@ -17,7 +17,7 @@ table_canonical_names = {'compound_summary': 'canopus_compound_summary',
 
 # MySQL db credentials
 host = "localhost"
-user = ""
-password = ""
+user = "root"
+password = "root"
 database = "emi_db"
 port = "3306"

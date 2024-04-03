@@ -12,7 +12,5 @@ taxon_metadata
 	source_taxon TEXT COMMENT 'renamed: organism_species'
 
 Cell values needing triming 
-taxon_metadata
-	wd_value values should not end with character '\r'
-
+wd_value and massive_id values should not end with character '\r'
 
