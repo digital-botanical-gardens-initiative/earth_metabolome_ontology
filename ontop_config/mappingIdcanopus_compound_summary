@@ -1,0 +1,7 @@
+mappingId	canopus_compound_summary
+target		:CANOPUS-mzspec:{massive_id2}:{sample_id}_features_ms2_{ion}.mgf:scan:{featureId2} a emi:ChemicalTaxonAnnotation ; rdfs:label "The CANOPUS annotation of mzspec:{massive_id2}:{sample_id}_features_ms2_{ion}.mgf:scan:{featureId2}"^^xsd:string; emi:hasClass npc:{npc_class}; emi:hasClassProbability {NPC_class_Probability}^^xsd:double; emi:hasSuperClassProbability {NPC_superclass_Probability}^^xsd:double; emi:hasPathwayProbability {NPC_pathway_Probability}^^xsd:double . usi:mzspec:{massive_id2}:{sample_id}_features_ms2_{ion}.mgf:scan:{featureId2} emi:hasAnnotation :CANOPUS-mzspec:{massive_id2}:{sample_id}_features_ms2_{ion}.mgf:scan:{featureId2} .
+source		SELECT DISTINCT IF(ccs.id LIKE '%pos%', 'pos','neg') as ion, m.sample_id, TRIM(TRAILING '\r' FROM m.massive_id) as massive_id2,
+ REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(UPPER(REPLACE(NPC_class, ' ', '_')), '(', '%28'),
+ ')', '%29'), 'Β','%CE%92'), 'Ε','%CE%95'), 'Ψ' , '%CE%A8' ), 'Γ', '%CE%93'), 'Κ','%CE%9A'), 'Π' ,'%CE%A0' ), 'Χ' ,'%CE%A7')
+ as npc_class, NPC_pathway_Probability, NPC_superclass_Probability, NPC_class_Probability, SUBSTRING_INDEX(id,'_',-1) as featureId2
+ FROM canopus_compound_summary as ccs join sample_metadata as m on ccs.sample_id = m.sample_id AND ccs.ionization = m.ionization

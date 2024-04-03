@@ -24,8 +24,8 @@
                         owl:versionIRI <https://purl.org/emi/version/0.1> ;
                         owl:imports <http://www.w3.org/2004/02/skos/core> ,
                                     <http://www.w3.org/ns/prov-o-20130430> ,
-                                    sosa: ,
-                                    <https://purl.org/npc> ;
+                                    sosa: ;
+                                    #<https://purl.org/npc> ;
                         dcterms:contributor "http://orcid.org/0000-0001-9292-9463" ,
                                             "http://orcid.org/0000-0002-3648-7362" ,
                                             "http://orcid.org/0000-0002-9619-1707" ,

@@ -5,7 +5,7 @@ CREATE TABLE canopus_compound_summary (
 	id VARCHAR(255)  , 
 	`molecularFormula` VARCHAR(255) , 
 	adduct VARCHAR(255) , 
-	`precursorFormula` VARCHAR(255) , 
+	#`precursorFormula` VARCHAR(255) , #removed
 	`NPC_pathway` VARCHAR(255) , 
 	`NPC_pathway_Probability` DOUBLE , 
 	`NPC_superclass` VARCHAR(255) , 
@@ -23,7 +23,7 @@ CREATE TABLE canopus_compound_summary (
 	`ClassyFire_superclass` VARCHAR(255) , 
 	`ClassyFire_superclass_probability` DOUBLE , 
 	`ClassyFire_all_classifications` VARCHAR(2550) , 
-	`featureId` INT, 
+	#`featureId` INT, #removed
     sample_id VARCHAR(255),
 	ionization VARCHAR(255),
     PRIMARY KEY (id) #,
@@ -35,14 +35,14 @@ DROP TABLE IF EXISTS `sample_metadata`;
 CREATE TABLE `sample_metadata` (
 	sample_id VARCHAR(255), 
 	sample_type VARCHAR(255) , 
-	source_id VARCHAR(255) , 
+	source_id VARCHAR(255) COMMENT 'renamed: sample_substance_name',
 	organism_kingdom VARCHAR(255) , 
 	organism_phylum VARCHAR(255) , 
 	organism_class VARCHAR(255) , 
 	organism_order VARCHAR(255) , 
 	organism_family VARCHAR(255) , 
 	organism_genus VARCHAR(255) , 
-	source_taxon VARCHAR(255) , 
+	source_taxon VARCHAR(255) COMMENT 'renamed: organism_species',   
 	organism_organe VARCHAR(255) , 
 	organism_broad_organe VARCHAR(255) , 
 	organism_tissue VARCHAR(255) , 
@@ -68,14 +68,14 @@ CREATE TABLE taxon_metadata (
 	a BOOL, 
 	sample_id VARCHAR(255), 
 	sample_type TEXT, 
-	source_id TEXT, 
+	source_id TEXT COMMENT 'renamed: sample_substance_name', 
 	organism_kingdom TEXT, 
 	organism_phylum TEXT, 
 	organism_class TEXT, 
 	organism_order TEXT, 
 	organism_family TEXT, 
 	organism_genus TEXT, 
-	source_taxon TEXT, 
+	source_taxon TEXT COMMENT 'renamed: organism_species',  
 	organism_organe TEXT, 
 	organism_broad_organe TEXT, 
 	organism_tissue TEXT, 
@@ -141,8 +141,8 @@ CREATE TABLE features_quant (
 
 DROP TABLE IF EXISTS `compound_identifications`;
 CREATE TABLE compound_identifications (
-	`confidenceRank` INT, 
-	`structurePerIdRank` INT , 
+	`rank` INT COMMENT 'previous name: confidenceRank', 
+#	`structurePerIdRank` INT , #removed
 	`formulaRank` INT ,  
 	`#adducts` INT ,  
 	`#predictedFPs` DOUBLE ,  
@@ -163,7 +163,7 @@ CREATE TABLE compound_identifications (
 	`ionMass` DOUBLE ,  
 	`retentionTimeInSeconds` DOUBLE ,  
 	id VARCHAR(1000) NOT NULL,  
-	`featureId` INT NOT NULL,
+	#`featureId` INT NOT NULL, #removed
 	sample_id VARCHAR(1000),
 	ionization VARCHAR(255)
 );

@@ -11,7 +11,6 @@ if __name__ == '__main__':
         database=database,
         allow_local_infile=True,
         autocommit=True)
-
     SQLDataInsertion.sql_insert_emi_data(
         raw_data_root_folder,
         table_canonical_names['sample_metadata'], "_metadata.tsv", mydb, ionization=ionization_mode)
@@ -33,7 +32,7 @@ if __name__ == '__main__':
     SQLDataInsertion.sql_insert_emi_data(
         raw_data_root_folder, table_canonical_names['isdb_reweighted_flat'],
         '_isdb_reweighted_flat_' + ionization_mode + '.tsv', mydb, os.path.join(ionization_mode, 'isdb', ''),
-        ionization=ionization_mode)
+       ionization=ionization_mode)
     SQLDataInsertion.sql_insert_emi_data(
         raw_data_root_folder,
         table_canonical_names['molecular_network_metadata'], '_mn_metadata_' + ionization_mode + '.tsv', mydb,

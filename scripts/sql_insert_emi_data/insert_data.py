@@ -29,7 +29,7 @@ class SQLDataInsertion:
         db_cursor = sql_db.cursor()
         for sample_folder in tqdm(sample_folder_list):
             sample_dir = os.path.join(directory_path, sample_folder)
-            if name_prefix is None:
+            if name_prefix is None or name_prefix == "":
                 metadata_file_name = sample_folder + name_suffix
                 absolut_file_path = os.path.join(sample_dir, metadata_file_name)
             else:
@@ -40,14 +40,16 @@ class SQLDataInsertion:
                     graph = nx.read_graphml(absolut_file_path)
                     sql_statement = "INSERT INTO " + table_name + "(source_id, target_id, weight," \
                                                                   " sample_id, ionization)  VALUES \n"
-                    for attribute in graph.edges(data=True):
-                        source_id = attribute[0]
-                        target_id = attribute[1]
-                        weight = attribute[2]['weight']
-                        sql_statement += "('" + source_id + "','" + target_id + "','" + str(weight) + "','" \
+                    edges = graph.edges(data=True)
+                    if len(edges):
+                        for attribute in edges:
+                            source_id = attribute[0]
+                            target_id = attribute[1]
+                            weight = attribute[2]['weight']
+                            sql_statement += "('" + source_id + "','" + target_id + "','" + str(weight) + "','" \
                                          + sample_folder + "','" + ionization + "'),\n"
-                    sql_statement = sql_statement[:-2] + ";"
-                    db_cursor.execute(sql_statement)
+                        sql_statement = sql_statement.rstrip('\n').rstrip(',') + ";"
+                        db_cursor.execute(sql_statement)
                 elif table_name == table_canonical_names["spec2vec_doc"]:
                     spectra = Spectra(absolut_file_path)
                     for spectrum, document in spectra.spectrum_document_list:
@@ -58,7 +60,7 @@ class SQLDataInsertion:
                         for word in document:
                             sql_statement += "('" + feature_id + "','" + raw_spectrum + "','" + str(word) + "','" \
                                              + sample_folder + "','" + ionization + "'),\n"
-                    sql_statement = sql_statement[:-2] + ";"
+                    sql_statement = sql_statement.rstrip('\n').rstrip(',') + ";"
                     db_cursor.execute(sql_statement)
                 else:
                     sql_statement = "LOAD DATA LOCAL INFILE '" + absolut_file_path + \

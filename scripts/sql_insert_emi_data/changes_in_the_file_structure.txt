@@ -1,0 +1,18 @@
+Changes in the file structure when comparing test-dataset.zip with pf1600_raw set
+
+canopus_compound_summary
+	`precursorFormula` #removed
+	`featureId` INT, #removed
+compound_identifications
+	`rank` INT COMMENT 'previous name: confidenceRank', 
+	`structurePerIdRank` INT , #removed
+	`featureId` INT NOT NULL, #removed
+taxon_metadata
+	source_id TEXT COMMENT 'renamed: sample_substance_name', 
+	source_taxon TEXT COMMENT 'renamed: organism_species'
+
+Cell values needing triming 
+taxon_metadata
+	wd_value values should not end with character '\r'
+
+
