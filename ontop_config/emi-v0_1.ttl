@@ -18,29 +18,85 @@
 @prefix void: <http://rdfs.org/ns/void#> .
 @prefix orcid: <http://orcid.org/> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix voaf: <http://purl.org/vocommons/voaf#> .
+@prefix widoco: <https://w3id.org/widoco/vocab#> . 
+@prefix bibo: <http://purl.org/ontology/bibo/> .
+@prefix sw: <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
+@prefix org: <http://www.w3.org/ns/org#> .
 @base <https://purl.org/emi/abox#> .
+
 
 <https://purl.org/emi> rdf:type owl:Ontology ;
                         owl:versionIRI <https://purl.org/emi/version/0.1> ;
                         owl:imports <http://www.w3.org/2004/02/skos/core> ,
                                     <http://www.w3.org/ns/prov-o-20130430> ,
-                                    sosa: ;
-                                    #<https://purl.org/npc> ;
-                        dcterms:contributor "http://orcid.org/0000-0001-9292-9463" ,
-                                            "http://orcid.org/0000-0002-3648-7362" ,
-                                            "http://orcid.org/0000-0002-9619-1707" ,
-                                            "http://orcid.org/0000-0003-3389-2191" ,
-                                            "https://orcid.org/0000-0002-1269-2038" ,
-                                            "https://orcid.org/0000-0002-3175-5372" ,
-                                            "https://orcid.org/0000-0003-3213-4495" ;
-                        dcterms:description "The Earth Metabolome Initiative (EMI) vocabulary. EMI is a global effort to profile the metabolic content of all currently known species on our planet." ;
+                                    sosa: ,
+                                    <https://purl.org/npc> ;
+                        dcterms:contributor <http://orcid.org/0000-0001-9292-9463> ,
+                                            <http://orcid.org/0000-0002-3648-7362> ,
+                                            <http://orcid.org/0000-0002-9619-1707> ,
+                                            <http://orcid.org/0000-0003-3389-2191> ,
+                                            <https://orcid.org/0000-0002-1269-2038> ,
+                                            <https://orcid.org/0000-0002-3175-5372> ,
+                                            <https://orcid.org/0000-0003-3213-4495> ;
                         dcterms:license <https://creativecommons.org/publicdomain/zero/1.0/> ;
-                        dcterms:replaces <https://enpkg.commons-lab.org/kg> ;
-                        dcterms:title "The Earth Metabolome semantic model." ;
+                        dcterms:replaces <https://enpkg.commons-lab.org/kg/ontology_version/0.1.0> ;
+                        dcterms:title "The Earth Metabolome Initiative (EMI) ontology"@en ;
                         vann:preferredNamespacePrefix "emi" ;
-                        vann:preferredNamespaceUri "https://purl.org/emi#" ;
-                        owl:versionInfo 0.1 .
+                        vann:preferredNamespaceUri <https://purl.org/emi#> ;
+                        owl:versionInfo "0.1" ;
+                        dcterms:modified "2024-04-25"^^xsd:date ;
+                        dcterms:issue "2024-04-03"^^xsd:date ;
+                        dcterms:creator <https://orcid.org/0000-0002-3175-5372> ;
+                        dcterms:created "2023-11-02"^^xsd:date ;
+                        dcterms:description "The Earth Metabolome Initiative (EMI) ontology is designed to capture and structure the metabolic content of all currently known species on our planet."@en ;
+                        dcterms:abstract "The Earth Metabolome Initiative ontology is mainly designed as data schema to structure and describe natural product taxonomy, spectrum annotation provenance, sample and observation data, mass spectrometry data and analysis, and chemical structure representations. The EMI ontology replaces the [ENPKG vocabulary](https://enpkg.commons-lab.org/doc/index.html).";
+                        dcterms:publisher <https://www.earthmetabolome.org> ;
+                        bibo:status <http://purl.org/ontology/bibo/status/draft> ;
+                        rdfs:seeAlso <https://enpkg.commons-lab.org/doc/index.html>, <https://bioschemas.org>, <https://schema.org> ;
+                        sdo:codeRepository "https://github.com/digital-botanical-gardens-initiative/earth_metabolome_ontology"^^xsd:anyURI ;
+                        widoco:introduction 
+'''The Earth Metabolome Initiative (EMI) ontology replaces the Experimental Natural Products Knowledge Graph [(ENPKG) vocabulary]( https://enpkg.commons-lab.org/doc/index.html). The EMI ontology is used to structure spectrum annotation provenance by reusing the [PROV-O ontology](https://www.w3.org/TR/prov-o/) (a W3C recommendation) and sample and observation data by applying the [SOSA ontology](https://www.w3.org/TR/vocab-ssn/). EMI reuses the SOSA ontology as a data schema for struturing the Sample and Observation data. SOSA (Sensor, Observation, Sample, and Actuator) is a subset of SSN (Semantic Sensor Network Ontology) that is a W3C recommendation. Although, the SSN was developed with ontology engineers in mind as the primary audience. They addressed changes in scope and audience that currently also includes scientific observations that may make heavy use of sampling strategies, and, therefore, the Sampling, Sampler, and Sample classes, as well as their corresponding properties, have been added to SOSA and SSN. Chemical taxonomy is also highly structure in EMI by relying on a taxonomy derived from NPClassifier (i.e., EMI imports [Natural Product Classifier vocabulary](https://purl.org/npc)). This taxonomy was defined for EMI with the [SKOS vocabulary](https://www.w3.org/TR/skos-reference). Indeed, it is an SKOS-based vocabulary for the structural classification of natural products. The skos:broder term is used to represent the hierarchy among Classes, Superclasses and Pathways.  npc:Class, npc:Superclass and npc:Pathway are subclasses of skos:Concept. rdfs:label is assigned for each term of the taxonomy that are instances of one of the subclasses of skos:Concept.
 
+SOSA reuse. We consider a Mass Spectrometer as a sosa:Platform. The MS detector that belongs to a Mass Spectrometer is a Sensor. If we do not want to capture the equipment (Mass Spectrometer for provenance) of the generated analysis such as by Liquid chromatography–mass spectrometry (LCMS), we can ignore/ommit it. The observation is interpreted as a prov:Activity/sosa:Observation/emi:Analysis (the Analysis as defined in the Earth Metabolome Intiative model). This observation (a.k.a. LCMS Analysis) uses (prov:use/sosa:hasFeatureOfInterest) some sample. This sample comes from some emi:System (e.g., species or another sample like a Raw Material, a broader specimen). All EMI model classes related to samples are subclasses of sosa:Sample, notably emi:Aliquot, emi:Blank, emi:ExtractSample, emi:RawMaterial and emi:QCSample.
+
+We can classify each Specimen by using some Specimen taxonomy, for example, [specimenType](https://isamplesorg.github.io/models/generated/vocabularies/specimenType.html) that relies on SKOS. Moreover, we can also classify a sample with an external material taxonomy (e.g.,  [materialType](https://isamplesorg.github.io/models/generated/vocabularies/materialType.html#organicmaterial)). The raw material (emi:RawMaterial) is also a sosa:sample. In case it is needed to describe the "Mass Spectrometer" as a sampler too, we can apply the sosa:Sampler class to define it. The sampling process resuts on subsamples (e.g., emi:Aliquot). The extracted sample can be classified with an external taxonomy (e.g., an Specimen taxonomy) with the term emi:isClassifiedWith.
+
+Other metabolomics data are structured with specific EMI classes such as emi:ChemicalStrucutre for represeting molecules, emi:MS2Spectrum for the mass spectrometry (MS2 spectra), emi:LCMSFeatureSet that represents features obtained from the processing of a given LCMS analysis, please refer to classes and properties descriptions. ''' ;
+                        #sdo:image <> ;
+                        foaf:logo <https://kg.earthmetabolome.org/static/img/logo.svg> 
+                        .
+
+<https://orcid.org/0000-0002-3175-5372> foaf:name "Tarcisio Mendes de Farias"@en ;
+  org:memberOf <https://www.sib.swiss> .
+<http://orcid.org/0000-0001-9292-9463> foaf:name "Marco Pagni"@en ;
+  org:memberOf <https://www.sib.swiss> .
+<http://orcid.org/0000-0002-3648-7362> foaf:name "Arnaud Gaudry"@en ;
+  org:memberOf <https://www.unige.ch> .
+<http://orcid.org/0000-0002-9619-1707> foaf:name "Florence Mehl"@en ;
+  org:memberOf <https://www.sib.swiss> .
+<http://orcid.org/0000-0003-3389-2191> foaf:name "Pierre-Marie Allard"@en ;
+  org:memberOf <https://www.unifr.ch> .
+<https://orcid.org/0000-0002-1269-2038> foaf:name "Luca Cappelletti"@en ;
+  org:memberOf <https://www.unifr.ch> .
+<https://orcid.org/0000-0003-3213-4495> foaf:name "Ana Claudia Sima"@en ;
+  org:memberOf <https://www.sib.swiss> .
+
+
+<https://www.sib.swiss> rdf:type owl:NamedIndividual ,
+                                   foaf:Organization ;
+                          foaf:homepage "https://www.sib.swiss" ;
+                          foaf:name "SIB Swiss Institute of Bioinformatics"@en .
+
+<https://www.unige.ch> rdf:type owl:NamedIndividual ,
+                                   foaf:Organization ;
+                          foaf:homepage "https://www.unige.ch" ;
+                          foaf:name "University of Geneva"@en .
+
+<https://www.unifr.ch> rdf:type owl:NamedIndividual ,
+                                   foaf:Organization ;
+                          foaf:homepage "https://www.unifr.ch" ;
+                          foaf:name "University of Fribourg"@en .
 #################################################################
 #    Annotation properties
 #################################################################
@@ -138,6 +194,55 @@ xsd:date rdf:type rdfs:Datatype .
 #    Object Properties
 #################################################################
 
+sosa:isResultOf  vann:example 
+'''@prefix : <https://purl.org/emi/abox#> .
+@prefix emi: <https://purl.org/emi#> .
+@prefix sosa: <http://www.w3.org/ns/sosa/> .
+:VGF153_A02_lcms_feature_list_neg rdf:type emi:LCMSFeatureSet ;
+                                  sosa:isResultOf :VGF153_A02_neg.mzXML .
+:VGF153_A02_neg.mzXML rdf:type emi:LCMSAnalysisNeg, emi:LCMSAnalysis, sosa:Observation .'''.
+
+sosa:isResultOf  vann:example 
+'''@prefix : <https://purl.org/emi/abox#> .
+@prefix emi: <https://purl.org/emi#> .
+@prefix sosa: <http://www.w3.org/ns/sosa/> .
+:VGF153_A02_neg.mzXML  rdf:type emi:LCMSAnalysisNeg, emi:LCMSAnalysis, sosa:Observation ;
+                       sosa:hasResult :VGF153_A02_lcms_feature_list_neg .
+:VGF153_A02_lcms_feature_list_neg rdf:type emi:LCMSFeatureSet.'''.
+
+sosa:hasFeatureOfInterest  vann:example 
+'''@prefix : <https://purl.org/emi/abox#> .
+@prefix emi: <https://purl.org/emi#> .
+@prefix sosa: <http://www.w3.org/ns/sosa/> .
+:VGF138_A02_neg.mzXML rdf:type emi:LCMSAnalysisNeg, emi:LCMSAnalysis, sosa:Observation ;
+                      sosa:hasFeatureOfInterest :VGF138_A02.
+:VGF138_A02 rdf:type emi:ExtractSample, sosa:Sample.'''.
+
+sosa:isFeatureOfInterest  vann:example 
+'''@prefix : <https://purl.org/emi/abox#> .
+@prefix emi: <https://purl.org/emi#> .
+@prefix sosa: <http://www.w3.org/ns/sosa/> .
+:VGF138_A02  rdf:type emi:ExtractSample, sosa:Sample. ;
+             sosa:isFeatureOfInterest :VGF138_A02_neg.mzXML.
+:VGF138_A02_neg.mzXML rdf:type emi:LCMSAnalysisNeg, emi:LCMSAnalysis, sosa:Observation.'''.
+
+sosa:isSampleOf vann:example 
+'''@prefix : <https://purl.org/emi/abox#> .
+@prefix emi: <https://purl.org/emi#> .
+@prefix sosa: <http://www.w3.org/ns/sosa/> .
+:VGF138_A02  rdf:type emi:ExtractSample, sosa:Sample. ;
+             sosa:isSampleOf :V111819GP-01.
+:V111819GP-01 rdf:type emi:RawMaterial, sosa:Sample.'''.
+
+
+sosa:hasSample vann:example 
+'''@prefix : <https://purl.org/emi/abox#> .
+@prefix emi: <https://purl.org/emi#> .
+@prefix sosa: <http://www.w3.org/ns/sosa/> .
+:V111819GP-01   rdf:type emi:RawMaterial, sosa:Sample . ;
+             sosa:hasSample :VGF138_A02.
+:VGF138_A02 rdf:type emi:ExtractSample, sosa:Sample.'''.
+
 ###  http://xmlns.com/foaf/0.1/depiction
 foaf:depiction rdf:type owl:ObjectProperty ;
                rdfs:comment "http://www.simolecule.com/cdkdepict/depict/bow/svg?smi=CCCCCCCCCCCC%5BC%40%40H%5D(O)%5BC%40H%5D1CCC(C2CCC(CC(O)CCCCC%5BC%40%40H%5D(O)CC3%3DC%5BC%40H%5D(C)OC3%3DO)O2)O1&zoom=2.0&annotate=cip" .
@@ -168,7 +273,13 @@ emi:hasClass rdf:type owl:ObjectProperty ;
                          ] ;
              rdfs:range npc:Class ;
              owl:propertyDisjointWith emi:hasSuperClass ;
-             rdfs:label "has class" .
+             rdfs:label "has class" ;
+             vann:example 
+'''@prefix : <https://purl.org/emi/abox#> .
+@prefix emi: <https://purl.org/emi#> .
+@prefix npc: <https://purl.org/npc#> .
+:CANOPUS-mzspec%3AMSV000087728%3AVGF147_E06_features_ms2_neg.mgf%3Ascan%3A45 rdf:type emi:ChemicalTaxonAnnotation ;
+            emi:hasClass "npc:CADINANE_SESQUITERPENOIDS" .'''.
 
 
 ###  https://purl.org/emi#hasConsensusSpectrum
@@ -183,7 +294,13 @@ emi:hasConsensusSpectrum rdf:type owl:ObjectProperty ;
 ###  https://purl.org/emi#hasFBMNComponent
 emi:hasFBMNComponent rdf:type owl:ObjectProperty ;
                      rdfs:domain emi:LCMSFeature ;
-                     rdfs:comment "Feature-based molecular network component." .
+                     rdfs:comment "Feature-based molecular network component." ;
+                     rdfs:label "has FBMN component" ;
+                     vann:example 
+'''@prefix emi: <https://purl.org/emi#> .
+@prefix usi: <https://metabolomics-usi.ucsd.edu/dashinterface/?usi1=> .
+usi:mzspec%3AMSV000087728%3AVGF153_A02_features_ms2_neg.mgf%3Ascan%3A356 rdf:type emi:LCMSFeature ;
+            emi:hasFBMNComponent :VGF153_A02_fbmn_neg_componentindex_0 .'''.
 
 
 ###  https://purl.org/emi#hasFirstMember
@@ -236,7 +353,14 @@ emi:hasLCMSFeature rdf:type owl:ObjectProperty ;
                    rdfs:subPropertyOf emi:hasSpectrum ;
                    rdfs:domain emi:LCMSFeatureSet ;
                    rdfs:range emi:LCMSFeature ;
-                   rdfs:label "has LCMS feature" .
+                   rdfs:label "has LCMS feature" ;
+                   rdfs:comment "It relates a LCMS feature set to a feature." ;
+                   vann:example 
+'''@prefix emi: <https://purl.org/emi#> .
+@prefix : <https://purl.org/emi/abox#> .
+@prefix usi: <https://metabolomics-usi.ucsd.edu/dashinterface/?usi1=> .
+:VGF153_A02_lcms_feature_list_neg rdf:type emi:LCMSFeatureSet ;
+            emi:hasLCMSFeature usi:mzspec%3AMSV000087728%3AVGF153_A02_features_ms2_neg.mgf%3Ascan%3A1 .'''.
 
 
 ###  https://purl.org/emi#hasLCMSFeatureSet
@@ -244,8 +368,14 @@ emi:hasLCMSFeatureSet rdf:type owl:ObjectProperty ;
                       rdfs:subPropertyOf sosa:hasResult ;
                       rdfs:domain emi:LCMSAnalysis ;
                       rdfs:range emi:LCMSFeatureSet ;
-                      rdfs:comment "Relates a LCMS analysis to a set of features." ;
-                      rdfs:label "has LCMS feature set" .
+                      rdfs:comment "It relates a LCMS analysis to a set of features." ;
+                      rdfs:label "has LCMS feature set" ;
+                   vann:example 
+'''@prefix emi: <https://purl.org/emi#> .
+@prefix : <https://purl.org/emi/abox#> .
+@prefix usi: <https://metabolomics-usi.ucsd.edu/dashinterface/?usi1=> .
+:VGF138_A02_neg.mzXML rdf:type emi:LCMSAnalysis ;
+            emi:hasLCMSFeatureSet :VGF153_A02_lcms_feature_list_neg .'''.
 
 
 ###  https://purl.org/emi#hasLabProcess
@@ -259,7 +389,15 @@ emi:hasLabProcess rdf:type owl:ObjectProperty ;
 
 ###  https://purl.org/emi#hasMassiveDOI
 emi:hasMassiveDOI rdf:type owl:ObjectProperty ;
-                  rdfs:domain emi:LCMSAnalysis .
+                  rdfs:domain emi:LCMSAnalysis ;
+                  rdfs:comment "It assigns a Massive repository DOI to a LCMS Analysis." ;
+                  rdfs:label "has Massive DOI." ;
+                   vann:example 
+'''@prefix emi: <https://purl.org/emi#> .
+@prefix : <https://purl.org/emi/abox#> .
+@prefix usi: <https://metabolomics-usi.ucsd.edu/dashinterface/?usi1=> .
+:VGF138_A02_neg.mzXML rdf:type emi:LCMSAnalysis ;
+            emi:hasMassiveDOI <https://massive.ucsd.edu/ProteoSAFe/dataset.jsp?accession=MSV000087728> .'''.
 
 
 ###  https://purl.org/emi#hasPairMember
@@ -297,13 +435,26 @@ emi:hasSpec2VecDoc rdf:type owl:ObjectProperty ;
                    rdfs:subPropertyOf owl:topObjectProperty ;
                    rdfs:domain emi:LCMSFeature ;
                    rdfs:range emi:Spec2VecDoc ;
-                   rdfs:label "has spec2vec documentation" .
+                   rdfs:label "has spec2vec documentation" ;
+                   vann:example 
+'''@prefix emi: <https://purl.org/emi#> .
+@prefix : <https://purl.org/emi/abox#> .
+@prefix usi: <https://metabolomics-usi.ucsd.edu/dashinterface/?usi1=> .
+usi:mzspec%3AMSV000087728%3AVGF153_A02_features_ms2_neg.mgf%3Ascan%3A356 rdf:type emi:LCMSFeature ;
+            emi:hasSpec2VecDoc :spec2vec_doc_mzspec%3AMSV000087728%3AVGF153_A02_features_ms2_neg.mgf%3Ascan%3A356 .'''.
 
 
 ###  https://purl.org/emi#hasSpectrum
 emi:hasSpectrum rdf:type owl:ObjectProperty ;
                 rdfs:range emi:MS2Spectrum ;
-                rdfs:label "has spectrum" .
+                rdfs:label "has spectrum" ;
+                rdfs:comment "It assigns a MS2 spectrum to, for instance, a LCMS feature set. The domain is not defined to provide flexibility. For a LCMS feature set prefer to state the  emi:hasLCMSFeature property." ;
+                vann:example 
+'''@prefix emi: <https://purl.org/emi#> .
+@prefix : <https://purl.org/emi/abox#> .
+@prefix usi: <https://metabolomics-usi.ucsd.edu/dashinterface/?usi1=> .
+:VGF153_A02_lcms_feature_list_neg rdf:type emi:LCMSFeatureSet ;
+            emi:hasSpectrum usi:mzspec%3AMSV000087728%3AVGF153_A02_features_ms2_neg.mgf%3Ascan%3A1 .'''.
 
 
 ###  https://purl.org/emi#hasSuperClass
@@ -331,7 +482,15 @@ emi:inTaxon rdf:type owl:ObjectProperty ;
 
 ###  https://purl.org/emi#isClassifiedWith
 emi:isClassifiedWith rdf:type owl:ObjectProperty ;
-                     rdfs:label "is classified with" .
+                     rdfs:label "is classified with" ;
+                     rdfs:comment "It is used to classify any individidual with an external controlled-vocabulary in case rdf:type is not the most suitable solution.";
+             vann:example 
+'''@prefix : <https://purl.org/emi/abox#> .
+@prefix emi: <https://purl.org/emi#> .
+@prefix npc: <https://purl.org/npc#> .
+:CANOPUS-mzspec%3AMSV000087728%3AVGF147_E06_features_ms2_neg.mgf%3Ascan%3A45 rdf:type emi:ChemicalTaxonAnnotation ;
+            emi:isClassifiedWith npc:CADINANE_SESQUITERPENOIDS .'''.
+
 
 
 ###  https://purl.org/emi#isInChIKey2DOf
@@ -384,7 +543,12 @@ emi:hasAdduct rdf:type owl:DatatypeProperty ;
 emi:hasClassProbability rdf:type owl:DatatypeProperty ;
                         rdfs:subPropertyOf emi:hasProbability ;
                         rdfs:domain emi:ChemicalTaxonAnnotation ;
-                        rdfs:range xsd:double .
+                        rdfs:range xsd:double ;
+             vann:example 
+'''@prefix : <https://purl.org/emi/abox#> .
+@prefix emi: <https://purl.org/emi#> .
+:CANOPUS-mzspec%3AMSV000087728%3AVGF147_E06_features_ms2_neg.mgf%3Ascan%3A45 rdf:type emi:ChemicalTaxonAnnotation ;
+            emi:hasClassProbability "0.6451306343078613"^^xsd:double .'''.
 
 
 ###  https://purl.org/emi#hasConsistencyScore
@@ -415,7 +579,13 @@ emi:hasCosmicScore rdf:type owl:DatatypeProperty ;
 ###  https://purl.org/emi#hasFeatureArea
 emi:hasFeatureArea rdf:type owl:DatatypeProperty ;
                    rdfs:range xsd:double ;
-                   rdfs:label "has feature area" .
+                   rdfs:label "has feature area" ;
+                   rdfs:comment "Assign a feature area to a MS2 spectrum." ;
+                   vann:example 
+'''@prefix emi: <https://purl.org/emi#> .
+@prefix usi: <https://metabolomics-usi.ucsd.edu/dashinterface/?usi1=> .
+usi:mzspec%3AMSV000087728%3AVGF153_A02_features_ms2_neg.mgf%3Ascan%3A356 rdf:type emi:LCMSFeature ;
+            emi:hasFeatureArea "1180836.665658199"^^xsd:double .'''.
 
 
 ###  https://purl.org/emi#hasFinalScore
@@ -432,7 +602,14 @@ emi:hasFinalScore rdf:type owl:DatatypeProperty ;
 emi:hasGNPSLCMSLink rdf:type owl:DatatypeProperty ;
                     rdfs:domain emi:LCMSAnalysis ;
                     rdfs:range xsd:anyURI ;
-                    rdfs:label "has GNPS LCMS link" .
+                    rdfs:label "has GNPS LCMS link" ;
+                  rdfs:comment "It relates  GNPS LCMS link to a LCMS Analysis." ;
+                   vann:example 
+'''@prefix emi: <https://purl.org/emi#> .
+@prefix : <https://purl.org/emi/abox#> .
+@prefix usi: <https://metabolomics-usi.ucsd.edu/dashinterface/?usi1=> .
+:VGF138_A02_neg.mzXML rdf:type emi:LCMSAnalysis ;
+            emi:hasGNPSLCMSLink "https://dashboard.gnps2.org/?usi=mzspec%3AMSV000087728%3AVGF138_A02_neg.mzXML"^^xsd:anyURI .'''.
 
 
 ###  https://purl.org/emi#hasIonization
@@ -453,47 +630,87 @@ emi:hasMassDifference rdf:type owl:DatatypeProperty ,
 emi:hasParentMass rdf:type owl:DatatypeProperty ;
                   rdfs:domain emi:LCMSFeature ;
                   rdfs:range xsd:double ;
-                  rdfs:label "has parent mass" .
+                  rdfs:label "has parent mass" ;
+                  rdfs:comment "The parent mass of a LCMS feature." ;
+                  vann:example 
+'''@prefix emi: <https://purl.org/emi#> .
+@prefix usi: <https://metabolomics-usi.ucsd.edu/dashinterface/?usi1=> .
+usi:mzspec%3AMSV000087728%3AVGF153_A02_features_ms2_neg.mgf%3Ascan%3A356 rdf:type emi:LCMSFeature ;
+            emi:hasParentMass "833.447509765625"^^xsd:double .'''.
 
 
 ###  https://purl.org/emi#hasPathwayProbability
 emi:hasPathwayProbability rdf:type owl:DatatypeProperty ;
                           rdfs:subPropertyOf emi:hasProbability ;
                           rdfs:domain emi:ChemicalTaxonAnnotation ;
-                          rdfs:range xsd:double .
+                          rdfs:range xsd:double ;
+             vann:example 
+'''@prefix : <https://purl.org/emi/abox#> .
+@prefix emi: <https://purl.org/emi#> .
+:CANOPUS-mzspec%3AMSV000087728%3AVGF147_E06_features_ms2_neg.mgf%3Ascan%3A45 rdf:type emi:ChemicalTaxonAnnotation ;
+            emi:hasPathwayProbability "0.5601769685745239"^^xsd:double .'''.
 
 
 ###  https://purl.org/emi#hasProbability
 emi:hasProbability rdf:type owl:DatatypeProperty ;
                    rdfs:range xsd:double ;
-                   rdfs:label "has probability" .
+                   rdfs:label "has probability" ;
+             vann:example 
+'''@prefix : <https://purl.org/emi/abox#> .
+@prefix emi: <https://purl.org/emi#> .
+:CANOPUS-mzspec%3AMSV000087728%3AVGF147_E06_features_ms2_neg.mgf%3Ascan%3A45 rdf:type emi:ChemicalTaxonAnnotation ;
+            emi:hasProbability "0.5601769685745239"^^xsd:double .'''.
 
 
 ###  https://purl.org/emi#hasRawSpectrum
 emi:hasRawSpectrum rdf:type owl:DatatypeProperty ;
                    rdfs:domain emi:LCMSFeature ;
-                   rdfs:range xsd:string .
+                   rdfs:range xsd:string ;
+                   rdfs:comment "The raw spectrum of a LCMS individual MS2 spectrum. Its value is a tuple of binary tuples (see vann:example).";
+             vann:example 
+'''@prefix emi: <https://purl.org/emi#> .
+@prefix usi: <https://metabolomics-usi.ucsd.edu/dashinterface/?usi1=> .
+usi:mzspec%3AMSV000087728%3AVGF153_A02_features_ms2_neg.mgf%3Ascan%3A356 rdf:type emi:LCMSFeature ;
+            emi:hasRawSpectrum "((58.7747, 0.034375), (107.3847, 0.0453125), (177.2855, 0.0375), (185.9186, 0.0375), (243.0295, 0.484375), (257.0457, 0.21875), (270.0167, 0.0765625), (271.0244, 0.4375), (285.0398, 0.359375), (300.028, 0.15625), (313.0341, 0.171875), (314.0425, 1.0), (315.0507, 0.640625), (551.4942, 0.0453125), (619.0516, 0.0375), (675.5888, 0.0421875))" .'''.
 
 
 ###  https://purl.org/emi#hasRelativeFeatureArea
 emi:hasRelativeFeatureArea rdf:type owl:DatatypeProperty ;
                            rdfs:domain emi:LCMSFeature ;
                            rdfs:range xsd:double ;
-                           rdfs:label "has relative feature area" .
+                           rdfs:label "has relative feature area" ;
+                           rdfs:comment "The relative feature area of a LCMS individual MS2 spectrum.";
+                     vann:example 
+'''@prefix emi: <https://purl.org/emi#> .
+@prefix usi: <https://metabolomics-usi.ucsd.edu/dashinterface/?usi1=> .
+usi:mzspec%3AMSV000087728%3AVGF153_A02_features_ms2_neg.mgf%3Ascan%3A356 rdf:type emi:LCMSFeature ;
+            emi:hasRelativeFeatureArea "0.0004294112935902454"^^xsd:double .'''.
 
 
 ###  https://purl.org/emi#hasRetentionTime
 emi:hasRetentionTime rdf:type owl:DatatypeProperty ;
                      rdfs:domain emi:LCMSFeature ;
                      rdfs:range xsd:double ;
-                     rdfs:label "has retention time" .
+                     rdfs:label "has retention time" ;
+                     rdfs:comment "The retention time of a LCMS individual MS2 spectrum." ;
+                     vann:example 
+'''@prefix emi: <https://purl.org/emi#> .
+@prefix usi: <https://metabolomics-usi.ucsd.edu/dashinterface/?usi1=> .
+usi:mzspec%3AMSV000087728%3AVGF153_A02_features_ms2_neg.mgf%3Ascan%3A356 rdf:type emi:LCMSFeature ;
+            emi:hasRetentionTime "7.663716666666667"^^xsd:double .'''.
 
 
 ###  https://purl.org/emi#hasRowId
 emi:hasRowId rdf:type owl:DatatypeProperty ;
              rdfs:domain emi:LCMSFeature ;
              rdfs:range xsd:integer ;
-             rdfs:label "has row id" .
+             rdfs:label "has row id" ;
+             rdfs:comment "The row id of a LCMS individual MS2 spectrum." ;
+             vann:example 
+'''@prefix emi: <https://purl.org/emi#> .
+@prefix usi: <https://metabolomics-usi.ucsd.edu/dashinterface/?usi1=> .
+usi:mzspec%3AMSV000087728%3AVGF153_A02_features_ms2_neg.mgf%3Ascan%3A356 rdf:type emi:LCMSFeature ;
+            emi:hasRowId "356"^^xsd:integer .'''.
 
 
 ###  https://purl.org/emi#hasSMILES
@@ -512,7 +729,12 @@ emi:hasScore rdf:type owl:DatatypeProperty ;
                                          emi:StructuralAnnotation
                                        )
                          ] ;
-             rdfs:label "has score" .
+             rdfs:label "has score" ;
+             vann:example 
+'''@prefix emi: <https://purl.org/emi#> .
+@prefix : <https://purl.org/emi/abox#> .
+:spec2vec_doc_mzspec%3AMSV000087728%3AVGF153_A02_features_ms2_neg.mgf%3Ascan%3A356 rdf:type emi:Spec2VecDoc ;
+            emi:hasSpec2VecValue "271.02"^^xsd:double .'''.
 
 
 ###  https://purl.org/emi#hasSpec2VecLoss
@@ -520,7 +742,13 @@ emi:hasSpec2VecLoss rdf:type owl:DatatypeProperty ;
                     rdfs:subPropertyOf emi:hasSpec2VecValue ;
                     rdfs:domain emi:Spec2VecDoc ;
                     rdfs:range xsd:double ;
-                    rdfs:label "has spec2vec loss" .
+                    rdfs:label "has spec2vec loss" ;
+                    rdfs:comment "The Spec2Vec losses of a Spec2Vec document." ;
+                    vann:example 
+'''@prefix emi: <https://purl.org/emi#> .
+@prefix : <https://purl.org/emi/abox#> .
+:spec2vec_doc_mzspec%3AMSV000087728%3AVGF153_A02_features_ms2_neg.mgf%3Ascan%3A356 rdf:type emi:Spec2VecDoc ;
+            emi:hasSpec2VecLoss "157.86"^^xsd:double .'''.
 
 
 ###  https://purl.org/emi#hasSpec2VecPeak
@@ -528,7 +756,13 @@ emi:hasSpec2VecPeak rdf:type owl:DatatypeProperty ;
                     rdfs:subPropertyOf emi:hasSpec2VecValue ;
                     rdfs:domain emi:Spec2VecDoc ;
                     rdfs:range xsd:double ;
-                    rdfs:label "has spec2vec peak" .
+                    rdfs:label "has spec2vec peak" ;
+                    rdfs:comment "The Spec2Vec peaks of a Spec2Vec document." ;
+                    vann:example 
+'''@prefix emi: <https://purl.org/emi#> .
+@prefix : <https://purl.org/emi/abox#> .
+:spec2vec_doc_mzspec%3AMSV000087728%3AVGF153_A02_features_ms2_neg.mgf%3Ascan%3A356 rdf:type emi:Spec2VecDoc ;
+            emi:hasSpec2VecPeak "271.02"^^xsd:double .'''.
 
 
 ###  https://purl.org/emi#hasSpec2VecValue
@@ -537,7 +771,12 @@ emi:hasSpec2VecValue rdf:type owl:DatatypeProperty ;
                      rdfs:domain emi:Spec2VecDoc ;
                      rdfs:range xsd:double ;
                      rdfs:comment "A mass spectral similarity scoring through learning of structural relationships. Spec2vec is a novel spectral similarity score inspired by a natural language processing algorithm -- Word2Vec. Where Word2Vec learns relationships between words in sentences, spec2vec does so for mass fragments and neutral losses in MS/MS spectra. The spectral similarity score is based on spectral embeddings learnt from the fragmental relationships within a large set of spectral data. Analysis and benchmarking of mass spectra similarity measures using gnps data set." ;
-                     rdfs:label "has spec2vec value" .
+                     rdfs:label "has spec2vec value" ;
+                    vann:example 
+'''@prefix emi: <https://purl.org/emi#> .
+@prefix : <https://purl.org/emi/abox#> .
+:spec2vec_doc_mzspec%3AMSV000087728%3AVGF153_A02_features_ms2_neg.mgf%3Ascan%3A356 rdf:type emi:Spec2VecDoc ;
+            emi:hasSpec2VecValue "271.02"^^xsd:double .'''.
 
 
 ###  https://purl.org/emi#hasSpectralScore
@@ -554,7 +793,12 @@ emi:hasSpectralScore rdf:type owl:DatatypeProperty ;
 emi:hasSuperClassProbability rdf:type owl:DatatypeProperty ;
                              rdfs:subPropertyOf emi:hasProbability ;
                              rdfs:domain emi:ChemicalTaxonAnnotation ;
-                             rdfs:range xsd:double .
+                             rdfs:range xsd:double ;
+             vann:example 
+'''@prefix : <https://purl.org/emi/abox#> .
+@prefix emi: <https://purl.org/emi#> .
+:CANOPUS-mzspec%3AMSV000087728%3AVGF147_E06_features_ms2_neg.mgf%3Ascan%3A45 rdf:type emi:ChemicalTaxonAnnotation ;
+            emi:hasSuperClassProbability "0.34501510858535767"^^xsd:double .'''.
 
 
 ###  https://purl.org/emi#hasTaxoScore
@@ -578,7 +822,12 @@ emi:hasUSI rdf:type owl:DatatypeProperty ;
                        ] ;
            rdfs:range xsd:string ;
            rdfs:comment "The universal spectrum identifier provided by GNPS." ;
-           rdfs:label "has universal spectrum identifier" .
+           rdfs:label "has universal spectrum identifier" ;
+           vann:example 
+'''@prefix emi: <https://purl.org/emi#> .
+@prefix usi: <https://metabolomics-usi.ucsd.edu/dashinterface/?usi1=> .
+usi:mzspec%3AMSV000087728%3AVGF153_A02_features_ms2_neg.mgf%3Ascan%3A356 rdf:type emi:LCMSFeature ;
+            emi:hasUSI "mzspec:MSV000087728:VGF153_A02_features_ms2_neg.mgf:scan:356" .'''.
 
 
 ###  https://purl.org/emi#hasZodiacScore
@@ -718,7 +967,11 @@ emi:ChemicalTaxonAnnotation rdf:type owl:Class ;
                             rdfs:subClassOf emi:SpectrumAnnotation ;
                             owl:disjointWith emi:StructuralAnnotation ;
                             rdfs:comment "This class is used to annotate a spectrum feature with a chemical taxon. Prefer the Chemical structure annotation class, if the annotation is mainly to assign a chemical representation structure as defined in the emi:ChemicalStructure." ;
-                            rdfs:label "Chemical taxon annotation" .
+                            rdfs:label "Chemical taxon annotation" ;
+                            vann:example 
+'''@prefix : <https://purl.org/emi/abox#> .
+@prefix emi: <https://purl.org/emi#> .
+:CANOPUS-mzspec%3AMSV000087728%3AVGF147_E06_features_ms2_neg.mgf%3Ascan%3A45 rdf:type emi:ChemicalTaxonAnnotation .'''.
 
 
 ###  https://purl.org/emi#ComputationalAnalysis
@@ -825,13 +1078,21 @@ emi:LCMSAnalysisPos rdf:type owl:Class ;
 emi:LCMSFeature rdf:type owl:Class ;
                 rdfs:subClassOf emi:MS2Spectrum ;
                 rdfs:comment "An LCMS feature from a processed LCMS analysis. Recommendation: instances of this class are ideally built as follows: \"https://metabolomics-usi.ucsd.edu/dashinterface/?usi1={id}\" (e.g., https://metabolomics-usi.ucsd.edu/dashinterface/?usi1=mzspec:MSV000090090:DBGI_01_04_001_features_ms2_pos.mgf:scan:1)" ;
-                rdfs:label "LCMS individual MS2 spectrum" .
+                rdfs:label "LCMS individual MS2 spectrum" ;
+                vann:example 
+'''@prefix emi: <https://purl.org/emi#> .
+@prefix usi: <https://metabolomics-usi.ucsd.edu/dashinterface/?usi1=> .
+usi:mzspec%3AMSV000087728%3AVGF153_A02_features_ms2_neg.mgf%3Ascan%3A356 rdf:type emi:LCMSFeature .'''.
 
 
 ###  https://purl.org/emi#LCMSFeatureSet
 emi:LCMSFeatureSet rdf:type owl:Class ;
                    rdfs:comment "A set of Liquid chromatography–mass spectrometry (LCMS) features obtained from the processing of a given LCMS analysis" ;
-                   rdfs:label "LCMS feature set" .
+                   rdfs:label "LCMS feature set" ;
+                vann:example 
+'''@prefix : <https://purl.org/emi/abox#> .
+@prefix emi: <https://purl.org/emi#> .
+:VGF153_A02_lcms_feature_list_neg rdf:type emi:LCMSFeatureSet .'''.
 
 
 ###  https://purl.org/emi#LFpair
@@ -851,7 +1112,12 @@ emi:LabObject rdf:type owl:Class ;
 ###  https://purl.org/emi#MS2Spectrum
 emi:MS2Spectrum rdf:type owl:Class ;
                 rdfs:comment "A fragmentation mass spectrometry (or MS2) spectrum" ;
-                rdfs:label "MS2 spectrum" .
+                rdfs:label "MS2 spectrum" ;
+                vann:example 
+'''@prefix : <https://purl.org/emi/abox#> .
+@prefix emi: <https://purl.org/emi#> .
+@prefix usi: <https://metabolomics-usi.ucsd.edu/dashinterface/?usi1=> .
+usi:mzspec%3AMSV000087728%3AVGF153_A02_features_ms2_neg.mgf%3Ascan%3A356 rdf:type emi:MS2Spectrum .'''.
 
 
 ###  https://purl.org/emi#Organism
@@ -916,7 +1182,11 @@ emi:SpectrumAnnotation rdf:type owl:Class ;
                                          owl:allValuesFrom emi:Analysis
                                        ] ;
                        rdfs:comment "A spectral annotation" ;
-                       rdfs:label "Spectrum annotation" .
+                       rdfs:label "Spectrum annotation" ;
+             vann:example 
+'''@prefix : <https://purl.org/emi/abox#> .
+@prefix emi: <https://purl.org/emi#> .
+:CANOPUS-mzspec%3AMSV000087728%3AVGF147_E06_features_ms2_neg.mgf%3Ascan%3A45 rdf:type emi:SpectrumAnnotation .'''.
 
 
 ###  https://purl.org/emi#StructuralAnnotation
