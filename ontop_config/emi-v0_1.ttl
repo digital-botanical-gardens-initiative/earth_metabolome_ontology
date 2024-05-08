@@ -32,10 +32,10 @@
                                     <http://www.w3.org/ns/prov-o-20130430> ,
                                     sosa: ,
                                     <https://purl.org/npc> ;
-                        dcterms:contributor <http://orcid.org/0000-0001-9292-9463> ,
-                                            <http://orcid.org/0000-0002-3648-7362> ,
-                                            <http://orcid.org/0000-0002-9619-1707> ,
-                                            <http://orcid.org/0000-0003-3389-2191> ,
+                        dcterms:contributor <https://orcid.org/0000-0001-9292-9463> ,
+                                            <https://orcid.org/0000-0002-3648-7362> ,
+                                            <https://orcid.org/0000-0002-9619-1707> ,
+                                            <https://orcid.org/0000-0003-3389-2191> ,
                                             <https://orcid.org/0000-0002-1269-2038> ,
                                             <https://orcid.org/0000-0002-3175-5372> ,
                                             <https://orcid.org/0000-0003-3213-4495> ;
@@ -69,13 +69,13 @@ Other metabolomics data are structured with specific EMI classes such as emi:Che
 
 <https://orcid.org/0000-0002-3175-5372> foaf:name "Tarcisio Mendes de Farias"@en ;
   org:memberOf <https://www.sib.swiss> .
-<http://orcid.org/0000-0001-9292-9463> foaf:name "Marco Pagni"@en ;
+<https://orcid.org/0000-0001-9292-9463> foaf:name "Marco Pagni"@en ;
   org:memberOf <https://www.sib.swiss> .
-<http://orcid.org/0000-0002-3648-7362> foaf:name "Arnaud Gaudry"@en ;
+<https://orcid.org/0000-0002-3648-7362> foaf:name "Arnaud Gaudry"@en ;
   org:memberOf <https://www.unige.ch> .
-<http://orcid.org/0000-0002-9619-1707> foaf:name "Florence Mehl"@en ;
+<https://orcid.org/0000-0002-9619-1707> foaf:name "Florence Mehl"@en ;
   org:memberOf <https://www.sib.swiss> .
-<http://orcid.org/0000-0003-3389-2191> foaf:name "Pierre-Marie Allard"@en ;
+<https://orcid.org/0000-0003-3389-2191> foaf:name "Pierre-Marie Allard"@en ;
   org:memberOf <https://www.unifr.ch> .
 <https://orcid.org/0000-0002-1269-2038> foaf:name "Luca Cappelletti"@en ;
   org:memberOf <https://www.unifr.ch> .

@@ -45,7 +45,7 @@
                         vann:preferredNamespacePrefix "emi" ;
                         vann:preferredNamespaceUri <https://purl.org/emi#> ;
                         owl:versionInfo "0.1" ;
-                        dcterms:modified "2024-04-25"^^xsd:date ;
+                        dcterms:modified "2024-05-08"^^xsd:date ;
                         dcterms:issue "2024-04-03"^^xsd:date ;
                         dcterms:creator <https://orcid.org/0000-0002-3175-5372> ;
                         dcterms:created "2023-11-02"^^xsd:date ;
@@ -55,6 +55,7 @@
                         bibo:status <http://purl.org/ontology/bibo/status/draft> ;
                         rdfs:seeAlso <https://enpkg.commons-lab.org/doc/index.html>, <https://bioschemas.org>, <https://schema.org> ;
                         sdo:codeRepository "https://github.com/digital-botanical-gardens-initiative/earth_metabolome_ontology"^^xsd:anyURI ;
+                        dcterms:bibliographicCitation '''The Earth Metabolome Initiative Consortium. The Earth Metabolome Initiative (EMI) ontology. Revision: 0.1. Retrieved from: https://purl.org/emi/version/0.1''' ;
                         widoco:introduction 
 '''The Earth Metabolome Initiative (EMI) ontology replaces the Experimental Natural Products Knowledge Graph [(ENPKG) vocabulary]( https://enpkg.commons-lab.org/doc/index.html). The EMI ontology is used to structure spectrum annotation provenance by reusing the [PROV-O ontology](https://www.w3.org/TR/prov-o/) (a W3C recommendation) and sample and observation data by applying the [SOSA ontology](https://www.w3.org/TR/vocab-ssn/). EMI reuses the SOSA ontology as a data schema for struturing the Sample and Observation data. SOSA (Sensor, Observation, Sample, and Actuator) is a subset of SSN (Semantic Sensor Network Ontology) that is a W3C recommendation. Although, the SSN was developed with ontology engineers in mind as the primary audience. They addressed changes in scope and audience that currently also includes scientific observations that may make heavy use of sampling strategies, and, therefore, the Sampling, Sampler, and Sample classes, as well as their corresponding properties, have been added to SOSA and SSN. Chemical taxonomy is also highly structure in EMI by relying on a taxonomy derived from NPClassifier (i.e., EMI imports [Natural Product Classifier vocabulary](https://purl.org/npc)). This taxonomy was defined for EMI with the [SKOS vocabulary](https://www.w3.org/TR/skos-reference). Indeed, it is an SKOS-based vocabulary for the structural classification of natural products. The skos:broder term is used to represent the hierarchy among Classes, Superclasses and Pathways.  npc:Class, npc:Superclass and npc:Pathway are subclasses of skos:Concept. rdfs:label is assigned for each term of the taxonomy that are instances of one of the subclasses of skos:Concept.
 
@@ -202,7 +203,7 @@ sosa:isResultOf  vann:example
                                   sosa:isResultOf :VGF153_A02_neg.mzXML .
 :VGF153_A02_neg.mzXML rdf:type emi:LCMSAnalysisNeg, emi:LCMSAnalysis, sosa:Observation .'''.
 
-sosa:isResultOf  vann:example 
+sosa:hasResult  vann:example 
 '''@prefix : <https://purl.org/emi/abox#> .
 @prefix emi: <https://purl.org/emi#> .
 @prefix sosa: <http://www.w3.org/ns/sosa/> .
@@ -326,7 +327,15 @@ emi:hasInChIKey rdf:type owl:ObjectProperty ;
                 owl:propertyChainAxiom ( emi:hasChemicalStructure
                                          emi:isInChIKey2DOf
                                        ) ;
-                rdfs:label "has InChIKey" .
+                rdfs:label "has InChIKey"  ;
+                rdfs:comment "It can be used to assign an InChIKey either to a chemical or to an spectrum annotation." ;
+             vann:example 
+'''@prefix : <https://purl.org/emi/abox#> .
+@prefix emi: <https://purl.org/emi#> .
+@prefix wd: <http://www.wikidata.org/entity/> .
+wd:Q27145340 rdf:type emi:Chemical ;
+            dcterms:identifier "Q27145340" ;
+            emi:hasInChIKey :ZCCLDKGWJIREQF-PDBXOOCHSA-N .'''.
 
 
 ###  https://purl.org/emi#hasInChIKey2D
@@ -336,7 +345,14 @@ emi:hasInChIKey2D rdf:type owl:ObjectProperty ;
                   rdf:type owl:FunctionalProperty ;
                   rdfs:domain emi:InChIKey ;
                   rdfs:range emi:InChIKey2D ;
-                  rdfs:label "has InChIKey2D" .
+                  rdfs:label "has InChIKey2D" ;
+                rdfs:comment "It can be used to represent the InChIKey2D of an emi:InChIKey that is chemical structure." ;
+             vann:example 
+'''@prefix : <https://purl.org/emi/abox#> .
+@prefix emi: <https://purl.org/emi#> .
+@prefix wd: <http://www.wikidata.org/entity/> .
+:ZCCLDKGWJIREQF-PDBXOOCHSA-N  rdf:type emi:InChIKey ;
+            emi:hasInChIKey2D :ZCCLDKGWJIREQF .'''.
 
 
 ###  https://purl.org/emi#hasLCMS
@@ -392,7 +408,7 @@ emi:hasMassiveDOI rdf:type owl:ObjectProperty ;
                   rdfs:domain emi:LCMSAnalysis ;
                   rdfs:comment "It assigns a Massive repository DOI to a LCMS Analysis." ;
                   rdfs:label "has Massive DOI." ;
-                   vann:example 
+                  vann:example 
 '''@prefix emi: <https://purl.org/emi#> .
 @prefix : <https://purl.org/emi/abox#> .
 @prefix usi: <https://metabolomics-usi.ucsd.edu/dashinterface/?usi1=> .
@@ -417,7 +433,14 @@ emi:hasPathway rdf:type owl:ObjectProperty ;
                                          )
                            ] ;
                rdfs:range npc:Pathway ;
-               rdfs:label "has pathway" .
+               rdfs:label "has pathway" ;
+               vann:example 
+'''@prefix emi: <https://purl.org/emi#> .
+@prefix : <https://purl.org/emi/abox#> .
+@prefix npc: <https://purl.org/npc#> .
+:CANOPUS-mzspec%3AMSV000087728%3AVGF147_E06_features_ms2_neg.mgf%3Ascan%3A45 rdf:type emi:ChemicalTaxonAnnotation ;
+            emi:hasPathway npc:TERPENOIDS .'''.
+
 
 
 ###  https://purl.org/emi#hasSecondMember
@@ -466,7 +489,13 @@ emi:hasSuperClass rdf:type owl:ObjectProperty ;
                                             )
                               ] ;
                   rdfs:range npc:Superclass ;
-                  rdfs:label "has super class" .
+                  rdfs:label "has super class" ;
+                  vann:example 
+'''@prefix emi: <https://purl.org/emi#> .
+@prefix : <https://purl.org/emi/abox#> .
+@prefix npc: <https://purl.org/npc#> .
+:CANOPUS-mzspec%3AMSV000087728%3AVGF147_E06_features_ms2_neg.mgf%3Ascan%3A45 rdf:type emi:ChemicalTaxonAnnotation ;
+            emi:hasSuperClass npc:SESQUITERPENOIDS .'''.
 
 
 ###  https://purl.org/emi#inTaxon
@@ -498,7 +527,16 @@ emi:isInChIKey2DOf rdf:type owl:ObjectProperty ,
                             owl:InverseFunctionalProperty ;
                    rdfs:domain emi:InChIKey2D ;
                    rdfs:range emi:InChIKey ;
-                   rdfs:label "is InChIKey2D of" .
+                   rdfs:label "is InChIKey2D of" ;
+                rdfs:comment "It can be used to assign an InChIKey2D to an InChIKey that represents a chemical structure." ;
+                vann:example 
+'''@prefix : <https://purl.org/emi/abox#> .
+@prefix emi: <https://purl.org/emi#> .
+@prefix wd: <http://www.wikidata.org/entity/> .
+:ZCCLDKGWJIREQF-PDBXOOCHSA-N rdf:type emi:InChIKey2D ;
+            emi:isInChIKey2DOf :ZCCLDKGWJIREQF ;
+            rdfs:label "ZCCLDKGWJIREQF" .
+:ZCCLDKGWJIREQF-PDBXOOCHSA-N rdf:type emi:InChIKey. '''.
 
 
 ###  https://purl.org/emi#isInChIKeyOf
@@ -509,7 +547,15 @@ emi:isInChIKeyOf rdf:type owl:ObjectProperty ;
                                             emi:SpectrumAnnotation
                                           )
                             ] ;
-                 rdfs:label "is InChIKey of" .
+                 rdfs:label "is InChIKey of" ;
+                 vann:example 
+'''@prefix : <https://purl.org/emi/abox#> .
+@prefix emi: <https://purl.org/emi#> .
+@prefix wd: <http://www.wikidata.org/entity/> .
+@prefix dcterms: < http://purl.org/dc/terms/> .
+wd:Q27145340 rdf:type emi:Chemical ;
+             dcterms:identifier "Q27145340" .
+ :ZCCLDKGWJIREQF-PDBXOOCHSA-N  emi:isInChIKeyOf wd:Q27145340 . '''.
 
 
 ###  https://purl.org/emi#source
@@ -874,9 +920,30 @@ emi:spectrumLink rdf:type owl:DatatypeProperty ,
 #################################################################
 #    Classes
 #################################################################
+sosa:Observation vann:example 
+'''@prefix : <https://purl.org/emi/abox#> .
+@prefix sosa: <http://www.w3.org/ns/sosa/> .
+:VGF138_A02_neg.mzXML rdf:type sosa:Observation .'''.
 
-###  http://org.semanticweb.owlapi/error#Error1
-<http://org.semanticweb.owlapi/error#Error1> rdf:type owl:Class .
+emi:LCMSAnalysis vann:example 
+'''@prefix : <https://purl.org/emi/abox#> .
+@prefix emi: <https://purl.org/emi#> .
+:VGF138_A02_neg.mzXML rdf:type emi:LCMSAnalysis .'''.
+
+emi:Analysis vann:example 
+'''@prefix : <https://purl.org/emi/abox#> .
+@prefix emi: <https://purl.org/emi#> .
+:VGF138_A02_neg.mzXML rdf:type emi:Analysis .'''.
+
+emi::LCMSAnalysisNeg vann:example 
+'''@prefix : <https://purl.org/emi/abox#> .
+@prefix emi: <https://purl.org/emi#> .
+:VGF138_A02_neg.mzXML rdf:type emi::LCMSAnalysisNeg .'''.
+
+emi::LCMSAnalysisPos vann:example 
+'''@prefix : <https://purl.org/emi/abox#> .
+@prefix emi: <https://purl.org/emi#> .
+:VGF138_A02_pos.mzXML rdf:type emi::LCMSAnalysisPos .'''.
 
 
 ###  http://www.wikidata.org/entity/Q16521
@@ -925,7 +992,12 @@ emi:BioassayAnalysis rdf:type owl:Class ;
 emi:Blank rdf:type owl:Class ;
           rdfs:subClassOf sosa:Sample ;
           rdfs:comment "A blank sample" ;
-          rdfs:label "Blank sample" .
+          rdfs:label "Blank sample" ;
+          vann:example 
+'''@prefix : <https://purl.org/emi/abox#> .
+@prefix emi: <https://purl.org/emi#> .
+:VGF138_A12 rdf:type emi:Blank ;
+            dcterms:identifier "VGF138_A12" .'''.
 
 
 ###  https://purl.org/emi#CSpair
@@ -939,7 +1011,16 @@ emi:CSpair rdf:type owl:Class ;
 emi:Chemical rdf:type owl:Class ;
              rdfs:subClassOf emi:ChemicalEntity ;
              rdfs:comment "A chemical. Recommendation: the instances of this class are ideally Wikidata chemical entries. If it is not a Wikidata entry we recommend to be as much as possible consistent in the whole dataset. Metadata can also be provided in order to describe the provenance of the instance (a chemical), for example, by stating the property prov-o:wasDerivedFrom (PROV-Ontology)." ;
-             rdfs:label "Chemical" .
+             rdfs:label "Chemical" ;
+             vann:example 
+'''@prefix : <https://purl.org/emi/abox#> .
+@prefix emi: <https://purl.org/emi#> .
+@prefix wd: <http://www.wikidata.org/entity/> .
+@prefix dcterms: < http://purl.org/dc/terms/> .
+wd:Q27145340 rdf:type emi:Chemical ;
+            dcterms:identifier "Q27145340" ;
+            emi:hasInChIKey :ZCCLDKGWJIREQF-PDBXOOCHSA-N ;
+            rdfs:label "ZCCLDKGWJIREQF-PDBXOOCHSA-N" .'''.
 
 
 ###  https://purl.org/emi#ChemicalEntity
