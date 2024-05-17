@@ -64,7 +64,7 @@ SOSA reuse. We consider a Mass Spectrometer as a sosa:Platform. The MS detector 
 We can classify each Specimen by using some Specimen taxonomy, for example, [specimenType](https://isamplesorg.github.io/models/generated/vocabularies/specimenType.html) that relies on SKOS. Moreover, we can also classify a sample with an external material taxonomy (e.g.,  [materialType](https://isamplesorg.github.io/models/generated/vocabularies/materialType.html#organicmaterial)). The raw material (emi:RawMaterial) is also a sosa:sample. In case it is needed to describe the "Mass Spectrometer" as a sampler too, we can apply the sosa:Sampler class to define it. The sampling process resuts on subsamples (e.g., emi:Aliquot). The extracted sample can be classified with an external taxonomy (e.g., an Specimen taxonomy) with the term emi:isClassifiedWith.
 
 Other metabolomics data are structured with specific EMI classes such as emi:ChemicalStrucutre for represeting molecules, emi:MS2Spectrum for the mass spectrometry (MS2 spectra), emi:LCMSFeatureSet that represents features obtained from the processing of a given LCMS analysis, please refer to classes and properties descriptions. ''' ;
-                        #sdo:image <> ;
+                        sdo:image <http://www.dbgi.org/earth_metabolome_ontology/images/EMI-diagram.png> ;
                         foaf:logo <https://kg.earthmetabolome.org/static/img/logo.svg> 
                         .
 
