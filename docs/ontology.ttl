@@ -34,6 +34,7 @@
                         <http://purl.org/vocab/vann/preferredNamespacePrefix> "emi" ;
                         <http://purl.org/vocab/vann/preferredNamespaceUri> : ;
                         <http://schema.org/codeRepository> "https://github.com/digital-botanical-gardens-initiative/earth_metabolome_ontology"^^xsd:anyURI ;
+                        <http://schema.org/image> <http://www.dbgi.org/earth_metabolome_ontology/images/EMI-diagram.png> ;
                         rdfs:seeAlso <https://bioschemas.org> ,
                                      <https://schema.org> ,
                                      <https://enpkg.commons-lab.org/doc/index.html> ;
@@ -129,6 +130,10 @@ Other metabolomics data are structured with specific EMI classes such as emi:Che
 
 ###  http://schema.org/domainIncludes
 <http://schema.org/domainIncludes> rdf:type owl:AnnotationProperty .
+
+
+###  http://schema.org/image
+<http://schema.org/image> rdf:type owl:AnnotationProperty .
 
 
 ###  http://schema.org/rangeIncludes

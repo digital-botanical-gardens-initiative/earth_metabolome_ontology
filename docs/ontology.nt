@@ -26,6 +26,7 @@
 <https://purl.org/emi> <http://purl.org/vocab/vann/preferredNamespacePrefix> "emi" .
 <https://purl.org/emi> <http://purl.org/vocab/vann/preferredNamespaceUri> <https://purl.org/emi#> .
 <https://purl.org/emi> <http://schema.org/codeRepository> "https://github.com/digital-botanical-gardens-initiative/earth_metabolome_ontology"^^<http://www.w3.org/2001/XMLSchema#anyURI> .
+<https://purl.org/emi> <http://schema.org/image> <http://www.dbgi.org/earth_metabolome_ontology/images/EMI-diagram.png> .
 <https://purl.org/emi> <http://www.w3.org/2000/01/rdf-schema#seeAlso> <https://bioschemas.org> .
 <https://purl.org/emi> <http://www.w3.org/2000/01/rdf-schema#seeAlso> <https://schema.org> .
 <https://purl.org/emi> <http://www.w3.org/2000/01/rdf-schema#seeAlso> <https://enpkg.commons-lab.org/doc/index.html> .
@@ -100,6 +101,9 @@
 # 
 # http://schema.org/domainIncludes
 <http://schema.org/domainIncludes> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://schema.org/image
+<http://schema.org/image> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
 # 
 # http://schema.org/rangeIncludes
 <http://schema.org/rangeIncludes> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .

@@ -573,6 +573,9 @@
   "@id" : "http://schema.org/domainIncludes",
   "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
 }, {
+  "@id" : "http://schema.org/image",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
   "@id" : "http://schema.org/rangeIncludes",
   "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
 }, {
@@ -5506,6 +5509,9 @@
   "http://schema.org/codeRepository" : [ {
     "@type" : "http://www.w3.org/2001/XMLSchema#anyURI",
     "@value" : "https://github.com/digital-botanical-gardens-initiative/earth_metabolome_ontology"
+  } ],
+  "http://schema.org/image" : [ {
+    "@id" : "http://www.dbgi.org/earth_metabolome_ontology/images/EMI-diagram.png"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#seeAlso" : [ {
     "@id" : "https://bioschemas.org"
