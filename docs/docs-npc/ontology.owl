@@ -19,17 +19,17 @@
         <terms:abstract>An SKOS-based OWL ontology for the structural classification of natural products derived from the NPClassifier tool. This OWL ontology was generated with the script in [scripts folder](scripts/natural_product_taxonomy).</terms:abstract>
         <terms:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2023-06-08</terms:created>
         <terms:creator rdf:resource="https://orcid.org/0000-0002-3175-5372"/>
-        <terms:description>A natural product taxonomony derived from the NPClassifier tool.</terms:description>
+        <terms:description>A natural product taxonomy derived from the NPClassifier tool.</terms:description>
         <terms:issue rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2023-06-14</terms:issue>
         <terms:license rdf:resource="https://creativecommons.org/publicdomain/zero/1.0/"/>
         <terms:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2024-05-21</terms:modified>
-        <terms:title>The natural product taxonomony.</terms:title>
+        <terms:title>The natural product taxonomy.</terms:title>
         <bibo:status rdf:resource="http://purl.org/ontology/bibo/status/draft"/>
         <vann:preferredNamespacePrefix>npc</vann:preferredNamespacePrefix>
         <vann:preferredNamespaceUri>https://purl.org/npc#</vann:preferredNamespaceUri>
         <schema:codeRepository rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://github.com/digital-botanical-gardens-initiative/earth_metabolome_ontology</schema:codeRepository>
         <owl:versionInfo>0.1</owl:versionInfo>
-        <vocab:instrocution> This taxonomy is structured with the SKOS vocabulary. skos:broder is used to represent the hierarchy among Classes, Superclasses and Pathways.  npc:Class, npc:Superclass and npc:Pathway are subclasses of skos:Concept. rdfs:label is assigned for each term of the taxonomy that are instances of one of the subclasses of skos:Concept.</vocab:instrocution>
+        <vocab:introduction>This taxonomy is structured with the SKOS vocabulary. skos:broder is used to represent the hierarchy among Classes, Superclasses and Pathways.  npc:Class, npc:Superclass and npc:Pathway are subclasses of skos:Concept. rdfs:label is assigned for each term of the taxonomy that are instances of one of the subclasses of skos:Concept.</vocab:introduction>
     </owl:Ontology>
     
 
@@ -259,10 +259,10 @@
     
 
 
-    <!-- https://w3id.org/widoco/vocab#instrocution -->
+    <!-- https://w3id.org/widoco/vocab#introduction -->
 
 
-    <owl:AnnotationProperty rdf:about="https://w3id.org/widoco/vocab#instrocution"/>
+    <owl:AnnotationProperty rdf:about="https://w3id.org/widoco/vocab#introduction"/>
     
 
 
@@ -637,6 +637,13 @@
     
 
 
+    <!-- http://xmlns.com/foaf/0.1/Person -->
+
+
+    <owl:Class rdf:about="http://xmlns.com/foaf/0.1/Person"/>
+    
+
+
     <!-- https://purl.org/npc#Class -->
 
 
@@ -689,6 +696,17 @@
         <rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Organization"/>
         <foaf:homepage>https://www.sib.swiss</foaf:homepage>
         <foaf:name xml:lang="en">SIB Swiss Institute of Bioinformatics</foaf:name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://orcid.org/0000-0002-3175-5372 -->
+
+
+    <owl:NamedIndividual rdf:about="https://orcid.org/0000-0002-3175-5372">
+        <rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+        <org:memberOf rdf:resource="https://www.sib.swiss"/>
+        <foaf:name xml:lang="en">Tarcisio Mendes de Farias</foaf:name>
     </owl:NamedIndividual>
     
 
@@ -9194,22 +9212,6 @@
         <skos:broader rdf:resource="https://purl.org/npc#TROPOLONES"/>
         <rdfs:label>Tropolones and derivatives (Shikimate)</rdfs:label>
     </owl:NamedIndividual>
-    
-
-
-    <!-- 
-    ///////////////////////////////////////////////////////////////////////////////////////
-    //
-    // Annotations
-    //
-    ///////////////////////////////////////////////////////////////////////////////////////
-     -->
-
-
-    <rdf:Description rdf:about="https://orcid.org/0000-0002-3175-5372">
-        <org:memberOf rdf:resource="https://www.sib.swiss"/>
-        <foaf:name xml:lang="en">Tarcisio Mendes de Farias</foaf:name>
-    </rdf:Description>
 </rdf:RDF>
 
 

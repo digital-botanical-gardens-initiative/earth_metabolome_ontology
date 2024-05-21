@@ -4,13 +4,13 @@
     "languages" : [ "en", "undefined" ],
     "baseIris" : [ "https://purl.org/npc", "http://www.w3.org/1999/02/22-rdf-syntax-ns", "http://www.w3.org/2000/01/rdf-schema", "http://www.w3.org/2001/XMLSchema", "http://xmlns.com/foaf/0.1", "http://www.w3.org/2004/02/skos/core" ],
     "title" : {
-      "undefined" : "The natural product taxonomony."
+      "undefined" : "The natural product taxonomy."
     },
     "iri" : "https://purl.org/npc",
     "version" : "0.1",
     "author" : [ "https://orcid.org/0000-0002-3175-5372" ],
     "description" : {
-      "undefined" : "A natural product taxonomony derived from the NPClassifier tool."
+      "undefined" : "A natural product taxonomy derived from the NPClassifier tool."
     },
     "other" : {
       "creator" : [ {
@@ -31,22 +31,22 @@
         "value" : "2023-06-08",
         "type" : "label"
       } ],
-      "abstract" : [ {
-        "identifier" : "abstract",
-        "language" : "undefined",
-        "value" : "An SKOS-based OWL ontology for the structural classification of natural products derived from the NPClassifier tool. This OWL ontology was generated with the script in [scripts folder](scripts/natural_product_taxonomy).",
-        "type" : "label"
-      } ],
       "versionInfo" : [ {
         "identifier" : "versionInfo",
         "language" : "undefined",
         "value" : "0.1",
         "type" : "label"
       } ],
+      "abstract" : [ {
+        "identifier" : "abstract",
+        "language" : "undefined",
+        "value" : "An SKOS-based OWL ontology for the structural classification of natural products derived from the NPClassifier tool. This OWL ontology was generated with the script in [scripts folder](scripts/natural_product_taxonomy).",
+        "type" : "label"
+      } ],
       "title" : [ {
         "identifier" : "title",
         "language" : "undefined",
-        "value" : "The natural product taxonomony.",
+        "value" : "The natural product taxonomy.",
         "type" : "label"
       } ],
       "license" : [ {
@@ -79,10 +79,10 @@
         "value" : "https://purl.org/npc#",
         "type" : "label"
       } ],
-      "instrocution" : [ {
-        "identifier" : "instrocution",
+      "introduction" : [ {
+        "identifier" : "introduction",
         "language" : "undefined",
-        "value" : " This taxonomy is structured with the SKOS vocabulary. skos:broder is used to represent the hierarchy among Classes, Superclasses and Pathways.  npc:Class, npc:Superclass and npc:Pathway are subclasses of skos:Concept. rdfs:label is assigned for each term of the taxonomy that are instances of one of the subclasses of skos:Concept.",
+        "value" : "This taxonomy is structured with the SKOS vocabulary. skos:broder is used to represent the hierarchy among Classes, Superclasses and Pathways.  npc:Class, npc:Superclass and npc:Pathway are subclasses of skos:Concept. rdfs:label is assigned for each term of the taxonomy that are instances of one of the subclasses of skos:Concept.",
         "type" : "label"
       } ],
       "status" : [ {
@@ -95,13 +95,13 @@
   },
   "namespace" : [ ],
   "class" : [ {
-    "id" : "5",
+    "id" : "1",
     "type" : "owl:Class"
   }, {
     "id" : "18",
     "type" : "owl:unionOf"
   }, {
-    "id" : "1",
+    "id" : "7",
     "type" : "owl:Thing"
   }, {
     "id" : "11",
@@ -122,7 +122,7 @@
     "id" : "32",
     "type" : "owl:Class"
   }, {
-    "id" : "2",
+    "id" : "8",
     "type" : "owl:Class"
   }, {
     "id" : "19",
@@ -132,6 +132,9 @@
     "type" : "owl:Class"
   }, {
     "id" : "34",
+    "type" : "owl:Class"
+  }, {
+    "id" : "37",
     "type" : "owl:Class"
   } ],
   "classAttribute" : [ {
@@ -175,16 +178,16 @@
     } ],
     "subClasses" : [ "14", "15", "16" ],
     "attributes" : [ "external" ],
-    "id" : "5"
+    "id" : "1"
   }, {
     "instances" : 0,
-    "union" : [ "19", "5" ],
-    "attributes" : [ "union", "anonymous" ],
+    "union" : [ "19", "1" ],
+    "attributes" : [ "anonymous", "union" ],
     "id" : "18"
   }, {
     "iri" : "http://www.w3.org/2002/07/owl#Thing",
     "baseIri" : "http://owl2vowl.de",
-    "id" : "1",
+    "id" : "7",
     "label" : {
       "undefined" : "Thing"
     }
@@ -264,18 +267,18 @@
         "undefined" : "Alkaloids"
       }
     }, {
-      "iri" : "https://purl.org/npc#AMINO_ACIDS_AND_PEPTIDES",
-      "baseIri" : "https://purl.org/npc",
-      "labels" : {
-        "IRI-based" : "AMINO_ACIDS_AND_PEPTIDES",
-        "undefined" : "Amino acids and Peptides"
-      }
-    }, {
       "iri" : "https://purl.org/npc#FATTY_ACIDS",
       "baseIri" : "https://purl.org/npc",
       "labels" : {
         "IRI-based" : "FATTY_ACIDS",
         "undefined" : "Fatty acids"
+      }
+    }, {
+      "iri" : "https://purl.org/npc#AMINO_ACIDS_AND_PEPTIDES",
+      "baseIri" : "https://purl.org/npc",
+      "labels" : {
+        "IRI-based" : "AMINO_ACIDS_AND_PEPTIDES",
+        "undefined" : "Amino acids and Peptides"
       }
     }, {
       "iri" : "https://purl.org/npc#POLYKETIDES",
@@ -310,7 +313,7 @@
       "undefined" : "The highest level of a hierarchical chemical structure classification such as those defined with the NPClassifier, a deep-learning tool for the automated structural classification of natural products (NP) from their counted Morgan fingerprints. The Pathways of NPClassifier consist of seven categories: fatty acids, polyketides, shikimates–phenylpropanoids, terpenoids, alkaloids, amino acids/peptides, and carbohydrates."
     },
     "id" : "15",
-    "superClasses" : [ "5" ]
+    "superClasses" : [ "1" ]
   }, {
     "iri" : "https://purl.org/npc#Superclass",
     "baseIri" : "https://purl.org/npc",
@@ -341,18 +344,18 @@
         "undefined" : "Anthranilic acid alkaloids"
       }
     }, {
-      "iri" : "https://purl.org/npc#FLAVONOIDS",
-      "baseIri" : "https://purl.org/npc",
-      "labels" : {
-        "IRI-based" : "FLAVONOIDS",
-        "undefined" : "Flavonoids"
-      }
-    }, {
       "iri" : "https://purl.org/npc#SMALL_PEPTIDES",
       "baseIri" : "https://purl.org/npc",
       "labels" : {
         "IRI-based" : "SMALL_PEPTIDES",
         "undefined" : "Small peptides"
+      }
+    }, {
+      "iri" : "https://purl.org/npc#FLAVONOIDS",
+      "baseIri" : "https://purl.org/npc",
+      "labels" : {
+        "IRI-based" : "FLAVONOIDS",
+        "undefined" : "Flavonoids"
       }
     }, {
       "iri" : "https://purl.org/npc#CAROTENOIDS_%28C45%29",
@@ -383,13 +386,6 @@
         "undefined" : "Phenylethanoids (C6-C2)"
       }
     }, {
-      "iri" : "https://purl.org/npc#FATTY_ESTERS",
-      "baseIri" : "https://purl.org/npc",
-      "labels" : {
-        "IRI-based" : "FATTY_ESTERS",
-        "undefined" : "Fatty esters"
-      }
-    }, {
       "iri" : "https://purl.org/npc#PHENYLPROPANOIDS_%28C6-C3%29",
       "baseIri" : "https://purl.org/npc",
       "labels" : {
@@ -402,6 +398,13 @@
       "labels" : {
         "IRI-based" : "NAPHTHALENES",
         "undefined" : "Naphthalenes"
+      }
+    }, {
+      "iri" : "https://purl.org/npc#FATTY_ESTERS",
+      "baseIri" : "https://purl.org/npc",
+      "labels" : {
+        "IRI-based" : "FATTY_ESTERS",
+        "undefined" : "Fatty esters"
       }
     }, {
       "iri" : "https://purl.org/npc#SERINE_ALKALOIDS",
@@ -446,18 +449,18 @@
         "undefined" : "Terphenyls"
       }
     }, {
-      "iri" : "https://purl.org/npc#PSEUDOALKALOIDS",
-      "baseIri" : "https://purl.org/npc",
-      "labels" : {
-        "IRI-based" : "PSEUDOALKALOIDS",
-        "undefined" : "Pseudoalkaloids"
-      }
-    }, {
       "iri" : "https://purl.org/npc#XANTHONES",
       "baseIri" : "https://purl.org/npc",
       "labels" : {
         "IRI-based" : "XANTHONES",
         "undefined" : "Xanthones"
+      }
+    }, {
+      "iri" : "https://purl.org/npc#PSEUDOALKALOIDS",
+      "baseIri" : "https://purl.org/npc",
+      "labels" : {
+        "IRI-based" : "PSEUDOALKALOIDS",
+        "undefined" : "Pseudoalkaloids"
       }
     }, {
       "iri" : "https://purl.org/npc#STEROIDS",
@@ -467,18 +470,18 @@
         "undefined" : "Steroids"
       }
     }, {
-      "iri" : "https://purl.org/npc#SESQUITERPENOIDS",
-      "baseIri" : "https://purl.org/npc",
-      "labels" : {
-        "IRI-based" : "SESQUITERPENOIDS",
-        "undefined" : "Sesquiterpenoids"
-      }
-    }, {
       "iri" : "https://purl.org/npc#GUANIDINE_ALKALOIDS",
       "baseIri" : "https://purl.org/npc",
       "labels" : {
         "IRI-based" : "GUANIDINE_ALKALOIDS",
         "undefined" : "Guanidine alkaloids"
+      }
+    }, {
+      "iri" : "https://purl.org/npc#SESQUITERPENOIDS",
+      "baseIri" : "https://purl.org/npc",
+      "labels" : {
+        "IRI-based" : "SESQUITERPENOIDS",
+        "undefined" : "Sesquiterpenoids"
       }
     }, {
       "iri" : "https://purl.org/npc#CAROTENOIDS_%28C40%29",
@@ -516,11 +519,11 @@
         "undefined" : "Diterpenoids"
       }
     }, {
-      "iri" : "https://purl.org/npc#STYRYLPYRONES",
+      "iri" : "https://purl.org/npc#TETRAMATE_ALKALOIDS",
       "baseIri" : "https://purl.org/npc",
       "labels" : {
-        "IRI-based" : "STYRYLPYRONES",
-        "undefined" : "Styrylpyrones"
+        "IRI-based" : "TETRAMATE_ALKALOIDS",
+        "undefined" : "Tetramate alkaloids"
       }
     }, {
       "iri" : "https://purl.org/npc#GLYCEROPHOSPHOLIPIDS",
@@ -530,11 +533,11 @@
         "undefined" : "Glycerophospholipids"
       }
     }, {
-      "iri" : "https://purl.org/npc#TETRAMATE_ALKALOIDS",
+      "iri" : "https://purl.org/npc#STYRYLPYRONES",
       "baseIri" : "https://purl.org/npc",
       "labels" : {
-        "IRI-based" : "TETRAMATE_ALKALOIDS",
-        "undefined" : "Tetramate alkaloids"
+        "IRI-based" : "STYRYLPYRONES",
+        "undefined" : "Styrylpyrones"
       }
     }, {
       "iri" : "https://purl.org/npc#MYCOSPORINE_DERIVATIVES",
@@ -572,13 +575,6 @@
         "undefined" : "γ-lactam-β-lactones"
       }
     }, {
-      "iri" : "https://purl.org/npc#LINEAR_POLYKETIDES",
-      "baseIri" : "https://purl.org/npc",
-      "labels" : {
-        "IRI-based" : "LINEAR_POLYKETIDES",
-        "undefined" : "Linear polyketides"
-      }
-    }, {
       "iri" : "https://purl.org/npc#OLIGOPEPTIDES",
       "baseIri" : "https://purl.org/npc",
       "labels" : {
@@ -586,11 +582,11 @@
         "undefined" : "Oligopeptides"
       }
     }, {
-      "iri" : "https://purl.org/npc#CHROMANES",
+      "iri" : "https://purl.org/npc#LINEAR_POLYKETIDES",
       "baseIri" : "https://purl.org/npc",
       "labels" : {
-        "IRI-based" : "CHROMANES",
-        "undefined" : "Chromanes"
+        "IRI-based" : "LINEAR_POLYKETIDES",
+        "undefined" : "Linear polyketides"
       }
     }, {
       "iri" : "https://purl.org/npc#SACCHARIDES",
@@ -598,6 +594,13 @@
       "labels" : {
         "IRI-based" : "SACCHARIDES",
         "undefined" : "Saccharides"
+      }
+    }, {
+      "iri" : "https://purl.org/npc#CHROMANES",
+      "baseIri" : "https://purl.org/npc",
+      "labels" : {
+        "IRI-based" : "CHROMANES",
+        "undefined" : "Chromanes"
       }
     }, {
       "iri" : "https://purl.org/npc#AROMATIC_POLYKETIDES",
@@ -642,18 +645,18 @@
         "undefined" : "Fatty Acids and Conjugates"
       }
     }, {
-      "iri" : "https://purl.org/npc#NICOTINIC_ACID_ALKALOIDS",
-      "baseIri" : "https://purl.org/npc",
-      "labels" : {
-        "IRI-based" : "NICOTINIC_ACID_ALKALOIDS",
-        "undefined" : "Nicotinic acid alkaloids"
-      }
-    }, {
       "iri" : "https://purl.org/npc#PHENANTHRENOIDS",
       "baseIri" : "https://purl.org/npc",
       "labels" : {
         "IRI-based" : "PHENANTHRENOIDS",
         "undefined" : "Phenanthrenoids"
+      }
+    }, {
+      "iri" : "https://purl.org/npc#NICOTINIC_ACID_ALKALOIDS",
+      "baseIri" : "https://purl.org/npc",
+      "labels" : {
+        "IRI-based" : "NICOTINIC_ACID_ALKALOIDS",
+        "undefined" : "Nicotinic acid alkaloids"
       }
     }, {
       "iri" : "https://purl.org/npc#APOCAROTENOIDS",
@@ -663,11 +666,11 @@
         "undefined" : "Apocarotenoids"
       }
     }, {
-      "iri" : "https://purl.org/npc#SESTERTERPENOIDS",
+      "iri" : "https://purl.org/npc#EICOSANOIDS",
       "baseIri" : "https://purl.org/npc",
       "labels" : {
-        "IRI-based" : "SESTERTERPENOIDS",
-        "undefined" : "Sesterterpenoids"
+        "IRI-based" : "EICOSANOIDS",
+        "undefined" : "Eicosanoids"
       }
     }, {
       "iri" : "https://purl.org/npc#SPINGOLIPIDS",
@@ -677,11 +680,11 @@
         "undefined" : "Spingolipids"
       }
     }, {
-      "iri" : "https://purl.org/npc#EICOSANOIDS",
+      "iri" : "https://purl.org/npc#SESTERTERPENOIDS",
       "baseIri" : "https://purl.org/npc",
       "labels" : {
-        "IRI-based" : "EICOSANOIDS",
-        "undefined" : "Eicosanoids"
+        "IRI-based" : "SESTERTERPENOIDS",
+        "undefined" : "Sesterterpenoids"
       }
     }, {
       "iri" : "https://purl.org/npc#NUCLEOSIDES",
@@ -719,18 +722,18 @@
         "undefined" : "Tropolones"
       }
     }, {
-      "iri" : "https://purl.org/npc#PHLOROGLUCINOLS",
-      "baseIri" : "https://purl.org/npc",
-      "labels" : {
-        "IRI-based" : "PHLOROGLUCINOLS",
-        "undefined" : "Phloroglucinols"
-      }
-    }, {
       "iri" : "https://purl.org/npc#FATTY_ACYLS",
       "baseIri" : "https://purl.org/npc",
       "labels" : {
         "IRI-based" : "FATTY_ACYLS",
         "undefined" : "Fatty acyls"
+      }
+    }, {
+      "iri" : "https://purl.org/npc#PHLOROGLUCINOLS",
+      "baseIri" : "https://purl.org/npc",
+      "labels" : {
+        "IRI-based" : "PHLOROGLUCINOLS",
+        "undefined" : "Phloroglucinols"
       }
     }, {
       "iri" : "https://purl.org/npc#DIPHENYL_ETHERS_%28DPES%29",
@@ -782,13 +785,6 @@
         "undefined" : "Miscellaneous alkaloids"
       }
     }, {
-      "iri" : "https://purl.org/npc#TYROSINE_ALKALOIDS",
-      "baseIri" : "https://purl.org/npc",
-      "labels" : {
-        "IRI-based" : "TYROSINE_ALKALOIDS",
-        "undefined" : "Tyrosine alkaloids"
-      }
-    }, {
       "iri" : "https://purl.org/npc#HISTIDINE_ALKALOIDS",
       "baseIri" : "https://purl.org/npc",
       "labels" : {
@@ -801,6 +797,13 @@
       "labels" : {
         "IRI-based" : "TRYPTOPHAN_ALKALOIDS",
         "undefined" : "Tryptophan alkaloids"
+      }
+    }, {
+      "iri" : "https://purl.org/npc#TYROSINE_ALKALOIDS",
+      "baseIri" : "https://purl.org/npc",
+      "labels" : {
+        "IRI-based" : "TYROSINE_ALKALOIDS",
+        "undefined" : "Tyrosine alkaloids"
       }
     }, {
       "iri" : "https://purl.org/npc#GLYCEROLIPIDS",
@@ -817,18 +820,18 @@
         "undefined" : "Miscellaneous polyketides"
       }
     }, {
-      "iri" : "https://purl.org/npc#AMINO_ACID_GLYCOSIDES",
-      "baseIri" : "https://purl.org/npc",
-      "labels" : {
-        "IRI-based" : "AMINO_ACID_GLYCOSIDES",
-        "undefined" : "Amino acid glycosides"
-      }
-    }, {
       "iri" : "https://purl.org/npc#LYSINE_ALKALOIDS",
       "baseIri" : "https://purl.org/npc",
       "labels" : {
         "IRI-based" : "LYSINE_ALKALOIDS",
         "undefined" : "Lysine alkaloids"
+      }
+    }, {
+      "iri" : "https://purl.org/npc#AMINO_ACID_GLYCOSIDES",
+      "baseIri" : "https://purl.org/npc",
+      "labels" : {
+        "IRI-based" : "AMINO_ACID_GLYCOSIDES",
+        "undefined" : "Amino acid glycosides"
       }
     }, {
       "iri" : "https://purl.org/npc#PROLINE_ALKALOIDS",
@@ -856,7 +859,7 @@
       "undefined" : "The Superclasses represent subcategories within the Pathways. The categories in the Superclass originate from the general classes of metabolites (e.g., flavonoids, meroterpenoids, or steroids), the general chemical or molecular shapes (e.g., chromanes, phloroglucinols, or macrolides), or biosynthetic information (e.g., tryptophan alkaloids, aromatic polyketides, or pseudo alkaloids)."
     },
     "id" : "16",
-    "superClasses" : [ "5" ]
+    "superClasses" : [ "1" ]
   }, {
     "iri" : "http://xmlns.com/foaf/0.1/Organization",
     "baseIri" : "http://xmlns.com/foaf/0.1",
@@ -949,7 +952,7 @@
       }
     } ],
     "attributes" : [ "external" ],
-    "id" : "2"
+    "id" : "8"
   }, {
     "iri" : "http://www.w3.org/2004/02/skos/core#Collection",
     "baseIri" : "http://www.w3.org/2004/02/skos/core",
@@ -1033,18 +1036,18 @@
         "undefined" : "Carbazole alkaloids"
       }
     }, {
-      "iri" : "https://purl.org/npc#CYANOGENIC_GLYCOSIDES",
-      "baseIri" : "https://purl.org/npc",
-      "labels" : {
-        "IRI-based" : "CYANOGENIC_GLYCOSIDES",
-        "undefined" : "Cyanogenic glycosides"
-      }
-    }, {
       "iri" : "https://purl.org/npc#XENICANE_DITERPENOIDS",
       "baseIri" : "https://purl.org/npc",
       "labels" : {
         "IRI-based" : "XENICANE_DITERPENOIDS",
         "undefined" : "Xenicane diterpenoids"
+      }
+    }, {
+      "iri" : "https://purl.org/npc#CYANOGENIC_GLYCOSIDES",
+      "baseIri" : "https://purl.org/npc",
+      "labels" : {
+        "IRI-based" : "CYANOGENIC_GLYCOSIDES",
+        "undefined" : "Cyanogenic glycosides"
       }
     }, {
       "iri" : "https://purl.org/npc#DOLICHOLS",
@@ -1082,18 +1085,18 @@
         "undefined" : "Ericamycins"
       }
     }, {
-      "iri" : "https://purl.org/npc#NEUROFURANS",
-      "baseIri" : "https://purl.org/npc",
-      "labels" : {
-        "IRI-based" : "NEUROFURANS",
-        "undefined" : "Neurofurans"
-      }
-    }, {
       "iri" : "https://purl.org/npc#DUCLAUXIN_AND_DERIVATIVES",
       "baseIri" : "https://purl.org/npc",
       "labels" : {
         "IRI-based" : "DUCLAUXIN_AND_DERIVATIVES",
         "undefined" : "Duclauxin and derivatives"
+      }
+    }, {
+      "iri" : "https://purl.org/npc#NEUROFURANS",
+      "baseIri" : "https://purl.org/npc",
+      "labels" : {
+        "IRI-based" : "NEUROFURANS",
+        "undefined" : "Neurofurans"
       }
     }, {
       "iri" : "https://purl.org/npc#MORPHINAN_ALKALOIDS",
@@ -1103,18 +1106,18 @@
         "undefined" : "Morphinan alkaloids"
       }
     }, {
-      "iri" : "https://purl.org/npc#AMINOSUGARS",
-      "baseIri" : "https://purl.org/npc",
-      "labels" : {
-        "IRI-based" : "AMINOSUGARS",
-        "undefined" : "Aminosugars"
-      }
-    }, {
       "iri" : "https://purl.org/npc#CAROTENOIDS_%28C50%2C_%CE%93-%CE%93%29",
       "baseIri" : "https://purl.org/npc",
       "labels" : {
         "IRI-based" : "CAROTENOIDS_%28C50%2C_%CE%93-%CE%93%29",
         "undefined" : "Carotenoids (C50, γ-γ)"
+      }
+    }, {
+      "iri" : "https://purl.org/npc#AMINOSUGARS",
+      "baseIri" : "https://purl.org/npc",
+      "labels" : {
+        "IRI-based" : "AMINOSUGARS",
+        "undefined" : "Aminosugars"
       }
     }, {
       "iri" : "https://purl.org/npc#BACTOPRENOLS",
@@ -1145,18 +1148,18 @@
         "undefined" : "Protoilludane sesquiterpenoids"
       }
     }, {
-      "iri" : "https://purl.org/npc#GLYCEROPHOSPHATES",
-      "baseIri" : "https://purl.org/npc",
-      "labels" : {
-        "IRI-based" : "GLYCEROPHOSPHATES",
-        "undefined" : "Glycerophosphates"
-      }
-    }, {
       "iri" : "https://purl.org/npc#LATHYRANE_DITERPENOIDS",
       "baseIri" : "https://purl.org/npc",
       "labels" : {
         "IRI-based" : "LATHYRANE_DITERPENOIDS",
         "undefined" : "Lathyrane diterpenoids"
+      }
+    }, {
+      "iri" : "https://purl.org/npc#GLYCEROPHOSPHATES",
+      "baseIri" : "https://purl.org/npc",
+      "labels" : {
+        "IRI-based" : "GLYCEROPHOSPHATES",
+        "undefined" : "Glycerophosphates"
       }
     }, {
       "iri" : "https://purl.org/npc#ILLUDALANE_SESQUITERPENOIDS",
@@ -1243,11 +1246,11 @@
         "undefined" : "Obtusane diterpenoids"
       }
     }, {
-      "iri" : "https://purl.org/npc#DECALINS_WITH_2-PYRONES",
+      "iri" : "https://purl.org/npc#OTHER_INDOLE_DIKETOPIPERAZINE_ALKALOIDS",
       "baseIri" : "https://purl.org/npc",
       "labels" : {
-        "IRI-based" : "DECALINS_WITH_2-PYRONES",
-        "undefined" : "Decalins with 2-pyrones"
+        "IRI-based" : "OTHER_INDOLE_DIKETOPIPERAZINE_ALKALOIDS",
+        "undefined" : "Other indole diketopiperazine alkaloids"
       }
     }, {
       "iri" : "https://purl.org/npc#QUINOLINE_ALKALOIDS",
@@ -1257,18 +1260,11 @@
         "undefined" : "Quinoline alkaloids"
       }
     }, {
-      "iri" : "https://purl.org/npc#OTHER_INDOLE_DIKETOPIPERAZINE_ALKALOIDS",
+      "iri" : "https://purl.org/npc#DECALINS_WITH_2-PYRONES",
       "baseIri" : "https://purl.org/npc",
       "labels" : {
-        "IRI-based" : "OTHER_INDOLE_DIKETOPIPERAZINE_ALKALOIDS",
-        "undefined" : "Other indole diketopiperazine alkaloids"
-      }
-    }, {
-      "iri" : "https://purl.org/npc#OXAZOLE_ALKALOIDS",
-      "baseIri" : "https://purl.org/npc",
-      "labels" : {
-        "IRI-based" : "OXAZOLE_ALKALOIDS",
-        "undefined" : "Oxazole alkaloids"
+        "IRI-based" : "DECALINS_WITH_2-PYRONES",
+        "undefined" : "Decalins with 2-pyrones"
       }
     }, {
       "iri" : "https://purl.org/npc#SELAGINELLINS",
@@ -1283,6 +1279,13 @@
       "labels" : {
         "IRI-based" : "METHYL_XANTHONES",
         "undefined" : "Methyl xanthones"
+      }
+    }, {
+      "iri" : "https://purl.org/npc#OXAZOLE_ALKALOIDS",
+      "baseIri" : "https://purl.org/npc",
+      "labels" : {
+        "IRI-based" : "OXAZOLE_ALKALOIDS",
+        "undefined" : "Oxazole alkaloids"
       }
     }, {
       "iri" : "https://purl.org/npc#DIALKYLRESORCINOLS",
@@ -1369,18 +1372,18 @@
         "undefined" : "Apocarotenoids (C30, Ψ-Ψ)"
       }
     }, {
-      "iri" : "https://purl.org/npc#ABEOTAXANE_DITERPENOIDS",
-      "baseIri" : "https://purl.org/npc",
-      "labels" : {
-        "IRI-based" : "ABEOTAXANE_DITERPENOIDS",
-        "undefined" : "Abeotaxane diterpenoids"
-      }
-    }, {
       "iri" : "https://purl.org/npc#LACTONES",
       "baseIri" : "https://purl.org/npc",
       "labels" : {
         "IRI-based" : "LACTONES",
         "undefined" : "Lactones"
+      }
+    }, {
+      "iri" : "https://purl.org/npc#ABEOTAXANE_DITERPENOIDS",
+      "baseIri" : "https://purl.org/npc",
+      "labels" : {
+        "IRI-based" : "ABEOTAXANE_DITERPENOIDS",
+        "undefined" : "Abeotaxane diterpenoids"
       }
     }, {
       "iri" : "https://purl.org/npc#CINNAMIC_ACID_AMIDES",
@@ -1411,18 +1414,18 @@
         "undefined" : "Bisabolane sesquiterpenoids"
       }
     }, {
-      "iri" : "https://purl.org/npc#COPAANE_SESQUITERPENOIDS",
-      "baseIri" : "https://purl.org/npc",
-      "labels" : {
-        "IRI-based" : "COPAANE_SESQUITERPENOIDS",
-        "undefined" : "Copaane sesquiterpenoids"
-      }
-    }, {
       "iri" : "https://purl.org/npc#CAROTENOIDS_%28C50%2C_%CE%92-%CE%A8%29",
       "baseIri" : "https://purl.org/npc",
       "labels" : {
         "IRI-based" : "CAROTENOIDS_%28C50%2C_%CE%92-%CE%A8%29",
         "undefined" : "Carotenoids (C50, β-Ψ)"
+      }
+    }, {
+      "iri" : "https://purl.org/npc#COPAANE_SESQUITERPENOIDS",
+      "baseIri" : "https://purl.org/npc",
+      "labels" : {
+        "IRI-based" : "COPAANE_SESQUITERPENOIDS",
+        "undefined" : "Copaane sesquiterpenoids"
       }
     }, {
       "iri" : "https://purl.org/npc#SIMPLE_PHENOLIC_ACIDS",
@@ -1432,18 +1435,18 @@
         "undefined" : "Simple phenolic acids"
       }
     }, {
-      "iri" : "https://purl.org/npc#PAULOMYCINS_AND_DERIVATIVES",
-      "baseIri" : "https://purl.org/npc",
-      "labels" : {
-        "IRI-based" : "PAULOMYCINS_AND_DERIVATIVES",
-        "undefined" : "Paulomycins and derivatives"
-      }
-    }, {
       "iri" : "https://purl.org/npc#LINEAR_DIARYLHEPTANOIDS",
       "baseIri" : "https://purl.org/npc",
       "labels" : {
         "IRI-based" : "LINEAR_DIARYLHEPTANOIDS",
         "undefined" : "Linear diarylheptanoids"
+      }
+    }, {
+      "iri" : "https://purl.org/npc#PAULOMYCINS_AND_DERIVATIVES",
+      "baseIri" : "https://purl.org/npc",
+      "labels" : {
+        "IRI-based" : "PAULOMYCINS_AND_DERIVATIVES",
+        "undefined" : "Paulomycins and derivatives"
       }
     }, {
       "iri" : "https://purl.org/npc#INDOLE-DITERPENOID_ALKALOIDS_%28PENITREMS%29",
@@ -1495,18 +1498,18 @@
         "undefined" : "Abeoabietane diterpenoids"
       }
     }, {
-      "iri" : "https://purl.org/npc#MACROLIDE_LACTAMS",
-      "baseIri" : "https://purl.org/npc",
-      "labels" : {
-        "IRI-based" : "MACROLIDE_LACTAMS",
-        "undefined" : "Macrolide lactams"
-      }
-    }, {
       "iri" : "https://purl.org/npc#SAXITOXINS",
       "baseIri" : "https://purl.org/npc",
       "labels" : {
         "IRI-based" : "SAXITOXINS",
         "undefined" : "Saxitoxins"
+      }
+    }, {
+      "iri" : "https://purl.org/npc#MACROLIDE_LACTAMS",
+      "baseIri" : "https://purl.org/npc",
+      "labels" : {
+        "IRI-based" : "MACROLIDE_LACTAMS",
+        "undefined" : "Macrolide lactams"
       }
     }, {
       "iri" : "https://purl.org/npc#TRINERVITANE_DITERPENOIDS",
@@ -1530,18 +1533,18 @@
         "undefined" : "Tremulane sesquiterpenoids"
       }
     }, {
-      "iri" : "https://purl.org/npc#FERNANE_AND_ARBORINANE_TRITERPENOIDS",
-      "baseIri" : "https://purl.org/npc",
-      "labels" : {
-        "IRI-based" : "FERNANE_AND_ARBORINANE_TRITERPENOIDS",
-        "undefined" : "Fernane and Arborinane triterpenoids"
-      }
-    }, {
       "iri" : "https://purl.org/npc#FLAVONOLIGNANS",
       "baseIri" : "https://purl.org/npc",
       "labels" : {
         "IRI-based" : "FLAVONOLIGNANS",
         "undefined" : "Flavonolignans"
+      }
+    }, {
+      "iri" : "https://purl.org/npc#FERNANE_AND_ARBORINANE_TRITERPENOIDS",
+      "baseIri" : "https://purl.org/npc",
+      "labels" : {
+        "IRI-based" : "FERNANE_AND_ARBORINANE_TRITERPENOIDS",
+        "undefined" : "Fernane and Arborinane triterpenoids"
       }
     }, {
       "iri" : "https://purl.org/npc#PHENYLALANINE-DERIVED_ALKALOIDS",
@@ -1558,18 +1561,18 @@
         "undefined" : "Gymnomitrane sesquiterpenoids"
       }
     }, {
-      "iri" : "https://purl.org/npc#CARABRANE_SESQUITERPENOIDS",
-      "baseIri" : "https://purl.org/npc",
-      "labels" : {
-        "IRI-based" : "CARABRANE_SESQUITERPENOIDS",
-        "undefined" : "Carabrane sesquiterpenoids"
-      }
-    }, {
       "iri" : "https://purl.org/npc#ECDYSTEROIDS",
       "baseIri" : "https://purl.org/npc",
       "labels" : {
         "IRI-based" : "ECDYSTEROIDS",
         "undefined" : "Ecdysteroids"
+      }
+    }, {
+      "iri" : "https://purl.org/npc#CARABRANE_SESQUITERPENOIDS",
+      "baseIri" : "https://purl.org/npc",
+      "labels" : {
+        "IRI-based" : "CARABRANE_SESQUITERPENOIDS",
+        "undefined" : "Carabrane sesquiterpenoids"
       }
     }, {
       "iri" : "https://purl.org/npc#FUSICOCCANE_DITERPENOIDS",
@@ -1593,18 +1596,18 @@
         "undefined" : "Cycloapotirucallane triterpenoids"
       }
     }, {
-      "iri" : "https://purl.org/npc#CAROTENOIDS_%28C50%2C_%CE%95-%CE%95%29",
-      "baseIri" : "https://purl.org/npc",
-      "labels" : {
-        "IRI-based" : "CAROTENOIDS_%28C50%2C_%CE%95-%CE%95%29",
-        "undefined" : "Carotenoids (C50, ε-ε)"
-      }
-    }, {
       "iri" : "https://purl.org/npc#NAGILACTONE_DITERPENOIDS",
       "baseIri" : "https://purl.org/npc",
       "labels" : {
         "IRI-based" : "NAGILACTONE_DITERPENOIDS",
         "undefined" : "Nagilactone diterpenoids"
+      }
+    }, {
+      "iri" : "https://purl.org/npc#CAROTENOIDS_%28C50%2C_%CE%95-%CE%95%29",
+      "baseIri" : "https://purl.org/npc",
+      "labels" : {
+        "IRI-based" : "CAROTENOIDS_%28C50%2C_%CE%95-%CE%95%29",
+        "undefined" : "Carotenoids (C50, ε-ε)"
       }
     }, {
       "iri" : "https://purl.org/npc#ANDROSTANE_STEROIDS",
@@ -1663,11 +1666,25 @@
         "undefined" : "Glycerophosphoethanolamines"
       }
     }, {
+      "iri" : "https://purl.org/npc#MONOMERIC_STILBENES",
+      "baseIri" : "https://purl.org/npc",
+      "labels" : {
+        "IRI-based" : "MONOMERIC_STILBENES",
+        "undefined" : "Monomeric stilbenes"
+      }
+    }, {
       "iri" : "https://purl.org/npc#PENTACYCLIC_GUANIDINE_ALKALOIDS",
       "baseIri" : "https://purl.org/npc",
       "labels" : {
         "IRI-based" : "PENTACYCLIC_GUANIDINE_ALKALOIDS",
         "undefined" : "Pentacyclic guanidine alkaloids"
+      }
+    }, {
+      "iri" : "https://purl.org/npc#FATTY_NITRILES",
+      "baseIri" : "https://purl.org/npc",
+      "labels" : {
+        "IRI-based" : "FATTY_NITRILES",
+        "undefined" : "Fatty nitriles"
       }
     }, {
       "iri" : "https://purl.org/npc#POLYESTERS",
@@ -1677,18 +1694,11 @@
         "undefined" : "Polyesters"
       }
     }, {
-      "iri" : "https://purl.org/npc#MONOMERIC_STILBENES",
+      "iri" : "https://purl.org/npc#COUMARINOLIGNANS",
       "baseIri" : "https://purl.org/npc",
       "labels" : {
-        "IRI-based" : "MONOMERIC_STILBENES",
-        "undefined" : "Monomeric stilbenes"
-      }
-    }, {
-      "iri" : "https://purl.org/npc#FATTY_NITRILES",
-      "baseIri" : "https://purl.org/npc",
-      "labels" : {
-        "IRI-based" : "FATTY_NITRILES",
-        "undefined" : "Fatty nitriles"
+        "IRI-based" : "COUMARINOLIGNANS",
+        "undefined" : "Coumarinolignans"
       }
     }, {
       "iri" : "https://purl.org/npc#3-OLIGOENOYLTETRAMIC_ACIDS",
@@ -1703,13 +1713,6 @@
       "labels" : {
         "IRI-based" : "HYDROXY-HYDROPEROXYEICOSATRIENOIC_ACIDS",
         "undefined" : "Hydroxy-hydroperoxyeicosatrienoic acids"
-      }
-    }, {
-      "iri" : "https://purl.org/npc#COUMARINOLIGNANS",
-      "baseIri" : "https://purl.org/npc",
-      "labels" : {
-        "IRI-based" : "COUMARINOLIGNANS",
-        "undefined" : "Coumarinolignans"
       }
     }, {
       "iri" : "https://purl.org/npc#MISCELLANEOUS_POLYKETIDES_CLASS",
@@ -1768,18 +1771,18 @@
         "undefined" : "Clavulones"
       }
     }, {
-      "iri" : "https://purl.org/npc#SIMPLE_AMIDE_ALKALOIDS",
-      "baseIri" : "https://purl.org/npc",
-      "labels" : {
-        "IRI-based" : "SIMPLE_AMIDE_ALKALOIDS",
-        "undefined" : "Simple amide alkaloids"
-      }
-    }, {
       "iri" : "https://purl.org/npc#HOMOERYTHRINA_ALKALOIDS",
       "baseIri" : "https://purl.org/npc",
       "labels" : {
         "IRI-based" : "HOMOERYTHRINA_ALKALOIDS",
         "undefined" : "Homoerythrina alkaloids"
+      }
+    }, {
+      "iri" : "https://purl.org/npc#SIMPLE_AMIDE_ALKALOIDS",
+      "baseIri" : "https://purl.org/npc",
+      "labels" : {
+        "IRI-based" : "SIMPLE_AMIDE_ALKALOIDS",
+        "undefined" : "Simple amide alkaloids"
       }
     }, {
       "iri" : "https://purl.org/npc#CARBOCYCLIC_FATTY_ACIDS",
@@ -1880,18 +1883,18 @@
         "undefined" : "4-pyrone derivatives"
       }
     }, {
-      "iri" : "https://purl.org/npc#ANSA_MACROLIDES",
-      "baseIri" : "https://purl.org/npc",
-      "labels" : {
-        "IRI-based" : "ANSA_MACROLIDES",
-        "undefined" : "Ansa macrolides"
-      }
-    }, {
       "iri" : "https://purl.org/npc#TETRAHYDROISOQUINOLINE_ALKALOIDS",
       "baseIri" : "https://purl.org/npc",
       "labels" : {
         "IRI-based" : "TETRAHYDROISOQUINOLINE_ALKALOIDS",
         "undefined" : "Tetrahydroisoquinoline alkaloids"
+      }
+    }, {
+      "iri" : "https://purl.org/npc#ANSA_MACROLIDES",
+      "baseIri" : "https://purl.org/npc",
+      "labels" : {
+        "IRI-based" : "ANSA_MACROLIDES",
+        "undefined" : "Ansa macrolides"
       }
     }, {
       "iri" : "https://purl.org/npc#HYDROPEROXY_FATTY_ACIDS",
@@ -2090,18 +2093,18 @@
         "undefined" : "Verticillane diterpenoids"
       }
     }, {
-      "iri" : "https://purl.org/npc#PHTHALIDE_DERIVATIVES",
-      "baseIri" : "https://purl.org/npc",
-      "labels" : {
-        "IRI-based" : "PHTHALIDE_DERIVATIVES",
-        "undefined" : "Phthalide derivatives"
-      }
-    }, {
       "iri" : "https://purl.org/npc#RIPPS-CYANOBACTINS",
       "baseIri" : "https://purl.org/npc",
       "labels" : {
         "IRI-based" : "RIPPS-CYANOBACTINS",
         "undefined" : "RiPPs-Cyanobactins"
+      }
+    }, {
+      "iri" : "https://purl.org/npc#PHTHALIDE_DERIVATIVES",
+      "baseIri" : "https://purl.org/npc",
+      "labels" : {
+        "IRI-based" : "PHTHALIDE_DERIVATIVES",
+        "undefined" : "Phthalide derivatives"
       }
     }, {
       "iri" : "https://purl.org/npc#ISOQUINOLINE_ALKALOIDS",
@@ -2188,13 +2191,6 @@
         "undefined" : "Miscellaneous meroterpenoids"
       }
     }, {
-      "iri" : "https://purl.org/npc#OXASQUALENOIDS",
-      "baseIri" : "https://purl.org/npc",
-      "labels" : {
-        "IRI-based" : "OXASQUALENOIDS",
-        "undefined" : "Oxasqualenoids"
-      }
-    }, {
       "iri" : "https://purl.org/npc#ANTHOCYANIDINS",
       "baseIri" : "https://purl.org/npc",
       "labels" : {
@@ -2202,11 +2198,11 @@
         "undefined" : "Anthocyanidins"
       }
     }, {
-      "iri" : "https://purl.org/npc#AERUGINOSINS",
+      "iri" : "https://purl.org/npc#OXASQUALENOIDS",
       "baseIri" : "https://purl.org/npc",
       "labels" : {
-        "IRI-based" : "AERUGINOSINS",
-        "undefined" : "Aeruginosins"
+        "IRI-based" : "OXASQUALENOIDS",
+        "undefined" : "Oxasqualenoids"
       }
     }, {
       "iri" : "https://purl.org/npc#PYRROLIDINE_ALKALOIDS",
@@ -2214,6 +2210,13 @@
       "labels" : {
         "IRI-based" : "PYRROLIDINE_ALKALOIDS",
         "undefined" : "Pyrrolidine alkaloids"
+      }
+    }, {
+      "iri" : "https://purl.org/npc#AERUGINOSINS",
+      "baseIri" : "https://purl.org/npc",
+      "labels" : {
+        "IRI-based" : "AERUGINOSINS",
+        "undefined" : "Aeruginosins"
       }
     }, {
       "iri" : "https://purl.org/npc#ENEDIYNES",
@@ -2237,6 +2240,13 @@
         "undefined" : "Trachylobane diterpenoids"
       }
     }, {
+      "iri" : "https://purl.org/npc#KAURANE_AND_PHYLLOCLADANE_DITERPENOIDS",
+      "baseIri" : "https://purl.org/npc",
+      "labels" : {
+        "IRI-based" : "KAURANE_AND_PHYLLOCLADANE_DITERPENOIDS",
+        "undefined" : "Kaurane and Phyllocladane diterpenoids"
+      }
+    }, {
       "iri" : "https://purl.org/npc#DEVADARANE_DITERPENOIDS",
       "baseIri" : "https://purl.org/npc",
       "labels" : {
@@ -2249,13 +2259,6 @@
       "labels" : {
         "IRI-based" : "INDOLE_DIKETOPIPERAZINE_ALKALOIDS_%28L-TRP%2C_L-PRO%29",
         "undefined" : "Indole diketopiperazine alkaloids (L-Trp, L-Pro)"
-      }
-    }, {
-      "iri" : "https://purl.org/npc#KAURANE_AND_PHYLLOCLADANE_DITERPENOIDS",
-      "baseIri" : "https://purl.org/npc",
-      "labels" : {
-        "IRI-based" : "KAURANE_AND_PHYLLOCLADANE_DITERPENOIDS",
-        "undefined" : "Kaurane and Phyllocladane diterpenoids"
       }
     }, {
       "iri" : "https://purl.org/npc#FUROCOUMARINS",
@@ -2293,20 +2296,6 @@
         "undefined" : "Spriromeroterpenoids"
       }
     }, {
-      "iri" : "https://purl.org/npc#ASPIDOSPERMA-IBOGA_HYBRID_TYPE_%28VINCA_ALKALOIDS%29",
-      "baseIri" : "https://purl.org/npc",
-      "labels" : {
-        "IRI-based" : "ASPIDOSPERMA-IBOGA_HYBRID_TYPE_%28VINCA_ALKALOIDS%29",
-        "undefined" : "Aspidosperma-Iboga hybrid type (Vinca alkaloids)"
-      }
-    }, {
-      "iri" : "https://purl.org/npc#SIMPLE_OXINDOLE_ALKALOIDS",
-      "baseIri" : "https://purl.org/npc",
-      "labels" : {
-        "IRI-based" : "SIMPLE_OXINDOLE_ALKALOIDS",
-        "undefined" : "Simple oxindole alkaloids"
-      }
-    }, {
       "iri" : "https://purl.org/npc#ASBESTINANE_DITERPENOIDS",
       "baseIri" : "https://purl.org/npc",
       "labels" : {
@@ -2314,11 +2303,25 @@
         "undefined" : "Asbestinane diterpenoids"
       }
     }, {
+      "iri" : "https://purl.org/npc#ASPIDOSPERMA-IBOGA_HYBRID_TYPE_%28VINCA_ALKALOIDS%29",
+      "baseIri" : "https://purl.org/npc",
+      "labels" : {
+        "IRI-based" : "ASPIDOSPERMA-IBOGA_HYBRID_TYPE_%28VINCA_ALKALOIDS%29",
+        "undefined" : "Aspidosperma-Iboga hybrid type (Vinca alkaloids)"
+      }
+    }, {
       "iri" : "https://purl.org/npc#PURINE_ALKALOIDS",
       "baseIri" : "https://purl.org/npc",
       "labels" : {
         "IRI-based" : "PURINE_ALKALOIDS",
         "undefined" : "Purine alkaloids"
+      }
+    }, {
+      "iri" : "https://purl.org/npc#SIMPLE_OXINDOLE_ALKALOIDS",
+      "baseIri" : "https://purl.org/npc",
+      "labels" : {
+        "IRI-based" : "SIMPLE_OXINDOLE_ALKALOIDS",
+        "undefined" : "Simple oxindole alkaloids"
       }
     }, {
       "iri" : "https://purl.org/npc#AZO_AND_AZOXY_ALKALOIDS",
@@ -2342,18 +2345,18 @@
         "undefined" : "Iridoids monoterpenoids"
       }
     }, {
-      "iri" : "https://purl.org/npc#ANTHRANILLIC_ACID_DERIVATIVES",
-      "baseIri" : "https://purl.org/npc",
-      "labels" : {
-        "IRI-based" : "ANTHRANILLIC_ACID_DERIVATIVES",
-        "undefined" : "Anthranillic acid derivatives"
-      }
-    }, {
       "iri" : "https://purl.org/npc#CLAVAMS",
       "baseIri" : "https://purl.org/npc",
       "labels" : {
         "IRI-based" : "CLAVAMS",
         "undefined" : "Clavams"
+      }
+    }, {
+      "iri" : "https://purl.org/npc#ANTHRANILLIC_ACID_DERIVATIVES",
+      "baseIri" : "https://purl.org/npc",
+      "labels" : {
+        "IRI-based" : "ANTHRANILLIC_ACID_DERIVATIVES",
+        "undefined" : "Anthranillic acid derivatives"
       }
     }, {
       "iri" : "https://purl.org/npc#LEVUGLANDINS",
@@ -2363,18 +2366,18 @@
         "undefined" : "Levuglandins"
       }
     }, {
-      "iri" : "https://purl.org/npc#ACIDIC_GLYCOSPHINGOLIPIDS",
-      "baseIri" : "https://purl.org/npc",
-      "labels" : {
-        "IRI-based" : "ACIDIC_GLYCOSPHINGOLIPIDS",
-        "undefined" : "Acidic glycosphingolipids"
-      }
-    }, {
       "iri" : "https://purl.org/npc#DIACYLGLYCEROLS",
       "baseIri" : "https://purl.org/npc",
       "labels" : {
         "IRI-based" : "DIACYLGLYCEROLS",
         "undefined" : "Diacylglycerols"
+      }
+    }, {
+      "iri" : "https://purl.org/npc#ACIDIC_GLYCOSPHINGOLIPIDS",
+      "baseIri" : "https://purl.org/npc",
+      "labels" : {
+        "IRI-based" : "ACIDIC_GLYCOSPHINGOLIPIDS",
+        "undefined" : "Acidic glycosphingolipids"
       }
     }, {
       "iri" : "https://purl.org/npc#GLUCOSINOLATES",
@@ -2391,18 +2394,18 @@
         "undefined" : "Germacrane sesquiterpenoids"
       }
     }, {
-      "iri" : "https://purl.org/npc#MYRSINANE_DITERPENOIDS",
-      "baseIri" : "https://purl.org/npc",
-      "labels" : {
-        "IRI-based" : "MYRSINANE_DITERPENOIDS",
-        "undefined" : "Myrsinane diterpenoids"
-      }
-    }, {
       "iri" : "https://purl.org/npc#CYCLOARTANE_TRITERPENOIDS",
       "baseIri" : "https://purl.org/npc",
       "labels" : {
         "IRI-based" : "CYCLOARTANE_TRITERPENOIDS",
         "undefined" : "Cycloartane triterpenoids"
+      }
+    }, {
+      "iri" : "https://purl.org/npc#MYRSINANE_DITERPENOIDS",
+      "baseIri" : "https://purl.org/npc",
+      "labels" : {
+        "IRI-based" : "MYRSINANE_DITERPENOIDS",
+        "undefined" : "Myrsinane diterpenoids"
       }
     }, {
       "iri" : "https://purl.org/npc#LIPOXINS",
@@ -2559,13 +2562,6 @@
         "undefined" : "Zizaane sesquiterpenoids"
       }
     }, {
-      "iri" : "https://purl.org/npc#TETRACYCLIC_DITERPENOIDS",
-      "baseIri" : "https://purl.org/npc",
-      "labels" : {
-        "IRI-based" : "TETRACYCLIC_DITERPENOIDS",
-        "undefined" : "Tetracyclic diterpenoids"
-      }
-    }, {
       "iri" : "https://purl.org/npc#DIBENZYLBUTANE_LIGNANS",
       "baseIri" : "https://purl.org/npc",
       "labels" : {
@@ -2573,11 +2569,11 @@
         "undefined" : "Dibenzylbutane lignans"
       }
     }, {
-      "iri" : "https://purl.org/npc#BUFADIENOLIDES",
+      "iri" : "https://purl.org/npc#TETRACYCLIC_DITERPENOIDS",
       "baseIri" : "https://purl.org/npc",
       "labels" : {
-        "IRI-based" : "BUFADIENOLIDES",
-        "undefined" : "Bufadienolides"
+        "IRI-based" : "TETRACYCLIC_DITERPENOIDS",
+        "undefined" : "Tetracyclic diterpenoids"
       }
     }, {
       "iri" : "https://purl.org/npc#MARESINS",
@@ -2585,6 +2581,13 @@
       "labels" : {
         "IRI-based" : "MARESINS",
         "undefined" : "Maresins"
+      }
+    }, {
+      "iri" : "https://purl.org/npc#BUFADIENOLIDES",
+      "baseIri" : "https://purl.org/npc",
+      "labels" : {
+        "IRI-based" : "BUFADIENOLIDES",
+        "undefined" : "Bufadienolides"
       }
     }, {
       "iri" : "https://purl.org/npc#DOLABELLANE_DITERPENOIDS",
@@ -2615,18 +2618,18 @@
         "undefined" : "Capnellane sesquiterpenoids"
       }
     }, {
-      "iri" : "https://purl.org/npc#CYTOCHALASAN_ALKALOIDS",
-      "baseIri" : "https://purl.org/npc",
-      "labels" : {
-        "IRI-based" : "CYTOCHALASAN_ALKALOIDS",
-        "undefined" : "Cytochalasan alkaloids"
-      }
-    }, {
       "iri" : "https://purl.org/npc#ACETOGENINS",
       "baseIri" : "https://purl.org/npc",
       "labels" : {
         "IRI-based" : "ACETOGENINS",
         "undefined" : "Acetogenins"
+      }
+    }, {
+      "iri" : "https://purl.org/npc#CYTOCHALASAN_ALKALOIDS",
+      "baseIri" : "https://purl.org/npc",
+      "labels" : {
+        "IRI-based" : "CYTOCHALASAN_ALKALOIDS",
+        "undefined" : "Cytochalasan alkaloids"
       }
     }, {
       "iri" : "https://purl.org/npc#PYRROLOQUINOLINE_ALKALOIDS",
@@ -2685,18 +2688,18 @@
         "undefined" : "Dunniane sesquiterpenoids"
       }
     }, {
-      "iri" : "https://purl.org/npc#ASCOMYCINS_AND_RAPAMYCINS",
-      "baseIri" : "https://purl.org/npc",
-      "labels" : {
-        "IRI-based" : "ASCOMYCINS_AND_RAPAMYCINS",
-        "undefined" : "Ascomycins and Rapamycins"
-      }
-    }, {
       "iri" : "https://purl.org/npc#OLIGOMERIC_PHLOROGLUCINOLS_%28PHLOROTANNINS%29",
       "baseIri" : "https://purl.org/npc",
       "labels" : {
         "IRI-based" : "OLIGOMERIC_PHLOROGLUCINOLS_%28PHLOROTANNINS%29",
         "undefined" : "Oligomeric phloroglucinols (phlorotannins)"
+      }
+    }, {
+      "iri" : "https://purl.org/npc#ASCOMYCINS_AND_RAPAMYCINS",
+      "baseIri" : "https://purl.org/npc",
+      "labels" : {
+        "IRI-based" : "ASCOMYCINS_AND_RAPAMYCINS",
+        "undefined" : "Ascomycins and Rapamycins"
       }
     }, {
       "iri" : "https://purl.org/npc#PHENETHYLISOQUINOLINE_ALKALOIDS",
@@ -2790,18 +2793,18 @@
         "undefined" : "Merosesquiterpenoids"
       }
     }, {
-      "iri" : "https://purl.org/npc#JATROPHANE_DITERPENOIDS",
-      "baseIri" : "https://purl.org/npc",
-      "labels" : {
-        "IRI-based" : "JATROPHANE_DITERPENOIDS",
-        "undefined" : "Jatrophane diterpenoids"
-      }
-    }, {
       "iri" : "https://purl.org/npc#NEUTRAL_GLYCOSPHINGOLIPIDS",
       "baseIri" : "https://purl.org/npc",
       "labels" : {
         "IRI-based" : "NEUTRAL_GLYCOSPHINGOLIPIDS",
         "undefined" : "Neutral glycosphingolipids"
+      }
+    }, {
+      "iri" : "https://purl.org/npc#JATROPHANE_DITERPENOIDS",
+      "baseIri" : "https://purl.org/npc",
+      "labels" : {
+        "IRI-based" : "JATROPHANE_DITERPENOIDS",
+        "undefined" : "Jatrophane diterpenoids"
       }
     }, {
       "iri" : "https://purl.org/npc#CAROTENOIDS_%28C40%2C_%CE%93-%CE%A8%29",
@@ -2811,18 +2814,18 @@
         "undefined" : "Carotenoids (C40, γ-Ψ)"
       }
     }, {
-      "iri" : "https://purl.org/npc#NORPIMARANE_AND_NORISOPIMARANE_DITERPENOIDS",
-      "baseIri" : "https://purl.org/npc",
-      "labels" : {
-        "IRI-based" : "NORPIMARANE_AND_NORISOPIMARANE_DITERPENOIDS",
-        "undefined" : "Norpimarane and Norisopimarane diterpenoids"
-      }
-    }, {
       "iri" : "https://purl.org/npc#EREMOPHILANE_SESQUITERPENOIDS",
       "baseIri" : "https://purl.org/npc",
       "labels" : {
         "IRI-based" : "EREMOPHILANE_SESQUITERPENOIDS",
         "undefined" : "Eremophilane sesquiterpenoids"
+      }
+    }, {
+      "iri" : "https://purl.org/npc#NORPIMARANE_AND_NORISOPIMARANE_DITERPENOIDS",
+      "baseIri" : "https://purl.org/npc",
+      "labels" : {
+        "IRI-based" : "NORPIMARANE_AND_NORISOPIMARANE_DITERPENOIDS",
+        "undefined" : "Norpimarane and Norisopimarane diterpenoids"
       }
     }, {
       "iri" : "https://purl.org/npc#FUKINANE_SESQUITERPENOIDS",
@@ -2846,11 +2849,11 @@
         "undefined" : "Steroidal alkaloids"
       }
     }, {
-      "iri" : "https://purl.org/npc#FURANOABIETANE_DITERPENOIDS",
+      "iri" : "https://purl.org/npc#BETAESTACIN-TYPE_SESTERTERPENOIDS",
       "baseIri" : "https://purl.org/npc",
       "labels" : {
-        "IRI-based" : "FURANOABIETANE_DITERPENOIDS",
-        "undefined" : "Furanoabietane diterpenoids"
+        "IRI-based" : "BETAESTACIN-TYPE_SESTERTERPENOIDS",
+        "undefined" : "Betaestacin-type sesterterpenoids"
       }
     }, {
       "iri" : "https://purl.org/npc#SILPHIPERFOLANE_SESQUITERPENOIDS",
@@ -2860,11 +2863,11 @@
         "undefined" : "Silphiperfolane sesquiterpenoids"
       }
     }, {
-      "iri" : "https://purl.org/npc#BETAESTACIN-TYPE_SESTERTERPENOIDS",
+      "iri" : "https://purl.org/npc#FURANOABIETANE_DITERPENOIDS",
       "baseIri" : "https://purl.org/npc",
       "labels" : {
-        "IRI-based" : "BETAESTACIN-TYPE_SESTERTERPENOIDS",
-        "undefined" : "Betaestacin-type sesterterpenoids"
+        "IRI-based" : "FURANOABIETANE_DITERPENOIDS",
+        "undefined" : "Furanoabietane diterpenoids"
       }
     }, {
       "iri" : "https://purl.org/npc#POLYAMINES",
@@ -2895,18 +2898,18 @@
         "undefined" : "Neohopane triterpenoids"
       }
     }, {
-      "iri" : "https://purl.org/npc#EUNICELLANE_DITERPENOIDS",
-      "baseIri" : "https://purl.org/npc",
-      "labels" : {
-        "IRI-based" : "EUNICELLANE_DITERPENOIDS",
-        "undefined" : "Eunicellane diterpenoids"
-      }
-    }, {
       "iri" : "https://purl.org/npc#STEMONA_ALKALOIDS",
       "baseIri" : "https://purl.org/npc",
       "labels" : {
         "IRI-based" : "STEMONA_ALKALOIDS",
         "undefined" : "Stemona alkaloids"
+      }
+    }, {
+      "iri" : "https://purl.org/npc#EUNICELLANE_DITERPENOIDS",
+      "baseIri" : "https://purl.org/npc",
+      "labels" : {
+        "IRI-based" : "EUNICELLANE_DITERPENOIDS",
+        "undefined" : "Eunicellane diterpenoids"
       }
     }, {
       "iri" : "https://purl.org/npc#PHOSPHOSPHINGOLIPIDS",
@@ -2993,18 +2996,18 @@
         "undefined" : "Halimane diterpenoids"
       }
     }, {
-      "iri" : "https://purl.org/npc#ATISANE_DITERPENOIDS",
-      "baseIri" : "https://purl.org/npc",
-      "labels" : {
-        "IRI-based" : "ATISANE_DITERPENOIDS",
-        "undefined" : "Atisane diterpenoids"
-      }
-    }, {
       "iri" : "https://purl.org/npc#AVERMECTINS",
       "baseIri" : "https://purl.org/npc",
       "labels" : {
         "IRI-based" : "AVERMECTINS",
         "undefined" : "Avermectins"
+      }
+    }, {
+      "iri" : "https://purl.org/npc#ATISANE_DITERPENOIDS",
+      "baseIri" : "https://purl.org/npc",
+      "labels" : {
+        "IRI-based" : "ATISANE_DITERPENOIDS",
+        "undefined" : "Atisane diterpenoids"
       }
     }, {
       "iri" : "https://purl.org/npc#MEROHEMITERPENOIDS",
@@ -3049,18 +3052,11 @@
         "undefined" : "Microcolins and mirabimids"
       }
     }, {
-      "iri" : "https://purl.org/npc#N-ACYL_AMINES",
+      "iri" : "https://purl.org/npc#PENTALENANE_SESQUITERPENOIDS",
       "baseIri" : "https://purl.org/npc",
       "labels" : {
-        "IRI-based" : "N-ACYL_AMINES",
-        "undefined" : "N-acyl amines"
-      }
-    }, {
-      "iri" : "https://purl.org/npc#CAROTENOIDS_%28C40%2C_%CE%92-%CE%A7%29",
-      "baseIri" : "https://purl.org/npc",
-      "labels" : {
-        "IRI-based" : "CAROTENOIDS_%28C40%2C_%CE%92-%CE%A7%29",
-        "undefined" : "Carotenoids (C40, β-Χ)"
+        "IRI-based" : "PENTALENANE_SESQUITERPENOIDS",
+        "undefined" : "Pentalenane sesquiterpenoids"
       }
     }, {
       "iri" : "https://purl.org/npc#BRANCHED_FATTY_ACIDS",
@@ -3070,18 +3066,25 @@
         "undefined" : "Branched fatty acids"
       }
     }, {
+      "iri" : "https://purl.org/npc#CAROTENOIDS_%28C40%2C_%CE%92-%CE%A7%29",
+      "baseIri" : "https://purl.org/npc",
+      "labels" : {
+        "IRI-based" : "CAROTENOIDS_%28C40%2C_%CE%92-%CE%A7%29",
+        "undefined" : "Carotenoids (C40, β-Χ)"
+      }
+    }, {
+      "iri" : "https://purl.org/npc#N-ACYL_AMINES",
+      "baseIri" : "https://purl.org/npc",
+      "labels" : {
+        "IRI-based" : "N-ACYL_AMINES",
+        "undefined" : "N-acyl amines"
+      }
+    }, {
       "iri" : "https://purl.org/npc#AROMATIC_POLYKETIDES_WITH_SIDE_CHAINS",
       "baseIri" : "https://purl.org/npc",
       "labels" : {
         "IRI-based" : "AROMATIC_POLYKETIDES_WITH_SIDE_CHAINS",
         "undefined" : "Aromatic polyketides with side chains"
-      }
-    }, {
-      "iri" : "https://purl.org/npc#PENTALENANE_SESQUITERPENOIDS",
-      "baseIri" : "https://purl.org/npc",
-      "labels" : {
-        "IRI-based" : "PENTALENANE_SESQUITERPENOIDS",
-        "undefined" : "Pentalenane sesquiterpenoids"
       }
     }, {
       "iri" : "https://purl.org/npc#PREGNANE_STEROIDS",
@@ -3126,13 +3129,6 @@
         "undefined" : "Decalins with side chains"
       }
     }, {
-      "iri" : "https://purl.org/npc#PROANTHOCYANINS",
-      "baseIri" : "https://purl.org/npc",
-      "labels" : {
-        "IRI-based" : "PROANTHOCYANINS",
-        "undefined" : "Proanthocyanins"
-      }
-    }, {
       "iri" : "https://purl.org/npc#SECOKAURANE_DITERPENOIDS",
       "baseIri" : "https://purl.org/npc",
       "labels" : {
@@ -3152,6 +3148,13 @@
       "labels" : {
         "IRI-based" : "DOCOSA-1%2C2-DIOXOLANES",
         "undefined" : "Docosa-1,2-dioxolanes"
+      }
+    }, {
+      "iri" : "https://purl.org/npc#PROANTHOCYANINS",
+      "baseIri" : "https://purl.org/npc",
+      "labels" : {
+        "IRI-based" : "PROANTHOCYANINS",
+        "undefined" : "Proanthocyanins"
       }
     }, {
       "iri" : "https://purl.org/npc#AGAROFURAN_SESQUITERPENOIDS",
@@ -3189,18 +3192,18 @@
         "undefined" : "Cubebane sesquiterpenoids"
       }
     }, {
-      "iri" : "https://purl.org/npc#TETRODOTOXINS",
-      "baseIri" : "https://purl.org/npc",
-      "labels" : {
-        "IRI-based" : "TETRODOTOXINS",
-        "undefined" : "Tetrodotoxins"
-      }
-    }, {
       "iri" : "https://purl.org/npc#MONOCYCLIC_%CE%92-LACTAMS",
       "baseIri" : "https://purl.org/npc",
       "labels" : {
         "IRI-based" : "MONOCYCLIC_%CE%92-LACTAMS",
         "undefined" : "Monocyclic β-lactams"
+      }
+    }, {
+      "iri" : "https://purl.org/npc#TETRODOTOXINS",
+      "baseIri" : "https://purl.org/npc",
+      "labels" : {
+        "IRI-based" : "TETRODOTOXINS",
+        "undefined" : "Tetrodotoxins"
       }
     }, {
       "iri" : "https://purl.org/npc#FENCHANE_MONOTERPENOIDS",
@@ -3266,18 +3269,18 @@
         "undefined" : "Spirotetronate macrolides"
       }
     }, {
-      "iri" : "https://purl.org/npc#GLYCEROPHOSPHOGLYCEROLS",
-      "baseIri" : "https://purl.org/npc",
-      "labels" : {
-        "IRI-based" : "GLYCEROPHOSPHOGLYCEROLS",
-        "undefined" : "Glycerophosphoglycerols"
-      }
-    }, {
       "iri" : "https://purl.org/npc#TROPANE_ALKALOIDS",
       "baseIri" : "https://purl.org/npc",
       "labels" : {
         "IRI-based" : "TROPANE_ALKALOIDS",
         "undefined" : "Tropane alkaloids"
+      }
+    }, {
+      "iri" : "https://purl.org/npc#GLYCEROPHOSPHOGLYCEROLS",
+      "baseIri" : "https://purl.org/npc",
+      "labels" : {
+        "IRI-based" : "GLYCEROPHOSPHOGLYCEROLS",
+        "undefined" : "Glycerophosphoglycerols"
       }
     }, {
       "iri" : "https://purl.org/npc#VALERENANE_SESQUITERPENOIDS",
@@ -3504,18 +3507,18 @@
         "undefined" : "Pyrimidine nucleos(t)ides"
       }
     }, {
-      "iri" : "https://purl.org/npc#ACYCLIC_GUANIDINE_ALKALOIDS",
-      "baseIri" : "https://purl.org/npc",
-      "labels" : {
-        "IRI-based" : "ACYCLIC_GUANIDINE_ALKALOIDS",
-        "undefined" : "Acyclic guanidine alkaloids"
-      }
-    }, {
       "iri" : "https://purl.org/npc#ACETATE-DERIVED_ALKALOIDS",
       "baseIri" : "https://purl.org/npc",
       "labels" : {
         "IRI-based" : "ACETATE-DERIVED_ALKALOIDS",
         "undefined" : "Acetate-derived alkaloids"
+      }
+    }, {
+      "iri" : "https://purl.org/npc#ACYCLIC_GUANIDINE_ALKALOIDS",
+      "baseIri" : "https://purl.org/npc",
+      "labels" : {
+        "IRI-based" : "ACYCLIC_GUANIDINE_ALKALOIDS",
+        "undefined" : "Acyclic guanidine alkaloids"
       }
     }, {
       "iri" : "https://purl.org/npc#SIMPLE_AROMATIC_POLYKETIDES",
@@ -3567,6 +3570,13 @@
         "undefined" : "Ivaxillarane sesquiterpenoids"
       }
     }, {
+      "iri" : "https://purl.org/npc#PARGUERANE_DITERPENOIDS",
+      "baseIri" : "https://purl.org/npc",
+      "labels" : {
+        "IRI-based" : "PARGUERANE_DITERPENOIDS",
+        "undefined" : "Parguerane diterpenoids"
+      }
+    }, {
       "iri" : "https://purl.org/npc#ASPERANE_SESTERTERPENOIDS",
       "baseIri" : "https://purl.org/npc",
       "labels" : {
@@ -3579,13 +3589,6 @@
       "labels" : {
         "IRI-based" : "MONACOLINS_AND_MONACOLIN_DERIVATIVES",
         "undefined" : "Monacolins and Monacolin derivatives"
-      }
-    }, {
-      "iri" : "https://purl.org/npc#PARGUERANE_DITERPENOIDS",
-      "baseIri" : "https://purl.org/npc",
-      "labels" : {
-        "IRI-based" : "PARGUERANE_DITERPENOIDS",
-        "undefined" : "Parguerane diterpenoids"
       }
     }, {
       "iri" : "https://purl.org/npc#PODOCARPANE_DITERPENOIDS",
@@ -3644,18 +3647,18 @@
         "undefined" : "Sophorolipids"
       }
     }, {
-      "iri" : "https://purl.org/npc#VERRUCOSANE_DITERPENOIDS",
-      "baseIri" : "https://purl.org/npc",
-      "labels" : {
-        "IRI-based" : "VERRUCOSANE_DITERPENOIDS",
-        "undefined" : "Verrucosane diterpenoids"
-      }
-    }, {
       "iri" : "https://purl.org/npc#ISOPROSTANES",
       "baseIri" : "https://purl.org/npc",
       "labels" : {
         "IRI-based" : "ISOPROSTANES",
         "undefined" : "Isoprostanes"
+      }
+    }, {
+      "iri" : "https://purl.org/npc#VERRUCOSANE_DITERPENOIDS",
+      "baseIri" : "https://purl.org/npc",
+      "labels" : {
+        "IRI-based" : "VERRUCOSANE_DITERPENOIDS",
+        "undefined" : "Verrucosane diterpenoids"
       }
     }, {
       "iri" : "https://purl.org/npc#VILLANOVANE_DITERPENOIDS",
@@ -3693,18 +3696,18 @@
         "undefined" : "Miscellaneous alkaloids"
       }
     }, {
-      "iri" : "https://purl.org/npc#TRIACYLGLYCEROLS",
-      "baseIri" : "https://purl.org/npc",
-      "labels" : {
-        "IRI-based" : "TRIACYLGLYCEROLS",
-        "undefined" : "Triacylglycerols"
-      }
-    }, {
       "iri" : "https://purl.org/npc#CARYOLANE_SESQUITERPENOIDS",
       "baseIri" : "https://purl.org/npc",
       "labels" : {
         "IRI-based" : "CARYOLANE_SESQUITERPENOIDS",
         "undefined" : "Caryolane sesquiterpenoids"
+      }
+    }, {
+      "iri" : "https://purl.org/npc#TRIACYLGLYCEROLS",
+      "baseIri" : "https://purl.org/npc",
+      "labels" : {
+        "IRI-based" : "TRIACYLGLYCEROLS",
+        "undefined" : "Triacylglycerols"
       }
     }, {
       "iri" : "https://purl.org/npc#ZEARALENONES",
@@ -3749,13 +3752,6 @@
         "undefined" : "Lupane triterpenoids"
       }
     }, {
-      "iri" : "https://purl.org/npc#PHENYLETHYLAMINES",
-      "baseIri" : "https://purl.org/npc",
-      "labels" : {
-        "IRI-based" : "PHENYLETHYLAMINES",
-        "undefined" : "Phenylethylamines"
-      }
-    }, {
       "iri" : "https://purl.org/npc#OLEANANE_TRITERPENOIDS",
       "baseIri" : "https://purl.org/npc",
       "labels" : {
@@ -3763,18 +3759,25 @@
         "undefined" : "Oleanane triterpenoids"
       }
     }, {
-      "iri" : "https://purl.org/npc#GLYCOSYLGLYCEROPHOSPHOLIPIDS",
-      "baseIri" : "https://purl.org/npc",
-      "labels" : {
-        "IRI-based" : "GLYCOSYLGLYCEROPHOSPHOLIPIDS",
-        "undefined" : "Glycosylglycerophospholipids"
-      }
-    }, {
       "iri" : "https://purl.org/npc#TROPOLONES_AND_DERIVATIVES_%28PKS%29",
       "baseIri" : "https://purl.org/npc",
       "labels" : {
         "IRI-based" : "TROPOLONES_AND_DERIVATIVES_%28PKS%29",
         "undefined" : "Tropolones and derivatives (PKS)"
+      }
+    }, {
+      "iri" : "https://purl.org/npc#PHENYLETHYLAMINES",
+      "baseIri" : "https://purl.org/npc",
+      "labels" : {
+        "IRI-based" : "PHENYLETHYLAMINES",
+        "undefined" : "Phenylethylamines"
+      }
+    }, {
+      "iri" : "https://purl.org/npc#GLYCOSYLGLYCEROPHOSPHOLIPIDS",
+      "baseIri" : "https://purl.org/npc",
+      "labels" : {
+        "IRI-based" : "GLYCOSYLGLYCEROPHOSPHOLIPIDS",
+        "undefined" : "Glycosylglycerophospholipids"
       }
     }, {
       "iri" : "https://purl.org/npc#PYRROCIDINE_TETRAMATE_ALKALOIDS",
@@ -3805,18 +3808,18 @@
         "undefined" : "Aporphine alkaloids"
       }
     }, {
-      "iri" : "https://purl.org/npc#MEGASTIGMANES",
-      "baseIri" : "https://purl.org/npc",
-      "labels" : {
-        "IRI-based" : "MEGASTIGMANES",
-        "undefined" : "Megastigmanes"
-      }
-    }, {
       "iri" : "https://purl.org/npc#ISOFLAVONES",
       "baseIri" : "https://purl.org/npc",
       "labels" : {
         "IRI-based" : "ISOFLAVONES",
         "undefined" : "Isoflavones"
+      }
+    }, {
+      "iri" : "https://purl.org/npc#MEGASTIGMANES",
+      "baseIri" : "https://purl.org/npc",
+      "labels" : {
+        "IRI-based" : "MEGASTIGMANES",
+        "undefined" : "Megastigmanes"
       }
     }, {
       "iri" : "https://purl.org/npc#CYCLOBISABOLANE_SESQUITERPENOIDS",
@@ -3917,6 +3920,13 @@
         "undefined" : "Sterpurane sesquiterpenoids"
       }
     }, {
+      "iri" : "https://purl.org/npc#FATTY_ACYL_COAS",
+      "baseIri" : "https://purl.org/npc",
+      "labels" : {
+        "IRI-based" : "FATTY_ACYL_COAS",
+        "undefined" : "Fatty acyl CoAs"
+      }
+    }, {
       "iri" : "https://purl.org/npc#STREPTOGRAMINS",
       "baseIri" : "https://purl.org/npc",
       "labels" : {
@@ -3931,13 +3941,6 @@
         "undefined" : "Thromboxanes"
       }
     }, {
-      "iri" : "https://purl.org/npc#KAVALACTONES_AND_DERIVATIVES",
-      "baseIri" : "https://purl.org/npc",
-      "labels" : {
-        "IRI-based" : "KAVALACTONES_AND_DERIVATIVES",
-        "undefined" : "Kavalactones and derivatives"
-      }
-    }, {
       "iri" : "https://purl.org/npc#JATROPHOLANE_DITERPENOIDS",
       "baseIri" : "https://purl.org/npc",
       "labels" : {
@@ -3945,11 +3948,11 @@
         "undefined" : "Jatropholane diterpenoids"
       }
     }, {
-      "iri" : "https://purl.org/npc#FATTY_ACYL_COAS",
+      "iri" : "https://purl.org/npc#KAVALACTONES_AND_DERIVATIVES",
       "baseIri" : "https://purl.org/npc",
       "labels" : {
-        "IRI-based" : "FATTY_ACYL_COAS",
-        "undefined" : "Fatty acyl CoAs"
+        "IRI-based" : "KAVALACTONES_AND_DERIVATIVES",
+        "undefined" : "Kavalactones and derivatives"
       }
     }, {
       "iri" : "https://purl.org/npc#LINEAR_POLYENES",
@@ -4022,13 +4025,6 @@
         "undefined" : "Rotundane sesquiterpenoids"
       }
     }, {
-      "iri" : "https://purl.org/npc#ERYTHROXYLANE_DITERPENOIDS",
-      "baseIri" : "https://purl.org/npc",
-      "labels" : {
-        "IRI-based" : "ERYTHROXYLANE_DITERPENOIDS",
-        "undefined" : "Erythroxylane diterpenoids"
-      }
-    }, {
       "iri" : "https://purl.org/npc#CYCLOEUDESMANE_SESQUITERPENOIDS",
       "baseIri" : "https://purl.org/npc",
       "labels" : {
@@ -4036,11 +4032,25 @@
         "undefined" : "Cycloeudesmane sesquiterpenoids"
       }
     }, {
+      "iri" : "https://purl.org/npc#ERYTHROXYLANE_DITERPENOIDS",
+      "baseIri" : "https://purl.org/npc",
+      "labels" : {
+        "IRI-based" : "ERYTHROXYLANE_DITERPENOIDS",
+        "undefined" : "Erythroxylane diterpenoids"
+      }
+    }, {
       "iri" : "https://purl.org/npc#BAUERANE_TRITERPENOIDS",
       "baseIri" : "https://purl.org/npc",
       "labels" : {
         "IRI-based" : "BAUERANE_TRITERPENOIDS",
         "undefined" : "Bauerane triterpenoids"
+      }
+    }, {
+      "iri" : "https://purl.org/npc#RHAMNOFOLANE_DITERPENOIDS",
+      "baseIri" : "https://purl.org/npc",
+      "labels" : {
+        "IRI-based" : "RHAMNOFOLANE_DITERPENOIDS",
+        "undefined" : "Rhamnofolane diterpenoids"
       }
     }, {
       "iri" : "https://purl.org/npc#OLIGOMYCINS",
@@ -4055,13 +4065,6 @@
       "labels" : {
         "IRI-based" : "SECOIRIDOID_MONOTERPENOIDS",
         "undefined" : "Secoiridoid monoterpenoids"
-      }
-    }, {
-      "iri" : "https://purl.org/npc#RHAMNOFOLANE_DITERPENOIDS",
-      "baseIri" : "https://purl.org/npc",
-      "labels" : {
-        "IRI-based" : "RHAMNOFOLANE_DITERPENOIDS",
-        "undefined" : "Rhamnofolane diterpenoids"
       }
     }, {
       "iri" : "https://purl.org/npc#ARTEMINISIN",
@@ -4092,13 +4095,6 @@
         "undefined" : "RiPPs-Amatoxins and Phallotoxins"
       }
     }, {
-      "iri" : "https://purl.org/npc#CORYNANTHE_TYPE",
-      "baseIri" : "https://purl.org/npc",
-      "labels" : {
-        "IRI-based" : "CORYNANTHE_TYPE",
-        "undefined" : "Corynanthe type"
-      }
-    }, {
       "iri" : "https://purl.org/npc#BERGAMOTANE_SESQUITERPENOIDS",
       "baseIri" : "https://purl.org/npc",
       "labels" : {
@@ -4106,11 +4102,11 @@
         "undefined" : "Bergamotane sesquiterpenoids"
       }
     }, {
-      "iri" : "https://purl.org/npc#CHROMONES",
+      "iri" : "https://purl.org/npc#CORYNANTHE_TYPE",
       "baseIri" : "https://purl.org/npc",
       "labels" : {
-        "IRI-based" : "CHROMONES",
-        "undefined" : "Chromones"
+        "IRI-based" : "CORYNANTHE_TYPE",
+        "undefined" : "Corynanthe type"
       }
     }, {
       "iri" : "https://purl.org/npc#MARASMANE_SESQUITERPENOIDS",
@@ -4118,6 +4114,13 @@
       "labels" : {
         "IRI-based" : "MARASMANE_SESQUITERPENOIDS",
         "undefined" : "Marasmane sesquiterpenoids"
+      }
+    }, {
+      "iri" : "https://purl.org/npc#CHROMONES",
+      "baseIri" : "https://purl.org/npc",
+      "labels" : {
+        "IRI-based" : "CHROMONES",
+        "undefined" : "Chromones"
       }
     }, {
       "iri" : "https://purl.org/npc#POLYPRENYLATED_CYCLIC_POLYKETIDES_%28HOP_MEROTERPENOIDS%29",
@@ -4141,6 +4144,20 @@
         "undefined" : "Copacamphane sesquiterpenoids"
       }
     }, {
+      "iri" : "https://purl.org/npc#GERSEMIANE_DITERPENOIDS",
+      "baseIri" : "https://purl.org/npc",
+      "labels" : {
+        "IRI-based" : "GERSEMIANE_DITERPENOIDS",
+        "undefined" : "Gersemiane diterpenoids"
+      }
+    }, {
+      "iri" : "https://purl.org/npc#STILBENOLIGNANS",
+      "baseIri" : "https://purl.org/npc",
+      "labels" : {
+        "IRI-based" : "STILBENOLIGNANS",
+        "undefined" : "Stilbenolignans"
+      }
+    }, {
       "iri" : "https://purl.org/npc#2-ARYLBENZOFURANS",
       "baseIri" : "https://purl.org/npc",
       "labels" : {
@@ -4153,20 +4170,6 @@
       "labels" : {
         "IRI-based" : "DIHYDROFLAVONOLS",
         "undefined" : "Dihydroflavonols"
-      }
-    }, {
-      "iri" : "https://purl.org/npc#STILBENOLIGNANS",
-      "baseIri" : "https://purl.org/npc",
-      "labels" : {
-        "IRI-based" : "STILBENOLIGNANS",
-        "undefined" : "Stilbenolignans"
-      }
-    }, {
-      "iri" : "https://purl.org/npc#GERSEMIANE_DITERPENOIDS",
-      "baseIri" : "https://purl.org/npc",
-      "labels" : {
-        "IRI-based" : "GERSEMIANE_DITERPENOIDS",
-        "undefined" : "Gersemiane diterpenoids"
       }
     }, {
       "iri" : "https://purl.org/npc#ICETEXANE_DITERPENOIDS",
@@ -4197,18 +4200,18 @@
         "undefined" : "Amino fatty acids"
       }
     }, {
-      "iri" : "https://purl.org/npc#GALLOTANNINS",
-      "baseIri" : "https://purl.org/npc",
-      "labels" : {
-        "IRI-based" : "GALLOTANNINS",
-        "undefined" : "Gallotannins"
-      }
-    }, {
       "iri" : "https://purl.org/npc#ACRIDONE_ALKALOIDS",
       "baseIri" : "https://purl.org/npc",
       "labels" : {
         "IRI-based" : "ACRIDONE_ALKALOIDS",
         "undefined" : "Acridone alkaloids"
+      }
+    }, {
+      "iri" : "https://purl.org/npc#GALLOTANNINS",
+      "baseIri" : "https://purl.org/npc",
+      "labels" : {
+        "IRI-based" : "GALLOTANNINS",
+        "undefined" : "Gallotannins"
       }
     }, {
       "iri" : "https://purl.org/npc#OXYGENATED_HYDROCARBONS",
@@ -4330,18 +4333,18 @@
         "undefined" : "Pyrrole alkaloids"
       }
     }, {
-      "iri" : "https://purl.org/npc#MEROTERPENOIDS_WITH_BRIDGED_RING",
-      "baseIri" : "https://purl.org/npc",
-      "labels" : {
-        "IRI-based" : "MEROTERPENOIDS_WITH_BRIDGED_RING",
-        "undefined" : "Meroterpenoids with bridged ring"
-      }
-    }, {
       "iri" : "https://purl.org/npc#BENZOPHENONES",
       "baseIri" : "https://purl.org/npc",
       "labels" : {
         "IRI-based" : "BENZOPHENONES",
         "undefined" : "Benzophenones"
+      }
+    }, {
+      "iri" : "https://purl.org/npc#MEROTERPENOIDS_WITH_BRIDGED_RING",
+      "baseIri" : "https://purl.org/npc",
+      "labels" : {
+        "IRI-based" : "MEROTERPENOIDS_WITH_BRIDGED_RING",
+        "undefined" : "Meroterpenoids with bridged ring"
       }
     }, {
       "iri" : "https://purl.org/npc#CAROTENOIDS_%28C50%2C_%CE%92-%CE%92%29",
@@ -4351,18 +4354,18 @@
         "undefined" : "Carotenoids (C50, β-β)"
       }
     }, {
-      "iri" : "https://purl.org/npc#MINOR_LIGNANS",
-      "baseIri" : "https://purl.org/npc",
-      "labels" : {
-        "IRI-based" : "MINOR_LIGNANS",
-        "undefined" : "Minor lignans"
-      }
-    }, {
       "iri" : "https://purl.org/npc#POLYETHER_IONOPHORES",
       "baseIri" : "https://purl.org/npc",
       "labels" : {
         "IRI-based" : "POLYETHER_IONOPHORES",
         "undefined" : "Polyether ionophores"
+      }
+    }, {
+      "iri" : "https://purl.org/npc#MINOR_LIGNANS",
+      "baseIri" : "https://purl.org/npc",
+      "labels" : {
+        "IRI-based" : "MINOR_LIGNANS",
+        "undefined" : "Minor lignans"
       }
     }, {
       "iri" : "https://purl.org/npc#PHLOROGLUCINOL-TERPENE_HYBRIDS",
@@ -4393,18 +4396,18 @@
         "undefined" : "Carane monoterpenoids"
       }
     }, {
-      "iri" : "https://purl.org/npc#VALERANE_SESQUITERPENOIDS",
-      "baseIri" : "https://purl.org/npc",
-      "labels" : {
-        "IRI-based" : "VALERANE_SESQUITERPENOIDS",
-        "undefined" : "Valerane sesquiterpenoids"
-      }
-    }, {
       "iri" : "https://purl.org/npc#SPHAEROANE_DITERPENOIDS",
       "baseIri" : "https://purl.org/npc",
       "labels" : {
         "IRI-based" : "SPHAEROANE_DITERPENOIDS",
         "undefined" : "Sphaeroane diterpenoids"
+      }
+    }, {
+      "iri" : "https://purl.org/npc#VALERANE_SESQUITERPENOIDS",
+      "baseIri" : "https://purl.org/npc",
+      "labels" : {
+        "IRI-based" : "VALERANE_SESQUITERPENOIDS",
+        "undefined" : "Valerane sesquiterpenoids"
       }
     }, {
       "iri" : "https://purl.org/npc#CYCLOABIETANE_DITERPENOIDS",
@@ -4463,6 +4466,13 @@
         "undefined" : "Fatty alcohols"
       }
     }, {
+      "iri" : "https://purl.org/npc#BRIARANE_DITERPENOIDS",
+      "baseIri" : "https://purl.org/npc",
+      "labels" : {
+        "IRI-based" : "BRIARANE_DITERPENOIDS",
+        "undefined" : "Briarane diterpenoids"
+      }
+    }, {
       "iri" : "https://purl.org/npc#AURONES",
       "baseIri" : "https://purl.org/npc",
       "labels" : {
@@ -4475,13 +4485,6 @@
       "labels" : {
         "IRI-based" : "RIPPS-BOTTROMYCINS",
         "undefined" : "RiPPs-Bottromycins"
-      }
-    }, {
-      "iri" : "https://purl.org/npc#BRIARANE_DITERPENOIDS",
-      "baseIri" : "https://purl.org/npc",
-      "labels" : {
-        "IRI-based" : "BRIARANE_DITERPENOIDS",
-        "undefined" : "Briarane diterpenoids"
       }
     }, {
       "iri" : "https://purl.org/npc#VALPARANE_DITERPENOIDS",
@@ -4568,18 +4571,18 @@
         "undefined" : "Acorane sesquiterpenoids"
       }
     }, {
-      "iri" : "https://purl.org/npc#FATTY_ETHERS",
-      "baseIri" : "https://purl.org/npc",
-      "labels" : {
-        "IRI-based" : "FATTY_ETHERS",
-        "undefined" : "Fatty ethers"
-      }
-    }, {
       "iri" : "https://purl.org/npc#MULTIFLORANE_TRITERPENOIDS",
       "baseIri" : "https://purl.org/npc",
       "labels" : {
         "IRI-based" : "MULTIFLORANE_TRITERPENOIDS",
         "undefined" : "Multiflorane triterpenoids"
+      }
+    }, {
+      "iri" : "https://purl.org/npc#FATTY_ETHERS",
+      "baseIri" : "https://purl.org/npc",
+      "labels" : {
+        "IRI-based" : "FATTY_ETHERS",
+        "undefined" : "Fatty ethers"
       }
     }, {
       "iri" : "https://purl.org/npc#RESOLVIN_DS",
@@ -4659,13 +4662,6 @@
         "undefined" : "Cyclopiane diterpenoids"
       }
     }, {
-      "iri" : "https://purl.org/npc#OXIDIZED_GLYCEROPHOSPHOLIPIDS",
-      "baseIri" : "https://purl.org/npc",
-      "labels" : {
-        "IRI-based" : "OXIDIZED_GLYCEROPHOSPHOLIPIDS",
-        "undefined" : "Oxidized glycerophospholipids"
-      }
-    }, {
       "iri" : "https://purl.org/npc#FUROSTANE_STEROIDS",
       "baseIri" : "https://purl.org/npc",
       "labels" : {
@@ -4680,11 +4676,11 @@
         "undefined" : "Oblogolides"
       }
     }, {
-      "iri" : "https://purl.org/npc#BAGREMYCINS",
+      "iri" : "https://purl.org/npc#OXIDIZED_GLYCEROPHOSPHOLIPIDS",
       "baseIri" : "https://purl.org/npc",
       "labels" : {
-        "IRI-based" : "BAGREMYCINS",
-        "undefined" : "Bagremycins"
+        "IRI-based" : "OXIDIZED_GLYCEROPHOSPHOLIPIDS",
+        "undefined" : "Oxidized glycerophospholipids"
       }
     }, {
       "iri" : "https://purl.org/npc#LAURANE_SESQUITERPENOIDS",
@@ -4699,6 +4695,13 @@
       "labels" : {
         "IRI-based" : "SALINOSPORAMIDES",
         "undefined" : "Salinosporamides"
+      }
+    }, {
+      "iri" : "https://purl.org/npc#BAGREMYCINS",
+      "baseIri" : "https://purl.org/npc",
+      "labels" : {
+        "IRI-based" : "BAGREMYCINS",
+        "undefined" : "Bagremycins"
       }
     }, {
       "iri" : "https://purl.org/npc#APHIDICOLANE_DITERPENOIDS",
@@ -4827,18 +4830,18 @@
         "undefined" : "Carotenoids (C40, κ-Χ)"
       }
     }, {
-      "iri" : "https://purl.org/npc#STROBILURINS_AND_DERIVATIVES",
-      "baseIri" : "https://purl.org/npc",
-      "labels" : {
-        "IRI-based" : "STROBILURINS_AND_DERIVATIVES",
-        "undefined" : "Strobilurins and derivatives"
-      }
-    }, {
       "iri" : "https://purl.org/npc#BREVIANE_DITERPENOIDS",
       "baseIri" : "https://purl.org/npc",
       "labels" : {
         "IRI-based" : "BREVIANE_DITERPENOIDS",
         "undefined" : "Breviane diterpenoids"
+      }
+    }, {
+      "iri" : "https://purl.org/npc#STROBILURINS_AND_DERIVATIVES",
+      "baseIri" : "https://purl.org/npc",
+      "labels" : {
+        "IRI-based" : "STROBILURINS_AND_DERIVATIVES",
+        "undefined" : "Strobilurins and derivatives"
       }
     }, {
       "iri" : "https://purl.org/npc#TERPENOID_TETRAHYDROISOQUINOLINE_ALKALOIDS",
@@ -4855,13 +4858,6 @@
         "undefined" : "Meromonoterpenoids"
       }
     }, {
-      "iri" : "https://purl.org/npc#PHYTOFURANS",
-      "baseIri" : "https://purl.org/npc",
-      "labels" : {
-        "IRI-based" : "PHYTOFURANS",
-        "undefined" : "Phytofurans"
-      }
-    }, {
       "iri" : "https://purl.org/npc#AMINO_CYCLITOLS",
       "baseIri" : "https://purl.org/npc",
       "labels" : {
@@ -4869,11 +4865,11 @@
         "undefined" : "Amino cyclitols"
       }
     }, {
-      "iri" : "https://purl.org/npc#AHP-CONTAINING_CYCLODEPSIPEPTIDES",
+      "iri" : "https://purl.org/npc#PHYTOFURANS",
       "baseIri" : "https://purl.org/npc",
       "labels" : {
-        "IRI-based" : "AHP-CONTAINING_CYCLODEPSIPEPTIDES",
-        "undefined" : "Ahp-containing cyclodepsipeptides"
+        "IRI-based" : "PHYTOFURANS",
+        "undefined" : "Phytofurans"
       }
     }, {
       "iri" : "https://purl.org/npc#SERRULATANE_AND_BIFLORANE_DITERPENOIDS",
@@ -4881,6 +4877,13 @@
       "labels" : {
         "IRI-based" : "SERRULATANE_AND_BIFLORANE_DITERPENOIDS",
         "undefined" : "Serrulatane and Biflorane diterpenoids"
+      }
+    }, {
+      "iri" : "https://purl.org/npc#AHP-CONTAINING_CYCLODEPSIPEPTIDES",
+      "baseIri" : "https://purl.org/npc",
+      "labels" : {
+        "IRI-based" : "AHP-CONTAINING_CYCLODEPSIPEPTIDES",
+        "undefined" : "Ahp-containing cyclodepsipeptides"
       }
     }, {
       "iri" : "https://purl.org/npc#FUSIDANE_TRITERPENOIDS",
@@ -4897,13 +4900,6 @@
         "undefined" : "Taraxerane triterpenoids"
       }
     }, {
-      "iri" : "https://purl.org/npc#DAMMARANE_AND_PROTOSTANE_TRITERPENOIDS",
-      "baseIri" : "https://purl.org/npc",
-      "labels" : {
-        "IRI-based" : "DAMMARANE_AND_PROTOSTANE_TRITERPENOIDS",
-        "undefined" : "Dammarane and Protostane triterpenoids"
-      }
-    }, {
       "iri" : "https://purl.org/npc#RHIZOXINS",
       "baseIri" : "https://purl.org/npc",
       "labels" : {
@@ -4911,11 +4907,11 @@
         "undefined" : "Rhizoxins"
       }
     }, {
-      "iri" : "https://purl.org/npc#CDP-GLYCEROLS",
+      "iri" : "https://purl.org/npc#DAMMARANE_AND_PROTOSTANE_TRITERPENOIDS",
       "baseIri" : "https://purl.org/npc",
       "labels" : {
-        "IRI-based" : "CDP-GLYCEROLS",
-        "undefined" : "CDP-Glycerols"
+        "IRI-based" : "DAMMARANE_AND_PROTOSTANE_TRITERPENOIDS",
+        "undefined" : "Dammarane and Protostane triterpenoids"
       }
     }, {
       "iri" : "https://purl.org/npc#LIMONOIDS",
@@ -4923,6 +4919,13 @@
       "labels" : {
         "IRI-based" : "LIMONOIDS",
         "undefined" : "Limonoids"
+      }
+    }, {
+      "iri" : "https://purl.org/npc#CDP-GLYCEROLS",
+      "baseIri" : "https://purl.org/npc",
+      "labels" : {
+        "IRI-based" : "CDP-GLYCEROLS",
+        "undefined" : "CDP-Glycerols"
       }
     }, {
       "iri" : "https://purl.org/npc#ERYTHROMYCINS",
@@ -5023,11 +5026,11 @@
         "undefined" : "Pyrroloindole alkaloids"
       }
     }, {
-      "iri" : "https://purl.org/npc#RHAMNOLIPIDS",
+      "iri" : "https://purl.org/npc#HALOGENATED_HYDROCARBONS",
       "baseIri" : "https://purl.org/npc",
       "labels" : {
-        "IRI-based" : "RHAMNOLIPIDS",
-        "undefined" : "Rhamnolipids"
+        "IRI-based" : "HALOGENATED_HYDROCARBONS",
+        "undefined" : "Halogenated hydrocarbons"
       }
     }, {
       "iri" : "https://purl.org/npc#CAROTENOIDS_%28C45%2C_%CE%A8-%CE%A8%29",
@@ -5037,11 +5040,11 @@
         "undefined" : "Carotenoids (C45, Ψ-Ψ)"
       }
     }, {
-      "iri" : "https://purl.org/npc#HALOGENATED_HYDROCARBONS",
+      "iri" : "https://purl.org/npc#RHAMNOLIPIDS",
       "baseIri" : "https://purl.org/npc",
       "labels" : {
-        "IRI-based" : "HALOGENATED_HYDROCARBONS",
-        "undefined" : "Halogenated hydrocarbons"
+        "IRI-based" : "RHAMNOLIPIDS",
+        "undefined" : "Rhamnolipids"
       }
     }, {
       "iri" : "https://purl.org/npc#TIGLIANE_DITERPENOIDS",
@@ -5051,18 +5054,18 @@
         "undefined" : "Tigliane diterpenoids"
       }
     }, {
-      "iri" : "https://purl.org/npc#ACTINOMYCINS",
-      "baseIri" : "https://purl.org/npc",
-      "labels" : {
-        "IRI-based" : "ACTINOMYCINS",
-        "undefined" : "Actinomycins"
-      }
-    }, {
       "iri" : "https://purl.org/npc#HYDROCARBONS",
       "baseIri" : "https://purl.org/npc",
       "labels" : {
         "IRI-based" : "HYDROCARBONS",
         "undefined" : "Hydrocarbons"
+      }
+    }, {
+      "iri" : "https://purl.org/npc#ACTINOMYCINS",
+      "baseIri" : "https://purl.org/npc",
+      "labels" : {
+        "IRI-based" : "ACTINOMYCINS",
+        "undefined" : "Actinomycins"
       }
     }, {
       "iri" : "https://purl.org/npc#AMINOACIDS",
@@ -5072,18 +5075,18 @@
         "undefined" : "Aminoacids"
       }
     }, {
-      "iri" : "https://purl.org/npc#FRIEDELANE_TRITERPENOIDS",
-      "baseIri" : "https://purl.org/npc",
-      "labels" : {
-        "IRI-based" : "FRIEDELANE_TRITERPENOIDS",
-        "undefined" : "Friedelane triterpenoids"
-      }
-    }, {
       "iri" : "https://purl.org/npc#STRYCHNOS_TYPE",
       "baseIri" : "https://purl.org/npc",
       "labels" : {
         "IRI-based" : "STRYCHNOS_TYPE",
         "undefined" : "Strychnos type"
+      }
+    }, {
+      "iri" : "https://purl.org/npc#FRIEDELANE_TRITERPENOIDS",
+      "baseIri" : "https://purl.org/npc",
+      "labels" : {
+        "IRI-based" : "FRIEDELANE_TRITERPENOIDS",
+        "undefined" : "Friedelane triterpenoids"
       }
     }, {
       "iri" : "https://purl.org/npc#LIPPIFOLIANE_SESQUITERPENOIDS",
@@ -5114,18 +5117,18 @@
         "undefined" : "Silphinane sesquiterpenoids"
       }
     }, {
-      "iri" : "https://purl.org/npc#RESOLVIN_ES",
-      "baseIri" : "https://purl.org/npc",
-      "labels" : {
-        "IRI-based" : "RESOLVIN_ES",
-        "undefined" : "Resolvin Es"
-      }
-    }, {
       "iri" : "https://purl.org/npc#ANABAENOPEPTINS",
       "baseIri" : "https://purl.org/npc",
       "labels" : {
         "IRI-based" : "ANABAENOPEPTINS",
         "undefined" : "Anabaenopeptins"
+      }
+    }, {
+      "iri" : "https://purl.org/npc#RESOLVIN_ES",
+      "baseIri" : "https://purl.org/npc",
+      "labels" : {
+        "IRI-based" : "RESOLVIN_ES",
+        "undefined" : "Resolvin Es"
       }
     }, {
       "iri" : "https://purl.org/npc#ACUTUMINE_ALKALOIDS",
@@ -5170,6 +5173,13 @@
         "undefined" : "Cephalotaxus alkaloids"
       }
     }, {
+      "iri" : "https://purl.org/npc#VANCOMYCINS_AND_TEICOPLANINS",
+      "baseIri" : "https://purl.org/npc",
+      "labels" : {
+        "IRI-based" : "VANCOMYCINS_AND_TEICOPLANINS",
+        "undefined" : "Vancomycins and Teicoplanins"
+      }
+    }, {
       "iri" : "https://purl.org/npc#ANSA_PEPTIDE_ALKALOIDS",
       "baseIri" : "https://purl.org/npc",
       "labels" : {
@@ -5184,11 +5194,11 @@
         "undefined" : "Purine nucleos(t)ides"
       }
     }, {
-      "iri" : "https://purl.org/npc#VANCOMYCINS_AND_TEICOPLANINS",
+      "iri" : "https://purl.org/npc#CAROTENOIDS_%28C40%2C_%CE%93-%CE%95%29",
       "baseIri" : "https://purl.org/npc",
       "labels" : {
-        "IRI-based" : "VANCOMYCINS_AND_TEICOPLANINS",
-        "undefined" : "Vancomycins and Teicoplanins"
+        "IRI-based" : "CAROTENOIDS_%28C40%2C_%CE%93-%CE%95%29",
+        "undefined" : "Carotenoids (C40, γ-ε)"
       }
     }, {
       "iri" : "https://purl.org/npc#INDOLE_DIKETOPIPERAZINE_ALKALOIDS_%28L-TRP%2C_L-TRP%29",
@@ -5196,13 +5206,6 @@
       "labels" : {
         "IRI-based" : "INDOLE_DIKETOPIPERAZINE_ALKALOIDS_%28L-TRP%2C_L-TRP%29",
         "undefined" : "Indole diketopiperazine alkaloids (L-Trp, L-Trp)"
-      }
-    }, {
-      "iri" : "https://purl.org/npc#CAROTENOIDS_%28C40%2C_%CE%93-%CE%95%29",
-      "baseIri" : "https://purl.org/npc",
-      "labels" : {
-        "IRI-based" : "CAROTENOIDS_%28C40%2C_%CE%93-%CE%95%29",
-        "undefined" : "Carotenoids (C40, γ-ε)"
       }
     }, {
       "iri" : "https://purl.org/npc#DEPSIPEPTIDES",
@@ -5219,18 +5222,18 @@
         "undefined" : "Carotenoids (C40, β-π)"
       }
     }, {
-      "iri" : "https://purl.org/npc#RIPPS-MICROCINS",
-      "baseIri" : "https://purl.org/npc",
-      "labels" : {
-        "IRI-based" : "RIPPS-MICROCINS",
-        "undefined" : "RiPPs-Microcins"
-      }
-    }, {
       "iri" : "https://purl.org/npc#OTHER_OCTADECANOIDS",
       "baseIri" : "https://purl.org/npc",
       "labels" : {
         "IRI-based" : "OTHER_OCTADECANOIDS",
         "undefined" : "Other Octadecanoids"
+      }
+    }, {
+      "iri" : "https://purl.org/npc#RIPPS-MICROCINS",
+      "baseIri" : "https://purl.org/npc",
+      "labels" : {
+        "IRI-based" : "RIPPS-MICROCINS",
+        "undefined" : "RiPPs-Microcins"
       }
     }, {
       "iri" : "https://purl.org/npc#FLAVANONES",
@@ -5387,13 +5390,6 @@
         "undefined" : "Simple cyclic polyketides"
       }
     }, {
-      "iri" : "https://purl.org/npc#ANTHRACYCLINES",
-      "baseIri" : "https://purl.org/npc",
-      "labels" : {
-        "IRI-based" : "ANTHRACYCLINES",
-        "undefined" : "Anthracyclines"
-      }
-    }, {
       "iri" : "https://purl.org/npc#VISCIDANE_DITERPENOIDS",
       "baseIri" : "https://purl.org/npc",
       "labels" : {
@@ -5401,11 +5397,11 @@
         "undefined" : "Viscidane diterpenoids"
       }
     }, {
-      "iri" : "https://purl.org/npc#INDOLE_DIKETOPIPERAZINE_ALKALOIDS_%28L-TRP%2C_L-ALA%29",
+      "iri" : "https://purl.org/npc#ANTHRACYCLINES",
       "baseIri" : "https://purl.org/npc",
       "labels" : {
-        "IRI-based" : "INDOLE_DIKETOPIPERAZINE_ALKALOIDS_%28L-TRP%2C_L-ALA%29",
-        "undefined" : "Indole diketopiperazine alkaloids (L-Trp, L-Ala)"
+        "IRI-based" : "ANTHRACYCLINES",
+        "undefined" : "Anthracyclines"
       }
     }, {
       "iri" : "https://purl.org/npc#GLYCEROPHOSPHOSERINES",
@@ -5420,6 +5416,13 @@
       "labels" : {
         "IRI-based" : "ISHWARANE_SESQUITERPENOIDS",
         "undefined" : "Ishwarane sesquiterpenoids"
+      }
+    }, {
+      "iri" : "https://purl.org/npc#INDOLE_DIKETOPIPERAZINE_ALKALOIDS_%28L-TRP%2C_L-ALA%29",
+      "baseIri" : "https://purl.org/npc",
+      "labels" : {
+        "IRI-based" : "INDOLE_DIKETOPIPERAZINE_ALKALOIDS_%28L-TRP%2C_L-ALA%29",
+        "undefined" : "Indole diketopiperazine alkaloids (L-Trp, L-Ala)"
       }
     }, {
       "iri" : "https://purl.org/npc#NORCEMBRANE_DITERPENOIDS",
@@ -5471,18 +5474,18 @@
         "undefined" : "Furans"
       }
     }, {
-      "iri" : "https://purl.org/npc#CAROTENOIDS_%28C40%2C_%CE%95-%CE%95%29",
-      "baseIri" : "https://purl.org/npc",
-      "labels" : {
-        "IRI-based" : "CAROTENOIDS_%28C40%2C_%CE%95-%CE%95%29",
-        "undefined" : "Carotenoids (C40, ε-ε)"
-      }
-    }, {
       "iri" : "https://purl.org/npc#FATTY_ALDEHYDES",
       "baseIri" : "https://purl.org/npc",
       "labels" : {
         "IRI-based" : "FATTY_ALDEHYDES",
         "undefined" : "Fatty aldehydes"
+      }
+    }, {
+      "iri" : "https://purl.org/npc#CAROTENOIDS_%28C40%2C_%CE%95-%CE%95%29",
+      "baseIri" : "https://purl.org/npc",
+      "labels" : {
+        "IRI-based" : "CAROTENOIDS_%28C40%2C_%CE%95-%CE%95%29",
+        "undefined" : "Carotenoids (C40, ε-ε)"
       }
     }, {
       "iri" : "https://purl.org/npc#SORBICILINOIDS",
@@ -5506,18 +5509,18 @@
         "undefined" : "Boromycins"
       }
     }, {
-      "iri" : "https://purl.org/npc#LONGIPINANE_SESQUITERPENOIDS",
-      "baseIri" : "https://purl.org/npc",
-      "labels" : {
-        "IRI-based" : "LONGIPINANE_SESQUITERPENOIDS",
-        "undefined" : "Longipinane sesquiterpenoids"
-      }
-    }, {
       "iri" : "https://purl.org/npc#BICYCLOGERMACRANE_SESQUITERPENOIDS",
       "baseIri" : "https://purl.org/npc",
       "labels" : {
         "IRI-based" : "BICYCLOGERMACRANE_SESQUITERPENOIDS",
         "undefined" : "Bicyclogermacrane sesquiterpenoids"
+      }
+    }, {
+      "iri" : "https://purl.org/npc#LONGIPINANE_SESQUITERPENOIDS",
+      "baseIri" : "https://purl.org/npc",
+      "labels" : {
+        "IRI-based" : "LONGIPINANE_SESQUITERPENOIDS",
+        "undefined" : "Longipinane sesquiterpenoids"
       }
     }, {
       "iri" : "https://purl.org/npc#NORLABDANE_DITERPENOIDS",
@@ -5583,18 +5586,18 @@
         "undefined" : "Glycerophosphoglycerophosphoglycerols"
       }
     }, {
-      "iri" : "https://purl.org/npc#ACYL_PHLOROGLUCINOLS",
-      "baseIri" : "https://purl.org/npc",
-      "labels" : {
-        "IRI-based" : "ACYL_PHLOROGLUCINOLS",
-        "undefined" : "Acyl phloroglucinols"
-      }
-    }, {
       "iri" : "https://purl.org/npc#LABDANE_DITERPENOIDS",
       "baseIri" : "https://purl.org/npc",
       "labels" : {
         "IRI-based" : "LABDANE_DITERPENOIDS",
         "undefined" : "Labdane diterpenoids"
+      }
+    }, {
+      "iri" : "https://purl.org/npc#ACYL_PHLOROGLUCINOLS",
+      "baseIri" : "https://purl.org/npc",
+      "labels" : {
+        "IRI-based" : "ACYL_PHLOROGLUCINOLS",
+        "undefined" : "Acyl phloroglucinols"
       }
     }, {
       "iri" : "https://purl.org/npc#GLYCOSYLDIACYLGLYCEROLS",
@@ -5625,18 +5628,18 @@
         "undefined" : "Trichothecane sesquiterpenoids"
       }
     }, {
-      "iri" : "https://purl.org/npc#ABEOLUPANE_TRITERPENOIDS",
-      "baseIri" : "https://purl.org/npc",
-      "labels" : {
-        "IRI-based" : "ABEOLUPANE_TRITERPENOIDS",
-        "undefined" : "Abeolupane triterpenoids"
-      }
-    }, {
       "iri" : "https://purl.org/npc#FARNESANE_SESQUITERPENOIDS",
       "baseIri" : "https://purl.org/npc",
       "labels" : {
         "IRI-based" : "FARNESANE_SESQUITERPENOIDS",
         "undefined" : "Farnesane sesquiterpenoids"
+      }
+    }, {
+      "iri" : "https://purl.org/npc#ABEOLUPANE_TRITERPENOIDS",
+      "baseIri" : "https://purl.org/npc",
+      "labels" : {
+        "IRI-based" : "ABEOLUPANE_TRITERPENOIDS",
+        "undefined" : "Abeolupane triterpenoids"
       }
     }, {
       "iri" : "https://purl.org/npc#IBOGA_TYPE",
@@ -5646,18 +5649,18 @@
         "undefined" : "Iboga type"
       }
     }, {
-      "iri" : "https://purl.org/npc#SACCULATANE_DITERPENOIDS",
-      "baseIri" : "https://purl.org/npc",
-      "labels" : {
-        "IRI-based" : "SACCULATANE_DITERPENOIDS",
-        "undefined" : "Sacculatane diterpenoids"
-      }
-    }, {
       "iri" : "https://purl.org/npc#SATIVANE_SESQUITERPENOIDS",
       "baseIri" : "https://purl.org/npc",
       "labels" : {
         "IRI-based" : "SATIVANE_SESQUITERPENOIDS",
         "undefined" : "Sativane sesquiterpenoids"
+      }
+    }, {
+      "iri" : "https://purl.org/npc#SACCULATANE_DITERPENOIDS",
+      "baseIri" : "https://purl.org/npc",
+      "labels" : {
+        "IRI-based" : "SACCULATANE_DITERPENOIDS",
+        "undefined" : "Sacculatane diterpenoids"
       }
     }, {
       "iri" : "https://purl.org/npc#SERRATANE_TRITERPENOIDS",
@@ -5751,18 +5754,18 @@
         "undefined" : "Prenyleudesmane diterpenoids"
       }
     }, {
-      "iri" : "https://purl.org/npc#PRODIGIOSINS",
-      "baseIri" : "https://purl.org/npc",
-      "labels" : {
-        "IRI-based" : "PRODIGIOSINS",
-        "undefined" : "Prodigiosins"
-      }
-    }, {
       "iri" : "https://purl.org/npc#DIBENZYLBUTYROLACTONE_LIGNANS",
       "baseIri" : "https://purl.org/npc",
       "labels" : {
         "IRI-based" : "DIBENZYLBUTYROLACTONE_LIGNANS",
         "undefined" : "Dibenzylbutyrolactone lignans"
+      }
+    }, {
+      "iri" : "https://purl.org/npc#PRODIGIOSINS",
+      "baseIri" : "https://purl.org/npc",
+      "labels" : {
+        "IRI-based" : "PRODIGIOSINS",
+        "undefined" : "Prodigiosins"
       }
     }, {
       "iri" : "https://purl.org/npc#CHILOSCYPHANE_SESQUITERPENOIDS",
@@ -5818,7 +5821,7 @@
       "undefined" : "The Superclasses are subdivided into Classes that represent specific compound families (e.g., erythromycins, penicillins, or cannabinoids), characteristic functional groups (e.g., chromones, azaphilones, indole alkaloids, or 3-spiro tetramic acids), or scaffold diversity within a Superclass (e.g., flavans, flavones, and chalcones from flavonoids)."
     },
     "id" : "14",
-    "superClasses" : [ "5" ]
+    "superClasses" : [ "1" ]
   }, {
     "iri" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#List",
     "baseIri" : "http://www.w3.org/1999/02/22-rdf-syntax-ns",
@@ -5828,12 +5831,42 @@
     },
     "attributes" : [ "external" ],
     "id" : "34"
+  }, {
+    "iri" : "http://xmlns.com/foaf/0.1/Person",
+    "baseIri" : "http://xmlns.com/foaf/0.1",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Person"
+    },
+    "individuals" : [ {
+      "iri" : "https://orcid.org/0000-0002-3175-5372",
+      "baseIri" : "https://orcid.org",
+      "annotations" : {
+        "name" : [ {
+          "identifier" : "name",
+          "language" : "en",
+          "value" : "Tarcisio Mendes de Farias",
+          "type" : "label"
+        } ],
+        "memberOf" : [ {
+          "identifier" : "memberOf",
+          "language" : "undefined",
+          "value" : "https://www.sib.swiss",
+          "type" : "iri"
+        } ]
+      },
+      "labels" : {
+        "IRI-based" : "0000-0002-3175-5372"
+      }
+    } ],
+    "attributes" : [ "external" ],
+    "id" : "37"
   } ],
   "property" : [ {
     "id" : "0",
     "type" : "owl:objectProperty"
   }, {
-    "id" : "4",
+    "id" : "6",
     "type" : "owl:objectProperty"
   }, {
     "id" : "10",
@@ -5863,7 +5896,7 @@
     "id" : "29",
     "type" : "owl:objectProperty"
   }, {
-    "id" : "7",
+    "id" : "3",
     "type" : "owl:objectProperty"
   }, {
     "id" : "30",
@@ -5872,7 +5905,7 @@
     "id" : "31",
     "type" : "owl:disjointWith"
   }, {
-    "id" : "3",
+    "id" : "9",
     "type" : "owl:objectProperty"
   }, {
     "id" : "22",
@@ -5884,10 +5917,10 @@
     "id" : "21",
     "type" : "owl:objectProperty"
   }, {
-    "id" : "8",
+    "id" : "4",
     "type" : "owl:objectProperty"
   }, {
-    "id" : "6",
+    "id" : "2",
     "type" : "owl:objectProperty"
   }, {
     "id" : "33",
@@ -5899,63 +5932,16 @@
     "id" : "36",
     "type" : "rdfs:SubClassOf"
   }, {
-    "id" : "9",
+    "id" : "5",
     "type" : "owl:objectProperty"
   }, {
-    "id" : "37",
+    "id" : "38",
     "type" : "owl:objectProperty"
   } ],
   "propertyAttribute" : [ {
-    "iri" : "http://www.w3.org/2004/02/skos/core#inScheme",
-    "baseIri" : "http://www.w3.org/2004/02/skos/core",
-    "range" : "2",
-    "annotations" : {
-      "isDefinedBy" : [ {
-        "identifier" : "isDefinedBy",
-        "language" : "undefined",
-        "value" : "http://www.w3.org/2004/02/skos/core",
-        "type" : "iri"
-      }, {
-        "identifier" : "isDefinedBy",
-        "language" : "undefined",
-        "value" : "http://www.w3.org/2004/02/skos/core",
-        "type" : "iri"
-      } ],
-      "definition" : [ {
-        "identifier" : "definition",
-        "language" : "en",
-        "value" : "Relates a resource (for example a concept) to a concept scheme in which it is included.",
-        "type" : "label"
-      }, {
-        "identifier" : "definition",
-        "language" : "en",
-        "value" : "Relates a resource (for example a concept) to a concept scheme in which it is included.",
-        "type" : "label"
-      } ],
-      "scopeNote" : [ {
-        "identifier" : "scopeNote",
-        "language" : "en",
-        "value" : "A concept may be a member of more than one concept scheme.",
-        "type" : "label"
-      }, {
-        "identifier" : "scopeNote",
-        "language" : "en",
-        "value" : "A concept may be a member of more than one concept scheme.",
-        "type" : "label"
-      } ]
-    },
-    "label" : {
-      "IRI-based" : "inScheme",
-      "en" : "is in scheme"
-    },
-    "domain" : "1",
-    "subproperty" : [ "3" ],
-    "attributes" : [ "external", "object" ],
-    "id" : "0"
-  }, {
     "iri" : "http://www.w3.org/2004/02/skos/core#semanticRelation",
     "baseIri" : "http://www.w3.org/2004/02/skos/core",
-    "range" : "5",
+    "range" : "1",
     "annotations" : {
       "isDefinedBy" : [ {
         "identifier" : "isDefinedBy",
@@ -5995,10 +5981,57 @@
       "IRI-based" : "semanticRelation",
       "en" : "is in semantic relation with"
     },
-    "domain" : "5",
-    "subproperty" : [ "6", "7", "8", "9" ],
-    "attributes" : [ "external", "object" ],
-    "id" : "4"
+    "domain" : "1",
+    "subproperty" : [ "2", "3", "4", "5" ],
+    "attributes" : [ "object", "external" ],
+    "id" : "0"
+  }, {
+    "iri" : "http://www.w3.org/2004/02/skos/core#inScheme",
+    "baseIri" : "http://www.w3.org/2004/02/skos/core",
+    "range" : "8",
+    "annotations" : {
+      "isDefinedBy" : [ {
+        "identifier" : "isDefinedBy",
+        "language" : "undefined",
+        "value" : "http://www.w3.org/2004/02/skos/core",
+        "type" : "iri"
+      }, {
+        "identifier" : "isDefinedBy",
+        "language" : "undefined",
+        "value" : "http://www.w3.org/2004/02/skos/core",
+        "type" : "iri"
+      } ],
+      "definition" : [ {
+        "identifier" : "definition",
+        "language" : "en",
+        "value" : "Relates a resource (for example a concept) to a concept scheme in which it is included.",
+        "type" : "label"
+      }, {
+        "identifier" : "definition",
+        "language" : "en",
+        "value" : "Relates a resource (for example a concept) to a concept scheme in which it is included.",
+        "type" : "label"
+      } ],
+      "scopeNote" : [ {
+        "identifier" : "scopeNote",
+        "language" : "en",
+        "value" : "A concept may be a member of more than one concept scheme.",
+        "type" : "label"
+      }, {
+        "identifier" : "scopeNote",
+        "language" : "en",
+        "value" : "A concept may be a member of more than one concept scheme.",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "inScheme",
+      "en" : "is in scheme"
+    },
+    "domain" : "7",
+    "subproperty" : [ "9" ],
+    "attributes" : [ "object", "external" ],
+    "id" : "6"
   }, {
     "iri" : "http://www.w3.org/2004/02/skos/core#closeMatch",
     "baseIri" : "http://www.w3.org/2004/02/skos/core",
@@ -6031,16 +6064,16 @@
       "IRI-based" : "closeMatch",
       "en" : "has close match"
     },
-    "superproperty" : [ "9" ],
+    "superproperty" : [ "5" ],
     "domain" : "11",
     "subproperty" : [ "12" ],
-    "attributes" : [ "external", "object", "symmetric" ],
+    "attributes" : [ "object", "external", "symmetric" ],
     "id" : "10"
   }, {
     "iri" : "http://www.w3.org/2004/02/skos/core#hasTopConcept",
-    "inverse" : "3",
+    "inverse" : "9",
     "baseIri" : "http://www.w3.org/2004/02/skos/core",
-    "range" : "5",
+    "range" : "1",
     "annotations" : {
       "isDefinedBy" : [ {
         "identifier" : "isDefinedBy",
@@ -6069,12 +6102,12 @@
       "IRI-based" : "hasTopConcept",
       "en" : "has top concept"
     },
-    "domain" : "2",
-    "attributes" : [ "external", "object" ],
+    "domain" : "8",
+    "attributes" : [ "object", "external" ],
     "id" : "13"
   }, {
-    "range" : "2",
-    "domain" : "5",
+    "range" : "8",
+    "domain" : "1",
     "attributes" : [ "object", "anonymous" ],
     "id" : "17"
   }, {
@@ -6110,22 +6143,22 @@
       "IRI-based" : "broadMatch",
       "en" : "has broader match"
     },
-    "superproperty" : [ "22", "9" ],
+    "superproperty" : [ "22", "5" ],
     "domain" : "11",
-    "attributes" : [ "external", "object" ],
+    "attributes" : [ "object", "external" ],
     "id" : "20"
   }, {
-    "range" : "5",
+    "range" : "1",
     "domain" : "14",
     "attributes" : [ "object", "anonymous" ],
     "id" : "24"
   }, {
-    "range" : "5",
+    "range" : "1",
     "domain" : "15",
     "attributes" : [ "object", "anonymous" ],
     "id" : "25"
   }, {
-    "range" : "5",
+    "range" : "1",
     "domain" : "16",
     "attributes" : [ "object", "anonymous" ],
     "id" : "26"
@@ -6173,13 +6206,13 @@
       "IRI-based" : "narrower",
       "en" : "has narrower"
     },
-    "superproperty" : [ "6" ],
+    "superproperty" : [ "2" ],
     "domain" : "11",
     "subproperty" : [ "21" ],
     "comment" : {
       "en" : "Narrower concepts are typically rendered as children in a concept hierarchy (tree)."
     },
-    "attributes" : [ "external", "object" ],
+    "attributes" : [ "object", "external" ],
     "id" : "28"
   }, {
     "iri" : "http://www.w3.org/2004/02/skos/core#relatedMatch",
@@ -6213,13 +6246,13 @@
       "IRI-based" : "relatedMatch",
       "en" : "has related match"
     },
-    "superproperty" : [ "8", "9" ],
+    "superproperty" : [ "4", "5" ],
     "domain" : "11",
-    "attributes" : [ "external", "object", "symmetric" ],
+    "attributes" : [ "object", "external", "symmetric" ],
     "id" : "29"
   }, {
     "iri" : "http://www.w3.org/2004/02/skos/core#broaderTransitive",
-    "inverse" : "6",
+    "inverse" : "2",
     "baseIri" : "http://www.w3.org/2004/02/skos/core",
     "range" : "11",
     "annotations" : {
@@ -6261,25 +6294,25 @@
       "IRI-based" : "broaderTransitive",
       "en" : "has broader transitive"
     },
-    "superproperty" : [ "4" ],
+    "superproperty" : [ "0" ],
     "domain" : "11",
     "subproperty" : [ "22" ],
-    "attributes" : [ "external", "transitive", "object" ],
-    "id" : "7"
+    "attributes" : [ "object", "transitive", "external" ],
+    "id" : "3"
   }, {
-    "range" : "5",
+    "range" : "1",
     "domain" : "19",
     "attributes" : [ "object", "anonymous" ],
     "id" : "30"
   }, {
-    "range" : "2",
+    "range" : "8",
     "domain" : "19",
     "attributes" : [ "object", "anonymous" ],
     "id" : "31"
   }, {
     "iri" : "http://www.w3.org/2004/02/skos/core#topConceptOf",
     "baseIri" : "http://www.w3.org/2004/02/skos/core",
-    "range" : "2",
+    "range" : "8",
     "annotations" : {
       "isDefinedBy" : [ {
         "identifier" : "isDefinedBy",
@@ -6308,10 +6341,10 @@
       "IRI-based" : "topConceptOf",
       "en" : "is top concept in scheme"
     },
-    "superproperty" : [ "0" ],
-    "domain" : "5",
-    "attributes" : [ "external", "object" ],
-    "id" : "3"
+    "superproperty" : [ "6" ],
+    "domain" : "1",
+    "attributes" : [ "object", "external" ],
+    "id" : "9"
   }, {
     "iri" : "http://www.w3.org/2004/02/skos/core#broader",
     "baseIri" : "http://www.w3.org/2004/02/skos/core",
@@ -6355,13 +6388,13 @@
       "IRI-based" : "broader",
       "en" : "has broader"
     },
-    "superproperty" : [ "7" ],
+    "superproperty" : [ "3" ],
     "domain" : "11",
     "subproperty" : [ "20" ],
     "comment" : {
       "en" : "Broader concepts are typically rendered as parents in a concept hierarchy (tree)."
     },
-    "attributes" : [ "external", "object" ],
+    "attributes" : [ "object", "external" ],
     "id" : "22"
   }, {
     "iri" : "http://www.w3.org/2004/02/skos/core#exactMatch",
@@ -6400,7 +6433,7 @@
     "comment" : {
       "en" : "skos:exactMatch is disjoint with each of the properties skos:broadMatch and skos:relatedMatch."
     },
-    "attributes" : [ "external", "transitive", "object", "symmetric" ],
+    "attributes" : [ "object", "transitive", "external", "symmetric" ],
     "id" : "12"
   }, {
     "iri" : "http://www.w3.org/2004/02/skos/core#narrowMatch",
@@ -6434,9 +6467,9 @@
       "IRI-based" : "narrowMatch",
       "en" : "has narrower match"
     },
-    "superproperty" : [ "28", "9" ],
+    "superproperty" : [ "28", "5" ],
     "domain" : "11",
-    "attributes" : [ "external", "object" ],
+    "attributes" : [ "object", "external" ],
     "id" : "21"
   }, {
     "iri" : "http://www.w3.org/2004/02/skos/core#related",
@@ -6470,14 +6503,14 @@
       "IRI-based" : "related",
       "en" : "has related"
     },
-    "superproperty" : [ "4" ],
+    "superproperty" : [ "0" ],
     "domain" : "11",
     "subproperty" : [ "29" ],
     "comment" : {
       "en" : "skos:related is disjoint with skos:broaderTransitive"
     },
-    "attributes" : [ "external", "object", "symmetric" ],
-    "id" : "8"
+    "attributes" : [ "object", "external", "symmetric" ],
+    "id" : "4"
   }, {
     "iri" : "http://www.w3.org/2004/02/skos/core#narrowerTransitive",
     "baseIri" : "http://www.w3.org/2004/02/skos/core",
@@ -6521,11 +6554,11 @@
       "IRI-based" : "narrowerTransitive",
       "en" : "has narrower transitive"
     },
-    "superproperty" : [ "4" ],
+    "superproperty" : [ "0" ],
     "domain" : "11",
     "subproperty" : [ "28" ],
-    "attributes" : [ "external", "transitive", "object" ],
-    "id" : "6"
+    "attributes" : [ "object", "transitive", "external" ],
+    "id" : "2"
   }, {
     "iri" : "http://www.w3.org/2004/02/skos/core#memberList",
     "baseIri" : "http://www.w3.org/2004/02/skos/core",
@@ -6562,7 +6595,7 @@
     "comment" : {
       "en" : "For any resource, every item in the list given as the value of the\n      skos:memberList property is also a value of the skos:member property."
     },
-    "attributes" : [ "external", "object", "functional" ],
+    "attributes" : [ "functional", "object", "external" ],
     "id" : "33"
   }, {
     "iri" : "http://www.w3.org/2004/02/skos/core#notation",
@@ -6647,14 +6680,14 @@
       "IRI-based" : "mappingRelation",
       "en" : "is in mapping relation with"
     },
-    "superproperty" : [ "4" ],
+    "superproperty" : [ "0" ],
     "domain" : "11",
     "subproperty" : [ "10", "29", "21", "20" ],
     "comment" : {
       "en" : "These concept mapping relations mirror semantic relations, and the data model defined below is similar (with the exception of skos:exactMatch) to the data model defined for semantic relations. A distinct vocabulary is provided for concept mapping relations, to provide a convenient way to differentiate links within a concept scheme from links between concept schemes. However, this pattern of usage is not a formal requirement of the SKOS data model, and relies on informal definitions of best practice."
     },
-    "attributes" : [ "external", "object" ],
-    "id" : "9"
+    "attributes" : [ "object", "external" ],
+    "id" : "5"
   }, {
     "iri" : "http://www.w3.org/2004/02/skos/core#member",
     "baseIri" : "http://www.w3.org/2004/02/skos/core",
@@ -6688,7 +6721,7 @@
       "en" : "has member"
     },
     "domain" : "19",
-    "attributes" : [ "external", "object" ],
-    "id" : "37"
+    "attributes" : [ "object", "external" ],
+    "id" : "38"
   } ]
 }

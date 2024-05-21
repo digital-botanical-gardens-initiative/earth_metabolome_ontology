@@ -13,11 +13,11 @@
 <script type="module" src="resources/dark-mode-toggle.mjs"></script><div class="darkmode">
 	<dark-mode-toggle class="slider"></dark-mode-toggle>
 </div>
- <title>The natural product taxonomony.</title>
+ <title>The natural product taxonomy.</title>
 
 
 <!-- SCHEMA.ORG METADATA -->
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","url":"https://purl.org/npc#","image":"http://vowl.visualdataweb.org/webvowl/#iri=https://purl.org/npc#","name":"The natural product taxonomony.", "headline":"The Earth Metabolome Initiative ontology is mainly designed as data schema to structure and describe natural product taxonomy, spectrum annotation provenance, sample and observation data, mass spectrometry data and analysis, and chemical structure representations. The EMI ontology replaces the [ENPKG vocabulary](https://enpkg.commons-lab.org/doc/index.html).", "dateReleased":"2023-06-08", "dateModified":"2024-05-21", "version":"0.1", "license":"https://creativecommons.org/publicdomain/zero/1.0/", "codeRepository":"https://github.com/digital-botanical-gardens-initiative/earth_metabolome_ontology", "author":[{"@type":"Person","name":"Tarcisio Mendes de Farias","url":"https://orcid.org/0000-0002-3175-5372"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","url":"https://purl.org/npc#","image":"http://vowl.visualdataweb.org/webvowl/#iri=https://purl.org/npc#","name":"The natural product taxonomy.", "headline":"An SKOS-based OWL ontology for the structural classification of natural products derived from the NPClassifier tool. This OWL ontology was generated with the script in [scripts folder](scripts/natural_product_taxonomy).", "dateReleased":"2023-06-08", "dateModified":"2024-05-21", "version":"0.1", "license":"https://creativecommons.org/publicdomain/zero/1.0/", "codeRepository":"https://github.com/digital-botanical-gardens-initiative/earth_metabolome_ontology", "author":[{"@type":"Person","name":"Tarcisio Mendes de Farias","url":"https://orcid.org/0000-0002-3175-5372"}]}</script>
 
 <script src="resources/jquery.js"></script> 
 <script src="resources/marked.min.js"></script> 
@@ -65,7 +65,7 @@ $(function(){
 <div class="container">
 <div class="head">
 <div style="float:right">language <a href="index-en.html"><b>en</b></a> </div>
-<h1>The natural product taxonomony.</h1>
+<h1>The natural product taxonomy.</h1>
 <h2>Release: 2023-06-08</h2>
 
 
@@ -84,7 +84,7 @@ $(function(){
 <dt>Download serialization:</dt><dd><span><a href="ontology.jsonld" target="_blank"><img src="https://img.shields.io/badge/Format-JSON_LD-blue.svg" alt="JSON-LD" /></a> </span><span><a href="ontology.owl" target="_blank"><img src="https://img.shields.io/badge/Format-RDF/XML-blue.svg" alt="RDF/XML" /></a> </span><span><a href="ontology.nt" target="_blank"><img src="https://img.shields.io/badge/Format-N_Triples-blue.svg" alt="N-Triples" /></a> </span><span><a href="ontology.ttl" target="_blank"><img src="https://img.shields.io/badge/Format-TTL-blue.svg" alt="TTL" /></a> </span></dd><dt>License:</dt><dd><a href="https://creativecommons.org/publicdomain/zero/1.0/" target="_blank"><img src="https://img.shields.io/badge/License-https://creativecommons.org/publicdomain/zero/1.0/-blue.svg" alt="https://creativecommons.org/publicdomain/zero/1.0/" /></a>
 </dd><dt>Visualization:</dt><dd><a href="webvowl/index.html#" target="_blank"><img src="https://img.shields.io/badge/Visualize_with-WebVowl-blue.svg" alt="Visualize with WebVowl" /></a></dd>
 <!-- <dt>Evaluation:</dt><dd><a href="OOPSevaluation/oopsEval.html#" target="_blank"><img src="https://img.shields.io/badge/Evaluate_with-OOPS! (OntOlogy Pitfall Scanner!)-blue.svg" alt="Evaluate with OOPS!" /></a></dd> --><dt>Cite as:</dt>
-<dd>Tarcisio Mendes de Farias. The natural product taxonomony.. Revision: 0.1.</dd>
+<dd>Tarcisio Mendes de Farias. The natural product taxonomy.. Revision: 0.1.</dd>
 <dt>Vocabulary maintained at:</dt>
 <dd><a href="https://github.com/digital-botanical-gardens-initiative/earth_metabolome_ontology">https://github.com/digital-botanical-gardens-initiative/earth_metabolome_ontology</a></dd>
 </dl>
@@ -96,19 +96,13 @@ $(function(){
 <span>draft</span>
 </div>
 </div>     <div id="abstract"><h2>Abstract</h2><span class="markdown">
-The Earth Metabolome Initiative ontology is mainly designed as data schema to structure and describe natural product taxonomy, spectrum annotation provenance, sample and observation data, mass spectrometry data and analysis, and chemical structure representations. The EMI ontology replaces the [ENPKG vocabulary](https://enpkg.commons-lab.org/doc/index.html).</span>
+An SKOS-based OWL ontology for the structural classification of natural products derived from the NPClassifier tool. This OWL ontology was generated with the script in [scripts folder](scripts/natural_product_taxonomy).</span>
 </div>
 <div id="toc"></div> 
 
 <!--INTRODUCTION SECTION-->
     <div id="introduction"><h2 id="intro" class="list">Introduction <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
-<span class="markdown">The Earth Metabolome Initiative (EMI) ontology replaces the Experimental Natural Products Knowledge Graph [(ENPKG) vocabulary]( https://enpkg.commons-lab.org/doc/index.html). The EMI ontology is used to structure spectrum annotation provenance by reusing the [PROV-O ontology](https://www.w3.org/TR/prov-o/) (a W3C recommendation) and sample and observation data by applying the [SOSA ontology](https://www.w3.org/TR/vocab-ssn/). EMI reuses the SOSA ontology as a data schema for struturing the Sample and Observation data. SOSA (Sensor, Observation, Sample, and Actuator) is a subset of SSN (Semantic Sensor Network Ontology) that is a W3C recommendation. Although, the SSN was developed with ontology engineers in mind as the primary audience. They addressed changes in scope and audience that currently also includes scientific observations that may make heavy use of sampling strategies, and, therefore, the Sampling, Sampler, and Sample classes, as well as their corresponding properties, have been added to SOSA and SSN. Chemical taxonomy is also highly structure in EMI by relying on a taxonomy derived from NPClassifier (i.e., EMI imports [Natural Product Classifier vocabulary](https://purl.org/npc)). This taxonomy was defined for EMI with the [SKOS vocabulary](https://www.w3.org/TR/skos-reference). Indeed, it is an SKOS-based vocabulary for the structural classification of natural products. The skos:broder term is used to represent the hierarchy among Classes, Superclasses and Pathways.  npc:Class, npc:Superclass and npc:Pathway are subclasses of skos:Concept. rdfs:label is assigned for each term of the taxonomy that are instances of one of the subclasses of skos:Concept.
-
-SOSA reuse. We consider a Mass Spectrometer as a sosa:Platform. The MS detector that belongs to a Mass Spectrometer is a Sensor. If we do not want to capture the equipment (Mass Spectrometer for provenance) of the generated analysis such as by Liquid chromatography–mass spectrometry (LCMS), we can ignore/ommit it. The observation is interpreted as a prov:Activity/sosa:Observation/emi:Analysis (the Analysis as defined in the Earth Metabolome Intiative model). This observation (a.k.a. LCMS Analysis) uses (prov:use/sosa:hasFeatureOfInterest) some sample. This sample comes from some emi:System (e.g., species or another sample like a Raw Material, a broader specimen). All EMI model classes related to samples are subclasses of sosa:Sample, notably emi:Aliquot, emi:Blank, emi:ExtractSample, emi:RawMaterial and emi:QCSample.
-
-We can classify each Specimen by using some Specimen taxonomy, for example, [specimenType](https://isamplesorg.github.io/models/generated/vocabularies/specimenType.html) that relies on SKOS. Moreover, we can also classify a sample with an external material taxonomy (e.g.,  [materialType](https://isamplesorg.github.io/models/generated/vocabularies/materialType.html#organicmaterial)). The raw material (emi:RawMaterial) is also a sosa:sample. In case it is needed to describe the "Mass Spectrometer" as a sampler too, we can apply the sosa:Sampler class to define it. The sampling process resuts on subsamples (e.g., emi:Aliquot). The extracted sample can be classified with an external taxonomy (e.g., an Specimen taxonomy) with the term emi:isClassifiedWith.
-
-Other metabolomics data are structured with specific EMI classes such as emi:ChemicalStrucutre for represeting molecules, emi:MS2Spectrum for the mass spectrometry (MS2 spectra), emi:LCMSFeatureSet that represents features obtained from the processing of a given LCMS analysis, please refer to classes and properties descriptions. </span>
+<span class="markdown"> This taxonomy is structured with the SKOS vocabulary. skos:broder is used to represent the hierarchy among Classes, Superclasses and Pathways.  npc:Class, npc:Superclass and npc:Pathway are subclasses of skos:Concept. rdfs:label is assigned for each term of the taxonomy that are instances of one of the subclasses of skos:Concept.</span>
 <div id="namespacedeclarations">
 <h3 id="ns" class="list">Namespace declarations</h3>
 <div id="ns" align="center">
@@ -153,7 +147,7 @@ Other metabolomics data are structured with specific EMI classes such as emi:Che
   
 
 <!--OVERVIEW SECTION-->
-    <div id="overview"><h2 id="overv" class="list">The natural product taxonomony.: Overview <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+    <div id="overview"><h2 id="overv" class="list">The natural product taxonomy.: Overview <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
 <span class="markdown">
 This ontology has the following classes and properties.</span>
 <h4>Classes</h4>
@@ -294,8 +288,8 @@ This ontology has the following classes and properties.</span>
       </a>
    </li>
    <li>
-      <a href="#https://w3id.org/widoco/vocab#instrocution" title="https://w3id.org/widoco/vocab#instrocution">
-         <span>instrocution</span>
+      <a href="#https://w3id.org/widoco/vocab#introduction" title="https://w3id.org/widoco/vocab#introduction">
+         <span>introduction</span>
       </a>
    </li>
    <li>
@@ -351,6 +345,11 @@ This ontology has the following classes and properties.</span>
 </ul><h4>Named Individuals</h4><ul xmlns:widoco="https://w3id.org/widoco/vocab#"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     class="hlist">
+   <li>
+      <a href="#https://orcid.org/0000-0002-3175-5372" title="https://orcid.org/0000-0002-3175-5372">
+         <span>0000 0002 3175 5372</span>
+      </a>
+   </li>
    <li>
       <a href="#12-OXOPHYTODIENOIC_ACID_METABOLITES"
          title="https://purl.org/npc#12-OXOPHYTODIENOIC_ACID_METABOLITES">12-oxophytodienoic acid metabolites</a>
@@ -2891,14 +2890,14 @@ This ontology has the following classes and properties.</span>
   
 
 <!--DESCRIPTION SECTION-->
-    <div id="description"><h2 id="desc" class="list">The natural product taxonomony.: Description <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+    <div id="description"><h2 id="desc" class="list">The natural product taxonomy.: Description <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
 
-<span class="markdown">A natural product taxonomony derived from the NPClassifier tool.</span></div>
+<span class="markdown">A natural product taxonomy derived from the NPClassifier tool.</span></div>
    
 
 <!--CROSSREF SECTION-->
-   <div id="crossref"><h2 id="crossreference" class="list">Cross-reference for The natural product taxonomony. classes, object properties and data properties <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
-This section provides details for each class and property defined by The natural product taxonomony..
+   <div id="crossref"><h2 id="crossreference" class="list">Cross-reference for The natural product taxonomy. classes, object properties and data properties <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+This section provides details for each class and property defined by The natural product taxonomy..
 <div xmlns:widoco="https://w3id.org/widoco/vocab#" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="classes">
  <h3 id="classes-headline" class="list">Classes</h3>
  <ul class="hlist">
@@ -3782,7 +3781,7 @@ This section provides details for each class and property defined by The natural
   <li><a href="#http://www.w3.org/2004/02/skos/core#hiddenLabel" title="http://www.w3.org/2004/02/skos/core#hiddenLabel">hidden label</a></li>
   <li><a href="#http://www.w3.org/2004/02/skos/core#historyNote" title="http://www.w3.org/2004/02/skos/core#historyNote">history note</a></li>
   <li><a href="#http://xmlns.com/foaf/0.1/homepage" title="http://xmlns.com/foaf/0.1/homepage"> <span>homepage</span> </a></li>
-  <li><a href="#https://w3id.org/widoco/vocab#instrocution" title="https://w3id.org/widoco/vocab#instrocution"> <span>instrocution</span> </a></li>
+  <li><a href="#https://w3id.org/widoco/vocab#introduction" title="https://w3id.org/widoco/vocab#introduction"> <span>introduction</span> </a></li>
   <li><a href="#http://purl.org/dc/terms/issue" title="http://purl.org/dc/terms/issue"> <span>issue</span> </a></li>
   <li><a href="#http://purl.org/dc/terms/license" title="http://purl.org/dc/terms/license"> <span>license</span> </a></li>
   <li><a href="#http://www.w3.org/ns/org#memberOf" title="http://www.w3.org/ns/org#memberOf"> <span>member Of</span> </a></li>
@@ -4000,9 +3999,9 @@ This section provides details for each class and property defined by The natural
   <h3>homepage<sup class="type-ap" title="annotation property">ap</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a> </span></h3>
   <p><strong>IRI:</strong> http://xmlns.com/foaf/0.1/homepage</p>
  </div>
- <div class="entity" id="https://w3id.org/widoco/vocab#instrocution">
-  <h3>instrocution<sup class="type-ap" title="annotation property">ap</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a> </span></h3>
-  <p><strong>IRI:</strong> https://w3id.org/widoco/vocab#instrocution</p>
+ <div class="entity" id="https://w3id.org/widoco/vocab#introduction">
+  <h3>introduction<sup class="type-ap" title="annotation property">ap</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/widoco/vocab#introduction</p>
  </div>
  <div class="entity" id="http://purl.org/dc/terms/issue">
   <h3>issue<sup class="type-ap" title="annotation property">ap</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a> </span></h3>
@@ -4117,6 +4116,7 @@ This section provides details for each class and property defined by The natural
 </div><div xmlns:widoco="https://w3id.org/widoco/vocab#" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="namedindividuals">
  <h3 id="namedindividuals" class="list">Named Individuals</h3>
  <ul class="hlist">
+  <li><a href="#https://orcid.org/0000-0002-3175-5372" title="https://orcid.org/0000-0002-3175-5372"> <span>0000 0002 3175 5372</span> </a></li>
   <li><a href="#12-OXOPHYTODIENOIC_ACID_METABOLITES" title="https://purl.org/npc#12-OXOPHYTODIENOIC_ACID_METABOLITES">12-oxophytodienoic acid metabolites</a></li>
   <li><a href="#2-ARYLBENZOFURANS" title="https://purl.org/npc#2-ARYLBENZOFURANS">2-arylbenzofurans</a></li>
   <li><a href="#2-PYRONE_DERIVATIVES" title="https://purl.org/npc#2-PYRONE_DERIVATIVES">2-pyrone derivatives</a></li>
@@ -4891,6 +4891,27 @@ This section provides details for each class and property defined by The natural
   <li><a href="#Β-LACTAMS" title="https://purl.org/npc#%CE%92-LACTAMS">β-lactams</a></li>
   <li><a href="#Γ-LACTAM-Β-LACTONES" title="https://purl.org/npc#%CE%93-LACTAM-%CE%92-LACTONES">γ-lactam-β-lactones</a></li>
  </ul>
+ <div class="entity" id="https://orcid.org/0000-0002-3175-5372">
+  <h3>0000 0002 3175 5372<sup class="type-ni" title="named individual">ni</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://orcid.org/0000-0002-3175-5372</p>
+  <dl class="description">
+   <dt>
+    belongs to
+   </dt>
+   <dd>
+    <a href="http://xmlns.com/foaf/0.1/Person" target="_blank" title="http://xmlns.com/foaf/0.1/Person">Person</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    has facts
+   </dt>
+   <dd>
+    <a href="http://www.w3.org/ns/org#memberOf" target="_blank" title="http://www.w3.org/ns/org#memberOf">member Of</a> <sup class="type-ap" title="annotation property">ap</sup> <a href="#https://www.sib.swiss" title="https://www.sib.swiss">https://www.sib.swiss</a> <sup class="type-ni" title="named individual">ni</sup>
+   </dd>
+   <dd>
+    <a href="http://xmlns.com/foaf/0.1/name" target="_blank" title="http://xmlns.com/foaf/0.1/name">name</a> <sup class="type-ap" title="annotation property">ap</sup> <span class="literal">"Tarcisio Mendes de Farias"@en</span>
+   </dd>
+  </dl>
+ </div>
  <div class="entity" id="12-OXOPHYTODIENOIC_ACID_METABOLITES">
   <h3>12-oxophytodienoic acid metabolites<sup class="type-ni" title="named individual">ni</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a> </span></h3>
   <p><strong>IRI:</strong> https://purl.org/npc#12-OXOPHYTODIENOIC_ACID_METABOLITES</p>

@@ -13,8 +13,8 @@
 <https://purl.org/npc> a owl:Ontology,
         skos:ConceptScheme ;
     dcterms:creator <https://orcid.org/0000-0002-3175-5372> ;
-    dcterms:description "A natural product taxonomony derived from the NPClassifier tool." ;
-    dcterms:title "The natural product taxonomony." ;
+    dcterms:description "A natural product taxonomy derived from the NPClassifier tool." ;
+    dcterms:title "The natural product taxonomy." ;
     vann:preferredNamespacePrefix "npc" ;
     vann:preferredNamespaceUri "https://purl.org/npc#" ;
     owl:imports skos: ;
@@ -26,10 +26,11 @@
     sdo:codeRepository "https://github.com/digital-botanical-gardens-initiative/earth_metabolome_ontology"^^xsd:anyURI ;
     bibo:status <http://purl.org/ontology/bibo/status/draft> ;
     dcterms:abstract "An SKOS-based OWL ontology for the structural classification of natural products derived from the NPClassifier tool. This OWL ontology was generated with the script in [scripts folder](scripts/natural_product_taxonomy).";
-    widoco:instrocution " This taxonomy is structured with the SKOS vocabulary. skos:broder is used to represent the hierarchy among Classes, Superclasses and Pathways.  npc:Class, npc:Superclass and npc:Pathway are subclasses of skos:Concept. rdfs:label is assigned for each term of the taxonomy that are instances of one of the subclasses of skos:Concept." ;
+    widoco:introduction "This taxonomy is structured with the SKOS vocabulary. skos:broder is used to represent the hierarchy among Classes, Superclasses and Pathways.  npc:Class, npc:Superclass and npc:Pathway are subclasses of skos:Concept. rdfs:label is assigned for each term of the taxonomy that are instances of one of the subclasses of skos:Concept." ;
     dcterms:license <https://creativecommons.org/publicdomain/zero/1.0/> .
 
-<https://orcid.org/0000-0002-3175-5372> foaf:name "Tarcisio Mendes de Farias"@en ;
+<https://orcid.org/0000-0002-3175-5372> a foaf:Person ;
+  foaf:name "Tarcisio Mendes de Farias"@en ;
   org:memberOf <https://www.sib.swiss> .
 
 

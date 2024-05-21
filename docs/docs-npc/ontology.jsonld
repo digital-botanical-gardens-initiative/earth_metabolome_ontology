@@ -716,6 +716,9 @@
   "@id" : "http://xmlns.com/foaf/0.1/Organization",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
 }, {
+  "@id" : "http://xmlns.com/foaf/0.1/Person",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
+}, {
   "@id" : "http://xmlns.com/foaf/0.1/homepage",
   "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
 }, {
@@ -723,6 +726,10 @@
   "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
 }, {
   "@id" : "https://orcid.org/0000-0002-3175-5372",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://xmlns.com/foaf/0.1/Person"
+  } ],
   "http://www.w3.org/ns/org#memberOf" : [ {
     "@id" : "https://www.sib.swiss"
   } ],
@@ -744,7 +751,7 @@
     "@id" : "https://orcid.org/0000-0002-3175-5372"
   } ],
   "http://purl.org/dc/terms/description" : [ {
-    "@value" : "A natural product taxonomony derived from the NPClassifier tool."
+    "@value" : "A natural product taxonomy derived from the NPClassifier tool."
   } ],
   "http://purl.org/dc/terms/issue" : [ {
     "@type" : "http://www.w3.org/2001/XMLSchema#date",
@@ -758,7 +765,7 @@
     "@value" : "2024-05-21"
   } ],
   "http://purl.org/dc/terms/title" : [ {
-    "@value" : "The natural product taxonomony."
+    "@value" : "The natural product taxonomy."
   } ],
   "http://purl.org/ontology/bibo/status" : [ {
     "@id" : "http://purl.org/ontology/bibo/status/draft"
@@ -782,8 +789,8 @@
   "http://www.w3.org/2002/07/owl#versionInfo" : [ {
     "@value" : "0.1"
   } ],
-  "https://w3id.org/widoco/vocab#instrocution" : [ {
-    "@value" : " This taxonomy is structured with the SKOS vocabulary. skos:broder is used to represent the hierarchy among Classes, Superclasses and Pathways.  npc:Class, npc:Superclass and npc:Pathway are subclasses of skos:Concept. rdfs:label is assigned for each term of the taxonomy that are instances of one of the subclasses of skos:Concept."
+  "https://w3id.org/widoco/vocab#introduction" : [ {
+    "@value" : "This taxonomy is structured with the SKOS vocabulary. skos:broder is used to represent the hierarchy among Classes, Superclasses and Pathways.  npc:Class, npc:Superclass and npc:Pathway are subclasses of skos:Concept. rdfs:label is assigned for each term of the taxonomy that are instances of one of the subclasses of skos:Concept."
   } ]
 }, {
   "@id" : "https://purl.org/npc#%CE%92-LACTAMS",
@@ -10093,7 +10100,7 @@
     "@id" : "https://purl.org/npc#SESQUITERPENOIDS"
   } ]
 }, {
-  "@id" : "https://w3id.org/widoco/vocab#instrocution",
+  "@id" : "https://w3id.org/widoco/vocab#introduction",
   "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
 }, {
   "@id" : "https://www.sib.swiss",
