@@ -4,6 +4,11 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix vann: <http://purl.org/vocab/vann/> .
+@prefix sdo: <http://schema.org/> .
+@prefix bibo: <http://purl.org/ontology/bibo/> .
+@prefix widoco: <https://w3id.org/widoco/vocab#> . 
+@prefix sw: <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
+@prefix org: <http://www.w3.org/ns/org#> .
 
 <https://purl.org/npc> a owl:Ontology,
         skos:ConceptScheme ;
@@ -13,7 +18,25 @@
     vann:preferredNamespacePrefix "npc" ;
     vann:preferredNamespaceUri "https://purl.org/npc#" ;
     owl:imports skos: ;
-    owl:versionInfo "0.1" .
+    owl:versionInfo "0.1" ;
+    dcterms:modified "2024-05-21"^^xsd:date ;
+    dcterms:issue "2023-06-14"^^xsd:date ;
+    dcterms:creator <https://orcid.org/0000-0002-3175-5372> ;
+    dcterms:created "2023-06-08"^^xsd:date ;
+    sdo:codeRepository "https://github.com/digital-botanical-gardens-initiative/earth_metabolome_ontology"^^xsd:anyURI ;
+    bibo:status <http://purl.org/ontology/bibo/status/draft> ;
+    dcterms:abstract "An SKOS-based OWL ontology for the structural classification of natural products derived from the NPClassifier tool. This OWL ontology was generated with the script in [scripts folder](scripts/natural_product_taxonomy).";
+    widoco:instrocution " This taxonomy is structured with the SKOS vocabulary. skos:broder is used to represent the hierarchy among Classes, Superclasses and Pathways.  npc:Class, npc:Superclass and npc:Pathway are subclasses of skos:Concept. rdfs:label is assigned for each term of the taxonomy that are instances of one of the subclasses of skos:Concept." ;
+    dcterms:license <https://creativecommons.org/publicdomain/zero/1.0/> .
+
+<https://orcid.org/0000-0002-3175-5372> foaf:name "Tarcisio Mendes de Farias"@en ;
+  org:memberOf <https://www.sib.swiss> .
+
+
+<https://www.sib.swiss> rdf:type owl:NamedIndividual ,
+                                   foaf:Organization ;
+                          foaf:homepage "https://www.sib.swiss" ;
+                          foaf:name "SIB Swiss Institute of Bioinformatics"@en .
 
 npc:12-OXOPHYTODIENOIC_ACID_METABOLITES a npc:Class ;
     rdfs:label "12-oxophytodienoic acid metabolites" ;
