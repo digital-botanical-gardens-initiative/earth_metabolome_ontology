@@ -121,6 +121,18 @@ move the archive mysql-connector-j-8.2.0.jar to the ontop-cli-5.1.1/lib folder
 /Applications/ontop-cli-5.1.1/ontop materialize -m ./ontop_config/emi-v0_1.obda -t ./ontop_config/emi-v0_1.ttl -p ./ontop_config/emi-v0_1.properties -f turtle --enable-annotations  --separate-files -o ./data/ontop
 ````
 
+```bash
+export CLASSPATH=$CLASSPATH:/path/to/mysql-connector-java.jar
+```
+
+example
+
+```bash
+export CLASSPATH=$CLASSPATH:/Applications/ontop-cli-5.1.1/lib/mysql-connector-java-8.2.0.jar
+```
+
+
+
 
 
 
