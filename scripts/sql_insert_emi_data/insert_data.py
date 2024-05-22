@@ -23,7 +23,7 @@ class SQLDataInsertion:
 
     @staticmethod
     def sql_insert_emi_data(directory_path: str, table_name: str, name_suffix: str,
-                            sql_db: Union[PooledMySQLConnection, MySQLConnection, CMySQLConnection, None],
+                            sql_db,
                             name_prefix: str = None, ionization: str = "pos", terminated_by: str = '\t'):
         sample_folder_list = [folder for folder in os.listdir(directory_path)]
         db_cursor = sql_db.cursor()

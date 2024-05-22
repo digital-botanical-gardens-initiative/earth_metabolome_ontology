@@ -1,3 +1,5 @@
+CREATE DATABASE IF NOT EXISTS `emi_db`;
+USE `emi_db`;
 
 SET FOREIGN_KEY_CHECKS = 0;
 DROP TABLE IF EXISTS `canopus_compound_summary`;

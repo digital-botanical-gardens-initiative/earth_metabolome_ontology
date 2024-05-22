@@ -1,7 +1,7 @@
 # Raw data input file path
-raw_data_root_folder = "/Users/tarcisio/Downloads/pf1600_raw"
+raw_data_root_folder = "data/output/individual_analysis"
 ionization_mode = 'pos'
-structure_metadata_sqlite_file = "/Users/tarcisio/Documents/git_repositories/enpkg_full/05_enpkg_meta_analysis/structures_metadata.db"
+structure_metadata_sqlite_file = "data/structures_metadata.db"
 # MySQL table mapping where values are mysql table names corresponding to the dictionary keys
 table_canonical_names = {'compound_summary': 'canopus_compound_summary',
                          'sample_metadata': 'sample_metadata',
@@ -18,6 +18,6 @@ table_canonical_names = {'compound_summary': 'canopus_compound_summary',
 # MySQL db credentials
 host = "localhost"
 user = "root"
-password = "root"
+password = "root_mysql"
 database = "emi_db"
 port = "3306"
