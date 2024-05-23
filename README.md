@@ -20,7 +20,7 @@ In this tutorial, we will use a toy dataset and it requires mainly [MySQL](https
 ```bash
 mysql --version
 ```
-- Install the Pipfile
+- Install the [Pipfile](scripts/sql_insert_emi_data/Pipfile):
 ```bash
 cd ./scripts/sql_insert_emi_data
 pipenv install
@@ -85,7 +85,8 @@ mysql> SHOW VARIABLES LIKE "local_infile";
 ```bash
 pipenv run python ./scripts/sql_insert_emi_data/main.py
 ```
-> **_NOTE:_** Alternatively, you can run `python ./scripts/sql_insert_emi_data/main.py` if you have all dependencies listed in [Pipfile](Pipfile) installed in your python enviroment. This tutorial was only tested on the Python 3.9 version (but it might work in any other 3.x version).
+> **_NOTE:_** Alternatively, you can run `python ./scripts/sql_insert_emi_data/main.py`, if you have all dependencies listed in [Pipfile](scripts/sql_insert_emi_data/Pipfile) installed in your python enviroment.
+> **IMPORTANT**: This tutorial was only tested on the Python 3.9 version (but it might work in any other 3.x version).
  
 ## Generating the EMI-based RDF graph
 
