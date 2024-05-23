@@ -11,6 +11,15 @@ For more details, see [Natural Product Classifier vocabulary](http://www.dbgi.or
 
 # Tutorial to generate RDF triples based on the EMI ontology
 
+**Summary**
+1. [Introduction](#introduction)
+2. [Allowing for insertion in mysql](#allowing-for-insertion-in-mysql)
+3. [Inserting the sample data into a MySQL database](#inserting-the-sample-data-into-a-mysql-database)
+4. [Generating the EMI-based RDF graph](#generating-the-emi-based-rdf-graph)
+5. [Importing the generated RDF-based files in a triple store]([#importing-the-generated-rdf-based-files-in-a-triple-store))
+6. [Interacting with the EMI virtual knowledge graph (VKG)](#interacting-with-the-emi-virtual-knowledge-graph-vkg)
+
+## Introduction
 In this tutorial, we will use a toy dataset and it requires mainly [MySQL](https://mysql.com) (version 8) and [Ontop](https://ontop-vkg.org) (version 5.1 or later).
 
 - Download the toy dataset from [ENPKG full](https://github.com/enpkg/enpkg_full).
