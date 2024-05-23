@@ -9,6 +9,9 @@ The [`npc_taxonomy.ttl`](npc_taxonomy.ttl) file is an SKOS-based OWL ontology fo
 
 For more details, see [Natural Product Classifier vocabulary](http://www.dbgi.org/earth_metabolome_ontology/docs-npc/index-en.html).
 
+## Example of a knowledge graph using the EMI ontology
+A knowledge graph was generated based on the EMI ontology with the [pf1600 dataset](pf1600 dataset - ENPKG](https://doi.org/10.5281/zenodo.10827917). It contains more than 32 million triples and is accessible and downloadable via the SPARQL endpoint: [https://biosoda.unil.ch/graphdb/sparql](https://biosoda.unil.ch/graphdb/sparql).
+
 # Tutorial to generate RDF triples based on the EMI ontology
 
 **Summary**
