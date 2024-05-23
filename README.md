@@ -86,7 +86,8 @@ mysql> SHOW VARIABLES LIKE "local_infile";
 pipenv run python ./scripts/sql_insert_emi_data/main.py
 ```
 > **_NOTE:_** Alternatively, you can run `python ./scripts/sql_insert_emi_data/main.py`, if you have all dependencies listed in [Pipfile](scripts/sql_insert_emi_data/Pipfile) installed in your python enviroment.
-> **IMPORTANT**: This tutorial was only tested on the Python 3.9 version (but it might work in any other 3.x version).
+
+> **IMPORTANT**: This tutorial was only tested with the Python 3.9 version, but it might work in any other 3.x version.
  
 ## Generating the EMI-based RDF graph
 
@@ -96,7 +97,7 @@ pipenv run python ./scripts/sql_insert_emi_data/main.py
 We recommend to download the version mysql-connector-j-8.2.0.jar from the MySQL download archive at
 https://downloads.mysql.com/archives/c-j/
 
-- Move the mysql-connector-j-8.2.0.jar to the ontop-cli-5.1.1/lib folder
+- Move the mysql-connector-j-8.2.0.jar to the `ontop-cli-5.1.1/lib` folder
 - Create ontop properties text file `./ontop_config/emi-v0_1.properties` such as the example below (change the user, password, and, if necessary, the url parameter too)
 
 ```
@@ -117,7 +118,19 @@ PATH/TO/ontop-cli-5.1.1/ontop materialize -m ./ontop_config/emi-v0_1.obda -t ./o
 ```bash
 export CLASSPATH=$CLASSPATH:/Applications/ontop-cli-5.1.1/lib/mysql-connector-java-8.2.0.jar
 ```
+## Importing the generated RDF-based files in a triple store
 
+For [GraphDB 10.6](https://graphdb.ontotext.com/), see [Loading data using importrdf](https://graphdb.ontotext.com/documentation/10.6/loading-data-using-importrdf.html).
+
+For [Stardog](https://stardog.com), see [Adding data documentation section](https://docs.stardog.com/operating-stardog/database-administration/adding-data). 
+
+For [Virtuoso](https://vos.openlinksw.com/owiki/wiki/VOS#2024-02-13%3A%20Virtuoso%207.2.12%20Released%2C%20Open%20Source%20Edition), see [Loading RDF data](https://docs.openlinksw.com/virtuoso/rdfperfloading/).
+
+## Interacting with the EMI virtual knowledge graph (VKG)
+
+Ontop allow us to build vitual knowledge graphs. With its plugin for Protege, we can query the VKG for more information see the section [Setting up the VKG using Ontop-Protégé](https://github.com/ontop/ontop-patterns-tutorial/blob/main/README.md#setting-up-the-vkg-using-ontop-protégé). 
+
+> **_NOTE:_** We recommend to download and use the [Ontop+Protege 5.1.1]([https://sourceforge.net/projects/ontop4obda/files/](https://sourceforge.net/projects/ontop4obda/files/ontop-5.1.1/ontop-protege-bundle-platform-independent-5.1.1.zip/download)). To build the VKG, you will also need all configuration files used to materialize the VKG in subsection [Generating the EMI-based RDF graph](#generating-the-emi-based-rdf-graph), notably `./ontop_config/emi-v0_1.obda`, `./ontop_config/emi-v0_1.ttl` and `./ontop_config/emi-v0_1.properties`. 
 
 
 
