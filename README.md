@@ -25,18 +25,21 @@ mysql --version
 cd scripts/sql_insert_emi_data
 pipenv install
 ```
-- If you do not have pipev, install it (see [more instructions](https://pipenv.pypa.io/en/latest/installation.html)
+- If you do not have pipev, install it as shown below (see [more instructions](https://pipenv.pypa.io/en/latest/installation.html)).
 ```bash
 pip install pipenv --user
 ```
 - In case you have any issue connecting check https://gist.github.com/zubaer-ahammed/c81c9a0e37adc1cb9a6cdc61c4190f52?permalink_comment_id=4473133
-
-- From the root of this directory, create a database with the sql statements from raw_mysql_schema.sql into the MySQL server
+- From the root of this directory, create a database `emi_db` with the sql statements from raw_mysql_schema.sql into the MySQL server
 ```bash
 mysql -u root -p < scripts/sql_insert_emi_data/raw_mysql_schema.sql
-````
-- You can connect to the database as shown below 
-    
+```
+> **_NOTE:_** Optionally if an `emi_db` already exists in your MySQL server and if you want to start from scratch, you should drop it before running the `raw_mysql_schema.sql` script with the command above. Note that the data will be added in the database allowing duplicates. The command below will drop `emi_db`.
+```bash
+mysql -u root -p --execute="DROP DATABASE IF EXISTS emi_db ;"
+```
+
+- You can connect to the database as shown below     
 ```bash
 mysql -u root -p
 ```
@@ -52,10 +55,8 @@ Alternatively, you can use the MYSQL Workbench to work with the emi_db database
 ```bash
 mysql-workbench
 ```
-
 **We observe that the structure_metadata (sqlite) is missing for now.**
 
-- Edit the scripts/sql_insert_emi_data/config.py file and make sure that the path are pointing to the correct files.
 
 ## Allowing for insertion in mysql
 
@@ -78,8 +79,13 @@ mysql> SHOW VARIABLES LIKE "local_infile";
 +---------------+-------+
 1 row in set (0,01 sec)
 ```
+## Inserting the sample data into a MySQL database
+- Edit the scripts/sql_insert_emi_data/config.py file and make sure that the path are pointing to the correct files.
+- Run the command below to intiate the insertion 
+```bash
 
-### Get Ontop
+``` 
+## Get Ontop
 
 - Download and unzip it from https://sourceforge.net/projects/ontop4obda/files/ontop-5.1.1/ontop-cli-5.1.1.zip/download
 
@@ -104,7 +110,6 @@ ontop.inferDefaultDatatype=True
 PATH/TO/ontop-cli-5.1.1/ontop materialize -m ./ontop_config/emi-v0_1.obda -t ./ontop_config/emi-v0_1.ttl -p ./ontop_config/emi-v0_1.properties -f turtle --enable-annotations  --separate-files -o ./data/ontop
 ```
 > **_NOTE:_**  you can allocated more memory to run ontop by editing the PATH/TO/ontop-cli-5.1.1/ontop file. For intance, `ONTOP_JAVA_ARGS="-Xmx16g"` instead of `ONTOP_JAVA_ARGS="-Xmx1g"`
-
 > **_NOTE:_** If necessary you may need to specify the classpath for the mysql-connector-java .jar
 ```bash
 export CLASSPATH=$CLASSPATH:/Applications/ontop-cli-5.1.1/lib/mysql-connector-java-8.2.0.jar
