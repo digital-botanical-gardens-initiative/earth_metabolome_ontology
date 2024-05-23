@@ -11,18 +11,18 @@ For more details, see [Natural Product Classifier vocabulary](http://www.dbgi.or
 
 # Tutorial to generate RDF triples based on the EMI ontology
 
-In this tutorial we will use a toy dataset and it requires mainly [MySQL](https://mysql.com) (version 8) and [Ontop](https://ontop-vkg.org) (version 5.1 or later) .
+In this tutorial, we will use a toy dataset and it requires mainly [MySQL](https://mysql.com) (version 8) and [Ontop](https://ontop-vkg.org) (version 5.1 or later).
 
-- Download the toy dataset in [ENPKG full](https://github.com/enpkg/enpkg_full)
+- Download the toy dataset from [ENPKG full](https://github.com/enpkg/enpkg_full).
 - Download and install  
-[MySQL 8.2](https://downloads.mysql.com/archives/community/) 
+[MySQL 8.2](https://downloads.mysql.com/archives/community/). 
 - To check, if MySQL was correctly installed 
 ```bash
 mysql --version
 ```
 - Install the Pipfile
 ```bash
-cd scripts/sql_insert_emi_data
+cd ./scripts/sql_insert_emi_data
 pipenv install
 ```
 - If you do not have pipev, install it as shown below (see [more instructions](https://pipenv.pypa.io/en/latest/installation.html)).
@@ -32,9 +32,9 @@ pip install pipenv --user
 - In case you have any issue connecting check https://gist.github.com/zubaer-ahammed/c81c9a0e37adc1cb9a6cdc61c4190f52?permalink_comment_id=4473133
 - From the root of this directory, create a database `emi_db` with the sql statements from raw_mysql_schema.sql into the MySQL server
 ```bash
-mysql -u root -p < scripts/sql_insert_emi_data/raw_mysql_schema.sql
+mysql -u root -p < ./scripts/sql_insert_emi_data/raw_mysql_schema.sql
 ```
-> **_NOTE:_** Optionally if an `emi_db` already exists in your MySQL server and if you want to start from scratch, you should drop it before running the `raw_mysql_schema.sql` script with the command above. Note that the data will be added in the database allowing duplicates. The command below will drop `emi_db`.
+> **_NOTE:_** Optionally, if an `emi_db` already exists in your MySQL server and if you want to start from scratch (i.e., an empty database), you should drop it before running the `raw_mysql_schema.sql` script with the command above. Note that the data will be added in the database allowing duplicates. The command below will drop `emi_db`.
 ```bash
 mysql -u root -p --execute="DROP DATABASE IF EXISTS emi_db ;"
 ```
@@ -81,13 +81,15 @@ mysql> SHOW VARIABLES LIKE "local_infile";
 ```
 ## Inserting the sample data into a MySQL database
 - Edit the scripts/sql_insert_emi_data/config.py file and make sure that the path are pointing to the correct files.
-- Run the command below to intiate the insertion 
+- Run the command below to intiate the insertion in the emi_db database.
 ```bash
+pipenv run python ./scripts/sql_insert_emi_data/main.py
+```
+> **_NOTE:_** Alternatively, you can run `python ./scripts/sql_insert_emi_data/main.py` if you have all dependencies listed in [Pipfile](Pipfile) installed in your python enviroment. This tutorial was only tested on the Python 3.9 version (but it might work in any other 3.x version).
+ 
+## Generating the EMI-based RDF graph
 
-``` 
-## Get Ontop
-
-- Download and unzip it from https://sourceforge.net/projects/ontop4obda/files/ontop-5.1.1/ontop-cli-5.1.1.zip/download
+- Download and unzip the **Ontop CLI** tool from https://sourceforge.net/projects/ontop4obda/files/ontop-5.1.1/ontop-cli-5.1.1.zip/download
 
 - Get MySQL JDBC driver  
 We recommend to download the version mysql-connector-j-8.2.0.jar from the MySQL download archive at
