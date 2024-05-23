@@ -141,5 +141,5 @@ Ontop allow us to build vitual knowledge graphs. With its plugin for Protege, we
 
 > **_NOTE:_** We recommend to download and use the [Ontop+Protege 5.1.1]([https://sourceforge.net/projects/ontop4obda/files/](https://sourceforge.net/projects/ontop4obda/files/ontop-5.1.1/ontop-protege-bundle-platform-independent-5.1.1.zip/download)). To build the VKG, you will also need all configuration files used to materialize the VKG in subsection [Generating the EMI-based RDF graph](#generating-the-emi-based-rdf-graph), notably `./ontop_config/emi-v0_1.obda`, `./ontop_config/emi-v0_1.ttl` and `./ontop_config/emi-v0_1.properties`. 
 
-
+A full tutorial about Ontop-Protégé is available at (https://doi.org/10.1016/j.patter.2021.100346). 
 
