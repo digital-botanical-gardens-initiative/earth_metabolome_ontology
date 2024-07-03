@@ -231,4 +231,23 @@ CREATE TABLE `spec2vec_doc` (
     
 DROP TABLE IF EXISTS structures_metadata ;
 
+DROP TABLE IF EXISTS open_tree_life ;
+CREATE TABLE `open_tree_life` (
+	uid INT NOT NULL, 
+	parent_uid INT , 
+	tax_name VARCHAR(1000) ,
+    tax_rank  VARCHAR(1000),
+	sourceinfo TEXT,
+    uniqname TEXT,
+    flags VARCHAR(1000),
+    PRIMARY KEY (uid) );
+
+DROP TABLE IF EXISTS open_tree_life_synonym ;
+CREATE TABLE `open_tree_life_synonym` (
+	tax_name VARCHAR(1000) ,
+    uid INT NOT NULL, 
+	tax_type INT , 
+    uniqname TEXT,
+	sourceinfo TEXT );
+
 SET FOREIGN_KEY_CHECKS = 1;

@@ -1,5 +1,7 @@
 # Raw data input file path
 raw_data_root_folder = "data/output/individual_analysis"
+#if an empty string or None does not consider it 
+open_tree_of_life_dir = None
 ionization_mode = 'pos'
 structure_metadata_sqlite_file = "data/structures_metadata.db"
 # MySQL table mapping where values are mysql table names corresponding to the dictionary keys
@@ -12,7 +14,9 @@ table_canonical_names = {'compound_summary': 'canopus_compound_summary',
                          'molecular_network': 'molecular_network',
                          'molecular_network_metadata': 'molecular_network_metadata',
                          'spec2vec_doc': 'spec2vec_doc',
-                         'structures_metadata': 'structures_metadata'
+                         'structures_metadata': 'structures_metadata',
+                         'opentreeoflife': 'open_tree_life',
+                         'opentreeoflife_synonym': 'open_tree_life_synonym'
                          }
 
 # MySQL db credentials

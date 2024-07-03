@@ -24,17 +24,24 @@ class SQLDataInsertion:
     @staticmethod
     def sql_insert_emi_data(directory_path: str, table_name: str, name_suffix: str,
                             sql_db,
-                            name_prefix: str = None, ionization: str = "pos", terminated_by: str = '\t'):
-        sample_folder_list = [folder for folder in os.listdir(directory_path)]
+                            name_prefix: str = None, ionization: str = "pos", terminated_by: str = '\t',
+                            is_sample_folder: bool = True, enclosed_by: str = '\"'):
+        if is_sample_folder:
+            sample_folder_list = [folder for folder in os.listdir(directory_path)]
+        else:
+            sample_folder_list = [directory_path]
         db_cursor = sql_db.cursor()
         for sample_folder in tqdm(sample_folder_list):
-            sample_dir = os.path.join(directory_path, sample_folder)
-            if name_prefix is None or name_prefix == "":
-                metadata_file_name = sample_folder + name_suffix
-                absolut_file_path = os.path.join(sample_dir, metadata_file_name)
+            if is_sample_folder:
+                sample_dir = os.path.join(directory_path, sample_folder)
+                if name_prefix is None or name_prefix == "":
+                    metadata_file_name = sample_folder + name_suffix
+                    absolut_file_path = os.path.join(sample_dir, metadata_file_name)
+                else:
+                    relative_file_path = name_prefix + sample_folder + name_suffix
+                    absolut_file_path = os.path.join(sample_dir, relative_file_path)
             else:
-                relative_file_path = name_prefix + sample_folder + name_suffix
-                absolut_file_path = os.path.join(sample_dir, relative_file_path)
+                absolut_file_path = os.path.join(directory_path, name_prefix + name_suffix)
             if os.path.isfile(absolut_file_path):
                 if table_name == table_canonical_names["molecular_network"]:
                     graph = nx.read_graphml(absolut_file_path)
@@ -65,7 +72,7 @@ class SQLDataInsertion:
                 else:
                     sql_statement = "LOAD DATA LOCAL INFILE '" + absolut_file_path + \
                                     "'  INTO TABLE " + table_name + " FIELDS terminated by '" + terminated_by \
-                                    + "' optionally enclosed by '\"' IGNORE 1 LINES;\n"
+                                    + "' optionally enclosed by '" + enclosed_by + "' IGNORE 1 LINES;\n"
                     db_cursor.execute(sql_statement)
                     if table_name == table_canonical_names["sample_metadata"]:
                         method_file_name = sample_folder + '_lcms_method_params_' + ionization + '.txt'
@@ -78,7 +85,7 @@ class SQLDataInsertion:
                                         "' " + lcms_method_params + "where sample_id = '" \
                                         + sample_folder + "' AND ionization is NULL ;"
                         db_cursor.execute(sql_statement)
-                    elif table_name != table_canonical_names["taxon_metadata"]:
+                    elif table_name != table_canonical_names["taxon_metadata"] and is_sample_folder:
                         sql_statement = "UPDATE " + table_name + " SET sample_id = '" + sample_folder + "'," + \
                                         "ionization = '" + ionization + "' WHERE sample_id is NULL ;"
                         db_cursor.execute(sql_statement)
