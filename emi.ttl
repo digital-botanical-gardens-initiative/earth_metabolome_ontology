@@ -935,15 +935,15 @@ emi:Analysis vann:example
 @prefix emi: <https://purl.org/emi#> .
 :VGF138_A02_neg.mzXML rdf:type emi:Analysis .'''.
 
-emi::LCMSAnalysisNeg vann:example 
+emi:LCMSAnalysisNeg vann:example 
 '''@prefix : <https://purl.org/emi/abox#> .
 @prefix emi: <https://purl.org/emi#> .
-:VGF138_A02_neg.mzXML rdf:type emi::LCMSAnalysisNeg .'''.
+:VGF138_A02_neg.mzXML rdf:type emi:LCMSAnalysisNeg .'''.
 
-emi::LCMSAnalysisPos vann:example 
+emi:LCMSAnalysisPos vann:example 
 '''@prefix : <https://purl.org/emi/abox#> .
 @prefix emi: <https://purl.org/emi#> .
-:VGF138_A02_pos.mzXML rdf:type emi::LCMSAnalysisPos .'''.
+:VGF138_A02_pos.mzXML rdf:type emi:LCMSAnalysisPos .'''.
 
 
 ###  http://www.wikidata.org/entity/Q16521

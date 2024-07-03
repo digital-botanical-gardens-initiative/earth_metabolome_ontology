@@ -13403,15 +13403,15 @@ usi:mzspec%3AMSV000087728%3AVGF153_A02_features_ms2_neg.mgf%3Ascan%3A356 rdf:typ
     <rdf:Description rdf:about="https://purl.org/emi#hasIonization">
         <owl:deprecated>delete? already defined in LCMS pos and neg</owl:deprecated>
     </rdf:Description>
-    <rdf:Description rdf:about="https://purl.org/emi#:LCMSAnalysisNeg">
+    <rdf:Description rdf:about="https://purl.org/emi#LCMSAnalysisNeg">
         <vann:example>@prefix : &lt;https://purl.org/emi/abox#&gt; .
 @prefix emi: &lt;https://purl.org/emi#&gt; .
-:VGF138_A02_neg.mzXML rdf:type emi::LCMSAnalysisNeg .</vann:example>
+:VGF138_A02_neg.mzXML rdf:type emi:LCMSAnalysisNeg .</vann:example>
     </rdf:Description>
-    <rdf:Description rdf:about="https://purl.org/emi#:LCMSAnalysisPos">
+    <rdf:Description rdf:about="https://purl.org/emi#LCMSAnalysisPos">
         <vann:example>@prefix : &lt;https://purl.org/emi/abox#&gt; .
 @prefix emi: &lt;https://purl.org/emi#&gt; .
-:VGF138_A02_pos.mzXML rdf:type emi::LCMSAnalysisPos .</vann:example>
+:VGF138_A02_pos.mzXML rdf:type emi:LCMSAnalysisPos .</vann:example>
     </rdf:Description>
 </rdf:RDF>
 
