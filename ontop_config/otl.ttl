@@ -1,0 +1,78 @@
+@prefix : <https://purl.org/emi/abox#> .
+@prefix wd: <http://www.wikidata.org/entity/> .
+@prefix emi: <https://purl.org/emi#> .
+@prefix npc: <https://purl.org/npc#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sdo: <http://schema.org/> .
+@prefix usi: <https://metabolomics-usi.ucsd.edu/dashinterface/?usi1=> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix obda: <https://w3id.org/obda/vocabulary#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix sosa: <http://www.w3.org/ns/sosa/> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix void: <http://rdfs.org/ns/void#> .
+@prefix orcid: <http://orcid.org/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix voaf: <http://purl.org/vocommons/voaf#> .
+@prefix widoco: <https://w3id.org/widoco/vocab#> . 
+@prefix bibo: <http://purl.org/ontology/bibo/> .
+@prefix sw: <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
+@prefix org: <http://www.w3.org/ns/org#> .
+@prefix up: <http://purl.uniprot.org/core/> .
+@base <https://purl.org/emi/abox#> .
+
+
+<https://purl.org/otl> rdf:type owl:Ontology ;
+                        owl:versionIRI <https://purl.org/emi/version/0.1> ;
+                        owl:imports <http://www.w3.org/2004/02/skos/core> ;
+                        dcterms:contributor <https://orcid.org/0000-0002-3175-5372> ;
+                        dcterms:license <https://creativecommons.org/publicdomain/zero/1.0/> ;
+                        dcterms:title "The Open Tree of Life taxonomy"@en ;
+                        vann:preferredNamespacePrefix "otl" ;
+                        vann:preferredNamespaceUri <https://purl.org/otl#> ;
+                        owl:versionInfo "0.1" ;
+                        dcterms:modified "2024-05-08"^^xsd:date ;
+                        dcterms:issue "2024-07-03"^^xsd:date ;
+                        dcterms:creator <https://orcid.org/0000-0002-3175-5372> ;
+                        dcterms:created "2024-07-03"^^xsd:date 
+                        .
+
+<https://orcid.org/0000-0002-3175-5372> foaf:name "Tarcisio Mendes de Farias"@en ;
+  org:memberOf <https://www.sib.swiss> .
+
+
+
+<https://www.sib.swiss> rdf:type owl:NamedIndividual ,
+                                   foaf:Organization ;
+                          foaf:homepage "https://www.sib.swiss" ;
+                          foaf:name "SIB Swiss Institute of Bioinformatics"@en .
+
+
+#################################################################
+
+###  https://purl.org/emi#Taxon
+emi:Taxon rdf:type owl:Class ;
+          rdfs:comment "Organism taxon. In the context of open research data, we recommend the use of Wikidata taxonomy as the classification and nomenclature for all of the organisms." ;
+          rdfs:label "Organism taxon" .
+
+up:Rank a owl:Class ;
+  rdfs:isDefinedBy <http://purl.uniprot.org/core/>;
+  rdfs:comment "A rank of a taxon." ;
+  rdfs:label "Taxon rank" .
+
+up:Taxon a owl:Class ;
+  rdfs:isDefinedBy <http://purl.uniprot.org/core/>;
+  rdfs:comment "An element of a taxonomy for classifying life forms." ;
+  rdfs:label "Taxon" . 
+
+up:rank a owl:ObjectProperty ;
+  rdfs:range up:Rank ;
+  rdfs:isDefinedBy <http://purl.uniprot.org/core/>;
+  rdfs:domain up:Taxon ;
+  rdfs:label "rank";
+  rdfs:comment "The rank of a taxon.".

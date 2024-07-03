@@ -71,5 +71,20 @@ mappingId	spec2spec_doc
 target		usi:mzspec%3A{massive_id}%3A{sample_id}_features_ms2_{ionization}.mgf%3Ascan%3A{feature_id}  emi:hasRawSpectrum "{raw_spectrum}";  emi:hasSpec2VecDoc :spec2vec_doc_mzspec%3A{massive_id}%3A{sample_id}_features_ms2_{ionization}.mgf%3Ascan%3A{feature_id} .  :spec2vec_doc_mzspec%3A{massive_id}%3A{sample_id}_features_ms2_{ionization}.mgf%3Ascan%3A{feature_id} a emi:Spec2VecDoc ; rdfs:label "Spec2vec document of feature {feature_id} from sample {sample_id} in {ionization} mode"^^xsd:string ; emi:hasSpec2VecPeak {peak}^^xsd:double; emi:hasSpec2VecLoss {loss}^^xsd:double .		
 source		SELECT DISTINCT  feature_id, raw_spectrum, sd.sample_id, sd.ionization, TRIM(TRAILING '\r' FROM massive_id) as massive_id, REPLACE(word,'@','_') as word_doc, IF(word LIKE 'peak%', REPLACE(word, 'peak@',''),  NULL) as peak, IF(word LIKE 'loss%', REPLACE(word, 'loss@',''),  NULL) as loss FROM spec2vec_doc as sd JOIN  sample_metadata sm ON sm.sample_id = sd.sample_id AND sm.ionization = sd.ionization   
 
+mappingId	open_tree_life
+target		<https://tree.opentreeoflife.org/taxonomy/browse?id={uid}> a skos:Concept ; rdfs:label {tax_name}^^xsd:string; skos:broader  <https://tree.opentreeoflife.org/taxonomy/browse?id={parent_uid}>; skos:inScheme <https://tree.opentreeoflife.org> .
+source		SELECT uid, parent_uid, tax_name FROM emi_db.open_tree_life;
+
+mappingId	open_tree_life_2
+target		<https://tree.opentreeoflife.org/taxonomy/browse?id={uid}> a up:Taxon, emi:Taxon; up:rank up:{rannk}. up:{rannk} a up:Rank ; rdfs:label {tax_rank}^^xsd:string .
+source		SELECT distinct CONCAT(UCASE(LEFT(tax_rank, 1)), LCASE(SUBSTRING(tax_rank, 2))) as rannk, tax_rank FROM emi_db.open_tree_life where tax_rank not in ('No rank - terminal','No rank') 
+
+mappingId	open_tree_life_synonym
+target		<https://tree.opentreeoflife.org/taxonomy/browse?id={uid}> skos:altLabel {synonym}^^xsd:string; rdfs:label {synonym}^^xsd:string
+source		SELECT replace(replace(substring_index(tax_name, '"',2), '"',''), '\'','') as synonym FROM emi_db.open_tree_life_synonym
+
+mappingId	open_tree_life_synonym_2
+target		<https://tree.opentreeoflife.org/taxonomy/browse?id={uid}>  skos:exactMatch   <iri_mapping> .
+source		SELECT IF( sourceinfo like 'ncbi:%', replace(sourceinfo, 'ncbi:','https://www.uniprot.org/taxonomy/'), replace(sourceinfo, 'gbif:','https://www.gbif.org/species/')) as iri_mapping FROM emi_db.open_tree_life_synonym where sourceinfo like 'ncbi:%' or sourceinfo like 'gbif:%'
 ]]
 

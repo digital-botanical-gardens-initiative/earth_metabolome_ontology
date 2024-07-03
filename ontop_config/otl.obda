@@ -1,0 +1,41 @@
+[PrefixDeclaration]
+: https://purl.org/emi/abox#
+emi: https://purl.org/emi#
+wd: http://www.wikidata.org/entity/
+owl: http://www.w3.org/2002/07/owl#
+rdf: http://www.w3.org/1999/02/22-rdf-syntax-ns#
+sdo: http://schema.org/
+xml: http://www.w3.org/XML/1998/namespace
+xsd: http://www.w3.org/2001/XMLSchema#
+foaf: http://xmlns.com/foaf/0.1/
+rdfs: http://www.w3.org/2000/01/rdf-schema#
+skos: http://www.w3.org/2004/02/skos/core#
+sosa: http://www.w3.org/ns/sosa/
+vann: http://purl.org/vocab/vann/
+void: http://rdfs.org/ns/void#
+orcid: http://orcid.org/
+dcterms: http://purl.org/dc/terms/
+npc: https://purl.org/npc#
+usi: https://metabolomics-usi.ucsd.edu/dashinterface/?usi1=
+prov: http://www.w3.org/ns/prov#
+up: http://purl.uniprot.org/core/
+
+[MappingDeclaration] @collection [[
+
+mappingId	open_tree_life
+target		<https://tree.opentreeoflife.org/taxonomy/browse?id={uid}> a skos:Concept ; rdfs:label {tax_name}^^xsd:string; skos:broader  <https://tree.opentreeoflife.org/taxonomy/browse?id={parent_uid}>; skos:inScheme <https://tree.opentreeoflife.org> .
+source		SELECT uid, parent_uid, tax_name FROM emi_db.open_tree_life;
+
+mappingId	open_tree_life_2
+target		<https://tree.opentreeoflife.org/taxonomy/browse?id={uid}> a up:Taxon, emi:Taxon; up:rank up:{rannk}. up:{rannk} a up:Rank ; rdfs:label {tax_rank}^^xsd:string .
+source		SELECT distinct uid, CONCAT(UCASE(LEFT(tax_rank, 1)), LCASE(SUBSTRING(tax_rank, 2))) as rannk, tax_rank FROM emi_db.open_tree_life where tax_rank not in ('No rank - terminal','No rank') 
+
+mappingId	open_tree_life_synonym
+target		<https://tree.opentreeoflife.org/taxonomy/browse?id={uid}> skos:altLabel {synonym}^^xsd:string; rdfs:label {synonym}^^xsd:string .
+source		SELECT replace(replace(substring_index(tax_name, '"',2), '"',''), '\'','') as synonym, uid FROM emi_db.open_tree_life_synonym
+
+mappingId	open_tree_life_synonym_2
+target		<https://tree.opentreeoflife.org/taxonomy/browse?id={uid}>  skos:exactMatch   <{iri_mapping}> .
+source		SELECT uid, IF( sourceinfo like 'ncbi:%', replace(sourceinfo, 'ncbi:','https://www.uniprot.org/taxonomy/'), replace(sourceinfo, 'gbif:','https://www.gbif.org/species/')) as iri_mapping FROM emi_db.open_tree_life_synonym where sourceinfo like 'ncbi:%' or sourceinfo like 'gbif:%'
+]]
+
