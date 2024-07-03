@@ -93,6 +93,8 @@ mysql> SHOW VARIABLES LIKE "local_infile";
 ```
 ## Inserting the sample data into a MySQL database
 - Edit the scripts/sql_insert_emi_data/config.py file and make sure that the path are pointing to the correct files.
+> **_NOTE:_** To generate also a SKOS-based version of the Open Tree of Life download the tsv files from https://tree.opentreeoflife.org/about/taxonomy-version and include in the config.py the directory path to these files by replacing the ```None``` value with this path.
+
 - Run the command below to intiate the insertion in the emi_db database.
 ```bash
 pipenv run python ./scripts/sql_insert_emi_data/main.py
