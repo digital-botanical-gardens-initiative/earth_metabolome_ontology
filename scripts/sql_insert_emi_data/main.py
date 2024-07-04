@@ -55,16 +55,17 @@ if __name__ == '__main__':
         table_canonical_names['spec2vec_doc'], '_features_ms2_' + ionization_mode + '.mgf', mydb,
         os.path.join(ionization_mode, ''), ionization=ionization_mode)
 
-    # insert the SQLite3 structures_metadata.db in the mysql db
-    conversion = SQLite3toMySQL(
-        sqlite_file=structure_metadata_sqlite_file,
-        mysql_user=user,
-        mysql_password=password,
-        mysql_host=host,
-        mysql_port=port,
-        mysql_database=database,
-        quiet=False,
-    )
-    conversion.transfer()
+    if structure_metadata_sqlite_file is not None and structure_metadata_sqlite_file != "":
+        # insert the SQLite3 structures_metadata.db in the mysql db
+        conversion = SQLite3toMySQL(
+            sqlite_file=structure_metadata_sqlite_file,
+            mysql_user=user,
+            mysql_password=password,
+            mysql_host=host,
+            mysql_port=port,
+            mysql_database=database,
+            quiet=False,
+        )
+        conversion.transfer()
 
 # See PyCharm help at https://www.jetbrains.com/help/pycharm/
