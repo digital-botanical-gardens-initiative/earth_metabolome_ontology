@@ -15,11 +15,11 @@ if __name__ == '__main__':
         SQLDataInsertion.sql_insert_emi_data(
             open_tree_of_life_dir,
             table_canonical_names['opentreeoflife'], ".tsv",  mydb, name_prefix="taxonomy",
-            is_sample_folder=False, enclosed_by='', terminated_by=' |   ')
+            is_sample_folder=False, enclosed_by='', terminated_by='\t|\t')
         SQLDataInsertion.sql_insert_emi_data(
             open_tree_of_life_dir,
             table_canonical_names['opentreeoflife_synonym'], ".tsv", mydb, name_prefix="synonyms",
-            is_sample_folder=False, enclosed_by='', terminated_by=' |   ')
+            is_sample_folder=False, enclosed_by='', terminated_by='\t|\t')
     SQLDataInsertion.sql_insert_emi_data(
         raw_data_root_folder,
         table_canonical_names['sample_metadata'], "_metadata.tsv", mydb, ionization=ionization_mode)
