@@ -23,7 +23,7 @@ up: http://purl.uniprot.org/core/
 [MappingDeclaration] @collection [[
 
 mappingId	open_tree_life
-target		<https://tree.opentreeoflife.org/taxonomy/browse?id={uid}> a skos:Concept ; rdfs:label {tax_name}^^xsd:string; skos:broader  <https://tree.opentreeoflife.org/taxonomy/browse?id={parent_uid}>; skos:inScheme <https://tree.opentreeoflife.org> .
+target		<https://tree.opentreeoflife.org/taxonomy/browse?id={uid}> a skos:Concept ; rdfs:label {tax_name}^^xsd:string; skos:prefLabel {tax_name}^^xsd:string; dcterms:identifier {uid} ;skos:broader  <https://tree.opentreeoflife.org/taxonomy/browse?id={parent_uid}>; skos:inScheme <https://tree.opentreeoflife.org> .
 source		SELECT uid, parent_uid, tax_name FROM emi_db.open_tree_life;
 
 mappingId	open_tree_life_2
@@ -32,10 +32,10 @@ source		SELECT distinct uid, CONCAT(UCASE(LEFT(tax_rank, 1)), LCASE(SUBSTRING(ta
 
 mappingId	open_tree_life_synonym
 target		<https://tree.opentreeoflife.org/taxonomy/browse?id={uid}> skos:altLabel {synonym}^^xsd:string; rdfs:label {synonym}^^xsd:string .
-source		SELECT replace(replace(substring_index(tax_name, '"',2), '"',''), '\'','') as synonym, uid FROM emi_db.open_tree_life_synonym
+source		SELECT trim(replace(replace(replace(substring_index(tax_name, '"',2), '"',''), '\'',''), '?', '') as synonym, uid FROM emi_db.open_tree_life_synonym
 
 mappingId	open_tree_life_synonym_2
-target		<https://tree.opentreeoflife.org/taxonomy/browse?id={uid}>  skos:exactMatch   <{iri_mapping}> .
-source		SELECT uid, IF( sourceinfo like 'ncbi:%', replace(sourceinfo, 'ncbi:','https://www.uniprot.org/taxonomy/'), replace(sourceinfo, 'gbif:','https://www.gbif.org/species/')) as iri_mapping FROM emi_db.open_tree_life_synonym where sourceinfo like 'ncbi:%' or sourceinfo like 'gbif:%'
+target		<https://tree.opentreeoflife.org/taxonomy/browse?id={uid}>  skos:exactMatch   <{iri_mapping}>. <{iri_mapping}> dcterms:identifier {external_id}^^xsd:string .
+source		SELECT uid, substring_index( IF( sourceinfo like 'ncbi:%', replace(sourceinfo, 'ncbi:','https://www.uniprot.org/taxonomy/'), replace(sourceinfo, 'gbif:','https://www.gbif.org/species/')),',' ,1 ) as iri_mapping, substring_index(sourceinfo,',','1') as external_id  FROM emi_db.open_tree_life_synonym where (sourceinfo like 'ncbi:%' or sourceinfo like 'gbif:%')
 ]]
 
