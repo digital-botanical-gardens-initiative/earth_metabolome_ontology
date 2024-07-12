@@ -62,8 +62,9 @@ CREATE TABLE `sample_metadata` (
 	neg_injection_date DATE , 
 	massive_id VARCHAR(255) ,
     ionization VARCHAR(255),
-    lcms_method_params TEXT,
-	PRIMARY KEY (sample_id));
+    lcms_method_params TEXT
+	#, PRIMARY KEY (sample_id)
+	);
     
 DROP TABLE IF EXISTS `taxon_metadata`;
 CREATE TABLE taxon_metadata (
