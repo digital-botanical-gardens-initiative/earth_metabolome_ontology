@@ -993,8 +993,18 @@ emi:ComputationalAnalysis rdf:type owl:Class ;
                           rdfs:subClassOf emi:Analysis .
 
 
+###  https://purl.org/emi#ContinousTrait
+emi:ContinousTrait rdf:type owl:Class ;
+                   rdfs:subClassOf sosa:Result .
+
+
 ###  https://purl.org/emi#DevelopmentalStage
 emi:DevelopmentalStage rdf:type owl:Class .
+
+
+###  https://purl.org/emi#DiscreteTrait
+emi:DiscreteTrait rdf:type owl:Class ;
+                  rdfs:subClassOf sosa:Result .
 
 
 ###  https://purl.org/emi#ExtractSample
