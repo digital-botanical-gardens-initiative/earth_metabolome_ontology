@@ -36,8 +36,7 @@
                                     <https://purl.org/npc> ,
                                     dcterms: ,
                                     geo: ,
-                                    qudt: 
-                                    ;
+                                    qudt: ;
                         dcterms:abstract "The Earth Metabolome Initiative ontology is mainly designed as data schema to structure and describe natural product taxonomy, spectrum annotation provenance, sample and observation data, mass spectrometry data and analysis, and chemical structure representations. The EMI ontology replaces the [ENPKG vocabulary](https://enpkg.commons-lab.org/doc/index.html)." ;
                         dcterms:bibliographicCitation "The Earth Metabolome Initiative Consortium. The Earth Metabolome Initiative (EMI) ontology. Revision: 0.1. Retrieved from: https://purl.org/emi/version/0.1" ;
                         dcterms:contributor <https://orcid.org/0000-0001-9292-9463> ,
@@ -235,11 +234,7 @@ foaf:depiction rdf:type owl:ObjectProperty ;
 
 ###  https://purl.org/emi#hasAnatomicalEntity
 emi:hasAnatomicalEntity rdf:type owl:ObjectProperty ;
-                        rdfs:domain [ rdf:type owl:Class ;
-                                      owl:unionOf ( sosa:Sample
-                                                    emi:Organism
-                                                  )
-                                    ] ;
+                        rdfs:domain sosa:Sample ;
                         rdfs:range emi:AnatomicalEntity ;
                         rdfs:label "has anatomical entity"@en ;
                         rdfs:comment "It states the anatomical entity of an organism or sample considered in an interaction record." .
@@ -289,11 +284,7 @@ emi:hasConsensusSpectrum rdf:type owl:ObjectProperty ;
 
 ###  https://purl.org/emi#hasDevelopmentalStage
 emi:hasDevelopmentalStage rdf:type owl:ObjectProperty ;
-                          rdfs:domain [ rdf:type owl:Class ;
-                                        owl:unionOf ( sosa:Sample
-                                                      emi:Organism
-                                                    )
-                                      ] ;
+                          rdfs:domain sosa:Sample ;
                           rdfs:range emi:DevelopmentalStage ;
                           rdfs:comment "The source or target organism in an interaction system such as GloBI can have a developmental stage." ;
                           rdfs:label "has developmental stage" ;
@@ -443,11 +434,7 @@ emi:hasPathway rdf:type owl:ObjectProperty ;
 
 ###  https://purl.org/emi#hasPhysiologicalStage
 emi:hasPhysiologicalStage rdf:type owl:ObjectProperty ;
-                          rdfs:domain [ rdf:type owl:Class ;
-                                        owl:unionOf ( sosa:Sample
-                                                      emi:Organism
-                                                    )
-                                      ] ;
+                          rdfs:domain sosa:Sample  ;
                           rdfs:range emi:PhysiologicalStage ;
                           rdfs:comment "The source or target organism or sample in an interaction system such as from GloBI can have a physiological stage." ;
                           rdfs:label "hasPhysiologicalStage" .
@@ -465,11 +452,7 @@ emi:hasSecondMember rdf:type owl:ObjectProperty ;
 
 ###  https://purl.org/emi#hasSex
 emi:hasSex rdf:type owl:ObjectProperty ;
-           rdfs:domain [ rdf:type owl:Class ;
-                         owl:unionOf ( sosa:Sample
-                                       emi:Organism
-                                     )
-                       ] ;
+           rdfs:domain sosa:Sample ;
            rdfs:range emi:BiologicalSex ;
            rdfs:label "has sex" ;
            rdfs:comment "The sex of a given organism. When applicable, we recommend to state PATO vocabulary biological sex terms.".
@@ -520,25 +503,17 @@ emi:hasSuperClass rdf:type owl:ObjectProperty ;
 ###  https://purl.org/emi#hasSource
 emi:hasSource rdf:type owl:ObjectProperty ;
                rdfs:domain emi:Interaction ;
-               rdfs:range [ rdf:type owl:Class ;
-                          owl:unionOf ( sosa:Sample
-                                        emi:Organism
-                                      )
-                        ] ;
+               rdfs:range sosa:Sample ;
                rdfs:label "has source" ; 
-               rdfs:comment "An interaction system has a source organim or sample that interacts with a target one. emi:hasSource should state the origin of an interaction." .
+               rdfs:comment "An interaction system has a source sample that interacts with a target one. emi:hasSource should state the origin of an interaction." .
 
 
 ###  https://purl.org/emi#hasTarget
 emi:hasTarget rdf:type owl:ObjectProperty ;
                rdfs:domain emi:Interaction ;
-               rdfs:range [ rdf:type owl:Class ;
-                          owl:unionOf ( sosa:Sample
-                                        emi:Organism
-                                      )
-                        ] ;
+               rdfs:range sosa:Sample ;
                rdfs:label "has target"  ;
-               rdfs:comment "An interaction system has a source organim or sample that interacts with a target one. emi:hasTarget should state the target of an interaction." .
+               rdfs:comment "An interaction system has a source sample that interacts with a target one. emi:hasTarget should state the target of an interaction." .
 
 
 ###  https://purl.org/emi#inTaxon
@@ -1092,7 +1067,7 @@ emi:ComputationalAnalysis rdf:type owl:Class ;
 ###  https://purl.org/emi#ContinousTrait
 emi:ContinousTrait rdf:type owl:Class ;
                    rdfs:subClassOf sosa:Result ;
-                   rdfs:label "ContinuousTrait" .
+                   rdfs:label "Continuous trait" .
 
 
 ###  https://purl.org/emi#Dataset
@@ -1108,7 +1083,14 @@ emi:DevelopmentalStage rdf:type owl:Class ;
 
 ###  https://purl.org/emi#DiscreteTrait
 emi:DiscreteTrait rdf:type owl:Class ;
-                  rdfs:subClassOf sosa:Result .
+                  rdfs:subClassOf sosa:Result ;
+                  rdfs:label "Discrete trait" ;
+                  vann:example """@prefix : <https://purl.org/emi/abox#> .
+@prefix emi: <https://purl.org/emi#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+:Example-Discrete-Trait rdf:value  12.4; 
+                        qudt:hasUnit unit:A .""" .
 
 
 ###  https://purl.org/emi#ExtractSample
@@ -1139,10 +1121,10 @@ emi:GNPSConsensusSpectrum rdf:type owl:Class ;
                           rdfs:label "GNPS consensus MS2 spectrum" .
 
 
-###  https://purl.org/emi#Gender
+###  https://purl.org/emi#BiologicalSex
 emi:BiologicalSex rdf:type owl:Class ;
            rdfs:label "biological sex"@en;
-           rdfs:comment "An organismal quality inhering in a bearer by virtue of the bearer's ability to undergo sexual reproduction in order to differentiate the individuals or types involved [source: http://purl.obolibrary.org/obo/PATO_0000047].". 
+           rdfs:comment "An organismal quality inhering in a bearer by virtue of the bearer's ability to undergo sexual reproduction in order to differentiate the individuals or types involved [source: http://purl.obolibrary.org/obo/PATO_0000047]. We recommend to use PATO ontology terms for inviduals of this class". 
 
 
 ###  https://purl.org/emi#ISDBAnnotation
