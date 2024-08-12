@@ -3,7 +3,6 @@
 @prefix up: <http://purl.uniprot.org/core/> .
 @prefix wd: <http://www.wikidata.org/entity/> .
 @prefix emi: <https://purl.org/emi#> .
-@prefix geo: <https://www.w3.org/2003/01/geo/wgs84_pos#> .
 @prefix npc: <https://purl.org/npc#> .
 @prefix org: <http://www.w3.org/ns/org#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
@@ -16,7 +15,7 @@
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
 @prefix obda: <https://w3id.org/obda/vocabulary#> .
 @prefix prov: <http://www.w3.org/ns/prov#> .
-@prefix qudt: <http://qudt.org/2.1/schema/qudt#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix sosa: <http://www.w3.org/ns/sosa/> .
@@ -26,6 +25,7 @@
 @prefix orcid: <http://orcid.org/> .
 @prefix widoco: <https://w3id.org/widoco/vocab#> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix geo: <http://www.w3.org/2003/01/geo/wgs84_pos#> .
 @base <https://purl.org/emi/abox#> .
 
 <https://purl.org/emi> rdf:type owl:Ontology ;
@@ -33,16 +33,21 @@
                         owl:imports <http://www.w3.org/2004/02/skos/core> ,
                                     <http://www.w3.org/ns/prov-o-20130430> ,
                                     sosa: ,
-                                    <https://purl.org/npc> ;
+                                    <https://purl.org/npc> ,
+                                    dcterms: ,
+                                    geo: ,
+                                    qudt: 
+                                    ;
                         dcterms:abstract "The Earth Metabolome Initiative ontology is mainly designed as data schema to structure and describe natural product taxonomy, spectrum annotation provenance, sample and observation data, mass spectrometry data and analysis, and chemical structure representations. The EMI ontology replaces the [ENPKG vocabulary](https://enpkg.commons-lab.org/doc/index.html)." ;
                         dcterms:bibliographicCitation "The Earth Metabolome Initiative Consortium. The Earth Metabolome Initiative (EMI) ontology. Revision: 0.1. Retrieved from: https://purl.org/emi/version/0.1" ;
-                        dcterms:contributor <http://orcid.org/0000-0001-9292-9463> ,
-                                            <http://orcid.org/0000-0002-3648-7362> ,
-                                            <http://orcid.org/0000-0002-9619-1707> ,
-                                            <http://orcid.org/0000-0003-3389-2191> ,
+                        dcterms:contributor <https://orcid.org/0000-0001-9292-9463> ,
+                                            <https://orcid.org/0000-0002-3648-7362> ,
+                                            <https://orcid.org/0000-0002-9619-1707> ,
+                                            <https://orcid.org/0000-0003-3389-2191> ,
                                             <https://orcid.org/0000-0002-1269-2038> ,
                                             <https://orcid.org/0000-0002-3175-5372> ,
-                                            <https://orcid.org/0000-0003-3213-4495> ;
+                                            <https://orcid.org/0000-0003-3213-4495> ,
+                                            <https://orcid.org/0009-0005-5515-1230>;
                         dcterms:created "2023-11-02"^^xsd:date ;
                         dcterms:creator <https://orcid.org/0000-0002-3175-5372> ;
                         dcterms:description "The Earth Metabolome Initiative (EMI) ontology is designed to capture and structure the metabolic content of all currently known species on our planet."@en ;
@@ -143,32 +148,6 @@ vann:preferredNamespaceUri rdf:type owl:AnnotationProperty .
 sdo:image rdf:type owl:AnnotationProperty .
 
 
-###  http://www.w3.org/2003/01/geo/wgs84_pos#alt
-<http://www.w3.org/2003/01/geo/wgs84_pos#alt> rdf:type owl:AnnotationProperty ;
-                                              rdfs:comment """The WGS84 altitude of a SpatialThing (decimal meters 
-above the local reference ellipsoid).""" ;
-                                              rdfs:label "altitude" ;
-                                              rdfs:domain <http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing> .
-
-
-###  http://www.w3.org/2003/01/geo/wgs84_pos#lat
-<http://www.w3.org/2003/01/geo/wgs84_pos#lat> rdf:type owl:AnnotationProperty ;
-                                              rdfs:comment "The WGS84 latitude of a SpatialThing (decimal degrees)." ;
-                                              rdfs:label "latitude" ;
-                                              rdfs:domain <http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing> .
-
-
-###  http://www.w3.org/2003/01/geo/wgs84_pos#location
-<http://www.w3.org/2003/01/geo/wgs84_pos#location> rdf:type owl:AnnotationProperty ;
-                                                   rdfs:subPropertyOf foaf:based_near ;
-                                                   rdfs:range <http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing> .
-
-
-###  http://www.w3.org/2003/01/geo/wgs84_pos#long
-<http://www.w3.org/2003/01/geo/wgs84_pos#long> rdf:type owl:AnnotationProperty ;
-                                               rdfs:comment "The WGS84 longitude of a SpatialThing (decimal degrees)." ;
-                                               rdfs:label "longitude" ;
-                                               rdfs:domain <http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing> .
 
 
 ###  http://www.w3.org/2004/02/skos/core#altLabel
@@ -236,9 +215,6 @@ up:rank rdf:type owl:ObjectProperty ;
         rdfs:label "rank" .
 
 
-###  http://www.w3.org/2003/01/geo/wgs84_pos#location
-<http://www.w3.org/2003/01/geo/wgs84_pos#location> rdf:type owl:ObjectProperty ;
-                                                   rdfs:domain emi:Interaction .
 
 
 ###  http://www.w3.org/ns/sosa/hasResult
@@ -264,7 +240,9 @@ emi:hasAnatomicalEntity rdf:type owl:ObjectProperty ;
                                                     emi:Organism
                                                   )
                                     ] ;
-                        rdfs:range emi:AnatomicalEntity .
+                        rdfs:range emi:AnatomicalEntity ;
+                        rdfs:label "has anatomical entity"@en ;
+                        rdfs:comment "It states the anatomical entity of an organism or sample considered in an interaction record." .
 
 
 ###  https://purl.org/emi#hasAnnotation
@@ -317,8 +295,9 @@ emi:hasDevelopmentalStage rdf:type owl:ObjectProperty ;
                                                     )
                                       ] ;
                           rdfs:range emi:DevelopmentalStage ;
-                          rdfs:comment "Source or Target Organism in an Interaction system from GloBI can have a DevelopmentalStage." ;
-                          rdfs:label "hasDevelopmentalStage" .
+                          rdfs:comment "The source or target organism in an interaction system such as GloBI can have a developmental stage." ;
+                          rdfs:label "has developmental stage" ;
+                          skos:closeMatch <http://purl.org/genex#hasDevelopmentalStage> .
 
 
 ###  https://purl.org/emi#hasFBMNComponent
@@ -470,7 +449,7 @@ emi:hasPhysiologicalStage rdf:type owl:ObjectProperty ;
                                                     )
                                       ] ;
                           rdfs:range emi:PhysiologicalStage ;
-                          rdfs:comment "Source or Target Organism in an Interaction system from GloBI can have a PhysiologicalStage." ;
+                          rdfs:comment "The source or target organism or sample in an interaction system such as from GloBI can have a physiological stage." ;
                           rdfs:label "hasPhysiologicalStage" .
 
 
@@ -491,8 +470,9 @@ emi:hasSex rdf:type owl:ObjectProperty ;
                                        emi:Organism
                                      )
                        ] ;
-           rdfs:range emi:Gender ;
-           rdfs:label "hasSex" .
+           rdfs:range emi:BiologicalSex ;
+           rdfs:label "has sex" ;
+           rdfs:comment "The sex of a given organism. When applicable, we recommend to state PATO vocabulary biological sex terms.".
 
 
 ###  https://purl.org/emi#hasSpec2VecDoc
@@ -537,18 +517,28 @@ emi:hasSuperClass rdf:type owl:ObjectProperty ;
                   rdfs:label "has super class" .
 
 
-###  https://purl.org/emi#has_source
-emi:has_source rdf:type owl:ObjectProperty ;
+###  https://purl.org/emi#hasSource
+emi:hasSource rdf:type owl:ObjectProperty ;
                rdfs:domain emi:Interaction ;
-               rdfs:range emi:Organism ;
-               rdfs:label "hasSource" .
+               rdfs:range [ rdf:type owl:Class ;
+                          owl:unionOf ( sosa:Sample
+                                        emi:Organism
+                                      )
+                        ] ;
+               rdfs:label "has source" ; 
+               rdfs:comment "An interaction system has a source organim or sample that interacts with a target one. emi:hasSource should state the origin of an interaction." .
 
 
-###  https://purl.org/emi#has_target
-emi:has_target rdf:type owl:ObjectProperty ;
+###  https://purl.org/emi#hasTarget
+emi:hasTarget rdf:type owl:ObjectProperty ;
                rdfs:domain emi:Interaction ;
-               rdfs:range emi:Organism ;
-               rdfs:label "hasTarget" .
+               rdfs:range [ rdf:type owl:Class ;
+                          owl:unionOf ( sosa:Sample
+                                        emi:Organism
+                                      )
+                        ] ;
+               rdfs:label "has target"  ;
+               rdfs:comment "An interaction system has a source organim or sample that interacts with a target one. emi:hasTarget should state the target of an interaction." .
 
 
 ###  https://purl.org/emi#inTaxon
@@ -612,67 +602,11 @@ wd:Q27145340 rdf:type emi:Chemical ;
                  rdfs:label "is InChIKey of" .
 
 
-###  https://purl.org/emi#source
-emi:source rdf:type owl:ObjectProperty ;
-           rdfs:domain emi:SpectrumAnnotation ;
-           rdfs:range emi:InformationSource ;
-           rdfs:label "has source" ;
-           owl:deprecated "to delete. if we decide to rely on the prov ontology." .
-
-
-###  https://qudt.org/2.1/schema/qudt#hasUnit
-<https://qudt.org/2.1/schema/qudt#hasUnit> rdf:type owl:ObjectProperty ;
-                                           rdfs:domain <https://qudt.org/2.1/schema/qudt#QuantityValue> ,
-                                                       [ rdf:type owl:Class ;
-                                                         owl:unionOf ( emi:ContinousTrait
-                                                                       emi:DiscreteTrait
-                                                                       emi:NonTrait
-                                                                     )
-                                                       ] ;
-                                           rdfs:range <https://qudt.org/2.1/vocab/unit> .
-
-
-###  https://www.w3.org/2003/01/geo/wgs84_pos#lat
-geo:lat rdf:type owl:ObjectProperty ;
-        rdfs:subPropertyOf <http://www.w3.org/2003/01/geo/wgs84_pos#location> .
-
-
-###  https://www.w3.org/2003/01/geo/wgs84_pos#long
-geo:long rdf:type owl:ObjectProperty ;
-         rdfs:subPropertyOf <http://www.w3.org/2003/01/geo/wgs84_pos#location> .
-
-
-###  https://www.w3.org/TR/rdf-schema/#ch_value
-<https://www.w3.org/TR/rdf-schema/#ch_value> rdf:type owl:ObjectProperty ;
-                                             rdfs:domain [ rdf:type owl:Class ;
-                                                           owl:unionOf ( emi:ContinousTrait
-                                                                         emi:DiscreteTrait
-                                                                         emi:NonTrait
-                                                                       )
-                                                         ] ;
-                                             rdfs:range <https://qudt.org/2.1/schema/qudt#QuantityValue> ;
-                                             rdfs:label "hasValue" .
-
 
 #################################################################
 #    Data properties
 #################################################################
 
-###  http://purl.org/dc/terms/identifier
-dcterms:identifier rdf:type owl:DatatypeProperty ;
-                   rdfs:domain [ rdf:type owl:Class ;
-                                 owl:unionOf ( up:Taxon
-                                               emi:AnatomicalEntity
-                                               emi:ContinousTrait
-                                               emi:Dataset
-                                               emi:DevelopmentalStage
-                                               emi:DiscreteTrait
-                                               emi:Gender
-                                               emi:InteractionType
-                                               emi:PhysiologicalStage
-                                             )
-                               ] ;
-                   rdfs:comment "An unambigious referece to the source within a given context. Recommended best practice is to identify the resource by means of a string or IRI conforming to a formal identification system." .
 
 
 ###  https://purl.org/emi#componentLink
@@ -1028,30 +962,6 @@ up:Taxon rdf:type owl:Class ;
          rdfs:label "Taxon" .
 
 
-###  http://www.w3.org/2003/01/geo/wgs84_pos#Point
-<http://www.w3.org/2003/01/geo/wgs84_pos#Point> rdf:type owl:Class ;
-                                                rdfs:subClassOf <http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing> ;
-                                                rdfs:comment """ 
-Uniquely identified by lat/long/alt. i.e.
-
-spaciallyIntersects(P1, P2) :- lat(P1, LAT), long(P1, LONG), alt(P1, ALT),
-  lat(P2, LAT), long(P2, LONG), alt(P2, ALT).
-
-sameThing(P1, P2) :- type(P1, Point), type(P2, Point), spaciallyIntersects(P1, P2).
-  """ ,
-                                                             """A point, typically described using a coordinate system relative to Earth, such as WGS84.
-  """ ;
-                                                rdfs:label "point" .
-
-
-###  http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing
-<http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing> rdf:type owl:Class ;
-                                                       rdfs:comment """Anything with spatial extent, i.e. size, shape, or position.
- e.g. people, places, bowling balls, as well as abstract areas like cubes.
-""" ;
-                                                       rdfs:label "SpatialThing" .
-
-
 ###  http://www.w3.org/ns/sosa/Observation
 sosa:Observation vann:example """@prefix : <https://purl.org/emi/abox#> .
 @prefix sosa: <http://www.w3.org/ns/sosa/> .
@@ -1091,7 +1001,9 @@ emi:Analysis rdf:type owl:Class ;
 
 ###  https://purl.org/emi#AnatomicalEntity
 emi:AnatomicalEntity rdf:type owl:Class ;
-                     rdfs:comment "The body part name/ID from UBERON of the Source and Target of an Interaction Record" .
+                     rdfs:comment "An anatomical entity can be an organism part (e.g. brain, blood, liver and so on) or a material anatomical entity such as a cell." ;
+                     rdfs:label "Anatomical entity"@en ;
+                     skos:closeMatch <http://purl.org/genex#AnatomicalEntity> .
 
 
 ###  https://purl.org/emi#BioAssayResults
@@ -1189,7 +1101,9 @@ emi:Dataset rdf:type owl:Class .
 
 ###  https://purl.org/emi#DevelopmentalStage
 emi:DevelopmentalStage rdf:type owl:Class ;
-                       rdfs:comment "Optional Developmental stage from UBERON of Source or Target Organism in an Interaction system from GloBI. It can have a name and ID." .
+                       rdfs:comment "A developmental stage is spatiotemporal region encompassing some part of the life cycle of an organism, e.g. blastula stage. We recommend to use the developmental stage terms from UBERON of a source or target organism in an interaction system such as from GloBI.";
+                       rdfs:label "Developmental stage" ;
+                       skos:closeMatch <http://www.ebi.ac.uk/efo/EFO_0000399> .
 
 
 ###  https://purl.org/emi#DiscreteTrait
@@ -1226,7 +1140,9 @@ emi:GNPSConsensusSpectrum rdf:type owl:Class ;
 
 
 ###  https://purl.org/emi#Gender
-emi:Gender rdf:type owl:Class .
+emi:BiologicalSex rdf:type owl:Class ;
+           rdfs:label "biological sex"@en;
+           rdfs:comment "An organismal quality inhering in a bearer by virtue of the bearer's ability to undergo sexual reproduction in order to differentiate the individuals or types involved [source: http://purl.obolibrary.org/obo/PATO_0000047].". 
 
 
 ###  https://purl.org/emi#ISDBAnnotation
@@ -1276,8 +1192,8 @@ https://www.w3.org/TR/prov-o/""" .
 ###  https://purl.org/emi#Interaction
 emi:Interaction rdf:type owl:Class ;
                 rdfs:subClassOf prov:Activity ;
-                rdfs:comment "The interaction record listed in GloBI database between Source and Target taxons." ;
-                rdfs:label "InteractionSystem" .
+                rdfs:comment "An interaction record listed (e.g.,in GloBI database) between Source and Target organims or samples." ;
+                rdfs:label "Interaction System" .
 
 
 ###  https://purl.org/emi#InteractionType
@@ -1386,7 +1302,8 @@ emi:Organism rdf:type owl:Class ;
 
 ###  https://purl.org/emi#PhysiologicalStage
 emi:PhysiologicalStage rdf:type owl:Class ;
-                       rdfs:comment "Optional Physiological stage from UBERON of Source or Target Organism in an Interaction system from GloBI. It can have a name and ID." .
+                       rdfs:label "Physiological stage" ;
+                       rdfs:comment "A physiological stage. We recommend to use UBERON terms as intances when it is applicable." .
 
 
 ###  https://purl.org/emi#QCSample
@@ -1540,15 +1457,6 @@ npc:Superclass rdf:type owl:Class ;
                rdfs:label "Natural product superclass" .
 
 
-###  https://qudt.org/2.1/schema/qudt#QuantityValue
-<https://qudt.org/2.1/schema/qudt#QuantityValue> rdf:type owl:Class ;
-                                                 rdfs:label "qudt:QuantityValue" .
-
-
-###  https://qudt.org/2.1/vocab/unit
-<https://qudt.org/2.1/vocab/unit> rdf:type owl:Class ;
-                                  rdfs:label "Unit" .
-
 
 #################################################################
 #    Individuals
@@ -1574,5 +1482,35 @@ npc:Superclass rdf:type owl:Class ;
                        foaf:homepage "https://www.unige.ch" ;
                        foaf:name "University of Geneva"@en .
 
+###  https://www.unige.ch
+<https://www.unine.ch> rdf:type owl:NamedIndividual ,
+                                foaf:Organization ;
+                       foaf:homepage "https://www.unine.ch" ;
+                       foaf:name "University of Neuchâtel"@en .
+
+<https://orcid.org/0000-0002-3175-5372> a foaf:Person ;
+    foaf:name "Tarcisio Mendes de Farias"@en ;
+    org:memberOf <https://www.sib.swiss> .
+<https://orcid.org/0000-0001-9292-9463> a foaf:Person ;
+foaf:name "Marco Pagni"@en ;
+  org:memberOf <https://www.sib.swiss> .
+<https://orcid.org/0000-0002-3648-7362> a foaf:Person ;
+foaf:name "Arnaud Gaudry"@en ;
+  org:memberOf <https://www.unige.ch> .
+<https://orcid.org/0000-0002-9619-1707> a foaf:Person ;
+foaf:name "Florence Mehl"@en ;
+  org:memberOf <https://www.sib.swiss> .
+<https://orcid.org/0000-0003-3389-2191> a foaf:Person ;
+foaf:name "Pierre-Marie Allard"@en ;
+  org:memberOf <https://www.unifr.ch> .
+<https://orcid.org/0000-0002-1269-2038> a foaf:Person ;
+foaf:name "Luca Cappelletti"@en ;
+  org:memberOf <https://www.unifr.ch> .
+<https://orcid.org/0000-0003-3213-4495> a foaf:Person ;
+foaf:name "Ana Claudia Sima"@en ;
+  org:memberOf <https://www.sib.swiss> .
+<https://orcid.org/0009-0005-5515-1230> a foaf:Person ;
+foaf:name "Disha Tandon"@en ;
+  org:memberOf <https://www.sib.swiss> .
 
 ###  Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi
