@@ -1473,27 +1473,27 @@ npc:Superclass rdf:type owl:Class ;
 ###  https://www.sib.swiss
 <https://www.sib.swiss> rdf:type owl:NamedIndividual ,
                                  foaf:Organization ;
-                        foaf:homepage "https://www.sib.swiss" ;
+                        foaf:homepage <https://www.sib.swiss> ;
                         foaf:name "SIB Swiss Institute of Bioinformatics"@en .
 
 
 ###  https://www.unifr.ch
 <https://www.unifr.ch> rdf:type owl:NamedIndividual ,
                                 foaf:Organization ;
-                       foaf:homepage "https://www.unifr.ch" ;
+                       foaf:homepage <https://www.unifr.ch> ;
                        foaf:name "University of Fribourg"@en .
 
 
 ###  https://www.unige.ch
 <https://www.unige.ch> rdf:type owl:NamedIndividual ,
                                 foaf:Organization ;
-                       foaf:homepage "https://www.unige.ch" ;
+                       foaf:homepage <https://www.unige.ch> ;
                        foaf:name "University of Geneva"@en .
 
 ###  https://www.unine.ch
 <https://www.unine.ch> rdf:type owl:NamedIndividual ,
                                 foaf:Organization ;
-                       foaf:homepage "https://www.unine.ch" ;
+                       foaf:homepage <https://www.unine.ch> ;
                        foaf:name "University of Neuchâtel"@en .
 
 <https://orcid.org/0000-0002-3175-5372> a foaf:Person ;
