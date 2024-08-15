@@ -15,6 +15,7 @@
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
 @prefix obda: <https://w3id.org/obda/vocabulary#> .
 @prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix sosa: <http://www.w3.org/ns/sosa/> .
@@ -24,30 +25,34 @@
 @prefix orcid: <http://orcid.org/> .
 @prefix widoco: <https://w3id.org/widoco/vocab#> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix geo: <http://www.w3.org/2003/01/geo/wgs84_pos#> .
 @base <https://purl.org/emi/abox#> .
 
 <https://purl.org/emi> rdf:type owl:Ontology ;
                         owl:versionIRI <https://purl.org/emi/version/0.2> ;
-                        owl:imports <http://www.w3.org/2003/01/geo/wgs84_pos> ,
-                                    <http://www.w3.org/2004/02/skos/core> ,
+                        owl:imports <http://www.w3.org/2004/02/skos/core> ,
                                     <http://www.w3.org/ns/prov-o-20130430> ,
                                     sosa: ,
-                                    <https://purl.org/npc> ;
+                                    <https://purl.org/npc> ,
+                                    dcterms: ,
+                                    geo: ,
+                                    qudt: ;
                         dcterms:abstract "The Earth Metabolome Initiative ontology is mainly designed as data schema to structure and describe natural product taxonomy, spectrum annotation provenance, sample and observation data, mass spectrometry data and analysis, and chemical structure representations. The EMI ontology replaces the [ENPKG vocabulary](https://enpkg.commons-lab.org/doc/index.html)." ;
-                        dcterms:bibliographicCitation "The Earth Metabolome Initiative Consortium. The Earth Metabolome Initiative (EMI) ontology. Revision: 0.1. Retrieved from: https://purl.org/emi/version/0.1" ;
-                        dcterms:contributor <http://orcid.org/0000-0001-9292-9463> ,
-                                            <http://orcid.org/0000-0002-3648-7362> ,
-                                            <http://orcid.org/0000-0002-9619-1707> ,
-                                            <http://orcid.org/0000-0003-3389-2191> ,
+                        dcterms:bibliographicCitation "The Earth Metabolome Initiative Consortium. The Earth Metabolome Initiative (EMI) ontology. Revision: 0.2. Retrieved from: https://purl.org/emi/version/0.2" ;
+                        dcterms:contributor <https://orcid.org/0000-0001-9292-9463> ,
+                                            <https://orcid.org/0000-0002-3648-7362> ,
+                                            <https://orcid.org/0000-0002-9619-1707> ,
+                                            <https://orcid.org/0000-0003-3389-2191> ,
                                             <https://orcid.org/0000-0002-1269-2038> ,
                                             <https://orcid.org/0000-0002-3175-5372> ,
-                                            <https://orcid.org/0000-0003-3213-4495> ;
+                                            <https://orcid.org/0000-0003-3213-4495> ,
+                                            <https://orcid.org/0009-0005-5515-1230>;
                         dcterms:created "2023-11-02"^^xsd:date ;
                         dcterms:creator <https://orcid.org/0000-0002-3175-5372> ;
                         dcterms:description "The Earth Metabolome Initiative (EMI) ontology is designed to capture and structure the metabolic content of all currently known species on our planet."@en ;
                         dcterms:issue "2024-04-03"^^xsd:date ;
-                        dcterms:license <https://creativecommons.org/publicdomain/zero/1.0/> ;
-                        dcterms:modified "2024-05-08"^^xsd:date ;
+                        dcterms:license <https://creativecommons.org/publicdomain/zero/1.0> ;
+                        dcterms:modified "2024-08-12"^^xsd:date ;
                         dcterms:publisher <https://www.earthmetabolome.org> ;
                         dcterms:replaces <https://enpkg.commons-lab.org/kg/ontology_version/0.1.0> ;
                         dcterms:title "The Earth Metabolome Initiative (EMI) ontology"@en ;
@@ -72,6 +77,18 @@ Other metabolomics data are structured with specific EMI classes such as emi:Che
 #################################################################
 #    Annotation properties
 #################################################################
+
+###  http://purl.org/dc/elements/1.1/date
+<http://purl.org/dc/elements/1.1/date> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/elements/1.1/description
+<http://purl.org/dc/elements/1.1/description> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/elements/1.1/title
+<http://purl.org/dc/elements/1.1/title> rdf:type owl:AnnotationProperty .
+
 
 ###  http://purl.org/dc/terms/bibliographicCitation
 dcterms:bibliographicCitation rdf:type owl:AnnotationProperty .
@@ -130,6 +147,8 @@ vann:preferredNamespaceUri rdf:type owl:AnnotationProperty .
 sdo:image rdf:type owl:AnnotationProperty .
 
 
+
+
 ###  http://www.w3.org/2004/02/skos/core#altLabel
 skos:altLabel rdf:type owl:AnnotationProperty ;
               rdfs:comment "The range of skos:altLabel is the class of RDF plain literals."@en ,
@@ -159,6 +178,10 @@ skos:prefLabel rdf:type owl:AnnotationProperty ;
                rdfs:label "preferred label"@en ;
                skos:definition "The preferred lexical label for a resource, in a given language."@en ;
                rdfs:subPropertyOf rdfs:label .
+
+
+###  http://xmlns.com/foaf/0.1/based_near
+foaf:based_near rdf:type owl:AnnotationProperty .
 
 
 ###  http://xmlns.com/foaf/0.1/logo
@@ -191,8 +214,12 @@ up:rank rdf:type owl:ObjectProperty ;
         rdfs:label "rank" .
 
 
+
+
 ###  http://www.w3.org/ns/sosa/hasResult
-sosa:hasResult vann:example """@prefix : <https://purl.org/emi/abox#> .
+sosa:hasResult rdfs:domain emi:Dataset ;
+               rdfs:range sosa:Result ;
+               vann:example """@prefix : <https://purl.org/emi/abox#> .
 @prefix emi: <https://purl.org/emi#> .
 @prefix sosa: <http://www.w3.org/ns/sosa/> .
 :VGF153_A02_neg.mzXML  rdf:type emi:LCMSAnalysisNeg, emi:LCMSAnalysis, sosa:Observation ;
@@ -203,6 +230,14 @@ sosa:hasResult vann:example """@prefix : <https://purl.org/emi/abox#> .
 ###  http://xmlns.com/foaf/0.1/depiction
 foaf:depiction rdf:type owl:ObjectProperty ;
                rdfs:comment "http://www.simolecule.com/cdkdepict/depict/bow/svg?smi=CCCCCCCCCCCC%5BC%40%40H%5D(O)%5BC%40H%5D1CCC(C2CCC(CC(O)CCCCC%5BC%40%40H%5D(O)CC3%3DC%5BC%40H%5D(C)OC3%3DO)O2)O1&zoom=2.0&annotate=cip" .
+
+
+###  https://purl.org/emi#hasAnatomicalEntity
+emi:hasAnatomicalEntity rdf:type owl:ObjectProperty ;
+                        rdfs:domain sosa:Sample ;
+                        rdfs:range emi:AnatomicalEntity ;
+                        rdfs:label "has anatomical entity"@en ;
+                        rdfs:comment "It can be used to assign an anatomical entity (e.g., body parts) to a source and/or target organism sample in an interaction system such as GloBI. When applicable, we recommend to state UBERON vocabulary anatomical entity terms." .
 
 
 ###  https://purl.org/emi#hasAnnotation
@@ -249,12 +284,10 @@ emi:hasConsensusSpectrum rdf:type owl:ObjectProperty ;
 
 ###  https://purl.org/emi#hasDevelopmentalStage
 emi:hasDevelopmentalStage rdf:type owl:ObjectProperty ;
-                          rdfs:domain [ rdf:type owl:Class ;
-                                        owl:unionOf ( sosa:Sample
-                                                      emi:Organism
-                                                    )
-                                      ] ;
-                          rdfs:range emi:DevelopmentalStage .
+                          rdfs:domain sosa:Sample ;
+                          rdfs:range emi:DevelopmentalStage ;
+                          rdfs:comment "The source or target organism sample of an interaction system such as GloBI can have a developmental stage." ;
+                          rdfs:label "has developmental stage"  .
 
 
 ###  https://purl.org/emi#hasFBMNComponent
@@ -346,8 +379,6 @@ emi:hasLCMSFeatureSet rdf:type owl:ObjectProperty ;
                       rdfs:domain emi:LCMSAnalysis ;
                       rdfs:range emi:LCMSFeatureSet ;
                       vann:example """@prefix emi: <https://purl.org/emi#> .
-@prefix : <https://purl.org/emi/abox#> .
-@prefix usi: <https://metabolomics-usi.ucsd.edu/dashinterface/?usi1=> .
 :VGF138_A02_neg.mzXML rdf:type emi:LCMSAnalysis ;
             emi:hasLCMSFeatureSet :VGF153_A02_lcms_feature_list_neg .""" ;
                       rdfs:comment "It relates a LCMS analysis to a set of features." ;
@@ -400,6 +431,14 @@ emi:hasPathway rdf:type owl:ObjectProperty ;
                rdfs:label "has pathway" .
 
 
+###  https://purl.org/emi#hasPhysiologicalStage
+emi:hasPhysiologicalStage rdf:type owl:ObjectProperty ;
+                          rdfs:domain sosa:Sample  ;
+                          rdfs:range emi:PhysiologicalStage ;
+                          rdfs:comment "It can be used to assign a physiological stage to a source and/or target organism sample in an interaction system such as GloBI. When applicable, we recommend to state PATO vocabulary anatomical entity terms." ;
+                          rdfs:label "has physiological stage" .
+
+
 ###  https://purl.org/emi#hasSecondMember
 emi:hasSecondMember rdf:type owl:ObjectProperty ;
                     rdfs:subPropertyOf emi:hasPairMember ;
@@ -408,6 +447,14 @@ emi:hasSecondMember rdf:type owl:ObjectProperty ;
                     rdfs:range emi:LCMSFeature ;
                     rdfs:comment "The second member of a spectral pair." ;
                     rdfs:label "has second member" .
+
+
+###  https://purl.org/emi#hasSex
+emi:hasSex rdf:type owl:ObjectProperty ;
+           rdfs:domain sosa:Sample ;
+           rdfs:range emi:BiologicalSex ;
+           rdfs:label "has sex" ;
+           rdfs:comment "It can be used to assign a biological sex to a source and/or target organism sample in an interaction system such as GloBI. When applicable, we recommend to state PATO vocabulary biological sex terms." .
 
 
 ###  https://purl.org/emi#hasSpec2VecDoc
@@ -452,14 +499,42 @@ emi:hasSuperClass rdf:type owl:ObjectProperty ;
                   rdfs:label "has super class" .
 
 
+###  https://purl.org/emi#hasSource
+emi:hasSource rdf:type owl:ObjectProperty ;
+               rdfs:domain emi:Interaction ;
+               rdfs:range sosa:Sample ;
+               rdfs:label "has source" ; 
+               rdfs:comment "An interaction system has a source sample that interacts with a target one. emi:hasSource should state the origin of an interaction." .
+
+
+###  https://purl.org/emi#hasTarget
+emi:hasTarget rdf:type owl:ObjectProperty ;
+               rdfs:domain emi:Interaction ;
+               rdfs:range sosa:Sample ;
+               rdfs:label "has target"  ;
+               rdfs:comment "An interaction system has a source sample that interacts with a target one. emi:hasTarget should state the target of an interaction." .
+
+
+###  https://purl.org/emi#has_habitat
+emi:hasHabitat rdf:type owl:ObjectProperty ;
+                rdfs:domain emi:Interaction ;
+                rdfs:range emi:Habitat ;
+                rdfs:comment "It can be used to assign a habitat to an interaction system such as from GloBI. When applicable, we recommend to state ENVO or CMECS vocabulary terms." ;
+                rdfs:label "has habitat" .
+
 ###  https://purl.org/emi#inTaxon
 emi:inTaxon rdf:type owl:ObjectProperty ;
             rdfs:domain [ rdf:type owl:Class ;
                           owl:unionOf ( sosa:Sample
                                         emi:InChIKey
+                                        emi:Organism
                                       )
                         ] ;
-            rdfs:range emi:Taxon ;
+            rdfs:range [ rdf:type owl:Class ;
+                         owl:unionOf ( up:Taxon
+                                       emi:Taxon
+                                     )
+                       ] ;
             rdfs:label "found in taxon" .
 
 
@@ -508,17 +583,12 @@ wd:Q27145340 rdf:type emi:Chemical ;
                  rdfs:label "is InChIKey of" .
 
 
-###  https://purl.org/emi#source
-emi:source rdf:type owl:ObjectProperty ;
-           rdfs:domain emi:SpectrumAnnotation ;
-           rdfs:range emi:InformationSource ;
-           rdfs:label "has source" ;
-           owl:deprecated "to delete. if we decide to rely on the prov ontology." .
-
 
 #################################################################
 #    Data properties
 #################################################################
+
+
 
 ###  https://purl.org/emi#componentLink
 emi:componentLink rdf:type owl:DatatypeProperty ,
@@ -910,6 +980,13 @@ emi:Analysis rdf:type owl:Class ;
              rdfs:comment "Any analysis performed over a sample." .
 
 
+###  https://purl.org/emi#AnatomicalEntity
+emi:AnatomicalEntity rdf:type owl:Class ;
+                     rdfs:comment "An anatomical entity can be an organism part (e.g. brain, blood, liver and so on) or a material anatomical entity such as a cell." ;
+                     rdfs:label "Anatomical entity"@en ;
+                     skos:closeMatch <http://purl.org/genex#AnatomicalEntity> .
+
+
 ###  https://purl.org/emi#BioAssayResults
 emi:BioAssayResults rdf:type owl:Class ;
                     rdfs:comment "An object to store bioactivity results." ;
@@ -995,16 +1072,31 @@ emi:ComputationalAnalysis rdf:type owl:Class ;
 
 ###  https://purl.org/emi#ContinousTrait
 emi:ContinousTrait rdf:type owl:Class ;
-                   rdfs:subClassOf sosa:Result .
+                   rdfs:subClassOf sosa:Result ;
+                   rdfs:label "Continuous trait" .
+
+
+###  https://purl.org/emi#Dataset
+emi:Dataset rdf:type owl:Class .
 
 
 ###  https://purl.org/emi#DevelopmentalStage
-emi:DevelopmentalStage rdf:type owl:Class .
+emi:DevelopmentalStage rdf:type owl:Class ;
+                       rdfs:comment "A developmental stage is spatiotemporal region encompassing some part of the life cycle of an organism, e.g. blastula stage. We recommend to use the developmental stage terms from UBERON of a source or target organism sample in an interaction system such as from GloBI.";
+                       rdfs:label "Developmental stage" ;
+                       skos:closeMatch <http://www.ebi.ac.uk/efo/EFO_0000399> .
 
 
 ###  https://purl.org/emi#DiscreteTrait
 emi:DiscreteTrait rdf:type owl:Class ;
-                  rdfs:subClassOf sosa:Result .
+                  rdfs:subClassOf sosa:Result ;
+                  rdfs:label "Discrete trait" ;
+                  vann:example """@prefix : <https://purl.org/emi/abox#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+:flower-color rdf:value  red ;
+              qudt:hasUnit unit:X .""" ;
+              rdfs:comment "A discrete trait structured value. When applicable, value units should be defined as QUDT Units Vocabulary terms." . 
 
 
 ###  https://purl.org/emi#ExtractSample
@@ -1033,6 +1125,13 @@ emi:GNPSConsensusSpectrum rdf:type owl:Class ;
                           rdfs:subClassOf emi:MS2Spectrum ;
                           rdfs:comment "An MS2 spectrum corresponding to the GNPS consensus spectrum of 1 or more LCMSFeature. Recommendation: instances of this class are ideally built as follows: \"https://metabolomics-usi.ucsd.edu/dashinterface/?usi1={id}\", e.g.: \"https://metabolomics-usi.ucsd.edu/dashinterface/?usi1=mzspec:MassIVE:TASK-773effaad17c4124b9ea9004eaa3f526-spectra/specs_ms.mgf:scan:1028\"" ;
                           rdfs:label "GNPS consensus MS2 spectrum" .
+
+
+###  https://purl.org/emi#BiologicalSex
+emi:BiologicalSex rdf:type owl:Class ;
+           rdfs:label "biological sex"@en ;
+           rdfs:comment "An organismal quality inhering in a bearer by virtue of the bearer's ability to undergo sexual reproduction in order to differentiate the individuals or types involved [source: http://purl.obolibrary.org/obo/PATO_0000047]. We recommend to use PATO ontology terms for inviduals of this class" ; 
+           skos:closeMatch <http://purl.obolibrary.org/obo/PATO_0000047> . 
 
 
 ###  https://purl.org/emi#ISDBAnnotation
@@ -1080,7 +1179,23 @@ https://www.w3.org/TR/prov-o/""" .
 
 
 ###  https://purl.org/emi#Interaction
-emi:Interaction rdf:type owl:Class .
+emi:Interaction rdf:type owl:Class ;
+                rdfs:subClassOf prov:Activity ;
+                rdfs:comment "An interaction record listed (e.g.,in GloBI database) between Source and Target samples." ;
+                rdfs:label "Interaction System" .
+
+
+
+###  https://purl.org/emi#InteractionType
+emi:InteractionType rdf:type owl:Class ;
+                    rdfs:comment "It represents the kind of interaction between a source and a target organism sample in an interaction system (e.g., has pathogen and allelopath of). We recommed using RO vocabulary terms." ;
+                    rdfs:label "Interaction type" ;
+                    vann:example """@prefix obo: <http://purl.obolibrary.org/obo/> .
+@prefix : <https://purl.org/emi/abox#> .
+@prefix emi: <https://purl.org/emi#> .
+:INTERACTION-1 a emi:Interaction ;
+    emi:isClassifiedWith obo:RO_0002557 . #has pathogen
+obo:RO_0002557 a emi:InteractionType .""".
 
 
 ###  https://purl.org/emi#LCMSAnalysis
@@ -1148,6 +1263,10 @@ emi:LabObject rdf:type owl:Class ;
               owl:deprecated "To remove, it was replaced with Sample from Sosa, because the Lab Objcts in the EMI model so far are only kind of samples. Hence, there is no need of generalizing to any lab object or making it specific to a \"lab\"." .
 
 
+###  https://purl.org/emi#Locality
+emi:Locality rdf:type owl:Class .
+
+
 ###  https://purl.org/emi#MS2Spectrum
 emi:MS2Spectrum rdf:type owl:Class ;
                 vann:example """@prefix : <https://purl.org/emi/abox#> .
@@ -1158,13 +1277,41 @@ usi:mzspec%3AMSV000087728%3AVGF153_A02_features_ms2_neg.mgf%3Ascan%3A356 rdf:typ
                 rdfs:label "MS2 spectrum" .
 
 
+###  https://purl.org/emi#Habitat
+emi:Habitat rdf:type owl:Class ;
+            rdfs:comment "It defines an environment where an emi:Interaction occurs. If applicable, we recommend to use the habitat terms from ENVO or CMECS of an interaction system such as from GloBI." ;
+            rdfs:label "Habitat" .
+
+###  https://purl.org/emi#NonTrait
+emi:NonTrait rdf:type owl:Class ;
+             rdfs:subClassOf sosa:Result ;
+             vann:example """@prefix : <https://purl.org/emi/abox#> .
+@prefix emi: <https://purl.org/emi#> .
+:EXAMPLE-NON-TRAIT rdf:type emi:NonTrait ;
+    rdf:value  12.4""" ;
+              rdfs:comment "A non trait structured value. When applicable, value units should be defined as QUDT Units Vocabulary terms." . 
+
+
+
+###  https://purl.org/emi#Observations
+emi:Observations rdf:type owl:Class ;
+                 rdfs:subClassOf sosa:Sample ;
+                 rdfs:comment "Observations under a Dataset in try-db" .
+
+
 ###  https://purl.org/emi#Organism
 emi:Organism rdf:type owl:Class ;
              rdfs:subClassOf emi:System ;
-             rdfs:comment "A living being, such as an animal, a plant, a bacterium, or a fungus., Any individual living (or previously living) being. Example: animal, human being. An organim is associated to a taxon such as \"Homo Sapiens\", NCBI taxonomy identifier: 9606." ;
+             rdfs:comment "A living being, such as an animal, a plant, a bacterium, or a fungus., Any individual living (or previously living) being. Example: animal, human being. An organism is associated to a taxon such as \"Homo Sapiens\", NCBI taxonomy identifier: 9606." ;
              rdfs:label "Organism" ;
              rdfs:seeAlso <http://purl.org/net/orth#Organism> ;
              skos:altLabel "Living being" .
+
+
+###  https://purl.org/emi#PhysiologicalStage
+emi:PhysiologicalStage rdf:type owl:Class ;
+                       rdfs:label "Physiological stage" ;
+                       rdfs:comment "A physiological stage is a specific phase or condition of an organism in its life cycle (e.g., viability stage). If applicable, we recommend to use the physiological stage terms from PATO of a source or target organism sample in an interaction system such as from GloBI." .
 
 
 ###  https://purl.org/emi#QCSample
@@ -1239,7 +1386,7 @@ emi:StructuralAnnotation rdf:type owl:Class ;
 
 ###  https://purl.org/emi#System
 emi:System rdf:type owl:Class ;
-           rdfs:comment "Any part of the observable universe. A system is often composed of subsystems, for example, the Earth system contains a biome that contains  a population that contains organisms that contains organs and so on." ;
+           rdfs:comment "Any part of the observable universe. A system is often composed of subsystems, for example, the Earth system contains a biome that contains a population that contains organisms that contains organs and so on." ;
            rdfs:label "System" .
 
 
@@ -1318,6 +1465,7 @@ npc:Superclass rdf:type owl:Class ;
                rdfs:label "Natural product superclass" .
 
 
+
 #################################################################
 #    Individuals
 #################################################################
@@ -1342,80 +1490,35 @@ npc:Superclass rdf:type owl:Class ;
                        foaf:homepage "https://www.unige.ch" ;
                        foaf:name "University of Geneva"@en .
 
+###  https://www.unige.ch
+<https://www.unine.ch> rdf:type owl:NamedIndividual ,
+                                foaf:Organization ;
+                       foaf:homepage "https://www.unine.ch" ;
+                       foaf:name "University of Neuchâtel"@en .
 
-#################################################################
-#    Annotations
-#################################################################
+<https://orcid.org/0000-0002-3175-5372> a foaf:Person ;
+    foaf:name "Tarcisio Mendes de Farias"@en ;
+    org:memberOf <https://www.sib.swiss> .
+<https://orcid.org/0000-0001-9292-9463> a foaf:Person ;
+foaf:name "Marco Pagni"@en ;
+  org:memberOf <https://www.sib.swiss> .
+<https://orcid.org/0000-0002-3648-7362> a foaf:Person ;
+foaf:name "Arnaud Gaudry"@en ;
+  org:memberOf <https://www.unige.ch> .
+<https://orcid.org/0000-0002-9619-1707> a foaf:Person ;
+foaf:name "Florence Mehl"@en ;
+  org:memberOf <https://www.sib.swiss> .
+<https://orcid.org/0000-0003-3389-2191> a foaf:Person ;
+foaf:name "Pierre-Marie Allard"@en ;
+  org:memberOf <https://www.unifr.ch> .
+<https://orcid.org/0000-0002-1269-2038> a foaf:Person ;
+foaf:name "Luca Cappelletti"@en ;
+  org:memberOf <https://www.unifr.ch> .
+<https://orcid.org/0000-0003-3213-4495> a foaf:Person ;
+foaf:name "Ana Claudia Sima"@en ;
+  org:memberOf <https://www.sib.swiss> .
+<https://orcid.org/0009-0005-5515-1230> a foaf:Person ;
+foaf:name "Disha Tandon"@en ;
+  org:memberOf <https://www.sib.swiss> .
 
-<http://orcid.org/0000-0001-9292-9463> org:memberOf <https://www.sib.swiss> ;
-                                       foaf:name "Marco Pagni"@en .
-
-
-<http://orcid.org/0000-0002-3648-7362> org:memberOf <https://www.unige.ch> ;
-                                       foaf:name "Arnaud Gaudry"@en .
-
-
-<http://orcid.org/0000-0002-9619-1707> org:memberOf <https://www.sib.swiss> ;
-                                       foaf:name "Florence Mehl"@en .
-
-
-<http://orcid.org/0000-0003-3389-2191> org:memberOf <https://www.unifr.ch> ;
-                                       foaf:name "Pierre-Marie Allard"@en .
-
-
-sosa:hasFeatureOfInterest vann:example """@prefix : <https://purl.org/emi/abox#> .
-@prefix emi: <https://purl.org/emi#> .
-@prefix sosa: <http://www.w3.org/ns/sosa/> .
-:VGF138_A02_neg.mzXML rdf:type emi:LCMSAnalysisNeg, emi:LCMSAnalysis, sosa:Observation ;
-                      sosa:hasFeatureOfInterest :VGF138_A02.
-:VGF138_A02 rdf:type emi:ExtractSample, sosa:Sample.""" .
-
-
-sosa:hasSample vann:example """@prefix : <https://purl.org/emi/abox#> .
-@prefix emi: <https://purl.org/emi#> .
-@prefix sosa: <http://www.w3.org/ns/sosa/> .
-:V111819GP-01   rdf:type emi:RawMaterial, sosa:Sample . ;
-             sosa:hasSample :VGF138_A02.
-:VGF138_A02 rdf:type emi:ExtractSample, sosa:Sample.""" .
-
-
-sosa:isFeatureOfInterest vann:example """@prefix : <https://purl.org/emi/abox#> .
-@prefix emi: <https://purl.org/emi#> .
-@prefix sosa: <http://www.w3.org/ns/sosa/> .
-:VGF138_A02  rdf:type emi:ExtractSample, sosa:Sample. ;
-             sosa:isFeatureOfInterest :VGF138_A02_neg.mzXML.
-:VGF138_A02_neg.mzXML rdf:type emi:LCMSAnalysisNeg, emi:LCMSAnalysis, sosa:Observation.""" .
-
-
-sosa:isResultOf vann:example """@prefix : <https://purl.org/emi/abox#> .
-@prefix emi: <https://purl.org/emi#> .
-@prefix sosa: <http://www.w3.org/ns/sosa/> .
-:VGF153_A02_lcms_feature_list_neg rdf:type emi:LCMSFeatureSet ;
-                                  sosa:isResultOf :VGF153_A02_neg.mzXML .
-:VGF153_A02_neg.mzXML rdf:type emi:LCMSAnalysisNeg, emi:LCMSAnalysis, sosa:Observation .""" .
-
-
-sosa:isSampleOf vann:example """@prefix : <https://purl.org/emi/abox#> .
-@prefix emi: <https://purl.org/emi#> .
-@prefix sosa: <http://www.w3.org/ns/sosa/> .
-:VGF138_A02  rdf:type emi:ExtractSample, sosa:Sample. ;
-             sosa:isSampleOf :V111819GP-01.
-:V111819GP-01 rdf:type emi:RawMaterial, sosa:Sample.""" .
-
-
-<https://orcid.org/0000-0002-1269-2038> org:memberOf <https://www.unifr.ch> ;
-                                        foaf:name "Luca Cappelletti"@en .
-
-
-<https://orcid.org/0000-0002-3175-5372> org:memberOf <https://www.sib.swiss> ;
-                                        foaf:name "Tarcisio Mendes de Farias"@en .
-
-
-<https://orcid.org/0000-0003-3213-4495> org:memberOf <https://www.sib.swiss> ;
-                                        foaf:name "Ana Claudia Sima"@en .
-
-
-emi:hasIonization owl:deprecated "delete? already defined in LCMS pos and neg" .
-
-
-###  Generated by the OWL API (version 4.5.25.2023-02-15T19:15:49Z) https://github.com/owlcs/owlapi
+###  Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi

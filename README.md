@@ -112,7 +112,7 @@ We recommend to download the version mysql-connector-j-8.2.0.jar from the MySQL 
 https://downloads.mysql.com/archives/c-j/
 
 - Move the mysql-connector-j-8.2.0.jar to the `ontop-cli-5.1.1/lib` folder
-- Create ontop properties text file `./ontop_config/emi-v0_1.properties` such as the example below (change the user, password, and, if necessary, the url parameter too)
+- Create ontop properties text file `./ontop_config/emi-v0_2/emi-v0_2.properties` such as the example below (change the user, password, and, if necessary, the url parameter too)
 
 ```
 jdbc.password=root
@@ -125,7 +125,7 @@ ontop.inferDefaultDatatype=True
 
 - Run the ontop command line tool with the command below in the current directory. Please refer to the right path to the ontop tool 
 ```bash
-PATH/TO/ontop-cli-5.1.1/ontop materialize -m ./ontop_config/emi-v0_1.obda -t ./ontop_config/emi-v0_1.ttl -p ./ontop_config/emi-v0_1.properties -f turtle --enable-annotations  --separate-files -o ./data/ontop
+PATH/TO/ontop-cli-5.1.1/ontop materialize -m ./ontop_config//emi-v0_2/emi-v0_2.obda -t ./ontop_config/emi-v0_2/emi-v0_2.ttl -p ./ontop_config/emi-v0_2/emi-v0_2.properties -f turtle --enable-annotations  --separate-files -o ./data/ontop
 ```
 > **_NOTE:_**  you can allocated more memory to run ontop by editing the PATH/TO/ontop-cli-5.1.1/ontop file. For intance, `ONTOP_JAVA_ARGS="-Xmx16g"` instead of `ONTOP_JAVA_ARGS="-Xmx1g"`
 > **_NOTE:_** If necessary you may need to specify the classpath for the mysql-connector-java .jar
@@ -144,7 +144,7 @@ For [Virtuoso](https://vos.openlinksw.com/owiki/wiki/VOS#2024-02-13%3A%20Virtuos
 
 Ontop allow us to build vitual knowledge graphs. With its plugin for Protege, we can query the VKG for more information see the section [Setting up the VKG using Ontop-Protégé](https://github.com/ontop/ontop-patterns-tutorial/blob/main/README.md#setting-up-the-vkg-using-ontop-protégé). 
 
-> **_NOTE:_** We recommend to download and use the [Ontop+Protege 5.1.1](https://sourceforge.net/projects/ontop4obda/files/ontop-5.1.1/ontop-protege-bundle-platform-independent-5.1.1.zip/download). To build the VKG, you will also need all configuration files used to materialize the VKG in subsection [Generating the EMI-based RDF graph](#generating-the-emi-based-rdf-graph), notably `./ontop_config/emi-v0_1.obda`, `./ontop_config/emi-v0_1.ttl` and `./ontop_config/emi-v0_1.properties`. 
+> **_NOTE:_** We recommend to download and use the [Ontop+Protege 5.1.1](https://sourceforge.net/projects/ontop4obda/files/ontop-5.1.1/ontop-protege-bundle-platform-independent-5.1.1.zip/download). To build the VKG, you will also need all configuration files used to materialize the VKG in subsection [Generating the EMI-based RDF graph](#generating-the-emi-based-rdf-graph), notably `./ontop_config/emi-v0_2/emi-v0_2.obda`, `./ontop_config/emi-v0_2/emi-v0_2.ttl` and `./ontop_config/emi-v0_2/emi-v0_2.properties`. 
 
 A full tutorial about Ontop-Protégé is available at (https://doi.org/10.1016/j.patter.2021.100346). 
 

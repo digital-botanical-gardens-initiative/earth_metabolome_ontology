@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<link rel="stylesheet" href="resources/primer.css" media="screen"/>
+<link rel="stylesheet" href="resources/rec.css" media="screen"/>
+<link rel="stylesheet" href="resources/extra.css" media="screen"/>
+<link rel="stylesheet" href="resources/owl.css" media="screen"/>
+<link rel="stylesheet" href="resources/dark.css" media="(prefers-color-scheme: dark)"/>
+<link rel="stylesheet" href="resources/light.css" media="(prefers-color-scheme: light)"/>
+<link rel="stylesheet" href="resources/slider.css" media="screen"/>
+<meta name="color-scheme" content="dark light">
+<script type="module" src="resources/dark-mode-toggle.mjs"></script><div class="darkmode">
+	<dark-mode-toggle class="slider"></dark-mode-toggle>
+</div>
+<link rel="icon" type="image/png" href="resources/rdf.icon"/> <title>The Earth Metabolome Initiative (EMI) ontology</title>
+
+
+<!-- SCHEMA.ORG METADATA -->
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","url":"https://purl.org/emi#","image":"http://vowl.visualdataweb.org/webvowl/#iri=https://purl.org/emi#","name":"The Earth Metabolome Initiative (EMI) ontology", "headline":"The Earth Metabolome Initiative ontology is mainly designed as data schema to structure and describe natural product taxonomy, spectrum annotation provenance, sample and observation data, mass spectrometry data and analysis, and chemical structure representations. The EMI ontology replaces the [ENPKG vocabulary](https://enpkg.commons-lab.org/doc/index.html).", "dateReleased":"2023-11-02", "dateModified":"2024-05-08", "version":"0.1", "license":"https://creativecommons.org/publicdomain/zero/1.0/", "codeRepository":"https://github.com/digital-botanical-gardens-initiative/earth_metabolome_ontology", "author":[{"@type":"Person","name":"Tarcisio Mendes de Farias","url":"https://orcid.org/0000-0002-3175-5372"}], "contributor":[{"@type":"Person","name":"Marco Pagni","url":"http://orcid.org/0000-0001-9292-9463"},{"@type":"Person","name":"Arnaud Gaudry","url":"http://orcid.org/0000-0002-3648-7362"},{"@type":"Person","name":"Florence Mehl","url":"http://orcid.org/0000-0002-9619-1707"},{"@type":"Person","name":"Pierre-Marie Allard","url":"http://orcid.org/0000-0003-3389-2191"},{"@type":"Person","name":"Luca Cappelletti","url":"https://orcid.org/0000-0002-1269-2038"},{"@type":"Person","name":"Tarcisio Mendes de Farias","url":"https://orcid.org/0000-0002-3175-5372"},{"@type":"Person","name":"Ana Claudia Sima","url":"https://orcid.org/0000-0003-3213-4495"}]}</script>
+
+<script src="resources/jquery.js"></script> 
+<script src="resources/marked.min.js"></script> 
+    <script> 
+function loadHash() {
+  jQuery(".markdown").each(function(el){jQuery(this).after(marked.parse(jQuery(this).text())).remove()});
+	var hash = location.hash;
+	if($(hash).offset()!=null){
+	  $('html, body').animate({scrollTop: $(hash).offset().top}, 0);
+}
+	loadTOC();
+}
+function loadTOC(){
+	//process toc dynamically
+	  var t='<h2>Table of contents</h2><ul>';i = 1;j=0;
+	  jQuery(".list").each(function(){
+		if(jQuery(this).is('h2')){
+			if(j>0){
+				t+='</ul>';
+				j=0;
+			}
+			t+= '<li>'+i+'. <a href=#'+ jQuery(this).attr('id')+'>'+ jQuery(this).ignore("span").text()+'</a></li>';
+			i++;
+		}
+		if(jQuery(this).is('h3')){
+			if(j==0){
+				t+='<ul>';
+			}
+			j++;
+			t+= '<li>'+(i-1)+'.'+j+'. '+'<a href=#'+ jQuery(this).attr('id')+'>'+ jQuery(this).ignore("span").text()+'</a></li>';
+		}
+	  });
+	  t+='</ul>';
+	  $("#toc").html(t); 
+}
+ $.fn.ignore = function(sel){
+        return this.clone().find(sel||">*").remove().end();
+ };    $(function(){
+      $("#abstract").load("sections/abstract-en.html"); 
+      $("#introduction").load("sections/introduction-en.html"); 
+      $("#nstable").load("sections/ns-en.html"); 
+      $("#overview").load("sections/overview-en.html"); 
+      $("#description").load("sections/description-en.html"); 
+      $("#references").load("sections/references-en.html"); 
+      $("#crossref").load("sections/crossref-en.html", null, loadHash); 
+    });
+    </script> 
+  </head> 
+
+<body>
+<div class="container">
+<div class="head">
+<div style="float:right">language <a href="index-en.html"><b>en</b></a> </div>
+<h1>The Earth Metabolome Initiative (EMI) ontology</h1>
+<img src="https://kg.earthmetabolome.org/static/img/logo.svg" width="50/">
+<h2>Release: 2023-11-02</h2>
+
+
+<dl>
+<dt>Modified on: 2024-05-08</dt>
+<dt>This version:</dt>
+<dd><a href="https://purl.org/emi/version/0.1">https://purl.org/emi/version/0.1</a></dd>
+<dt>Latest version:</dt>
+<dd><a href="https://purl.org/emi#">https://purl.org/emi#</a></dd>
+<dt>Previous version:</dt>
+<dd><a href="https://enpkg.commons-lab.org/kg/ontology_version/0.1.0">https://enpkg.commons-lab.org/kg/ontology_version/0.1.0</a></dd>
+<dt>Revision:</dt>
+<dd>0.1</dd>
+<dt>Authors:</dt>
+<dd><a href="https://orcid.org/0000-0002-3175-5372">Tarcisio Mendes de Farias</a>, <a href="https://www.sib.swiss">SIB Swiss Institute of Bioinformatics</a></dd>
+
+<dt>Contributors:</dt>
+<dd><a href="http://orcid.org/0000-0001-9292-9463">Marco Pagni</a>, <a href="https://www.sib.swiss">SIB Swiss Institute of Bioinformatics</a></dd><dd><a href="http://orcid.org/0000-0002-3648-7362">Arnaud Gaudry</a>, <a href="https://www.unige.ch">University of Geneva</a></dd><dd><a href="http://orcid.org/0000-0002-9619-1707">Florence Mehl</a>, <a href="https://www.sib.swiss">SIB Swiss Institute of Bioinformatics</a></dd><dd><a href="http://orcid.org/0000-0003-3389-2191">Pierre-Marie Allard</a>, <a href="https://www.unifr.ch">University of Fribourg</a></dd><dd><a href="https://orcid.org/0000-0002-1269-2038">Luca Cappelletti</a>, <a href="https://www.unifr.ch">University of Fribourg</a></dd><dd><a href="https://orcid.org/0000-0002-3175-5372">Tarcisio Mendes de Farias</a>, <a href="https://www.sib.swiss">SIB Swiss Institute of Bioinformatics</a></dd><dd><a href="https://orcid.org/0000-0003-3213-4495">Ana Claudia Sima</a>, <a href="https://www.sib.swiss">SIB Swiss Institute of Bioinformatics</a></dd>
+
+<dt>Publisher:</dt>
+<dd><a href="https://www.earthmetabolome.org">https://www.earthmetabolome.org</a></dd>
+<dt>Imported Ontologies:</dt>
+<dd><a href="http://www.w3.org/2004/02/skos/core">core</a></dd><dd><a href="http://www.w3.org/ns/prov-o#">prov-o#</a></dd><dd><a href="http://www.w3.org/ns/sosa/">&lt;http://www.w3.org/ns/sosa/&gt;</a></dd><dd><a href="https://purl.org/npc">npc</a></dd>
+
+<dt>See also:</dt>
+<dd><a href="https://bioschemas.org">https://bioschemas.org</a></dd><dd><a href="https://schema.org">https://schema.org</a></dd><dd><a href="https://enpkg.commons-lab.org/doc/index.html">https://enpkg.commons-lab.org/doc/index.html</a></dd>
+
+<dt>Download serialization:</dt><dd><span><a href="ontology.jsonld" target="_blank"><img src="https://img.shields.io/badge/Format-JSON_LD-blue.svg" alt="JSON-LD" /></a> </span><span><a href="ontology.owl" target="_blank"><img src="https://img.shields.io/badge/Format-RDF/XML-blue.svg" alt="RDF/XML" /></a> </span><span><a href="ontology.nt" target="_blank"><img src="https://img.shields.io/badge/Format-N_Triples-blue.svg" alt="N-Triples" /></a> </span><span><a href="ontology.ttl" target="_blank"><img src="https://img.shields.io/badge/Format-TTL-blue.svg" alt="TTL" /></a> </span></dd><dt>License:</dt><dd><a href="https://creativecommons.org/publicdomain/zero/1.0/" target="_blank"><img src="https://img.shields.io/badge/License-https://creativecommons.org/publicdomain/zero/1.0/-blue.svg" alt="https://creativecommons.org/publicdomain/zero/1.0/" /></a>
+</dd><dt>Visualization:</dt><dd><a href="webvowl/index.html#" target="_blank"><img src="https://img.shields.io/badge/Visualize_with-WebVowl-blue.svg" alt="Visualize with WebVowl" /></a></dd>
+<!-- <dt>Evaluation:</dt><dd><a href="OOPSevaluation/oopsEval.html#" target="_blank"><img src="https://img.shields.io/badge/Evaluate_with-OOPS! (OntOlogy Pitfall Scanner!)-blue.svg" alt="Evaluate with OOPS!" /></a></dd> --><dt>Cite as:</dt>
+<dd>The Earth Metabolome Initiative Consortium. The Earth Metabolome Initiative (EMI) ontology. Revision: 0.1. Retrieved from: https://purl.org/emi/version/0.1</dd>
+<dt>Vocabulary maintained at:</dt>
+<dd><a href="https://github.com/digital-botanical-gardens-initiative/earth_metabolome_ontology">https://github.com/digital-botanical-gardens-initiative/earth_metabolome_ontology</a></dd>
+</dl>
+
+<hr/>
+</div>
+<div class="status">
+<div>
+<span>draft</span>
+</div>
+</div>     <div id="abstract"></div>
+<div id="toc"></div>     <div id="introduction"></div>
+	  <div id="nstable"></div>
+     <div id="overview"></div>
+     <div id="description"></div>
+     <div id="crossref"></div>
+     <div id="references"></div>
+     <div id="changelog"></div>
+<div id="acknowledgments">
+<h2 id="ack" class="list">Acknowledgments <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+<p>
+The authors would like to thank <a href="http://www.essepuntato.it/">Silvio Peroni</a> for developing <a href="http://www.essepuntato.it/lode">LODE</a>, a Live OWL Documentation Environment, which is used for representing the Cross Referencing Section of this document and <a href="https://w3id.org/people/dgarijo">Daniel Garijo</a> for developing <a href="https://github.com/dgarijo/Widoco">Widoco</a>, the program used to create the template used in this documentation.</p>
+</div>
+
+
+</div>
+</body>
+</html>
