@@ -19209,6 +19209,8 @@
     "@id" : "http://xmlns.com/foaf/0.1/Organization"
   } ],
   "http://xmlns.com/foaf/0.1/homepage" : [ {
+    "@id" : "https://www.sib.swiss"
+  }, {
     "@value" : "https://www.sib.swiss"
   } ],
   "http://xmlns.com/foaf/0.1/name" : [ {
@@ -19222,7 +19224,7 @@
     "@id" : "http://xmlns.com/foaf/0.1/Organization"
   } ],
   "http://xmlns.com/foaf/0.1/homepage" : [ {
-    "@value" : "https://www.unifr.ch"
+    "@id" : "https://www.unifr.ch"
   } ],
   "http://xmlns.com/foaf/0.1/name" : [ {
     "@language" : "en",
@@ -19235,7 +19237,7 @@
     "@id" : "http://xmlns.com/foaf/0.1/Organization"
   } ],
   "http://xmlns.com/foaf/0.1/homepage" : [ {
-    "@value" : "https://www.unige.ch"
+    "@id" : "https://www.unige.ch"
   } ],
   "http://xmlns.com/foaf/0.1/name" : [ {
     "@language" : "en",
@@ -19248,7 +19250,7 @@
     "@id" : "http://xmlns.com/foaf/0.1/Organization"
   } ],
   "http://xmlns.com/foaf/0.1/homepage" : [ {
-    "@value" : "https://www.unine.ch"
+    "@id" : "https://www.unine.ch"
   } ],
   "http://xmlns.com/foaf/0.1/name" : [ {
     "@language" : "en",

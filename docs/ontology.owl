@@ -6997,6 +6997,7 @@ usi:mzspec%3AMSV000087728%3AVGF153_A02_features_ms2_neg.mgf%3Ascan%3A356 rdf:typ
 
     <owl:NamedIndividual rdf:about="https://www.sib.swiss">
         <rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Organization"/>
+        <foaf:homepage rdf:resource="https://www.sib.swiss"/>
         <foaf:homepage>https://www.sib.swiss</foaf:homepage>
         <foaf:name xml:lang="en">SIB Swiss Institute of Bioinformatics</foaf:name>
     </owl:NamedIndividual>
@@ -7008,7 +7009,7 @@ usi:mzspec%3AMSV000087728%3AVGF153_A02_features_ms2_neg.mgf%3Ascan%3A356 rdf:typ
 
     <owl:NamedIndividual rdf:about="https://www.unifr.ch">
         <rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Organization"/>
-        <foaf:homepage>https://www.unifr.ch</foaf:homepage>
+        <foaf:homepage rdf:resource="https://www.unifr.ch"/>
         <foaf:name xml:lang="en">University of Fribourg</foaf:name>
     </owl:NamedIndividual>
     
@@ -7019,7 +7020,7 @@ usi:mzspec%3AMSV000087728%3AVGF153_A02_features_ms2_neg.mgf%3Ascan%3A356 rdf:typ
 
     <owl:NamedIndividual rdf:about="https://www.unige.ch">
         <rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Organization"/>
-        <foaf:homepage>https://www.unige.ch</foaf:homepage>
+        <foaf:homepage rdf:resource="https://www.unige.ch"/>
         <foaf:name xml:lang="en">University of Geneva</foaf:name>
     </owl:NamedIndividual>
     
@@ -7030,7 +7031,7 @@ usi:mzspec%3AMSV000087728%3AVGF153_A02_features_ms2_neg.mgf%3Ascan%3A356 rdf:typ
 
     <owl:NamedIndividual rdf:about="https://www.unine.ch">
         <rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Organization"/>
-        <foaf:homepage>https://www.unine.ch</foaf:homepage>
+        <foaf:homepage rdf:resource="https://www.unine.ch"/>
         <foaf:name xml:lang="en">University of Neuchâtel</foaf:name>
     </owl:NamedIndividual>
     

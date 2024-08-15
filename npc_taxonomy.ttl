@@ -36,7 +36,7 @@
 
 <https://www.sib.swiss> rdf:type owl:NamedIndividual ,
                                    foaf:Organization ;
-                          foaf:homepage "https://www.sib.swiss" ;
+                          foaf:homepage <https://www.sib.swiss> ;
                           foaf:name "SIB Swiss Institute of Bioinformatics"@en .
 
 npc:12-OXOPHYTODIENOIC_ACID_METABOLITES a npc:Class ;

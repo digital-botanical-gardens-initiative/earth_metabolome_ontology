@@ -4734,28 +4734,29 @@ usi:mzspec%3AMSV000087728%3AVGF153_A02_features_ms2_neg.mgf%3Ascan%3A356 rdf:typ
 ###  https://www.sib.swiss
 <https://www.sib.swiss> rdf:type owl:NamedIndividual ,
                                  <http://xmlns.com/foaf/0.1/Organization> ;
-                        <http://xmlns.com/foaf/0.1/homepage> "https://www.sib.swiss" ;
+                        <http://xmlns.com/foaf/0.1/homepage> <https://www.sib.swiss> ,
+                                                             "https://www.sib.swiss" ;
                         <http://xmlns.com/foaf/0.1/name> "SIB Swiss Institute of Bioinformatics"@en .
 
 
 ###  https://www.unifr.ch
 <https://www.unifr.ch> rdf:type owl:NamedIndividual ,
                                 <http://xmlns.com/foaf/0.1/Organization> ;
-                       <http://xmlns.com/foaf/0.1/homepage> "https://www.unifr.ch" ;
+                       <http://xmlns.com/foaf/0.1/homepage> <https://www.unifr.ch> ;
                        <http://xmlns.com/foaf/0.1/name> "University of Fribourg"@en .
 
 
 ###  https://www.unige.ch
 <https://www.unige.ch> rdf:type owl:NamedIndividual ,
                                 <http://xmlns.com/foaf/0.1/Organization> ;
-                       <http://xmlns.com/foaf/0.1/homepage> "https://www.unige.ch" ;
+                       <http://xmlns.com/foaf/0.1/homepage> <https://www.unige.ch> ;
                        <http://xmlns.com/foaf/0.1/name> "University of Geneva"@en .
 
 
 ###  https://www.unine.ch
 <https://www.unine.ch> rdf:type owl:NamedIndividual ,
                                 <http://xmlns.com/foaf/0.1/Organization> ;
-                       <http://xmlns.com/foaf/0.1/homepage> "https://www.unine.ch" ;
+                       <http://xmlns.com/foaf/0.1/homepage> <https://www.unine.ch> ;
                        <http://xmlns.com/foaf/0.1/name> "University of Neuchâtel"@en .
 
 

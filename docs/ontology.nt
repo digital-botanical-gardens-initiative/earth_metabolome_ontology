@@ -4126,25 +4126,26 @@ _:genid110 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/
 # https://www.sib.swiss
 <https://www.sib.swiss> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
 <https://www.sib.swiss> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Organization> .
+<https://www.sib.swiss> <http://xmlns.com/foaf/0.1/homepage> <https://www.sib.swiss> .
 <https://www.sib.swiss> <http://xmlns.com/foaf/0.1/homepage> "https://www.sib.swiss" .
 <https://www.sib.swiss> <http://xmlns.com/foaf/0.1/name> "SIB Swiss Institute of Bioinformatics"@en .
 # 
 # https://www.unifr.ch
 <https://www.unifr.ch> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
 <https://www.unifr.ch> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Organization> .
-<https://www.unifr.ch> <http://xmlns.com/foaf/0.1/homepage> "https://www.unifr.ch" .
+<https://www.unifr.ch> <http://xmlns.com/foaf/0.1/homepage> <https://www.unifr.ch> .
 <https://www.unifr.ch> <http://xmlns.com/foaf/0.1/name> "University of Fribourg"@en .
 # 
 # https://www.unige.ch
 <https://www.unige.ch> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
 <https://www.unige.ch> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Organization> .
-<https://www.unige.ch> <http://xmlns.com/foaf/0.1/homepage> "https://www.unige.ch" .
+<https://www.unige.ch> <http://xmlns.com/foaf/0.1/homepage> <https://www.unige.ch> .
 <https://www.unige.ch> <http://xmlns.com/foaf/0.1/name> "University of Geneva"@en .
 # 
 # https://www.unine.ch
 <https://www.unine.ch> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
 <https://www.unine.ch> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Organization> .
-<https://www.unine.ch> <http://xmlns.com/foaf/0.1/homepage> "https://www.unine.ch" .
+<https://www.unine.ch> <http://xmlns.com/foaf/0.1/homepage> <https://www.unine.ch> .
 <https://www.unine.ch> <http://xmlns.com/foaf/0.1/name> "University of Neuchâtel"@en .
 # 
 # https://orcid.org/0000-0001-9292-9463
