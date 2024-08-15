@@ -1,7 +1,7 @@
 # Earth Metabolome Ontology
 The first version of a draft of the Earth Metabolome Initiative (EMI) ontology is available in [`emi.ttl`](emi.ttl) that can replace the enpkg vocabulary. 
 
-For more details, see [EMI ontology draft documentation](http://www.dbgi.org/earth_metabolome_ontology/).
+For more details, see [EMI ontology draft documentation](https://www.dbgi.org/earth_metabolome_ontology/).
 
 
 ## Natural Product taxonomy
