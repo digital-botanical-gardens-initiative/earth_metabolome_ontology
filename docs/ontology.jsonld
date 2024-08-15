@@ -8071,7 +8071,7 @@
     "@id" : "http://xmlns.com/foaf/0.1/Person"
   } ],
   "http://www.w3.org/ns/org#memberOf" : [ {
-    "@id" : "https://www.sib.swiss"
+    "@id" : "https://www.unine.ch"
   } ],
   "http://xmlns.com/foaf/0.1/name" : [ {
     "@language" : "en",

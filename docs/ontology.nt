@@ -4192,7 +4192,7 @@ _:genid110 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/
 # https://orcid.org/0009-0005-5515-1230
 <https://orcid.org/0009-0005-5515-1230> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
 <https://orcid.org/0009-0005-5515-1230> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Person> .
-<https://orcid.org/0009-0005-5515-1230> <http://www.w3.org/ns/org#memberOf> <https://www.sib.swiss> .
+<https://orcid.org/0009-0005-5515-1230> <http://www.w3.org/ns/org#memberOf> <https://www.unine.ch> .
 <https://orcid.org/0009-0005-5515-1230> <http://xmlns.com/foaf/0.1/name> "Disha Tandon"@en .
 # 
 # https://purl.org/npc

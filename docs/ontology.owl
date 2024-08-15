@@ -7118,7 +7118,7 @@ usi:mzspec%3AMSV000087728%3AVGF153_A02_features_ms2_neg.mgf%3Ascan%3A356 rdf:typ
 
     <owl:NamedIndividual rdf:about="https://orcid.org/0009-0005-5515-1230">
         <rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
-        <org:memberOf rdf:resource="https://www.sib.swiss"/>
+        <org:memberOf rdf:resource="https://www.unine.ch"/>
         <foaf:name xml:lang="en">Disha Tandon</foaf:name>
     </owl:NamedIndividual>
     
