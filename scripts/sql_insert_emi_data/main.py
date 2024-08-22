@@ -68,4 +68,17 @@ if __name__ == '__main__':
         )
         conversion.transfer()
 
+    if trait_dir is not None and trait_dir != "":
+        for table_name in table_canonical_names['trait_data'].values():
+            if table_name in ["enpkg","trydbAll","interactions"]:
+                SQLDataInsertion.sql_insert_emi_data(
+                    trait_dir,
+                    table_name, ".tsv", mydb, name_prefix=table_name,
+                is_sample_folder=False, enclosed_by='"', terminated_by='\t')
+            else:
+                SQLDataInsertion.sql_insert_emi_data(
+                    trait_dir,
+                    table_name, ".csv", mydb, name_prefix=table_name,
+                    is_sample_folder=False, enclosed_by='"', terminated_by=',')
+
 # See PyCharm help at https://www.jetbrains.com/help/pycharm/

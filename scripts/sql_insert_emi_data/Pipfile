@@ -8,7 +8,7 @@ csvkit = "1.3.0"
 pandas = "*"
 sqlite3-to-mysql = "*"
 networkx = "*"
-matchms = "*"
+matchms = "0.26.4"
 spec2vec = "*"
 
 [dev-packages]
