@@ -35,8 +35,8 @@
                                     sosa: ,
                                     <https://purl.org/npc> ,
                                     dcterms: ,
-                                    geo: ,
-                                    qudt: ;
+                                    geo: ;
+                                   # qudt: ;
                         dcterms:abstract "The Earth Metabolome Initiative ontology is mainly designed as data schema to structure and describe natural product taxonomy, spectrum annotation provenance, sample and observation data, mass spectrometry data and analysis, and chemical structure representations. The EMI ontology replaces the [ENPKG vocabulary](https://enpkg.commons-lab.org/doc/index.html)." ;
                         dcterms:bibliographicCitation "The Earth Metabolome Initiative Consortium. The Earth Metabolome Initiative (EMI) ontology. Revision: 0.2. Retrieved from: https://purl.org/emi/version/0.2" ;
                         dcterms:contributor <https://orcid.org/0000-0001-9292-9463> ,
