@@ -89,6 +89,6 @@ source		SELECT trim(replace(replace(replace(substring_index(tax_name, '"',2), '"
 
 mappingId	open_tree_life_synonym_2
 target		<https://tree.opentreeoflife.org/taxonomy/browse?id={uid}> skos:exactMatch <{iri_mapping}> . <{iri_mapping}> dcterms:identifier {external_id}^^xsd:string . 
-source		SELECT uid, substring_index( IF( sourceinfo like 'ncbi:%', replace(sourceinfo, 'ncbi:','https://www.uniprot.org/taxonomy/'), replace(sourceinfo, 'gbif:','https://www.gbif.org/species/')),',' ,1 ) as iri_mapping, substring_index(sourceinfo,',','1') as external_id  FROM open_tree_life_synonym where (sourceinfo like 'ncbi:%' or sourceinfo like 'gbif:%')
+source		SELECT uid, substring_index( IF( sourceinfo like 'ncbi:%', replace(sourceinfo, 'ncbi:','http://purl.uniprot.org/taxonomy/'), replace(sourceinfo, 'gbif:','https://www.gbif.org/species/')),',' ,1 ) as iri_mapping, substring_index(sourceinfo,',','1') as external_id  FROM open_tree_life_synonym where (sourceinfo like 'ncbi:%' or sourceinfo like 'gbif:%')
 ]]
 
