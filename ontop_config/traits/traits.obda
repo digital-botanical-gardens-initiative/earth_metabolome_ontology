@@ -1,0 +1,31 @@
+[PrefixDeclaration]
+: https://purl.org/emi/abox#
+emi: https://purl.org/emi#
+wd: http://www.wikidata.org/entity/
+owl: http://www.w3.org/2002/07/owl#
+rdf: http://www.w3.org/1999/02/22-rdf-syntax-ns#
+sdo: http://schema.org/
+xml: http://www.w3.org/XML/1998/namespace
+xsd: http://www.w3.org/2001/XMLSchema#
+foaf: http://xmlns.com/foaf/0.1/
+rdfs: http://www.w3.org/2000/01/rdf-schema#
+skos: http://www.w3.org/2004/02/skos/core#
+sosa: http://www.w3.org/ns/sosa/
+vann: http://purl.org/vocab/vann/
+void: http://rdfs.org/ns/void#
+orcid: http://orcid.org/
+dcterms: http://purl.org/dc/terms/
+npc: https://purl.org/npc#
+usi: https://metabolomics-usi.ucsd.edu/dashinterface/?usi1=
+prov: http://www.w3.org/ns/prov#
+up: http://purl.uniprot.org/core/
+
+[MappingDeclaration] @collection [[
+
+mappingId	taxonomy
+target		<https://tree.opentreeoflife.org/taxonomy/browse?id={ott}>  skos:exactMatch   <http://purl.uniprot.org/taxonomy/{ncbi_otol}>, <http://purl.uniprot.org/taxonomy/{ncbi_wd}>,  <https://www.gbif.org/species/{gbif_otol_new}>, <https://www.eol.org/pages/{eol}>, <http://purl.obolibrary.org/obo/NCBITaxon_{ncbi_wd}>, <http://purl.obolibrary.org/obo/NCBITaxon_{ncbi_otol}> , <{WdID}> . <http://purl.uniprot.org/taxonomy/{ncbi_otol}> dcterms:identifier {ncbi_otol}^^xsd:int ; skos:inScheme <http://purl.uniprot.org/taxonomy>  . <http://purl.uniprot.org/taxonomy> rdfs:label "UniProtKB-NCBI organismal taxonomy" . <https://www.gbif.org/species/{gbif_otol_new}> dcterms:identifier {gbif_otol_new}^^xsd:int ; skos:inScheme <https://www.gbif.org/species> . <https://www.gbif.org/species> rdfs:label "The GBIF taxonomy" . <https://www.eol.org/pages/{eol}> dcterms:identifier {eol}^^xsd:int ; skos:inScheme <https://www.eol.org> . <https://www.eol.org> rdfs:label "Encyclopedia of Life" . <http://purl.obolibrary.org/obo/NCBITaxon_{ncbi_wd}> dcterms:identifier {ncbi_wd}^^xsd:int ; skos:inScheme <http://purl.obolibrary.org/obo/ncbitaxon.owl> . <http://purl.obolibrary.org/obo/ncbitaxon.owl>  rdfs:label "NCBI organismal classification" . <{WdID}> dcterms:identifier {wd_id}^^xsd:string ; a emi:Taxon ; skos:inScheme <http://www.wikidata.org/entity> . <http://www.wikidata.org/entity> rdfs:label "Wikidata entities".
+source		SELECT ott, IF(WdID = 'NA', Null, WdID) as WdID, replace(replace(WdID, 'http://www.wikidata.org/entity/',''),'NA',Null) as wd_id, IF(eol='NA', Null, eol) as eol, IF(gbif_otol='NA', Null, gbif_otol) as gbif_otol_new, IF(ncbi_wd='NA', Null, ncbi_wd) as ncbi_wd, IF(ncbi_otol='NA', Null, ncbi_otol)  as ncbi_otol FROM taxonomy where ott != 'NA' and WdID = 'NA' 
+
+
+]]
+
