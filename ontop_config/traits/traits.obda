@@ -28,8 +28,8 @@ source		SELECT DISTINCT IF(ott='NA',null,ott) as ott, IF(WdID = 'NA', null, WdID
 
 
 mappingId	try-db
-target		:{Dataset} a emi:Dataset ; sosa:hasSample :{AccSpeciesName} . :{AccSpeciesName} a sosa:Sample; a emi:Observations ; sosa:isSampleOf emi:Organism ; emi:hasResult :{TraitName} ; prov:wasQuotedFrom {Reference} . :{TraitName} a sosa:Result ; a ?subclass ; dcterms:identifier {TraitId}^^xsd:string ; <https://qudt.org/schema/qudt/hasQuantity> {StdValueStr}^^xsd:string ; <https://qudt.org/schema/qudt/hasUnit> {UnitName}^^xsd:string ; <https://qudt.org/schema/qudt/hasQuantityKind> {ValueKindName}^^xsd:string . 
-source		SELECT Dataset, AccSpeciesName, TraitName, CASE                        WHEN DataType = 'continuous' THEN 'https://purl.org/emi#ContinuousTrait'             WHEN DataType = 'discrete' THEN 'https://purl.org/emi#DiscreteTrait'                 WHEN DataType = 'non-trait' THEN 'https://purl.org/emi#NonTrait'		      ELSE 'https://purl.org/emi#Result' END AS subclass, Reference, StdValueStr, UnitName, ValueKindName FROM "tryDb";
+target		:{Dataset} a emi:Dataset ; sosa:hasSample :{AccSpeciesName} . :{AccSpeciesName} a sosa:Sample; a emi:Observations ; sosa:isSampleOf emi:Organism ; emi:hasResult :{TraitName} ; prov:wasQuotedFrom {Reference} ; rdfs:comment {Comment}^^xsd:string . :{TraitName} a sosa:Result ; a ?subclass ; dcterms:identifier {TraitId}^^xsd:string ; <https://qudt.org/schema/qudt/hasQuantity> {StdValueStr}^^xsd:string ; <https://qudt.org/schema/qudt/hasUnit> {UnitName}^^xsd:string ; <https://qudt.org/schema/qudt/hasQuantityKind> {ValueKindName}^^xsd:string . 
+source		SELECT Dataset, AccSpeciesName, TraitName, CASE                        WHEN DataType = 'continuous' THEN 'https://purl.org/emi#ContinuousTrait'             WHEN DataType = 'discrete' THEN 'https://purl.org/emi#DiscreteTrait'                 WHEN DataType = 'non-trait' THEN 'https://purl.org/emi#NonTrait'		      ELSE 'https://purl.org/emi#Result' END AS subclass, Reference, Comment, StdValueStr, UnitName, ValueKindName FROM "tryDb";
 
 
 
