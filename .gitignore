@@ -11,7 +11,8 @@ __pycache__/
 .Python
 venv/
 env/
-
+*.lock
+scripts/sql_insert_emi_data/.idea/
 *.properties
 query_tests.sql
 

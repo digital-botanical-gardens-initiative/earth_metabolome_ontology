@@ -1624,8 +1624,6 @@ _:genid62 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1
 # http://www.w3.org/ns/sosa/hasResult
 <http://www.w3.org/ns/sosa/hasResult> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 <http://www.w3.org/ns/sosa/hasResult> <http://www.w3.org/2002/07/owl#inverseOf> <http://www.w3.org/ns/sosa/isResultOf> .
-<http://www.w3.org/ns/sosa/hasResult> <http://www.w3.org/2000/01/rdf-schema#domain> <https://purl.org/emi#Dataset> .
-<http://www.w3.org/ns/sosa/hasResult> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/ns/sosa/Result> .
 <http://www.w3.org/ns/sosa/hasResult> <http://purl.org/vocab/vann/example> "@prefix : <https://purl.org/emi/abox#> .\n@prefix emi: <https://purl.org/emi#> .\n@prefix sosa: <http://www.w3.org/ns/sosa/> .\n:VGF153_A02_neg.mzXML  rdf:type emi:LCMSAnalysisNeg, emi:LCMSAnalysis, sosa:Observation ;\n                       sosa:hasResult :VGF153_A02_lcms_feature_list_neg .\n:VGF153_A02_lcms_feature_list_neg rdf:type emi:LCMSFeatureSet." .
 <http://www.w3.org/ns/sosa/hasResult> <http://schema.org/domainIncludes> <http://www.w3.org/ns/sosa/Actuation> .
 <http://www.w3.org/ns/sosa/hasResult> <http://schema.org/domainIncludes> <http://www.w3.org/ns/sosa/Observation> .
@@ -3318,9 +3316,6 @@ _:genid95 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2
 <https://purl.org/emi#ContinousTrait> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.w3.org/ns/sosa/Result> .
 <https://purl.org/emi#ContinousTrait> <http://www.w3.org/2000/01/rdf-schema#label> "Continuous trait" .
 # 
-# https://purl.org/emi#Dataset
-<https://purl.org/emi#Dataset> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-# 
 # https://purl.org/emi#DevelopmentalStage
 <https://purl.org/emi#DevelopmentalStage> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 # 
@@ -3473,11 +3468,7 @@ _:genid98 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2
 <https://purl.org/emi#NonTrait> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.w3.org/ns/sosa/Result> .
 <https://purl.org/emi#NonTrait> <http://purl.org/vocab/vann/example> "@prefix : <https://purl.org/emi/abox#> .\n@prefix emi: <https://purl.org/emi#> .\n:EXAMPLE-NON-TRAIT rdf:type emi:NonTrait ;\n    rdf:value  12.4" .
 <https://purl.org/emi#NonTrait> <http://www.w3.org/2000/01/rdf-schema#comment> "A non trait structured value. When applicable, value units should be defined as QUDT Units Vocabulary terms." .
-# 
-# https://purl.org/emi#Observations
-<https://purl.org/emi#Observations> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<https://purl.org/emi#Observations> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.w3.org/ns/sosa/Sample> .
-<https://purl.org/emi#Observations> <http://www.w3.org/2000/01/rdf-schema#comment> "Observations under a Dataset in try-db" .
+
 # 
 # https://purl.org/emi#Organism
 <https://purl.org/emi#Organism> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .

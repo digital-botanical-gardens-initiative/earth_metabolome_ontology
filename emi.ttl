@@ -217,9 +217,7 @@ up:rank rdf:type owl:ObjectProperty ;
 
 
 ###  http://www.w3.org/ns/sosa/hasResult
-sosa:hasResult rdfs:domain emi:Dataset ;
-               rdfs:range sosa:Result ;
-               vann:example """@prefix : <https://purl.org/emi/abox#> .
+sosa:hasResult vann:example """@prefix : <https://purl.org/emi/abox#> .
 @prefix emi: <https://purl.org/emi#> .
 @prefix sosa: <http://www.w3.org/ns/sosa/> .
 :VGF153_A02_neg.mzXML  rdf:type emi:LCMSAnalysisNeg, emi:LCMSAnalysis, sosa:Observation ;
@@ -1075,11 +1073,6 @@ emi:ContinousTrait rdf:type owl:Class ;
                    rdfs:subClassOf sosa:Result ;
                    rdfs:label "Continuous trait" .
 
-
-###  https://purl.org/emi#Dataset
-emi:Dataset rdf:type owl:Class .
-
-
 ###  https://purl.org/emi#DevelopmentalStage
 emi:DevelopmentalStage rdf:type owl:Class ;
                        rdfs:comment "A developmental stage is spatiotemporal region encompassing some part of the life cycle of an organism, e.g. blastula stage. We recommend to use the developmental stage terms from UBERON of a source or target organism sample in an interaction system such as from GloBI.";
@@ -1290,13 +1283,6 @@ emi:NonTrait rdf:type owl:Class ;
 :EXAMPLE-NON-TRAIT rdf:type emi:NonTrait ;
     rdf:value  12.4""" ;
               rdfs:comment "A non trait structured value. When applicable, value units should be defined as QUDT Units Vocabulary terms." . 
-
-
-
-###  https://purl.org/emi#Observations
-emi:Observations rdf:type owl:Class ;
-                 rdfs:subClassOf sosa:Sample ;
-                 rdfs:comment "Observations under a Dataset in try-db" .
 
 
 ###  https://purl.org/emi#Organism

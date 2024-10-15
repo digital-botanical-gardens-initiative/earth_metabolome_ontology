@@ -1774,8 +1774,6 @@ http://www.w3.org/TR/2013/REC-prov-constraints-20130430/#term-Revision 23 April 
 ###  http://www.w3.org/ns/sosa/hasResult
 <http://www.w3.org/ns/sosa/hasResult> rdf:type owl:ObjectProperty ;
                                       owl:inverseOf <http://www.w3.org/ns/sosa/isResultOf> ;
-                                      rdfs:domain :Dataset ;
-                                      rdfs:range <http://www.w3.org/ns/sosa/Result> ;
                                       <http://purl.org/vocab/vann/example> """@prefix : <https://purl.org/emi/abox#> .
 @prefix emi: <https://purl.org/emi#> .
 @prefix sosa: <http://www.w3.org/ns/sosa/> .
@@ -3766,10 +3764,6 @@ wd:Q27145340 rdf:type emi:Chemical ;
                 rdfs:label "Continuous trait" .
 
 
-###  https://purl.org/emi#Dataset
-:Dataset rdf:type owl:Class .
-
-
 ###  https://purl.org/emi#DevelopmentalStage
 :DevelopmentalStage rdf:type owl:Class .
 
@@ -3970,12 +3964,6 @@ usi:mzspec%3AMSV000087728%3AVGF153_A02_features_ms2_neg.mgf%3Ascan%3A356 rdf:typ
 :EXAMPLE-NON-TRAIT rdf:type emi:NonTrait ;
     rdf:value  12.4""" ;
           rdfs:comment "A non trait structured value. When applicable, value units should be defined as QUDT Units Vocabulary terms." .
-
-
-###  https://purl.org/emi#Observations
-:Observations rdf:type owl:Class ;
-              rdfs:subClassOf <http://www.w3.org/ns/sosa/Sample> ;
-              rdfs:comment "Observations under a Dataset in try-db" .
 
 
 ###  https://purl.org/emi#Organism
