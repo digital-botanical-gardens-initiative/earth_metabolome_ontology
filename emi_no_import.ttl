@@ -45,7 +45,7 @@
                         dcterms:description "The Earth Metabolome Initiative (EMI) ontology is designed to capture and structure the metabolic content of all currently known species on our planet."@en ;
                         dcterms:issue "2024-04-03"^^xsd:date ;
                         dcterms:license <https://creativecommons.org/publicdomain/zero/1.0> ;
-                        dcterms:modified "2024-08-12"^^xsd:date ;
+                        dcterms:modified "2024-10-15"^^xsd:date ;
                         dcterms:publisher <https://www.earthmetabolome.org> ;
                         dcterms:replaces <https://enpkg.commons-lab.org/kg/ontology_version/0.1.0> ;
                         dcterms:title "The Earth Metabolome Initiative (EMI) ontology"@en ;

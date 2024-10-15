@@ -41,7 +41,7 @@
         <terms:description xml:lang="en">The Earth Metabolome Initiative (EMI) ontology is designed to capture and structure the metabolic content of all currently known species on our planet.</terms:description>
         <terms:issue rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2024-04-03</terms:issue>
         <terms:license rdf:resource="https://creativecommons.org/publicdomain/zero/1.0"/>
-        <terms:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2024-08-12</terms:modified>
+        <terms:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2024-10-15</terms:modified>
         <terms:publisher rdf:resource="https://www.earthmetabolome.org"/>
         <terms:replaces rdf:resource="https://enpkg.commons-lab.org/kg/ontology_version/0.1.0"/>
         <terms:title xml:lang="en">The Earth Metabolome Initiative (EMI) ontology</terms:title>

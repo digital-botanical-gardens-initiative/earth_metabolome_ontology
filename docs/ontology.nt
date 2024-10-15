@@ -20,7 +20,7 @@
 <https://purl.org/emi> <http://purl.org/dc/terms/description> "The Earth Metabolome Initiative (EMI) ontology is designed to capture and structure the metabolic content of all currently known species on our planet."@en .
 <https://purl.org/emi> <http://purl.org/dc/terms/issue> "2024-04-03"^^<http://www.w3.org/2001/XMLSchema#date> .
 <https://purl.org/emi> <http://purl.org/dc/terms/license> <https://creativecommons.org/publicdomain/zero/1.0> .
-<https://purl.org/emi> <http://purl.org/dc/terms/modified> "2024-08-12"^^<http://www.w3.org/2001/XMLSchema#date> .
+<https://purl.org/emi> <http://purl.org/dc/terms/modified> "2024-10-15"^^<http://www.w3.org/2001/XMLSchema#date> .
 <https://purl.org/emi> <http://purl.org/dc/terms/publisher> <https://www.earthmetabolome.org> .
 <https://purl.org/emi> <http://purl.org/dc/terms/replaces> <https://enpkg.commons-lab.org/kg/ontology_version/0.1.0> .
 <https://purl.org/emi> <http://purl.org/dc/terms/title> "The Earth Metabolome Initiative (EMI) ontology"@en .
