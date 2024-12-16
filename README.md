@@ -1,7 +1,7 @@
 # Earth Metabolome Ontology
 The latest and official version of the Earth Metabolome Initiative (EMI) ontology is available in [`emi.ttl`](emi.ttl) that can replace the enpkg vocabulary, for example. 
 
-**Any ontology issue, change or suggestion should be reported based on the [`emi.ttl`](emi.ttl) file**. The ontology documentation, other ontology files in the [docs](/docs) folder and [ontop_config](/ontop_config), and the [emi_no_import.ttl](emi_no_import.ttl) file are generated based on the [`emi.ttl`](emi.ttl) file. The  [emi_no_import.ttl](emi_no_import.ttl) is the same as [`emi.ttl`](emi.ttl) without imported ontologies. 
+**Any ontology issue, change or suggestion should be reported based on the [`emi.ttl`](emi.ttl) file**. The ontology documentation, other ontology files in the [docs](/docs) folder and [ontop_config](/ontop_config), and the [emi_no_import.ttl](emi_no_import.ttl) file are generated based on the [`emi.ttl`](emi.ttl) file. The  [emi_no_import.ttl](emi_no_import.ttl) is the same as [`emi.ttl`](emi.ttl) without imported ontologies. [emi-ols.ttl](emi-ols.ttl) is used by the EBI [Ontology Lookup Service](https://www.ebi.ac.uk/ols4/ontologies/emi) and ignores the [quadt ontology](http://qudt.org/schema/qudt/) import (see [issue](https://github.com/EBISPOT/ols4/issues/814)).
 
 To open and edit the ontology, it can be done  with a text editor or an ontology editor such as [Protege](https://protege.stanford.edu). 
 
