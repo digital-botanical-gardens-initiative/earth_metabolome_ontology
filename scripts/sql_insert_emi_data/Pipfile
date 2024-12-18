@@ -10,6 +10,7 @@ sqlite3-to-mysql = "*"
 networkx = "*"
 matchms = "0.26.4"
 spec2vec = "*"
+sparqlwrapper = "*"
 
 [dev-packages]
 pylint = "*"

@@ -20,14 +20,14 @@
      xmlns:schema="http://schema.org/"
      xmlns:wgs84_pos="http://www.w3.org/2003/01/geo/wgs84_pos#">
     <owl:Ontology rdf:about="https://purl.org/emi">
-        <owl:versionIRI rdf:resource="https://purl.org/emi/version/0.3"/>
+        <owl:versionIRI rdf:resource="https://purl.org/emi/version/0.2"/>
         <owl:imports rdf:resource="http://qudt.org/schema/qudt/"/>
         <owl:imports rdf:resource="http://www.w3.org/2004/02/skos/core"/>
         <owl:imports rdf:resource="http://www.w3.org/ns/prov-o-20130430"/>
         <owl:imports rdf:resource="http://www.w3.org/ns/sosa/"/>
         <owl:imports rdf:resource="https://purl.org/npc"/>
         <terms:abstract>The Earth Metabolome Initiative ontology is mainly designed as data schema to structure and describe natural product taxonomy, spectrum annotation provenance, sample and observation data, mass spectrometry data and analysis, and chemical structure representations. The EMI ontology replaces the [ENPKG vocabulary](https://enpkg.commons-lab.org/doc/index.html).</terms:abstract>
-        <terms:bibliographicCitation>The Earth Metabolome Initiative Consortium. The Earth Metabolome Initiative (EMI) ontology. Revision: 0.3. Retrieved from: https://purl.org/emi/version/0.3</terms:bibliographicCitation>
+        <terms:bibliographicCitation>The Earth Metabolome Initiative Consortium. The Earth Metabolome Initiative (EMI) ontology. Revision: 0.2. Retrieved from: https://purl.org/emi/version/0.2</terms:bibliographicCitation>
         <terms:contributor rdf:resource="https://orcid.org/0000-0001-9292-9463"/>
         <terms:contributor rdf:resource="https://orcid.org/0000-0002-1269-2038"/>
         <terms:contributor rdf:resource="https://orcid.org/0000-0002-3175-5372"/>
@@ -41,7 +41,7 @@
         <terms:description xml:lang="en">The Earth Metabolome Initiative (EMI) ontology is designed to capture and structure the metabolic content of all currently known species on our planet.</terms:description>
         <terms:issue rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2024-04-03</terms:issue>
         <terms:license rdf:resource="https://creativecommons.org/publicdomain/zero/1.0"/>
-        <terms:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2024-12-18</terms:modified>
+        <terms:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2024-10-15</terms:modified>
         <terms:publisher rdf:resource="https://www.earthmetabolome.org"/>
         <terms:replaces rdf:resource="https://enpkg.commons-lab.org/kg/ontology_version/0.1.0"/>
         <terms:title xml:lang="en">The Earth Metabolome Initiative (EMI) ontology</terms:title>
@@ -53,7 +53,7 @@
         <rdfs:seeAlso rdf:resource="https://bioschemas.org"/>
         <rdfs:seeAlso rdf:resource="https://schema.org"/>
         <rdfs:seeAlso rdf:resource="https://enpkg.commons-lab.org/doc/index.html"/>
-        <owl:versionInfo>0.3</owl:versionInfo>
+        <owl:versionInfo>0.2</owl:versionInfo>
         <foaf:logo rdf:resource="https://www.dbgi.org/earth_metabolome_ontology/images/logo.png"/>
         <vocab:introduction>The Earth Metabolome Initiative (EMI) ontology replaces the Experimental Natural Products Knowledge Graph [(ENPKG) vocabulary]( https://enpkg.commons-lab.org/doc/index.html). The EMI ontology is used to structure spectrum annotation provenance by reusing the [PROV-O ontology](https://www.w3.org/TR/prov-o/) (a W3C recommendation) and sample and observation data by applying the [SOSA ontology](https://www.w3.org/TR/vocab-ssn/). EMI reuses the SOSA ontology as a data schema for struturing the Sample and Observation data. SOSA (Sensor, Observation, Sample, and Actuator) is a subset of SSN (Semantic Sensor Network Ontology) that is a W3C recommendation. Although, the SSN was developed with ontology engineers in mind as the primary audience. They addressed changes in scope and audience that currently also includes scientific observations that may make heavy use of sampling strategies, and, therefore, the Sampling, Sampler, and Sample classes, as well as their corresponding properties, have been added to SOSA and SSN. Chemical taxonomy is also highly structure in EMI by relying on a taxonomy derived from NPClassifier (i.e., EMI imports [Natural Product Classifier vocabulary](https://purl.org/npc)). This taxonomy was defined for EMI with the [SKOS vocabulary](https://www.w3.org/TR/skos-reference). Indeed, it is an SKOS-based vocabulary for the structural classification of natural products. The skos:broder term is used to represent the hierarchy among Classes, Superclasses and Pathways.  npc:Class, npc:Superclass and npc:Pathway are subclasses of skos:Concept. rdfs:label is assigned for each term of the taxonomy that are instances of one of the subclasses of skos:Concept.
 
@@ -3064,6 +3064,19 @@ wd:Q27145340 rdf:type emi:Chemical ;
     
 
 
+    <!-- https://purl.org/emi#hasLCMS -->
+
+
+    <owl:ObjectProperty rdf:about="https://purl.org/emi#hasLCMS">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.w3.org/ns/sosa/Sample"/>
+        <rdfs:range rdf:resource="https://purl.org/emi#LCMSAnalysis"/>
+        <rdfs:label>has LCMS analysis</rdfs:label>
+        <owl:deprecated>replaced by sosa:isFeatureOfInterestOf and its inverse property sosa:hasFeatureOfInterest</owl:deprecated>
+    </owl:ObjectProperty>
+    
+
+
     <!-- https://purl.org/emi#hasLCMSFeature -->
 
 
@@ -3094,6 +3107,19 @@ wd:Q27145340 rdf:type emi:Chemical ;
             emi:hasLCMSFeatureSet :VGF153_A02_lcms_feature_list_neg .</vann:example>
         <rdfs:comment>It relates a LCMS analysis to a set of features.</rdfs:comment>
         <rdfs:label>has LCMS feature set</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://purl.org/emi#hasLabProcess -->
+
+
+    <owl:ObjectProperty rdf:about="https://purl.org/emi#hasLabProcess">
+        <rdfs:domain rdf:resource="https://purl.org/emi#RawMaterial"/>
+        <rdfs:range rdf:resource="https://purl.org/emi#ExtractSample"/>
+        <rdfs:comment>The resulted extract after performing a sampling (e.g., a lab process).</rdfs:comment>
+        <rdfs:label>has processed sample</rdfs:label>
+        <owl:deprecated>replaced by &quot;sosa:hasSample&quot; and its inverse property &quot;sosa:isSampleOf&quot;</owl:deprecated>
     </owl:ObjectProperty>
     
 
@@ -3180,14 +3206,7 @@ wd:Q27145340 rdf:type emi:Chemical ;
 
 
     <owl:ObjectProperty rdf:about="https://purl.org/emi#hasSex">
-        <rdfs:domain>
-            <owl:Class>
-                <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="https://purl.org/emi#Organism"/>
-                    <rdf:Description rdf:about="https://purl.org/emi#OrganismGroup"/>
-                </owl:unionOf>
-            </owl:Class>
-        </rdfs:domain>
+        <rdfs:domain rdf:resource="http://www.w3.org/ns/sosa/Sample"/>
         <rdfs:range rdf:resource="https://purl.org/emi#BiologicalSex"/>
         <rdfs:comment>It can be used to assign a biological sex to a source and/or target organism sample in an interaction system such as GloBI. When applicable, we recommend to state PATO vocabulary biological sex terms.</rdfs:comment>
         <rdfs:label>has sex</rdfs:label>
@@ -5285,7 +5304,7 @@ A Sample is intended to sample some FatureOfInterest, so there is an expectation
 @prefix emi: &lt;https://purl.org/emi#&gt; .
 :VGF138_A12 rdf:type emi:Blank ;
             dcterms:identifier &quot;VGF138_A12&quot; .</vann:example>
-        <rdfs:comment>A blank sample.</rdfs:comment>
+        <rdfs:comment>A blank sample</rdfs:comment>
         <rdfs:label>Blank sample</rdfs:label>
     </owl:Class>
     
@@ -5347,7 +5366,7 @@ wd:Q27145340 rdf:type emi:Chemical ;
 
     <owl:Class rdf:about="https://purl.org/emi#ChemicalTaxon">
         <rdfs:subClassOf rdf:resource="https://purl.org/emi#ChemicalEntity"/>
-        <rdfs:comment>As a taxonomy for chemicals such as natural products, we recommend to use the taxonomy derived from NPClassifier (i.e., https://purl.org/npc).</rdfs:comment>
+        <rdfs:comment>As a taxonomy for chemicals such as natural products, we recommend to use the taxonomy derived from NPClassifier (i.e. https://purl.org/npc).</rdfs:comment>
         <rdfs:label>Chemical taxon</rdfs:label>
     </owl:Class>
     
@@ -5373,8 +5392,6 @@ wd:Q27145340 rdf:type emi:Chemical ;
 
     <owl:Class rdf:about="https://purl.org/emi#ComputationalAnalysis">
         <rdfs:subClassOf rdf:resource="https://purl.org/emi#Analysis"/>
-        <rdfs:comment>A data analysis made with computational resources (e.g., computers, software tools).</rdfs:comment>
-        <rdfs:label>Computational analysis</rdfs:label>
     </owl:Class>
     
 
@@ -5383,10 +5400,10 @@ wd:Q27145340 rdf:type emi:Chemical ;
 
 
     <owl:Class rdf:about="https://purl.org/emi#ContinousTrait">
-        <rdfs:subClassOf rdf:resource="https://purl.org/emi#Trait"/>
-        <rdfs:comment>A specific quantitative characteristic of an individual such as height and blood pressure.</rdfs:comment>
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/sosa/Result"/>
         <rdfs:label>Continuous trait</rdfs:label>
     </owl:Class>
+    
     
 
 
@@ -5401,13 +5418,13 @@ wd:Q27145340 rdf:type emi:Chemical ;
 
 
     <owl:Class rdf:about="https://purl.org/emi#DiscreteTrait">
-        <rdfs:subClassOf rdf:resource="https://purl.org/emi#Trait"/>
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/sosa/Result"/>
         <vann:example>@prefix : &lt;https://purl.org/emi/abox#&gt; .
 @prefix qudt: &lt;http://qudt.org/schema/qudt/&gt; .
 @prefix unit: &lt;http://qudt.org/vocab/unit/&gt; .
 :flower-color rdf:value  red ;
               qudt:hasUnit unit:X .</vann:example>
-        <rdfs:comment>A discrete trait structured value. When applicable, value units should be defined as the QUDT Units Vocabulary terms.</rdfs:comment>
+        <rdfs:comment>A discrete trait structured value. When applicable, value units should be defined as QUDT Units Vocabulary terms.</rdfs:comment>
         <rdfs:label>Discrete trait</rdfs:label>
     </owl:Class>
     
@@ -5418,7 +5435,7 @@ wd:Q27145340 rdf:type emi:Chemical ;
 
     <owl:Class rdf:about="https://purl.org/emi#ExtractSample">
         <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/sosa/Sample"/>
-        <rdfs:comment>A natural extract obtained from the processing of a RawMaterial.</rdfs:comment>
+        <rdfs:comment>A natural extract obtained from the processing of a RawMaterial</rdfs:comment>
         <rdfs:label>Extract sample</rdfs:label>
     </owl:Class>
     
@@ -5434,12 +5451,24 @@ wd:Q27145340 rdf:type emi:Chemical ;
     
 
 
+    <!-- https://purl.org/emi#GNPSAnnotation -->
+
+
+    <owl:Class rdf:about="https://purl.org/emi#GNPSAnnotation">
+        <rdfs:subClassOf rdf:resource="https://purl.org/emi#StructuralAnnotation"/>
+        <rdfs:comment>A spectrum structural annotation by GNPS</rdfs:comment>
+        <rdfs:label>GNPS structural annotation</rdfs:label>
+        <owl:deprecated>delete it, it is better to model the source separately becuase otherwise it would require to add a new class each time a new source of annotation appears. the only advantage of keeping the model like this is to reduce the number of triples.</owl:deprecated>
+    </owl:Class>
+    
+
+
     <!-- https://purl.org/emi#GNPSConsensusSpectrum -->
 
 
     <owl:Class rdf:about="https://purl.org/emi#GNPSConsensusSpectrum">
         <rdfs:subClassOf rdf:resource="https://purl.org/emi#MS2Spectrum"/>
-        <rdfs:comment>An MS2 spectrum corresponding to the GNPS consensus spectrum of 1 or more LCMSFeature. Recommendation: instances of this class are ideally built as follows: &quot;https://metabolomics-usi.ucsd.edu/dashinterface/?usi1={id}&quot;, e.g.: &quot;https://metabolomics-usi.ucsd.edu/dashinterface/?usi1=mzspec:MassIVE:TASK-773effaad17c4124b9ea9004eaa3f526-spectra/specs_ms.mgf:scan:1028&quot;.</rdfs:comment>
+        <rdfs:comment>An MS2 spectrum corresponding to the GNPS consensus spectrum of 1 or more LCMSFeature. Recommendation: instances of this class are ideally built as follows: &quot;https://metabolomics-usi.ucsd.edu/dashinterface/?usi1={id}&quot;, e.g.: &quot;https://metabolomics-usi.ucsd.edu/dashinterface/?usi1=mzspec:MassIVE:TASK-773effaad17c4124b9ea9004eaa3f526-spectra/specs_ms.mgf:scan:1028&quot;</rdfs:comment>
         <rdfs:label>GNPS consensus MS2 spectrum</rdfs:label>
     </owl:Class>
     
@@ -5451,6 +5480,18 @@ wd:Q27145340 rdf:type emi:Chemical ;
     <owl:Class rdf:about="https://purl.org/emi#Habitat">
         <rdfs:comment>It defines an environment where an emi:Interaction occurs. If applicable, we recommend to use the habitat terms from ENVO or CMECS of an interaction system such as from GloBI.</rdfs:comment>
         <rdfs:label>Habitat</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://purl.org/emi#ISDBAnnotation -->
+
+
+    <owl:Class rdf:about="https://purl.org/emi#ISDBAnnotation">
+        <rdfs:subClassOf rdf:resource="https://purl.org/emi#StructuralAnnotation"/>
+        <rdfs:comment>A spectrum structural annotation by comparison with an in-silico spectral DB, coupled to chemical and taxonomical reweighting</rdfs:comment>
+        <rdfs:label>ISDB structural annotation</rdfs:label>
+        <owl:deprecated>delete it, it is better to model the source separately becuase otherwise it would require to add a new class each time a new source of annotation appears. the only advantage of keeping the model like this is to reduce the number of triples.</owl:deprecated>
     </owl:Class>
     
 
@@ -5544,7 +5585,7 @@ obo:RO_0002557 a emi:InteractionType .</vann:example>
         <vann:example>@prefix : &lt;https://purl.org/emi/abox#&gt; .
 @prefix emi: &lt;https://purl.org/emi#&gt; .
 :VGF138_A02_neg.mzXML rdf:type emi:LCMSAnalysis .</vann:example>
-        <rdfs:comment>A liquid chromatography–mass spectrometry (LCMS) analysis in a given ionization mode (pos or neg).</rdfs:comment>
+        <rdfs:comment>A liquid chromatography–mass spectrometry (LCMS) analysis in a given ionization mode (pos or neg)</rdfs:comment>
         <rdfs:label>LCMS analysis</rdfs:label>
     </owl:Class>
     
@@ -5558,7 +5599,7 @@ obo:RO_0002557 a emi:InteractionType .</vann:example>
         <vann:example>@prefix : &lt;https://purl.org/emi/abox#&gt; .
 @prefix emi: &lt;https://purl.org/emi#&gt; .
 :VGF138_A02_neg.mzXML rdf:type emi:LCMSAnalysisNeg .</vann:example>
-        <rdfs:comment>An LCMS analysis in negative ionization mode (pos or neg).</rdfs:comment>
+        <rdfs:comment>An LCMS analysis in negative ionization mode (pos or neg)</rdfs:comment>
         <rdfs:label>Negative LCMS analysis</rdfs:label>
         <hasIonization>negative</hasIonization>
     </owl:Class>
@@ -5588,7 +5629,7 @@ obo:RO_0002557 a emi:InteractionType .</vann:example>
         <vann:example>@prefix emi: &lt;https://purl.org/emi#&gt; .
 @prefix usi: &lt;https://metabolomics-usi.ucsd.edu/dashinterface/?usi1=&gt; .
 usi:mzspec%3AMSV000087728%3AVGF153_A02_features_ms2_neg.mgf%3Ascan%3A356 rdf:type emi:LCMSFeature .</vann:example>
-        <rdfs:comment>An LCMS feature from a processed LCMS analysis. Recommendation: instances of this class are ideally built as follows: &quot;https://metabolomics-usi.ucsd.edu/dashinterface/?usi1={id}&quot; (e.g., https://metabolomics-usi.ucsd.edu/dashinterface/?usi1=mzspec:MSV000090090:DBGI_01_04_001_features_ms2_pos.mgf:scan:1).</rdfs:comment>
+        <rdfs:comment>An LCMS feature from a processed LCMS analysis. Recommendation: instances of this class are ideally built as follows: &quot;https://metabolomics-usi.ucsd.edu/dashinterface/?usi1={id}&quot; (e.g., https://metabolomics-usi.ucsd.edu/dashinterface/?usi1=mzspec:MSV000090090:DBGI_01_04_001_features_ms2_pos.mgf:scan:1)</rdfs:comment>
         <rdfs:label>LCMS individual MS2 spectrum</rdfs:label>
     </owl:Class>
     
@@ -5601,7 +5642,7 @@ usi:mzspec%3AMSV000087728%3AVGF153_A02_features_ms2_neg.mgf%3Ascan%3A356 rdf:typ
         <vann:example>@prefix : &lt;https://purl.org/emi/abox#&gt; .
 @prefix emi: &lt;https://purl.org/emi#&gt; .
 :VGF153_A02_lcms_feature_list_neg rdf:type emi:LCMSFeatureSet .</vann:example>
-        <rdfs:comment>A set of Liquid chromatography–mass spectrometry (LCMS) features obtained from the processing of a given LCMS analysis.</rdfs:comment>
+        <rdfs:comment>A set of Liquid chromatography–mass spectrometry (LCMS) features obtained from the processing of a given LCMS analysis</rdfs:comment>
         <rdfs:label>LCMS feature set</rdfs:label>
     </owl:Class>
     
@@ -5612,8 +5653,19 @@ usi:mzspec%3AMSV000087728%3AVGF153_A02_features_ms2_neg.mgf%3Ascan%3A356 rdf:typ
 
     <owl:Class rdf:about="https://purl.org/emi#LFpair">
         <rdfs:subClassOf rdf:resource="https://purl.org/emi#SpectralPair"/>
-        <rdfs:comment>A pair of LCMSFeature.</rdfs:comment>
+        <rdfs:comment>A pair of LCMSFeature</rdfs:comment>
         <rdfs:label>LCMS feature pair</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://purl.org/emi#LabObject -->
+
+
+    <owl:Class rdf:about="https://purl.org/emi#LabObject">
+        <rdfs:comment>An object that correspond to a physical laboratory object</rdfs:comment>
+        <rdfs:label>Laboratory object</rdfs:label>
+        <owl:deprecated>To remove, it was replaced with Sample from Sosa, because the Lab Objcts in the EMI model so far are only kind of samples. Hence, there is no need of generalizing to any lab object or making it specific to a &quot;lab&quot;.</owl:deprecated>
     </owl:Class>
     
 
@@ -5633,7 +5685,7 @@ usi:mzspec%3AMSV000087728%3AVGF153_A02_features_ms2_neg.mgf%3Ascan%3A356 rdf:typ
 @prefix emi: &lt;https://purl.org/emi#&gt; .
 @prefix usi: &lt;https://metabolomics-usi.ucsd.edu/dashinterface/?usi1=&gt; .
 usi:mzspec%3AMSV000087728%3AVGF153_A02_features_ms2_neg.mgf%3Ascan%3A356 rdf:type emi:MS2Spectrum .</vann:example>
-        <rdfs:comment>A fragmentation mass spectrometry (or MS2) spectrum.</rdfs:comment>
+        <rdfs:comment>A fragmentation mass spectrometry (or MS2) spectrum</rdfs:comment>
         <rdfs:label>MS2 spectrum</rdfs:label>
     </owl:Class>
     
@@ -5650,7 +5702,6 @@ usi:mzspec%3AMSV000087728%3AVGF153_A02_features_ms2_neg.mgf%3Ascan%3A356 rdf:typ
     rdf:value  12.4</vann:example>
         <rdfs:comment>A non trait structured value. When applicable, value units should be defined as QUDT Units Vocabulary terms.</rdfs:comment>
     </owl:Class>
-    
 
 
     <!-- https://purl.org/emi#Organism -->
@@ -5662,19 +5713,6 @@ usi:mzspec%3AMSV000087728%3AVGF153_A02_features_ms2_neg.mgf%3Ascan%3A356 rdf:typ
         <rdfs:label>Organism</rdfs:label>
         <rdfs:seeAlso rdf:resource="http://purl.org/net/orth#Organism"/>
         <skos:altLabel>Living being</skos:altLabel>
-    </owl:Class>
-    
-
-
-    <!-- https://purl.org/emi#OrganismGroup -->
-
-
-    <owl:Class rdf:about="https://purl.org/emi#OrganismGroup">
-        <rdfs:comment>A group of organisms (see emi:Organism). These organims may be grouped by biological sex (emi:BiologicalSex), for example.</rdfs:comment>
-        <rdfs:label>Group of organisms</rdfs:label>
-        <skos:altLabel>Cluster of organisms</skos:altLabel>
-        <skos:altLabel>Organism cluster</skos:altLabel>
-        <skos:altLabel>Organism group</skos:altLabel>
     </owl:Class>
     
 
@@ -5694,7 +5732,7 @@ usi:mzspec%3AMSV000087728%3AVGF153_A02_features_ms2_neg.mgf%3Ascan%3A356 rdf:typ
 
     <owl:Class rdf:about="https://purl.org/emi#QCSample">
         <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/sosa/Sample"/>
-        <rdfs:comment>A quality control (QC) sample.</rdfs:comment>
+        <rdfs:comment>A quality control (QC) sample</rdfs:comment>
         <rdfs:label>Quality control sample</rdfs:label>
     </owl:Class>
     
@@ -5705,8 +5743,32 @@ usi:mzspec%3AMSV000087728%3AVGF153_A02_features_ms2_neg.mgf%3Ascan%3A356 rdf:typ
 
     <owl:Class rdf:about="https://purl.org/emi#RawMaterial">
         <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/sosa/Sample"/>
-        <rdfs:comment>A raw laboratory biological material, i.e., before extraction.</rdfs:comment>
+        <rdfs:comment>A raw laboratory biological material, i.e. before extraction</rdfs:comment>
         <rdfs:label>Raw material</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://purl.org/emi#SIRIUSAnnotation -->
+
+
+    <owl:Class rdf:about="https://purl.org/emi#SIRIUSAnnotation">
+        <rdfs:subClassOf rdf:resource="https://purl.org/emi#StructuralAnnotation"/>
+        <rdfs:comment>A spectrum structural annotation by SIRIUS</rdfs:comment>
+        <rdfs:label>SIRIUS structural annotation</rdfs:label>
+        <owl:deprecated>delete it, it is better to model the source separately becuase otherwise it would require to add a new class each time a new source of annotation appears. the only advantage of keeping the model like this is to reduce the number of triples.</owl:deprecated>
+    </owl:Class>
+    
+
+
+    <!-- https://purl.org/emi#SiriusCanopusAnnotation -->
+
+
+    <owl:Class rdf:about="https://purl.org/emi#SiriusCanopusAnnotation">
+        <rdfs:subClassOf rdf:resource="https://purl.org/emi#ChemicalTaxonAnnotation"/>
+        <rdfs:comment>A spectrum chemical class annotation by SIRIUS-CANOPUS</rdfs:comment>
+        <rdfs:label>CANOPUS chemical class annotation</rdfs:label>
+        <owl:deprecated>to delete?</owl:deprecated>
     </owl:Class>
     
 
@@ -5750,7 +5812,7 @@ usi:mzspec%3AMSV000087728%3AVGF153_A02_features_ms2_neg.mgf%3Ascan%3A356 rdf:typ
         <vann:example>@prefix : &lt;https://purl.org/emi/abox#&gt; .
 @prefix emi: &lt;https://purl.org/emi#&gt; .
 :CANOPUS-mzspec%3AMSV000087728%3AVGF147_E06_features_ms2_neg.mgf%3Ascan%3A45 rdf:type emi:SpectrumAnnotation .</vann:example>
-        <rdfs:comment>A spectral annotation.</rdfs:comment>
+        <rdfs:comment>A spectral annotation</rdfs:comment>
         <rdfs:label>Spectrum annotation</rdfs:label>
     </owl:Class>
     
@@ -5793,13 +5855,14 @@ usi:mzspec%3AMSV000087728%3AVGF153_A02_features_ms2_neg.mgf%3Ascan%3A356 rdf:typ
     
 
 
-    <!-- https://purl.org/emi#Trait -->
+    <!-- https://purl.org/emi#WDChemical -->
 
 
-    <owl:Class rdf:about="https://purl.org/emi#Trait">
-        <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/sosa/Result"/>
-        <rdfs:comment>A specific characteristic of an individual. Traits can be determined by genes, environmental factors or by a combination of both. Traits can be discrete (i.e., qualitative such as color) or continuous (quantitative such as height).</rdfs:comment>
-        <rdfs:label>Trait</rdfs:label>
+    <owl:Class rdf:about="https://purl.org/emi#WDChemical">
+        <rdfs:subClassOf rdf:resource="https://purl.org/emi#XRef"/>
+        <rdfs:comment>Cross-reference to a chemical entity in Wikidata</rdfs:comment>
+        <rdfs:label>Cross-reference to a chemical entity in Wikidata</rdfs:label>
+        <owl:deprecated>delete?</owl:deprecated>
     </owl:Class>
     
 
@@ -5811,6 +5874,17 @@ usi:mzspec%3AMSV000087728%3AVGF153_A02_features_ms2_neg.mgf%3Ascan%3A356 rdf:typ
         <rdfs:subClassOf rdf:resource="https://purl.org/emi#Chemical"/>
         <rdfs:comment>A Wikidata chemical entry.</rdfs:comment>
         <rdfs:label>Wikidata chemical</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://purl.org/emi#XRef -->
+
+
+    <owl:Class rdf:about="https://purl.org/emi#XRef">
+        <rdfs:comment>Any cross-reference</rdfs:comment>
+        <rdfs:label>Any cross-reference</rdfs:label>
+        <owl:deprecated>delete?</owl:deprecated>
     </owl:Class>
     
 
@@ -16240,11 +16314,11 @@ basic geo vocab
         <rdfs:label xml:lang="en">Anatomical entity</rdfs:label>
     </rdf:Description>
     <rdf:Description rdf:about="https://purl.org/emi#BiologicalSex">
-        <rdfs:comment>An organismal quality inhering in a bearer by virtue of the bearer&apos;s ability to undergo sexual reproduction in order to differentiate the individuals or types involved [source: http://purl.obolibrary.org/obo/PATO_0000047]. We recommend to use PATO ontology terms for inviduals of this class.</rdfs:comment>
+        <rdfs:comment>An organismal quality inhering in a bearer by virtue of the bearer&apos;s ability to undergo sexual reproduction in order to differentiate the individuals or types involved [source: http://purl.obolibrary.org/obo/PATO_0000047]. We recommend to use PATO ontology terms for inviduals of this class</rdfs:comment>
         <rdfs:label xml:lang="en">biological sex</rdfs:label>
     </rdf:Description>
     <rdf:Description rdf:about="https://purl.org/emi#DevelopmentalStage">
-        <rdfs:comment>A developmental stage is spatiotemporal region encompassing some part of the life cycle of an organism, e.g., blastula stage. We recommend to use the developmental stage terms from UBERON of a source or target organism sample in an interaction system such as from GloBI.</rdfs:comment>
+        <rdfs:comment>A developmental stage is spatiotemporal region encompassing some part of the life cycle of an organism, e.g. blastula stage. We recommend to use the developmental stage terms from UBERON of a source or target organism sample in an interaction system such as from GloBI.</rdfs:comment>
         <rdfs:label>Developmental stage</rdfs:label>
     </rdf:Description>
 </rdf:RDF>

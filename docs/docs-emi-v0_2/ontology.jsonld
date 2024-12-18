@@ -11,37 +11,6 @@
 }, {
   "@id" : "_:genid100",
   "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
-  "http://www.w3.org/2002/07/owl#onProperty" : [ {
-    "@id" : "https://purl.org/emi#isInChIKey2DOf"
-  } ],
-  "http://www.w3.org/2002/07/owl#someValuesFrom" : [ {
-    "@id" : "https://purl.org/emi#InChIKey"
-  } ]
-}, {
-  "@id" : "_:genid101",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
-  "http://www.w3.org/2002/07/owl#onDataRange" : [ {
-    "@id" : "http://www.w3.org/2001/XMLSchema#string"
-  } ],
-  "http://www.w3.org/2002/07/owl#onProperty" : [ {
-    "@id" : "https://purl.org/emi#inChIKey2D"
-  } ],
-  "http://www.w3.org/2002/07/owl#qualifiedCardinality" : [ {
-    "@type" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
-    "@value" : "1"
-  } ]
-}, {
-  "@id" : "_:genid102",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
-  "http://www.w3.org/2002/07/owl#allValuesFrom" : [ {
-    "@id" : "https://purl.org/emi#InformationSource"
-  } ],
-  "http://www.w3.org/2002/07/owl#onProperty" : [ {
-    "@id" : "http://www.w3.org/ns/prov#wasDerivedFrom"
-  } ]
-}, {
-  "@id" : "_:genid103",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
   "http://www.w3.org/2002/07/owl#allValuesFrom" : [ {
     "@id" : "https://purl.org/emi#Analysis"
   } ],
@@ -49,7 +18,7 @@
     "@id" : "http://www.w3.org/ns/prov#wasGeneratedBy"
   } ]
 }, {
-  "@id" : "_:genid104",
+  "@id" : "_:genid101",
   "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
   "http://www.w3.org/2002/07/owl#onProperty" : [ {
     "@id" : "https://purl.org/emi#hasChemicalStructure"
@@ -58,7 +27,7 @@
     "@id" : "https://purl.org/emi#InChIKey2D"
   } ]
 }, {
-  "@id" : "_:genid105",
+  "@id" : "_:genid102",
   "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
   "http://www.w3.org/2002/07/owl#onProperty" : [ {
     "@id" : "http://www.w3.org/2004/02/skos/core#broader"
@@ -67,7 +36,7 @@
     "@id" : "https://purl.org/npc#Superclass"
   } ]
 }, {
-  "@id" : "_:genid106",
+  "@id" : "_:genid103",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2002/07/owl#unionOf" : [ {
     "@list" : [ {
@@ -77,7 +46,7 @@
     } ]
   } ]
 }, {
-  "@id" : "_:genid109",
+  "@id" : "_:genid106",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2002/07/owl#unionOf" : [ {
     "@list" : [ {
@@ -85,6 +54,15 @@
     }, {
       "@id" : "https://purl.org/npc#Superclass"
     } ]
+  } ]
+}, {
+  "@id" : "_:genid109",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "http://www.w3.org/2004/02/skos/core#broader"
+  } ],
+  "http://www.w3.org/2002/07/owl#someValuesFrom" : [ {
+    "@id" : "https://purl.org/npc#Pathway"
   } ]
 }, {
   "@id" : "_:genid11",
@@ -101,16 +79,7 @@
     } ]
   } ]
 }, {
-  "@id" : "_:genid112",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
-  "http://www.w3.org/2002/07/owl#onProperty" : [ {
-    "@id" : "http://www.w3.org/2004/02/skos/core#broader"
-  } ],
-  "http://www.w3.org/2002/07/owl#someValuesFrom" : [ {
-    "@id" : "https://purl.org/npc#Pathway"
-  } ]
-}, {
-  "@id" : "_:genid113",
+  "@id" : "_:genid110",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2002/07/owl#unionOf" : [ {
     "@list" : [ {
@@ -120,7 +89,7 @@
     } ]
   } ]
 }, {
-  "@id" : "_:genid116",
+  "@id" : "_:genid113",
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
     "@id" : "http://xmlns.com/foaf/0.1/Agent"
   } ],
@@ -129,7 +98,7 @@
     "@value" : "W3C/OGC Spatial Data on the Web Working Group"
   } ]
 }, {
-  "@id" : "_:genid117",
+  "@id" : "_:genid114",
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
     "@id" : "http://xmlns.com/foaf/0.1/Agent"
   } ],
@@ -365,23 +334,13 @@
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2002/07/owl#unionOf" : [ {
     "@list" : [ {
-      "@id" : "https://purl.org/emi#Organism"
-    }, {
-      "@id" : "https://purl.org/emi#OrganismGroup"
-    } ]
-  } ]
-}, {
-  "@id" : "_:genid77",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2002/07/owl#unionOf" : [ {
-    "@list" : [ {
       "@id" : "https://purl.org/emi#ChemicalStructure"
     }, {
       "@id" : "https://purl.org/emi#ChemicalTaxonAnnotation"
     } ]
   } ]
 }, {
-  "@id" : "_:genid80",
+  "@id" : "_:genid77",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2002/07/owl#unionOf" : [ {
     "@list" : [ {
@@ -393,7 +352,7 @@
     } ]
   } ]
 }, {
-  "@id" : "_:genid84",
+  "@id" : "_:genid81",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2002/07/owl#unionOf" : [ {
     "@list" : [ {
@@ -403,7 +362,7 @@
     } ]
   } ]
 }, {
-  "@id" : "_:genid87",
+  "@id" : "_:genid84",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2002/07/owl#unionOf" : [ {
     "@list" : [ {
@@ -413,7 +372,7 @@
     } ]
   } ]
 }, {
-  "@id" : "_:genid90",
+  "@id" : "_:genid87",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2002/07/owl#unionOf" : [ {
     "@list" : [ {
@@ -423,7 +382,7 @@
     } ]
   } ]
 }, {
-  "@id" : "_:genid93",
+  "@id" : "_:genid90",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2002/07/owl#unionOf" : [ {
     "@list" : [ {
@@ -433,7 +392,7 @@
     } ]
   } ]
 }, {
-  "@id" : "_:genid96",
+  "@id" : "_:genid93",
   "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
   "http://www.w3.org/2002/07/owl#maxCardinality" : [ {
     "@type" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
@@ -443,7 +402,7 @@
     "@id" : "http://www.w3.org/ns/prov#hadActivity"
   } ]
 }, {
-  "@id" : "_:genid97",
+  "@id" : "_:genid94",
   "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
   "http://www.w3.org/2002/07/owl#allValuesFrom" : [ {
     "@id" : "http://www.w3.org/ns/prov#Entity"
@@ -452,7 +411,7 @@
     "@id" : "http://www.w3.org/ns/prov#used"
   } ]
 }, {
-  "@id" : "_:genid98",
+  "@id" : "_:genid95",
   "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
   "http://www.w3.org/2002/07/owl#allValuesFrom" : [ {
     "@id" : "http://www.w3.org/ns/prov#Agent"
@@ -461,7 +420,7 @@
     "@id" : "http://www.w3.org/ns/prov#wasAssociatedWith"
   } ]
 }, {
-  "@id" : "_:genid99",
+  "@id" : "_:genid96",
   "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
   "http://www.w3.org/2002/07/owl#onDataRange" : [ {
     "@id" : "http://www.w3.org/2001/XMLSchema#string"
@@ -472,6 +431,37 @@
   "http://www.w3.org/2002/07/owl#qualifiedCardinality" : [ {
     "@type" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
     "@value" : "1"
+  } ]
+}, {
+  "@id" : "_:genid97",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "https://purl.org/emi#isInChIKey2DOf"
+  } ],
+  "http://www.w3.org/2002/07/owl#someValuesFrom" : [ {
+    "@id" : "https://purl.org/emi#InChIKey"
+  } ]
+}, {
+  "@id" : "_:genid98",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#onDataRange" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#string"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "https://purl.org/emi#inChIKey2D"
+  } ],
+  "http://www.w3.org/2002/07/owl#qualifiedCardinality" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
+    "@value" : "1"
+  } ]
+}, {
+  "@id" : "_:genid99",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#allValuesFrom" : [ {
+    "@id" : "https://purl.org/emi#InformationSource"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "http://www.w3.org/ns/prov#wasDerivedFrom"
   } ]
 }, {
   "@id" : "http://org.semanticweb.owlapi/error#Error1",
@@ -3923,7 +3913,7 @@
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
     "@id" : "http://www.w3.org/ns/prov#Influence"
   }, {
-    "@id" : "_:genid96"
+    "@id" : "_:genid93"
   } ],
   "http://www.w3.org/2002/07/owl#disjointWith" : [ {
     "@id" : "http://www.w3.org/ns/prov#EntityInfluence"
@@ -8088,7 +8078,7 @@
     "@value" : "The Earth Metabolome Initiative ontology is mainly designed as data schema to structure and describe natural product taxonomy, spectrum annotation provenance, sample and observation data, mass spectrometry data and analysis, and chemical structure representations. The EMI ontology replaces the [ENPKG vocabulary](https://enpkg.commons-lab.org/doc/index.html)."
   } ],
   "http://purl.org/dc/terms/bibliographicCitation" : [ {
-    "@value" : "The Earth Metabolome Initiative Consortium. The Earth Metabolome Initiative (EMI) ontology. Revision: 0.3. Retrieved from: https://purl.org/emi/version/0.3"
+    "@value" : "The Earth Metabolome Initiative Consortium. The Earth Metabolome Initiative (EMI) ontology. Revision: 0.2. Retrieved from: https://purl.org/emi/version/0.2"
   } ],
   "http://purl.org/dc/terms/contributor" : [ {
     "@id" : "https://orcid.org/0000-0001-9292-9463"
@@ -8127,7 +8117,7 @@
   } ],
   "http://purl.org/dc/terms/modified" : [ {
     "@type" : "http://www.w3.org/2001/XMLSchema#date",
-    "@value" : "2024-12-18"
+    "@value" : "2024-10-15"
   } ],
   "http://purl.org/dc/terms/publisher" : [ {
     "@id" : "https://www.earthmetabolome.org"
@@ -8174,10 +8164,10 @@
     "@id" : "https://purl.org/npc"
   } ],
   "http://www.w3.org/2002/07/owl#versionIRI" : [ {
-    "@id" : "https://purl.org/emi/version/0.3"
+    "@id" : "https://purl.org/emi/version/0.2"
   } ],
   "http://www.w3.org/2002/07/owl#versionInfo" : [ {
-    "@value" : "0.3"
+    "@value" : "0.2"
   } ],
   "http://xmlns.com/foaf/0.1/logo" : [ {
     "@id" : "https://www.dbgi.org/earth_metabolome_ontology/images/logo.png"
@@ -8209,9 +8199,9 @@
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
     "@id" : "http://www.w3.org/ns/sosa/Observation"
   }, {
-    "@id" : "_:genid97"
+    "@id" : "_:genid94"
   }, {
-    "@id" : "_:genid98"
+    "@id" : "_:genid95"
   } ]
 }, {
   "@id" : "https://purl.org/emi#AnatomicalEntity",
@@ -8254,7 +8244,7 @@
   "@id" : "https://purl.org/emi#BiologicalSex",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class", "http://www.w3.org/2002/07/owl#NamedIndividual" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@value" : "An organismal quality inhering in a bearer by virtue of the bearer's ability to undergo sexual reproduction in order to differentiate the individuals or types involved [source: http://purl.obolibrary.org/obo/PATO_0000047]. We recommend to use PATO ontology terms for inviduals of this class."
+    "@value" : "An organismal quality inhering in a bearer by virtue of the bearer's ability to undergo sexual reproduction in order to differentiate the individuals or types involved [source: http://purl.obolibrary.org/obo/PATO_0000047]. We recommend to use PATO ontology terms for inviduals of this class"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
@@ -8270,7 +8260,7 @@
     "@value" : "@prefix : <https://purl.org/emi/abox#> .\n@prefix emi: <https://purl.org/emi#> .\n:VGF138_A12 rdf:type emi:Blank ;\n            dcterms:identifier \"VGF138_A12\" ."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@value" : "A blank sample."
+    "@value" : "A blank sample"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@value" : "Blank sample"
@@ -8330,7 +8320,7 @@
   "@id" : "https://purl.org/emi#ChemicalTaxon",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@value" : "As a taxonomy for chemicals such as natural products, we recommend to use the taxonomy derived from NPClassifier (i.e., https://purl.org/npc)."
+    "@value" : "As a taxonomy for chemicals such as natural products, we recommend to use the taxonomy derived from NPClassifier (i.e. https://purl.org/npc)."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@value" : "Chemical taxon"
@@ -8359,32 +8349,23 @@
 }, {
   "@id" : "https://purl.org/emi#ComputationalAnalysis",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@value" : "A data analysis made with computational resources (e.g., computers, software tools)."
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@value" : "Computational analysis"
-  } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
     "@id" : "https://purl.org/emi#Analysis"
   } ]
 }, {
   "@id" : "https://purl.org/emi#ContinousTrait",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@value" : "A specific quantitative characteristic of an individual such as height and blood pressure."
-  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@value" : "Continuous trait"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "https://purl.org/emi#Trait"
+    "@id" : "http://www.w3.org/ns/sosa/Result"
   } ]
 }, {
   "@id" : "https://purl.org/emi#DevelopmentalStage",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class", "http://www.w3.org/2002/07/owl#NamedIndividual" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@value" : "A developmental stage is spatiotemporal region encompassing some part of the life cycle of an organism, e.g., blastula stage. We recommend to use the developmental stage terms from UBERON of a source or target organism sample in an interaction system such as from GloBI."
+    "@value" : "A developmental stage is spatiotemporal region encompassing some part of the life cycle of an organism, e.g. blastula stage. We recommend to use the developmental stage terms from UBERON of a source or target organism sample in an interaction system such as from GloBI."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@value" : "Developmental stage"
@@ -8399,19 +8380,19 @@
     "@value" : "@prefix : <https://purl.org/emi/abox#> .\n@prefix qudt: <http://qudt.org/schema/qudt/> .\n@prefix unit: <http://qudt.org/vocab/unit/> .\n:flower-color rdf:value  red ;\n              qudt:hasUnit unit:X ."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@value" : "A discrete trait structured value. When applicable, value units should be defined as the QUDT Units Vocabulary terms."
+    "@value" : "A discrete trait structured value. When applicable, value units should be defined as QUDT Units Vocabulary terms."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@value" : "Discrete trait"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "https://purl.org/emi#Trait"
+    "@id" : "http://www.w3.org/ns/sosa/Result"
   } ]
 }, {
   "@id" : "https://purl.org/emi#ExtractSample",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@value" : "A natural extract obtained from the processing of a RawMaterial."
+    "@value" : "A natural extract obtained from the processing of a RawMaterial"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@value" : "Extract sample"
@@ -8429,10 +8410,25 @@
     "@value" : "FBMN component"
   } ]
 }, {
+  "@id" : "https://purl.org/emi#GNPSAnnotation",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "A spectrum structural annotation by GNPS"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "GNPS structural annotation"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://purl.org/emi#StructuralAnnotation"
+  } ],
+  "http://www.w3.org/2002/07/owl#deprecated" : [ {
+    "@value" : "delete it, it is better to model the source separately becuase otherwise it would require to add a new class each time a new source of annotation appears. the only advantage of keeping the model like this is to reduce the number of triples."
+  } ]
+}, {
   "@id" : "https://purl.org/emi#GNPSConsensusSpectrum",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@value" : "An MS2 spectrum corresponding to the GNPS consensus spectrum of 1 or more LCMSFeature. Recommendation: instances of this class are ideally built as follows: \"https://metabolomics-usi.ucsd.edu/dashinterface/?usi1={id}\", e.g.: \"https://metabolomics-usi.ucsd.edu/dashinterface/?usi1=mzspec:MassIVE:TASK-773effaad17c4124b9ea9004eaa3f526-spectra/specs_ms.mgf:scan:1028\"."
+    "@value" : "An MS2 spectrum corresponding to the GNPS consensus spectrum of 1 or more LCMSFeature. Recommendation: instances of this class are ideally built as follows: \"https://metabolomics-usi.ucsd.edu/dashinterface/?usi1={id}\", e.g.: \"https://metabolomics-usi.ucsd.edu/dashinterface/?usi1=mzspec:MassIVE:TASK-773effaad17c4124b9ea9004eaa3f526-spectra/specs_ms.mgf:scan:1028\""
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@value" : "GNPS consensus MS2 spectrum"
@@ -8450,6 +8446,21 @@
     "@value" : "Habitat"
   } ]
 }, {
+  "@id" : "https://purl.org/emi#ISDBAnnotation",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "A spectrum structural annotation by comparison with an in-silico spectral DB, coupled to chemical and taxonomical reweighting"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "ISDB structural annotation"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://purl.org/emi#StructuralAnnotation"
+  } ],
+  "http://www.w3.org/2002/07/owl#deprecated" : [ {
+    "@value" : "delete it, it is better to model the source separately becuase otherwise it would require to add a new class each time a new source of annotation appears. the only advantage of keeping the model like this is to reduce the number of triples."
+  } ]
+}, {
   "@id" : "https://purl.org/emi#InChIKey",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
@@ -8461,7 +8472,7 @@
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
     "@id" : "https://purl.org/emi#ChemicalStructure"
   }, {
-    "@id" : "_:genid99"
+    "@id" : "_:genid96"
   } ]
 }, {
   "@id" : "https://purl.org/emi#InChIKey2D",
@@ -8475,9 +8486,9 @@
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
     "@id" : "https://purl.org/emi#ChemicalStructure"
   }, {
-    "@id" : "_:genid100"
+    "@id" : "_:genid97"
   }, {
-    "@id" : "_:genid101"
+    "@id" : "_:genid98"
   } ]
 }, {
   "@id" : "https://purl.org/emi#InformationSource",
@@ -8522,7 +8533,7 @@
     "@value" : "@prefix : <https://purl.org/emi/abox#> .\n@prefix emi: <https://purl.org/emi#> .\n:VGF138_A02_neg.mzXML rdf:type emi:LCMSAnalysis ."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@value" : "A liquid chromatography–mass spectrometry (LCMS) analysis in a given ionization mode (pos or neg)."
+    "@value" : "A liquid chromatography–mass spectrometry (LCMS) analysis in a given ionization mode (pos or neg)"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@value" : "LCMS analysis"
@@ -8537,7 +8548,7 @@
     "@value" : "@prefix : <https://purl.org/emi/abox#> .\n@prefix emi: <https://purl.org/emi#> .\n:VGF138_A02_neg.mzXML rdf:type emi:LCMSAnalysisNeg ."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@value" : "An LCMS analysis in negative ionization mode (pos or neg)."
+    "@value" : "An LCMS analysis in negative ionization mode (pos or neg)"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@value" : "Negative LCMS analysis"
@@ -8573,7 +8584,7 @@
     "@value" : "@prefix emi: <https://purl.org/emi#> .\n@prefix usi: <https://metabolomics-usi.ucsd.edu/dashinterface/?usi1=> .\nusi:mzspec%3AMSV000087728%3AVGF153_A02_features_ms2_neg.mgf%3Ascan%3A356 rdf:type emi:LCMSFeature ."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@value" : "An LCMS feature from a processed LCMS analysis. Recommendation: instances of this class are ideally built as follows: \"https://metabolomics-usi.ucsd.edu/dashinterface/?usi1={id}\" (e.g., https://metabolomics-usi.ucsd.edu/dashinterface/?usi1=mzspec:MSV000090090:DBGI_01_04_001_features_ms2_pos.mgf:scan:1)."
+    "@value" : "An LCMS feature from a processed LCMS analysis. Recommendation: instances of this class are ideally built as follows: \"https://metabolomics-usi.ucsd.edu/dashinterface/?usi1={id}\" (e.g., https://metabolomics-usi.ucsd.edu/dashinterface/?usi1=mzspec:MSV000090090:DBGI_01_04_001_features_ms2_pos.mgf:scan:1)"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@value" : "LCMS individual MS2 spectrum"
@@ -8588,7 +8599,7 @@
     "@value" : "@prefix : <https://purl.org/emi/abox#> .\n@prefix emi: <https://purl.org/emi#> .\n:VGF153_A02_lcms_feature_list_neg rdf:type emi:LCMSFeatureSet ."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@value" : "A set of Liquid chromatography–mass spectrometry (LCMS) features obtained from the processing of a given LCMS analysis."
+    "@value" : "A set of Liquid chromatography–mass spectrometry (LCMS) features obtained from the processing of a given LCMS analysis"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@value" : "LCMS feature set"
@@ -8597,13 +8608,25 @@
   "@id" : "https://purl.org/emi#LFpair",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@value" : "A pair of LCMSFeature."
+    "@value" : "A pair of LCMSFeature"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@value" : "LCMS feature pair"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
     "@id" : "https://purl.org/emi#SpectralPair"
+  } ]
+}, {
+  "@id" : "https://purl.org/emi#LabObject",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "An object that correspond to a physical laboratory object"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "Laboratory object"
+  } ],
+  "http://www.w3.org/2002/07/owl#deprecated" : [ {
+    "@value" : "To remove, it was replaced with Sample from Sosa, because the Lab Objcts in the EMI model so far are only kind of samples. Hence, there is no need of generalizing to any lab object or making it specific to a \"lab\"."
   } ]
 }, {
   "@id" : "https://purl.org/emi#Locality",
@@ -8615,7 +8638,7 @@
     "@value" : "@prefix : <https://purl.org/emi/abox#> .\n@prefix emi: <https://purl.org/emi#> .\n@prefix usi: <https://metabolomics-usi.ucsd.edu/dashinterface/?usi1=> .\nusi:mzspec%3AMSV000087728%3AVGF153_A02_features_ms2_neg.mgf%3Ascan%3A356 rdf:type emi:MS2Spectrum ."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@value" : "A fragmentation mass spectrometry (or MS2) spectrum."
+    "@value" : "A fragmentation mass spectrometry (or MS2) spectrum"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@value" : "MS2 spectrum"
@@ -8651,22 +8674,6 @@
     "@value" : "Living being"
   } ]
 }, {
-  "@id" : "https://purl.org/emi#OrganismGroup",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@value" : "A group of organisms (see emi:Organism). These organims may be grouped by biological sex (emi:BiologicalSex), for example."
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@value" : "Group of organisms"
-  } ],
-  "http://www.w3.org/2004/02/skos/core#altLabel" : [ {
-    "@value" : "Cluster of organisms"
-  }, {
-    "@value" : "Organism cluster"
-  }, {
-    "@value" : "Organism group"
-  } ]
-}, {
   "@id" : "https://purl.org/emi#PhysiologicalStage",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
@@ -8679,7 +8686,7 @@
   "@id" : "https://purl.org/emi#QCSample",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@value" : "A quality control (QC) sample."
+    "@value" : "A quality control (QC) sample"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@value" : "Quality control sample"
@@ -8691,13 +8698,43 @@
   "@id" : "https://purl.org/emi#RawMaterial",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@value" : "A raw laboratory biological material, i.e., before extraction."
+    "@value" : "A raw laboratory biological material, i.e. before extraction"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@value" : "Raw material"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
     "@id" : "http://www.w3.org/ns/sosa/Sample"
+  } ]
+}, {
+  "@id" : "https://purl.org/emi#SIRIUSAnnotation",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "A spectrum structural annotation by SIRIUS"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "SIRIUS structural annotation"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://purl.org/emi#StructuralAnnotation"
+  } ],
+  "http://www.w3.org/2002/07/owl#deprecated" : [ {
+    "@value" : "delete it, it is better to model the source separately becuase otherwise it would require to add a new class each time a new source of annotation appears. the only advantage of keeping the model like this is to reduce the number of triples."
+  } ]
+}, {
+  "@id" : "https://purl.org/emi#SiriusCanopusAnnotation",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "A spectrum chemical class annotation by SIRIUS-CANOPUS"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "CANOPUS chemical class annotation"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://purl.org/emi#ChemicalTaxonAnnotation"
+  } ],
+  "http://www.w3.org/2002/07/owl#deprecated" : [ {
+    "@value" : "to delete?"
   } ]
 }, {
   "@id" : "https://purl.org/emi#Spec2VecDoc",
@@ -8724,15 +8761,15 @@
     "@value" : "@prefix : <https://purl.org/emi/abox#> .\n@prefix emi: <https://purl.org/emi#> .\n:CANOPUS-mzspec%3AMSV000087728%3AVGF147_E06_features_ms2_neg.mgf%3Ascan%3A45 rdf:type emi:SpectrumAnnotation ."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@value" : "A spectral annotation."
+    "@value" : "A spectral annotation"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@value" : "Spectrum annotation"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "_:genid102"
+    "@id" : "_:genid99"
   }, {
-    "@id" : "_:genid103"
+    "@id" : "_:genid100"
   } ]
 }, {
   "@id" : "https://purl.org/emi#StructuralAnnotation",
@@ -8746,7 +8783,7 @@
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
     "@id" : "https://purl.org/emi#SpectrumAnnotation"
   }, {
-    "@id" : "_:genid104"
+    "@id" : "_:genid101"
   } ]
 }, {
   "@id" : "https://purl.org/emi#System",
@@ -8767,16 +8804,19 @@
     "@value" : "Organism taxon"
   } ]
 }, {
-  "@id" : "https://purl.org/emi#Trait",
+  "@id" : "https://purl.org/emi#WDChemical",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@value" : "A specific characteristic of an individual. Traits can be determined by genes, environmental factors or by a combination of both. Traits can be discrete (i.e., qualitative such as color) or continuous (quantitative such as height)."
+    "@value" : "Cross-reference to a chemical entity in Wikidata"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@value" : "Trait"
+    "@value" : "Cross-reference to a chemical entity in Wikidata"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "http://www.w3.org/ns/sosa/Result"
+    "@id" : "https://purl.org/emi#XRef"
+  } ],
+  "http://www.w3.org/2002/07/owl#deprecated" : [ {
+    "@value" : "delete?"
   } ]
 }, {
   "@id" : "https://purl.org/emi#WDChemicalStructure",
@@ -8789,6 +8829,18 @@
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
     "@id" : "https://purl.org/emi#Chemical"
+  } ]
+}, {
+  "@id" : "https://purl.org/emi#XRef",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "Any cross-reference"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "Any cross-reference"
+  } ],
+  "http://www.w3.org/2002/07/owl#deprecated" : [ {
+    "@value" : "delete?"
   } ]
 }, {
   "@id" : "https://purl.org/emi#componentLink",
@@ -9132,6 +9184,21 @@
     "@id" : "http://www.w3.org/2001/XMLSchema#string"
   } ]
 }, {
+  "@id" : "https://purl.org/emi#hasLCMS",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://www.w3.org/ns/sosa/Sample"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "has LCMS analysis"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "https://purl.org/emi#LCMSAnalysis"
+  } ],
+  "http://www.w3.org/2002/07/owl#deprecated" : [ {
+    "@value" : "replaced by sosa:isFeatureOfInterestOf and its inverse property sosa:hasFeatureOfInterest"
+  } ]
+}, {
   "@id" : "https://purl.org/emi#hasLCMSFeature",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
   "http://purl.org/vocab/vann/example" : [ {
@@ -9172,6 +9239,24 @@
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
     "@id" : "http://www.w3.org/ns/sosa/hasResult"
+  } ]
+}, {
+  "@id" : "https://purl.org/emi#hasLabProcess",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "The resulted extract after performing a sampling (e.g., a lab process)."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://purl.org/emi#RawMaterial"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "has processed sample"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "https://purl.org/emi#ExtractSample"
+  } ],
+  "http://www.w3.org/2002/07/owl#deprecated" : [ {
+    "@value" : "replaced by \"sosa:hasSample\" and its inverse property \"sosa:isSampleOf\""
   } ]
 }, {
   "@id" : "https://purl.org/emi#hasMassDifference",
@@ -9384,7 +9469,7 @@
     "@value" : "@prefix emi: <https://purl.org/emi#> .\n@prefix : <https://purl.org/emi/abox#> .\n:spec2vec_doc_mzspec%3AMSV000087728%3AVGF153_A02_features_ms2_neg.mgf%3Ascan%3A356 rdf:type emi:Spec2VecDoc ;\n            emi:hasSpec2VecValue \"271.02\"^^xsd:double ."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "_:genid90"
+    "@id" : "_:genid87"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@value" : "has score"
@@ -9414,7 +9499,7 @@
     "@value" : "It can be used to assign a biological sex to a source and/or target organism sample in an interaction system such as GloBI. When applicable, we recommend to state PATO vocabulary biological sex terms."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "_:genid74"
+    "@id" : "http://www.w3.org/ns/sosa/Sample"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@value" : "has sex"
@@ -9558,7 +9643,7 @@
     "@value" : "@prefix emi: <https://purl.org/emi#> .\n@prefix : <https://purl.org/emi/abox#> .\n@prefix npc: <https://purl.org/npc#> .\n:CANOPUS-mzspec%3AMSV000087728%3AVGF147_E06_features_ms2_neg.mgf%3Ascan%3A45 rdf:type emi:ChemicalTaxonAnnotation ;\n            emi:hasSuperClass npc:SESQUITERPENOIDS ."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "_:genid77"
+    "@id" : "_:genid74"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@value" : "has super class"
@@ -9627,7 +9712,7 @@
     "@value" : "The universal spectrum identifier provided by GNPS."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "_:genid93"
+    "@id" : "_:genid90"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@value" : "has universal spectrum identifier"
@@ -9687,13 +9772,13 @@
   "@id" : "https://purl.org/emi#inTaxon",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "_:genid80"
+    "@id" : "_:genid77"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@value" : "found in taxon"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "_:genid84"
+    "@id" : "_:genid81"
   } ]
 }, {
   "@id" : "https://purl.org/emi#isClassifiedWith",
@@ -9738,7 +9823,7 @@
     "@value" : "is InChIKey of"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "_:genid87"
+    "@id" : "_:genid84"
   } ]
 }, {
   "@id" : "https://purl.org/emi#scientificName",
@@ -12395,10 +12480,10 @@
   }, {
     "@id" : "https://purl.org/emi#ChemicalTaxon"
   }, {
-    "@id" : "_:genid105"
+    "@id" : "_:genid102"
   } ],
   "http://www.w3.org/2002/07/owl#disjointWith" : [ {
-    "@id" : "_:genid106"
+    "@id" : "_:genid103"
   } ]
 }, {
   "@id" : "https://purl.org/npc#DACTYLOMELANE_DITERPENOIDS",
@@ -17333,7 +17418,7 @@
     "@id" : "https://purl.org/emi#ChemicalTaxon"
   } ],
   "http://www.w3.org/2002/07/owl#disjointWith" : [ {
-    "@id" : "_:genid109"
+    "@id" : "_:genid106"
   } ]
 }, {
   "@id" : "https://purl.org/npc#QUADRANE_SESQUITERPENOIDS",
@@ -18372,10 +18457,10 @@
   }, {
     "@id" : "https://purl.org/emi#ChemicalTaxon"
   }, {
-    "@id" : "_:genid112"
+    "@id" : "_:genid109"
   } ],
   "http://www.w3.org/2002/07/owl#disjointWith" : [ {
-    "@id" : "_:genid113"
+    "@id" : "_:genid110"
   } ]
 }, {
   "@id" : "https://purl.org/npc#TANTAZOLES_AND_MIRABAZOLES",

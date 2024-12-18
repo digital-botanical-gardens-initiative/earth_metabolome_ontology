@@ -1,12 +1,12 @@
 <https://purl.org/emi> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Ontology> .
-<https://purl.org/emi> <http://www.w3.org/2002/07/owl#versionIRI> <https://purl.org/emi/version/0.3> .
+<https://purl.org/emi> <http://www.w3.org/2002/07/owl#versionIRI> <https://purl.org/emi/version/0.2> .
 <https://purl.org/emi> <http://www.w3.org/2002/07/owl#imports> <http://qudt.org/schema/qudt/> .
 <https://purl.org/emi> <http://www.w3.org/2002/07/owl#imports> <http://www.w3.org/2004/02/skos/core> .
 <https://purl.org/emi> <http://www.w3.org/2002/07/owl#imports> <http://www.w3.org/ns/prov-o-20130430> .
 <https://purl.org/emi> <http://www.w3.org/2002/07/owl#imports> <http://www.w3.org/ns/sosa/> .
 <https://purl.org/emi> <http://www.w3.org/2002/07/owl#imports> <https://purl.org/npc> .
 <https://purl.org/emi> <http://purl.org/dc/terms/abstract> "The Earth Metabolome Initiative ontology is mainly designed as data schema to structure and describe natural product taxonomy, spectrum annotation provenance, sample and observation data, mass spectrometry data and analysis, and chemical structure representations. The EMI ontology replaces the [ENPKG vocabulary](https://enpkg.commons-lab.org/doc/index.html)." .
-<https://purl.org/emi> <http://purl.org/dc/terms/bibliographicCitation> "The Earth Metabolome Initiative Consortium. The Earth Metabolome Initiative (EMI) ontology. Revision: 0.3. Retrieved from: https://purl.org/emi/version/0.3" .
+<https://purl.org/emi> <http://purl.org/dc/terms/bibliographicCitation> "The Earth Metabolome Initiative Consortium. The Earth Metabolome Initiative (EMI) ontology. Revision: 0.2. Retrieved from: https://purl.org/emi/version/0.2" .
 <https://purl.org/emi> <http://purl.org/dc/terms/contributor> <https://orcid.org/0000-0001-9292-9463> .
 <https://purl.org/emi> <http://purl.org/dc/terms/contributor> <https://orcid.org/0000-0002-1269-2038> .
 <https://purl.org/emi> <http://purl.org/dc/terms/contributor> <https://orcid.org/0000-0002-3175-5372> .
@@ -20,7 +20,7 @@
 <https://purl.org/emi> <http://purl.org/dc/terms/description> "The Earth Metabolome Initiative (EMI) ontology is designed to capture and structure the metabolic content of all currently known species on our planet."@en .
 <https://purl.org/emi> <http://purl.org/dc/terms/issue> "2024-04-03"^^<http://www.w3.org/2001/XMLSchema#date> .
 <https://purl.org/emi> <http://purl.org/dc/terms/license> <https://creativecommons.org/publicdomain/zero/1.0> .
-<https://purl.org/emi> <http://purl.org/dc/terms/modified> "2024-12-18"^^<http://www.w3.org/2001/XMLSchema#date> .
+<https://purl.org/emi> <http://purl.org/dc/terms/modified> "2024-10-15"^^<http://www.w3.org/2001/XMLSchema#date> .
 <https://purl.org/emi> <http://purl.org/dc/terms/publisher> <https://www.earthmetabolome.org> .
 <https://purl.org/emi> <http://purl.org/dc/terms/replaces> <https://enpkg.commons-lab.org/kg/ontology_version/0.1.0> .
 <https://purl.org/emi> <http://purl.org/dc/terms/title> "The Earth Metabolome Initiative (EMI) ontology"@en .
@@ -32,7 +32,7 @@
 <https://purl.org/emi> <http://www.w3.org/2000/01/rdf-schema#seeAlso> <https://bioschemas.org> .
 <https://purl.org/emi> <http://www.w3.org/2000/01/rdf-schema#seeAlso> <https://schema.org> .
 <https://purl.org/emi> <http://www.w3.org/2000/01/rdf-schema#seeAlso> <https://enpkg.commons-lab.org/doc/index.html> .
-<https://purl.org/emi> <http://www.w3.org/2002/07/owl#versionInfo> "0.3" .
+<https://purl.org/emi> <http://www.w3.org/2002/07/owl#versionInfo> "0.2" .
 <https://purl.org/emi> <http://xmlns.com/foaf/0.1/logo> <https://www.dbgi.org/earth_metabolome_ontology/images/logo.png> .
 <https://purl.org/emi> <https://w3id.org/widoco/vocab#introduction> "The Earth Metabolome Initiative (EMI) ontology replaces the Experimental Natural Products Knowledge Graph [(ENPKG) vocabulary]( https://enpkg.commons-lab.org/doc/index.html). The EMI ontology is used to structure spectrum annotation provenance by reusing the [PROV-O ontology](https://www.w3.org/TR/prov-o/) (a W3C recommendation) and sample and observation data by applying the [SOSA ontology](https://www.w3.org/TR/vocab-ssn/). EMI reuses the SOSA ontology as a data schema for struturing the Sample and Observation data. SOSA (Sensor, Observation, Sample, and Actuator) is a subset of SSN (Semantic Sensor Network Ontology) that is a W3C recommendation. Although, the SSN was developed with ontology engineers in mind as the primary audience. They addressed changes in scope and audience that currently also includes scientific observations that may make heavy use of sampling strategies, and, therefore, the Sampling, Sampler, and Sample classes, as well as their corresponding properties, have been added to SOSA and SSN. Chemical taxonomy is also highly structure in EMI by relying on a taxonomy derived from NPClassifier (i.e., EMI imports [Natural Product Classifier vocabulary](https://purl.org/npc)). This taxonomy was defined for EMI with the [SKOS vocabulary](https://www.w3.org/TR/skos-reference). Indeed, it is an SKOS-based vocabulary for the structural classification of natural products. The skos:broder term is used to represent the hierarchy among Classes, Superclasses and Pathways.  npc:Class, npc:Superclass and npc:Pathway are subclasses of skos:Concept. rdfs:label is assigned for each term of the taxonomy that are instances of one of the subclasses of skos:Concept.\n\nSOSA reuse. We consider a Mass Spectrometer as a sosa:Platform. The MS detector that belongs to a Mass Spectrometer is a Sensor. If we do not want to capture the equipment (Mass Spectrometer for provenance) of the generated analysis such as by Liquid chromatography–mass spectrometry (LCMS), we can ignore/ommit it. The observation is interpreted as a prov:Activity/sosa:Observation/emi:Analysis (the Analysis as defined in the Earth Metabolome Intiative model). This observation (a.k.a. LCMS Analysis) uses (prov:use/sosa:hasFeatureOfInterest) some sample. This sample comes from some emi:System (e.g., species or another sample like a Raw Material, a broader specimen). All EMI model classes related to samples are subclasses of sosa:Sample, notably emi:Aliquot, emi:Blank, emi:ExtractSample, emi:RawMaterial and emi:QCSample.\n\nWe can classify each Specimen by using some Specimen taxonomy, for example, [specimenType](https://isamplesorg.github.io/models/generated/vocabularies/specimenType.html) that relies on SKOS. Moreover, we can also classify a sample with an external material taxonomy (e.g.,  [materialType](https://isamplesorg.github.io/models/generated/vocabularies/materialType.html#organicmaterial)). The raw material (emi:RawMaterial) is also a sosa:sample. In case it is needed to describe the \"Mass Spectrometer\" as a sampler too, we can apply the sosa:Sampler class to define it. The sampling process resuts on subsamples (e.g., emi:Aliquot). The extracted sample can be classified with an external taxonomy (e.g., an Specimen taxonomy) with the term emi:isClassifiedWith.\n\nOther metabolomics data are structured with specific EMI classes such as emi:ChemicalStrucutre for represeting molecules, emi:MS2Spectrum for the mass spectrometry (MS2 spectra), emi:LCMSFeatureSet that represents features obtained from the processing of a given LCMS analysis, please refer to classes and properties descriptions. " .
 # 
@@ -1935,6 +1935,14 @@ _:genid70 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1
 <https://purl.org/emi#hasInChIKey2D> <http://www.w3.org/2000/01/rdf-schema#comment> "It can be used to represent the InChIKey2D of an emi:InChIKey that is chemical structure." .
 <https://purl.org/emi#hasInChIKey2D> <http://www.w3.org/2000/01/rdf-schema#label> "has InChIKey2D" .
 # 
+# https://purl.org/emi#hasLCMS
+<https://purl.org/emi#hasLCMS> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://purl.org/emi#hasLCMS> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
+<https://purl.org/emi#hasLCMS> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.w3.org/ns/sosa/Sample> .
+<https://purl.org/emi#hasLCMS> <http://www.w3.org/2000/01/rdf-schema#range> <https://purl.org/emi#LCMSAnalysis> .
+<https://purl.org/emi#hasLCMS> <http://www.w3.org/2000/01/rdf-schema#label> "has LCMS analysis" .
+<https://purl.org/emi#hasLCMS> <http://www.w3.org/2002/07/owl#deprecated> "replaced by sosa:isFeatureOfInterestOf and its inverse property sosa:hasFeatureOfInterest" .
+# 
 # https://purl.org/emi#hasLCMSFeature
 <https://purl.org/emi#hasLCMSFeature> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 <https://purl.org/emi#hasLCMSFeature> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://purl.org/emi#hasSpectrum> .
@@ -1952,6 +1960,14 @@ _:genid70 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1
 <https://purl.org/emi#hasLCMSFeatureSet> <http://purl.org/vocab/vann/example> "@prefix emi: <https://purl.org/emi#> .\n:VGF138_A02_neg.mzXML rdf:type emi:LCMSAnalysis ;\n            emi:hasLCMSFeatureSet :VGF153_A02_lcms_feature_list_neg ." .
 <https://purl.org/emi#hasLCMSFeatureSet> <http://www.w3.org/2000/01/rdf-schema#comment> "It relates a LCMS analysis to a set of features." .
 <https://purl.org/emi#hasLCMSFeatureSet> <http://www.w3.org/2000/01/rdf-schema#label> "has LCMS feature set" .
+# 
+# https://purl.org/emi#hasLabProcess
+<https://purl.org/emi#hasLabProcess> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://purl.org/emi#hasLabProcess> <http://www.w3.org/2000/01/rdf-schema#domain> <https://purl.org/emi#RawMaterial> .
+<https://purl.org/emi#hasLabProcess> <http://www.w3.org/2000/01/rdf-schema#range> <https://purl.org/emi#ExtractSample> .
+<https://purl.org/emi#hasLabProcess> <http://www.w3.org/2000/01/rdf-schema#comment> "The resulted extract after performing a sampling (e.g., a lab process)." .
+<https://purl.org/emi#hasLabProcess> <http://www.w3.org/2000/01/rdf-schema#label> "has processed sample" .
+<https://purl.org/emi#hasLabProcess> <http://www.w3.org/2002/07/owl#deprecated> "replaced by \"sosa:hasSample\" and its inverse property \"sosa:isSampleOf\"" .
 # 
 # https://purl.org/emi#hasMassiveDOI
 <https://purl.org/emi#hasMassiveDOI> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
@@ -2001,15 +2017,7 @@ _:genid71 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2
 # 
 # https://purl.org/emi#hasSex
 <https://purl.org/emi#hasSex> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<https://purl.org/emi#hasSex> <http://www.w3.org/2000/01/rdf-schema#domain> _:genid74 .
-_:genid74 <http://www.w3.org/2002/07/owl#unionOf> _:genid76 .
-_:genid76 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid75 .
-_:genid75 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
-_:genid75 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://purl.org/emi#OrganismGroup> .
-_:genid75 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid76 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://purl.org/emi#Organism> .
-_:genid76 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid74 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://purl.org/emi#hasSex> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.w3.org/ns/sosa/Sample> .
 <https://purl.org/emi#hasSex> <http://www.w3.org/2000/01/rdf-schema#range> <https://purl.org/emi#BiologicalSex> .
 <https://purl.org/emi#hasSex> <http://www.w3.org/2000/01/rdf-schema#comment> "It can be used to assign a biological sex to a source and/or target organism sample in an interaction system such as GloBI. When applicable, we recommend to state PATO vocabulary biological sex terms." .
 <https://purl.org/emi#hasSex> <http://www.w3.org/2000/01/rdf-schema#label> "has sex" .
@@ -2039,15 +2047,15 @@ _:genid74 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2
 # https://purl.org/emi#hasSuperClass
 <https://purl.org/emi#hasSuperClass> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 <https://purl.org/emi#hasSuperClass> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://purl.org/emi#isClassifiedWith> .
-<https://purl.org/emi#hasSuperClass> <http://www.w3.org/2000/01/rdf-schema#domain> _:genid77 .
-_:genid77 <http://www.w3.org/2002/07/owl#unionOf> _:genid79 .
-_:genid79 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid78 .
-_:genid78 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
-_:genid78 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://purl.org/emi#ChemicalTaxonAnnotation> .
-_:genid78 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid79 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://purl.org/emi#ChemicalStructure> .
-_:genid79 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid77 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://purl.org/emi#hasSuperClass> <http://www.w3.org/2000/01/rdf-schema#domain> _:genid74 .
+_:genid74 <http://www.w3.org/2002/07/owl#unionOf> _:genid76 .
+_:genid76 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid75 .
+_:genid75 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid75 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://purl.org/emi#ChemicalTaxonAnnotation> .
+_:genid75 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid76 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://purl.org/emi#ChemicalStructure> .
+_:genid76 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid74 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <https://purl.org/emi#hasSuperClass> <http://www.w3.org/2000/01/rdf-schema#range> <https://purl.org/npc#Superclass> .
 <https://purl.org/emi#hasSuperClass> <http://purl.org/vocab/vann/example> "@prefix emi: <https://purl.org/emi#> .\n@prefix : <https://purl.org/emi/abox#> .\n@prefix npc: <https://purl.org/npc#> .\n:CANOPUS-mzspec%3AMSV000087728%3AVGF147_E06_features_ms2_neg.mgf%3Ascan%3A45 rdf:type emi:ChemicalTaxonAnnotation ;\n            emi:hasSuperClass npc:SESQUITERPENOIDS ." .
 <https://purl.org/emi#hasSuperClass> <http://www.w3.org/2000/01/rdf-schema#label> "has super class" .
@@ -2061,27 +2069,27 @@ _:genid77 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2
 # 
 # https://purl.org/emi#inTaxon
 <https://purl.org/emi#inTaxon> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<https://purl.org/emi#inTaxon> <http://www.w3.org/2000/01/rdf-schema#domain> _:genid80 .
-_:genid80 <http://www.w3.org/2002/07/owl#unionOf> _:genid83 .
+<https://purl.org/emi#inTaxon> <http://www.w3.org/2000/01/rdf-schema#domain> _:genid77 .
+_:genid77 <http://www.w3.org/2002/07/owl#unionOf> _:genid80 .
+_:genid80 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid79 .
+_:genid79 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid78 .
+_:genid78 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid78 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://purl.org/emi#Organism> .
+_:genid78 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid79 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://purl.org/emi#InChIKey> .
+_:genid79 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid80 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://www.w3.org/ns/sosa/Sample> .
+_:genid80 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid77 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://purl.org/emi#inTaxon> <http://www.w3.org/2000/01/rdf-schema#range> _:genid81 .
+_:genid81 <http://www.w3.org/2002/07/owl#unionOf> _:genid83 .
 _:genid83 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid82 .
-_:genid82 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid81 .
-_:genid81 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
-_:genid81 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://purl.org/emi#Organism> .
-_:genid81 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid82 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://purl.org/emi#InChIKey> .
+_:genid82 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid82 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://purl.org/emi#Taxon> .
 _:genid82 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid83 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://www.w3.org/ns/sosa/Sample> .
+_:genid83 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://purl.uniprot.org/core/Taxon> .
 _:genid83 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid80 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<https://purl.org/emi#inTaxon> <http://www.w3.org/2000/01/rdf-schema#range> _:genid84 .
-_:genid84 <http://www.w3.org/2002/07/owl#unionOf> _:genid86 .
-_:genid86 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid85 .
-_:genid85 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
-_:genid85 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://purl.org/emi#Taxon> .
-_:genid85 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid86 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://purl.uniprot.org/core/Taxon> .
-_:genid86 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid84 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+_:genid81 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <https://purl.org/emi#inTaxon> <http://www.w3.org/2000/01/rdf-schema#label> "found in taxon" .
 # 
 # https://purl.org/emi#isClassifiedWith
@@ -2102,15 +2110,15 @@ _:genid84 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2
 # https://purl.org/emi#isInChIKeyOf
 <https://purl.org/emi#isInChIKeyOf> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 <https://purl.org/emi#isInChIKeyOf> <http://www.w3.org/2000/01/rdf-schema#domain> <https://purl.org/emi#InChIKey> .
-<https://purl.org/emi#isInChIKeyOf> <http://www.w3.org/2000/01/rdf-schema#range> _:genid87 .
-_:genid87 <http://www.w3.org/2002/07/owl#unionOf> _:genid89 .
-_:genid89 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid88 .
-_:genid88 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
-_:genid88 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://purl.org/emi#SpectrumAnnotation> .
-_:genid88 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid89 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://purl.org/emi#Chemical> .
-_:genid89 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid87 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://purl.org/emi#isInChIKeyOf> <http://www.w3.org/2000/01/rdf-schema#range> _:genid84 .
+_:genid84 <http://www.w3.org/2002/07/owl#unionOf> _:genid86 .
+_:genid86 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid85 .
+_:genid85 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid85 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://purl.org/emi#SpectrumAnnotation> .
+_:genid85 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid86 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://purl.org/emi#Chemical> .
+_:genid86 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid84 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <https://purl.org/emi#isInChIKeyOf> <http://purl.org/vocab/vann/example> "@prefix : <https://purl.org/emi/abox#> .\n@prefix emi: <https://purl.org/emi#> .\n@prefix wd: <http://www.wikidata.org/entity/> .\n@prefix dcterms: < http://purl.org/dc/terms/> .\nwd:Q27145340 rdf:type emi:Chemical ;\n             dcterms:identifier \"Q27145340\" .\n :ZCCLDKGWJIREQF-PDBXOOCHSA-N  emi:isInChIKeyOf wd:Q27145340 . " .
 <https://purl.org/emi#isInChIKeyOf> <http://www.w3.org/2000/01/rdf-schema#label> "is InChIKey of" .
 # 
@@ -2433,15 +2441,15 @@ _:genid87 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2
 # 
 # https://purl.org/emi#hasScore
 <https://purl.org/emi#hasScore> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-<https://purl.org/emi#hasScore> <http://www.w3.org/2000/01/rdf-schema#domain> _:genid90 .
-_:genid90 <http://www.w3.org/2002/07/owl#unionOf> _:genid92 .
-_:genid92 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid91 .
-_:genid91 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
-_:genid91 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://purl.org/emi#StructuralAnnotation> .
-_:genid91 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid92 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://purl.org/emi#Spec2VecDoc> .
-_:genid92 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid90 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://purl.org/emi#hasScore> <http://www.w3.org/2000/01/rdf-schema#domain> _:genid87 .
+_:genid87 <http://www.w3.org/2002/07/owl#unionOf> _:genid89 .
+_:genid89 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid88 .
+_:genid88 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid88 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://purl.org/emi#StructuralAnnotation> .
+_:genid88 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid89 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://purl.org/emi#Spec2VecDoc> .
+_:genid89 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid87 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <https://purl.org/emi#hasScore> <http://purl.org/vocab/vann/example> "@prefix emi: <https://purl.org/emi#> .\n@prefix : <https://purl.org/emi/abox#> .\n:spec2vec_doc_mzspec%3AMSV000087728%3AVGF153_A02_features_ms2_neg.mgf%3Ascan%3A356 rdf:type emi:Spec2VecDoc ;\n            emi:hasSpec2VecValue \"271.02\"^^xsd:double ." .
 <https://purl.org/emi#hasScore> <http://www.w3.org/2000/01/rdf-schema#label> "has score" .
 # 
@@ -2501,15 +2509,15 @@ _:genid90 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2
 <https://purl.org/emi#hasUSI> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
 <https://purl.org/emi#hasUSI> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topDataProperty> .
 <https://purl.org/emi#hasUSI> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
-<https://purl.org/emi#hasUSI> <http://www.w3.org/2000/01/rdf-schema#domain> _:genid93 .
-_:genid93 <http://www.w3.org/2002/07/owl#unionOf> _:genid95 .
-_:genid95 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid94 .
-_:genid94 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
-_:genid94 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://purl.org/emi#StructuralAnnotation> .
-_:genid94 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid95 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://purl.org/emi#MS2Spectrum> .
-_:genid95 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid93 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://purl.org/emi#hasUSI> <http://www.w3.org/2000/01/rdf-schema#domain> _:genid90 .
+_:genid90 <http://www.w3.org/2002/07/owl#unionOf> _:genid92 .
+_:genid92 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid91 .
+_:genid91 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid91 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://purl.org/emi#StructuralAnnotation> .
+_:genid91 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid92 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://purl.org/emi#MS2Spectrum> .
+_:genid92 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid90 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <https://purl.org/emi#hasUSI> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
 <https://purl.org/emi#hasUSI> <http://purl.org/vocab/vann/example> "@prefix emi: <https://purl.org/emi#> .\n@prefix usi: <https://metabolomics-usi.ucsd.edu/dashinterface/?usi1=> .\nusi:mzspec%3AMSV000087728%3AVGF153_A02_features_ms2_neg.mgf%3Ascan%3A356 rdf:type emi:LCMSFeature ;\n            emi:hasUSI \"mzspec:MSV000087728:VGF153_A02_features_ms2_neg.mgf:scan:356\" ." .
 <https://purl.org/emi#hasUSI> <http://www.w3.org/2000/01/rdf-schema#comment> "The universal spectrum identifier provided by GNPS." .
@@ -2724,10 +2732,10 @@ _:genid93 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2
 # http://www.w3.org/ns/prov#ActivityInfluence
 <http://www.w3.org/ns/prov#ActivityInfluence> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://www.w3.org/ns/prov#ActivityInfluence> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.w3.org/ns/prov#Influence> .
-<http://www.w3.org/ns/prov#ActivityInfluence> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid96 .
-_:genid96 <http://www.w3.org/2002/07/owl#maxCardinality> "0"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
-_:genid96 <http://www.w3.org/2002/07/owl#onProperty> <http://www.w3.org/ns/prov#hadActivity> .
-_:genid96 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<http://www.w3.org/ns/prov#ActivityInfluence> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid93 .
+_:genid93 <http://www.w3.org/2002/07/owl#maxCardinality> "0"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid93 <http://www.w3.org/2002/07/owl#onProperty> <http://www.w3.org/ns/prov#hadActivity> .
+_:genid93 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
 <http://www.w3.org/ns/prov#ActivityInfluence> <http://www.w3.org/2002/07/owl#disjointWith> <http://www.w3.org/ns/prov#EntityInfluence> .
 <http://www.w3.org/ns/prov#ActivityInfluence> <http://www.w3.org/2000/01/rdf-schema#comment> "ActivityInfluence provides additional descriptions of an Activity's binary influence upon any other kind of resource. Instances of ActivityInfluence use the prov:activity property to cite the influencing Activity."@en .
 <http://www.w3.org/ns/prov#ActivityInfluence> <http://www.w3.org/2000/01/rdf-schema#comment> "It is not recommended that the type ActivityInfluence be asserted without also asserting one of its more specific subclasses."@en .
@@ -3225,14 +3233,14 @@ _:genid96 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2
 # https://purl.org/emi#Analysis
 <https://purl.org/emi#Analysis> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <https://purl.org/emi#Analysis> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.w3.org/ns/sosa/Observation> .
-<https://purl.org/emi#Analysis> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid97 .
-_:genid97 <http://www.w3.org/2002/07/owl#allValuesFrom> <http://www.w3.org/ns/prov#Entity> .
-_:genid97 <http://www.w3.org/2002/07/owl#onProperty> <http://www.w3.org/ns/prov#used> .
-_:genid97 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
-<https://purl.org/emi#Analysis> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid98 .
-_:genid98 <http://www.w3.org/2002/07/owl#allValuesFrom> <http://www.w3.org/ns/prov#Agent> .
-_:genid98 <http://www.w3.org/2002/07/owl#onProperty> <http://www.w3.org/ns/prov#wasAssociatedWith> .
-_:genid98 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://purl.org/emi#Analysis> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid94 .
+_:genid94 <http://www.w3.org/2002/07/owl#allValuesFrom> <http://www.w3.org/ns/prov#Entity> .
+_:genid94 <http://www.w3.org/2002/07/owl#onProperty> <http://www.w3.org/ns/prov#used> .
+_:genid94 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://purl.org/emi#Analysis> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid95 .
+_:genid95 <http://www.w3.org/2002/07/owl#allValuesFrom> <http://www.w3.org/ns/prov#Agent> .
+_:genid95 <http://www.w3.org/2002/07/owl#onProperty> <http://www.w3.org/ns/prov#wasAssociatedWith> .
+_:genid95 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
 <https://purl.org/emi#Analysis> <http://purl.org/vocab/vann/example> "@prefix : <https://purl.org/emi/abox#> .\n@prefix emi: <https://purl.org/emi#> .\n:VGF138_A02_neg.mzXML rdf:type emi:Analysis ." .
 <https://purl.org/emi#Analysis> <http://www.w3.org/2000/01/rdf-schema#comment> "Any analysis performed over a sample." .
 # 
@@ -3258,7 +3266,7 @@ _:genid98 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2
 <https://purl.org/emi#Blank> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <https://purl.org/emi#Blank> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.w3.org/ns/sosa/Sample> .
 <https://purl.org/emi#Blank> <http://purl.org/vocab/vann/example> "@prefix : <https://purl.org/emi/abox#> .\n@prefix emi: <https://purl.org/emi#> .\n:VGF138_A12 rdf:type emi:Blank ;\n            dcterms:identifier \"VGF138_A12\" ." .
-<https://purl.org/emi#Blank> <http://www.w3.org/2000/01/rdf-schema#comment> "A blank sample." .
+<https://purl.org/emi#Blank> <http://www.w3.org/2000/01/rdf-schema#comment> "A blank sample" .
 <https://purl.org/emi#Blank> <http://www.w3.org/2000/01/rdf-schema#label> "Blank sample" .
 # 
 # https://purl.org/emi#CSpair
@@ -3288,7 +3296,7 @@ _:genid98 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2
 # https://purl.org/emi#ChemicalTaxon
 <https://purl.org/emi#ChemicalTaxon> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <https://purl.org/emi#ChemicalTaxon> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://purl.org/emi#ChemicalEntity> .
-<https://purl.org/emi#ChemicalTaxon> <http://www.w3.org/2000/01/rdf-schema#comment> "As a taxonomy for chemicals such as natural products, we recommend to use the taxonomy derived from NPClassifier (i.e., https://purl.org/npc)." .
+<https://purl.org/emi#ChemicalTaxon> <http://www.w3.org/2000/01/rdf-schema#comment> "As a taxonomy for chemicals such as natural products, we recommend to use the taxonomy derived from NPClassifier (i.e. https://purl.org/npc)." .
 <https://purl.org/emi#ChemicalTaxon> <http://www.w3.org/2000/01/rdf-schema#label> "Chemical taxon" .
 # 
 # https://purl.org/emi#ChemicalTaxonAnnotation
@@ -3302,13 +3310,10 @@ _:genid98 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2
 # https://purl.org/emi#ComputationalAnalysis
 <https://purl.org/emi#ComputationalAnalysis> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <https://purl.org/emi#ComputationalAnalysis> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://purl.org/emi#Analysis> .
-<https://purl.org/emi#ComputationalAnalysis> <http://www.w3.org/2000/01/rdf-schema#comment> "A data analysis made with computational resources (e.g., computers, software tools)." .
-<https://purl.org/emi#ComputationalAnalysis> <http://www.w3.org/2000/01/rdf-schema#label> "Computational analysis" .
 # 
 # https://purl.org/emi#ContinousTrait
 <https://purl.org/emi#ContinousTrait> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<https://purl.org/emi#ContinousTrait> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://purl.org/emi#Trait> .
-<https://purl.org/emi#ContinousTrait> <http://www.w3.org/2000/01/rdf-schema#comment> "A specific quantitative characteristic of an individual such as height and blood pressure." .
+<https://purl.org/emi#ContinousTrait> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.w3.org/ns/sosa/Result> .
 <https://purl.org/emi#ContinousTrait> <http://www.w3.org/2000/01/rdf-schema#label> "Continuous trait" .
 # 
 # https://purl.org/emi#DevelopmentalStage
@@ -3316,15 +3321,15 @@ _:genid98 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2
 # 
 # https://purl.org/emi#DiscreteTrait
 <https://purl.org/emi#DiscreteTrait> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<https://purl.org/emi#DiscreteTrait> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://purl.org/emi#Trait> .
+<https://purl.org/emi#DiscreteTrait> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.w3.org/ns/sosa/Result> .
 <https://purl.org/emi#DiscreteTrait> <http://purl.org/vocab/vann/example> "@prefix : <https://purl.org/emi/abox#> .\n@prefix qudt: <http://qudt.org/schema/qudt/> .\n@prefix unit: <http://qudt.org/vocab/unit/> .\n:flower-color rdf:value  red ;\n              qudt:hasUnit unit:X ." .
-<https://purl.org/emi#DiscreteTrait> <http://www.w3.org/2000/01/rdf-schema#comment> "A discrete trait structured value. When applicable, value units should be defined as the QUDT Units Vocabulary terms." .
+<https://purl.org/emi#DiscreteTrait> <http://www.w3.org/2000/01/rdf-schema#comment> "A discrete trait structured value. When applicable, value units should be defined as QUDT Units Vocabulary terms." .
 <https://purl.org/emi#DiscreteTrait> <http://www.w3.org/2000/01/rdf-schema#label> "Discrete trait" .
 # 
 # https://purl.org/emi#ExtractSample
 <https://purl.org/emi#ExtractSample> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <https://purl.org/emi#ExtractSample> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.w3.org/ns/sosa/Sample> .
-<https://purl.org/emi#ExtractSample> <http://www.w3.org/2000/01/rdf-schema#comment> "A natural extract obtained from the processing of a RawMaterial." .
+<https://purl.org/emi#ExtractSample> <http://www.w3.org/2000/01/rdf-schema#comment> "A natural extract obtained from the processing of a RawMaterial" .
 <https://purl.org/emi#ExtractSample> <http://www.w3.org/2000/01/rdf-schema#label> "Extract sample" .
 # 
 # https://purl.org/emi#FBMNComponent
@@ -3332,10 +3337,17 @@ _:genid98 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2
 <https://purl.org/emi#FBMNComponent> <http://www.w3.org/2000/01/rdf-schema#comment> "Feature-based molecular network component." .
 <https://purl.org/emi#FBMNComponent> <http://www.w3.org/2000/01/rdf-schema#label> "FBMN component" .
 # 
+# https://purl.org/emi#GNPSAnnotation
+<https://purl.org/emi#GNPSAnnotation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://purl.org/emi#GNPSAnnotation> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://purl.org/emi#StructuralAnnotation> .
+<https://purl.org/emi#GNPSAnnotation> <http://www.w3.org/2000/01/rdf-schema#comment> "A spectrum structural annotation by GNPS" .
+<https://purl.org/emi#GNPSAnnotation> <http://www.w3.org/2000/01/rdf-schema#label> "GNPS structural annotation" .
+<https://purl.org/emi#GNPSAnnotation> <http://www.w3.org/2002/07/owl#deprecated> "delete it, it is better to model the source separately becuase otherwise it would require to add a new class each time a new source of annotation appears. the only advantage of keeping the model like this is to reduce the number of triples." .
+# 
 # https://purl.org/emi#GNPSConsensusSpectrum
 <https://purl.org/emi#GNPSConsensusSpectrum> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <https://purl.org/emi#GNPSConsensusSpectrum> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://purl.org/emi#MS2Spectrum> .
-<https://purl.org/emi#GNPSConsensusSpectrum> <http://www.w3.org/2000/01/rdf-schema#comment> "An MS2 spectrum corresponding to the GNPS consensus spectrum of 1 or more LCMSFeature. Recommendation: instances of this class are ideally built as follows: \"https://metabolomics-usi.ucsd.edu/dashinterface/?usi1={id}\", e.g.: \"https://metabolomics-usi.ucsd.edu/dashinterface/?usi1=mzspec:MassIVE:TASK-773effaad17c4124b9ea9004eaa3f526-spectra/specs_ms.mgf:scan:1028\"." .
+<https://purl.org/emi#GNPSConsensusSpectrum> <http://www.w3.org/2000/01/rdf-schema#comment> "An MS2 spectrum corresponding to the GNPS consensus spectrum of 1 or more LCMSFeature. Recommendation: instances of this class are ideally built as follows: \"https://metabolomics-usi.ucsd.edu/dashinterface/?usi1={id}\", e.g.: \"https://metabolomics-usi.ucsd.edu/dashinterface/?usi1=mzspec:MassIVE:TASK-773effaad17c4124b9ea9004eaa3f526-spectra/specs_ms.mgf:scan:1028\"" .
 <https://purl.org/emi#GNPSConsensusSpectrum> <http://www.w3.org/2000/01/rdf-schema#label> "GNPS consensus MS2 spectrum" .
 # 
 # https://purl.org/emi#Habitat
@@ -3343,29 +3355,36 @@ _:genid98 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2
 <https://purl.org/emi#Habitat> <http://www.w3.org/2000/01/rdf-schema#comment> "It defines an environment where an emi:Interaction occurs. If applicable, we recommend to use the habitat terms from ENVO or CMECS of an interaction system such as from GloBI." .
 <https://purl.org/emi#Habitat> <http://www.w3.org/2000/01/rdf-schema#label> "Habitat" .
 # 
+# https://purl.org/emi#ISDBAnnotation
+<https://purl.org/emi#ISDBAnnotation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://purl.org/emi#ISDBAnnotation> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://purl.org/emi#StructuralAnnotation> .
+<https://purl.org/emi#ISDBAnnotation> <http://www.w3.org/2000/01/rdf-schema#comment> "A spectrum structural annotation by comparison with an in-silico spectral DB, coupled to chemical and taxonomical reweighting" .
+<https://purl.org/emi#ISDBAnnotation> <http://www.w3.org/2000/01/rdf-schema#label> "ISDB structural annotation" .
+<https://purl.org/emi#ISDBAnnotation> <http://www.w3.org/2002/07/owl#deprecated> "delete it, it is better to model the source separately becuase otherwise it would require to add a new class each time a new source of annotation appears. the only advantage of keeping the model like this is to reduce the number of triples." .
+# 
 # https://purl.org/emi#InChIKey
 <https://purl.org/emi#InChIKey> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <https://purl.org/emi#InChIKey> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://purl.org/emi#ChemicalStructure> .
-<https://purl.org/emi#InChIKey> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid99 .
-_:genid99 <http://www.w3.org/2002/07/owl#onDataRange> <http://www.w3.org/2001/XMLSchema#string> .
-_:genid99 <http://www.w3.org/2002/07/owl#qualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
-_:genid99 <http://www.w3.org/2002/07/owl#onProperty> <https://purl.org/emi#inChIKey> .
-_:genid99 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://purl.org/emi#InChIKey> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid96 .
+_:genid96 <http://www.w3.org/2002/07/owl#onDataRange> <http://www.w3.org/2001/XMLSchema#string> .
+_:genid96 <http://www.w3.org/2002/07/owl#qualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid96 <http://www.w3.org/2002/07/owl#onProperty> <https://purl.org/emi#inChIKey> .
+_:genid96 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
 <https://purl.org/emi#InChIKey> <http://www.w3.org/2000/01/rdf-schema#comment> "A chemical structure represented by its InChIKey." .
 <https://purl.org/emi#InChIKey> <http://www.w3.org/2000/01/rdf-schema#label> "InChIKey" .
 # 
 # https://purl.org/emi#InChIKey2D
 <https://purl.org/emi#InChIKey2D> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <https://purl.org/emi#InChIKey2D> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://purl.org/emi#ChemicalStructure> .
-<https://purl.org/emi#InChIKey2D> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid100 .
-_:genid100 <http://www.w3.org/2002/07/owl#someValuesFrom> <https://purl.org/emi#InChIKey> .
-_:genid100 <http://www.w3.org/2002/07/owl#onProperty> <https://purl.org/emi#isInChIKey2DOf> .
-_:genid100 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
-<https://purl.org/emi#InChIKey2D> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid101 .
-_:genid101 <http://www.w3.org/2002/07/owl#onDataRange> <http://www.w3.org/2001/XMLSchema#string> .
-_:genid101 <http://www.w3.org/2002/07/owl#qualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
-_:genid101 <http://www.w3.org/2002/07/owl#onProperty> <https://purl.org/emi#inChIKey2D> .
-_:genid101 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://purl.org/emi#InChIKey2D> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid97 .
+_:genid97 <http://www.w3.org/2002/07/owl#someValuesFrom> <https://purl.org/emi#InChIKey> .
+_:genid97 <http://www.w3.org/2002/07/owl#onProperty> <https://purl.org/emi#isInChIKey2DOf> .
+_:genid97 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://purl.org/emi#InChIKey2D> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid98 .
+_:genid98 <http://www.w3.org/2002/07/owl#onDataRange> <http://www.w3.org/2001/XMLSchema#string> .
+_:genid98 <http://www.w3.org/2002/07/owl#qualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid98 <http://www.w3.org/2002/07/owl#onProperty> <https://purl.org/emi#inChIKey2D> .
+_:genid98 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
 <https://purl.org/emi#InChIKey2D> <http://www.w3.org/2000/01/rdf-schema#comment> "A collection of chemical structures that share the first 14 characters of their InChIKeys, often returned by mass spectrometry based annotation tools." .
 <https://purl.org/emi#InChIKey2D> <http://www.w3.org/2000/01/rdf-schema#label> "2D InChIKey" .
 # 
@@ -3391,14 +3410,14 @@ _:genid101 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/
 <https://purl.org/emi#LCMSAnalysis> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <https://purl.org/emi#LCMSAnalysis> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://purl.org/emi#Analysis> .
 <https://purl.org/emi#LCMSAnalysis> <http://purl.org/vocab/vann/example> "@prefix : <https://purl.org/emi/abox#> .\n@prefix emi: <https://purl.org/emi#> .\n:VGF138_A02_neg.mzXML rdf:type emi:LCMSAnalysis ." .
-<https://purl.org/emi#LCMSAnalysis> <http://www.w3.org/2000/01/rdf-schema#comment> "A liquid chromatography–mass spectrometry (LCMS) analysis in a given ionization mode (pos or neg)." .
+<https://purl.org/emi#LCMSAnalysis> <http://www.w3.org/2000/01/rdf-schema#comment> "A liquid chromatography–mass spectrometry (LCMS) analysis in a given ionization mode (pos or neg)" .
 <https://purl.org/emi#LCMSAnalysis> <http://www.w3.org/2000/01/rdf-schema#label> "LCMS analysis" .
 # 
 # https://purl.org/emi#LCMSAnalysisNeg
 <https://purl.org/emi#LCMSAnalysisNeg> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <https://purl.org/emi#LCMSAnalysisNeg> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://purl.org/emi#LCMSAnalysis> .
 <https://purl.org/emi#LCMSAnalysisNeg> <http://purl.org/vocab/vann/example> "@prefix : <https://purl.org/emi/abox#> .\n@prefix emi: <https://purl.org/emi#> .\n:VGF138_A02_neg.mzXML rdf:type emi:LCMSAnalysisNeg ." .
-<https://purl.org/emi#LCMSAnalysisNeg> <http://www.w3.org/2000/01/rdf-schema#comment> "An LCMS analysis in negative ionization mode (pos or neg)." .
+<https://purl.org/emi#LCMSAnalysisNeg> <http://www.w3.org/2000/01/rdf-schema#comment> "An LCMS analysis in negative ionization mode (pos or neg)" .
 <https://purl.org/emi#LCMSAnalysisNeg> <http://www.w3.org/2000/01/rdf-schema#label> "Negative LCMS analysis" .
 <https://purl.org/emi#LCMSAnalysisNeg> <https://purl.org/emi#hasIonization> "negative" .
 # 
@@ -3414,20 +3433,26 @@ _:genid101 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/
 <https://purl.org/emi#LCMSFeature> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <https://purl.org/emi#LCMSFeature> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://purl.org/emi#MS2Spectrum> .
 <https://purl.org/emi#LCMSFeature> <http://purl.org/vocab/vann/example> "@prefix emi: <https://purl.org/emi#> .\n@prefix usi: <https://metabolomics-usi.ucsd.edu/dashinterface/?usi1=> .\nusi:mzspec%3AMSV000087728%3AVGF153_A02_features_ms2_neg.mgf%3Ascan%3A356 rdf:type emi:LCMSFeature ." .
-<https://purl.org/emi#LCMSFeature> <http://www.w3.org/2000/01/rdf-schema#comment> "An LCMS feature from a processed LCMS analysis. Recommendation: instances of this class are ideally built as follows: \"https://metabolomics-usi.ucsd.edu/dashinterface/?usi1={id}\" (e.g., https://metabolomics-usi.ucsd.edu/dashinterface/?usi1=mzspec:MSV000090090:DBGI_01_04_001_features_ms2_pos.mgf:scan:1)." .
+<https://purl.org/emi#LCMSFeature> <http://www.w3.org/2000/01/rdf-schema#comment> "An LCMS feature from a processed LCMS analysis. Recommendation: instances of this class are ideally built as follows: \"https://metabolomics-usi.ucsd.edu/dashinterface/?usi1={id}\" (e.g., https://metabolomics-usi.ucsd.edu/dashinterface/?usi1=mzspec:MSV000090090:DBGI_01_04_001_features_ms2_pos.mgf:scan:1)" .
 <https://purl.org/emi#LCMSFeature> <http://www.w3.org/2000/01/rdf-schema#label> "LCMS individual MS2 spectrum" .
 # 
 # https://purl.org/emi#LCMSFeatureSet
 <https://purl.org/emi#LCMSFeatureSet> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <https://purl.org/emi#LCMSFeatureSet> <http://purl.org/vocab/vann/example> "@prefix : <https://purl.org/emi/abox#> .\n@prefix emi: <https://purl.org/emi#> .\n:VGF153_A02_lcms_feature_list_neg rdf:type emi:LCMSFeatureSet ." .
-<https://purl.org/emi#LCMSFeatureSet> <http://www.w3.org/2000/01/rdf-schema#comment> "A set of Liquid chromatography–mass spectrometry (LCMS) features obtained from the processing of a given LCMS analysis." .
+<https://purl.org/emi#LCMSFeatureSet> <http://www.w3.org/2000/01/rdf-schema#comment> "A set of Liquid chromatography–mass spectrometry (LCMS) features obtained from the processing of a given LCMS analysis" .
 <https://purl.org/emi#LCMSFeatureSet> <http://www.w3.org/2000/01/rdf-schema#label> "LCMS feature set" .
 # 
 # https://purl.org/emi#LFpair
 <https://purl.org/emi#LFpair> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <https://purl.org/emi#LFpair> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://purl.org/emi#SpectralPair> .
-<https://purl.org/emi#LFpair> <http://www.w3.org/2000/01/rdf-schema#comment> "A pair of LCMSFeature." .
+<https://purl.org/emi#LFpair> <http://www.w3.org/2000/01/rdf-schema#comment> "A pair of LCMSFeature" .
 <https://purl.org/emi#LFpair> <http://www.w3.org/2000/01/rdf-schema#label> "LCMS feature pair" .
+# 
+# https://purl.org/emi#LabObject
+<https://purl.org/emi#LabObject> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://purl.org/emi#LabObject> <http://www.w3.org/2000/01/rdf-schema#comment> "An object that correspond to a physical laboratory object" .
+<https://purl.org/emi#LabObject> <http://www.w3.org/2000/01/rdf-schema#label> "Laboratory object" .
+<https://purl.org/emi#LabObject> <http://www.w3.org/2002/07/owl#deprecated> "To remove, it was replaced with Sample from Sosa, because the Lab Objcts in the EMI model so far are only kind of samples. Hence, there is no need of generalizing to any lab object or making it specific to a \"lab\"." .
 # 
 # https://purl.org/emi#Locality
 <https://purl.org/emi#Locality> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
@@ -3435,7 +3460,7 @@ _:genid101 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/
 # https://purl.org/emi#MS2Spectrum
 <https://purl.org/emi#MS2Spectrum> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <https://purl.org/emi#MS2Spectrum> <http://purl.org/vocab/vann/example> "@prefix : <https://purl.org/emi/abox#> .\n@prefix emi: <https://purl.org/emi#> .\n@prefix usi: <https://metabolomics-usi.ucsd.edu/dashinterface/?usi1=> .\nusi:mzspec%3AMSV000087728%3AVGF153_A02_features_ms2_neg.mgf%3Ascan%3A356 rdf:type emi:MS2Spectrum ." .
-<https://purl.org/emi#MS2Spectrum> <http://www.w3.org/2000/01/rdf-schema#comment> "A fragmentation mass spectrometry (or MS2) spectrum." .
+<https://purl.org/emi#MS2Spectrum> <http://www.w3.org/2000/01/rdf-schema#comment> "A fragmentation mass spectrometry (or MS2) spectrum" .
 <https://purl.org/emi#MS2Spectrum> <http://www.w3.org/2000/01/rdf-schema#label> "MS2 spectrum" .
 # 
 # https://purl.org/emi#NonTrait
@@ -3443,6 +3468,7 @@ _:genid101 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/
 <https://purl.org/emi#NonTrait> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.w3.org/ns/sosa/Result> .
 <https://purl.org/emi#NonTrait> <http://purl.org/vocab/vann/example> "@prefix : <https://purl.org/emi/abox#> .\n@prefix emi: <https://purl.org/emi#> .\n:EXAMPLE-NON-TRAIT rdf:type emi:NonTrait ;\n    rdf:value  12.4" .
 <https://purl.org/emi#NonTrait> <http://www.w3.org/2000/01/rdf-schema#comment> "A non trait structured value. When applicable, value units should be defined as QUDT Units Vocabulary terms." .
+
 # 
 # https://purl.org/emi#Organism
 <https://purl.org/emi#Organism> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
@@ -3452,14 +3478,6 @@ _:genid101 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/
 <https://purl.org/emi#Organism> <http://www.w3.org/2000/01/rdf-schema#seeAlso> <http://purl.org/net/orth#Organism> .
 <https://purl.org/emi#Organism> <http://www.w3.org/2004/02/skos/core#altLabel> "Living being" .
 # 
-# https://purl.org/emi#OrganismGroup
-<https://purl.org/emi#OrganismGroup> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<https://purl.org/emi#OrganismGroup> <http://www.w3.org/2000/01/rdf-schema#comment> "A group of organisms (see emi:Organism). These organims may be grouped by biological sex (emi:BiologicalSex), for example." .
-<https://purl.org/emi#OrganismGroup> <http://www.w3.org/2000/01/rdf-schema#label> "Group of organisms" .
-<https://purl.org/emi#OrganismGroup> <http://www.w3.org/2004/02/skos/core#altLabel> "Cluster of organisms" .
-<https://purl.org/emi#OrganismGroup> <http://www.w3.org/2004/02/skos/core#altLabel> "Organism cluster" .
-<https://purl.org/emi#OrganismGroup> <http://www.w3.org/2004/02/skos/core#altLabel> "Organism group" .
-# 
 # https://purl.org/emi#PhysiologicalStage
 <https://purl.org/emi#PhysiologicalStage> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <https://purl.org/emi#PhysiologicalStage> <http://www.w3.org/2000/01/rdf-schema#comment> "A physiological stage is a specific phase or condition of an organism in its life cycle (e.g., viability stage). If applicable, we recommend to use the physiological stage terms from PATO of a source or target organism sample in an interaction system such as from GloBI." .
@@ -3468,14 +3486,28 @@ _:genid101 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/
 # https://purl.org/emi#QCSample
 <https://purl.org/emi#QCSample> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <https://purl.org/emi#QCSample> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.w3.org/ns/sosa/Sample> .
-<https://purl.org/emi#QCSample> <http://www.w3.org/2000/01/rdf-schema#comment> "A quality control (QC) sample." .
+<https://purl.org/emi#QCSample> <http://www.w3.org/2000/01/rdf-schema#comment> "A quality control (QC) sample" .
 <https://purl.org/emi#QCSample> <http://www.w3.org/2000/01/rdf-schema#label> "Quality control sample" .
 # 
 # https://purl.org/emi#RawMaterial
 <https://purl.org/emi#RawMaterial> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <https://purl.org/emi#RawMaterial> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.w3.org/ns/sosa/Sample> .
-<https://purl.org/emi#RawMaterial> <http://www.w3.org/2000/01/rdf-schema#comment> "A raw laboratory biological material, i.e., before extraction." .
+<https://purl.org/emi#RawMaterial> <http://www.w3.org/2000/01/rdf-schema#comment> "A raw laboratory biological material, i.e. before extraction" .
 <https://purl.org/emi#RawMaterial> <http://www.w3.org/2000/01/rdf-schema#label> "Raw material" .
+# 
+# https://purl.org/emi#SIRIUSAnnotation
+<https://purl.org/emi#SIRIUSAnnotation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://purl.org/emi#SIRIUSAnnotation> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://purl.org/emi#StructuralAnnotation> .
+<https://purl.org/emi#SIRIUSAnnotation> <http://www.w3.org/2000/01/rdf-schema#comment> "A spectrum structural annotation by SIRIUS" .
+<https://purl.org/emi#SIRIUSAnnotation> <http://www.w3.org/2000/01/rdf-schema#label> "SIRIUS structural annotation" .
+<https://purl.org/emi#SIRIUSAnnotation> <http://www.w3.org/2002/07/owl#deprecated> "delete it, it is better to model the source separately becuase otherwise it would require to add a new class each time a new source of annotation appears. the only advantage of keeping the model like this is to reduce the number of triples." .
+# 
+# https://purl.org/emi#SiriusCanopusAnnotation
+<https://purl.org/emi#SiriusCanopusAnnotation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://purl.org/emi#SiriusCanopusAnnotation> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://purl.org/emi#ChemicalTaxonAnnotation> .
+<https://purl.org/emi#SiriusCanopusAnnotation> <http://www.w3.org/2000/01/rdf-schema#comment> "A spectrum chemical class annotation by SIRIUS-CANOPUS" .
+<https://purl.org/emi#SiriusCanopusAnnotation> <http://www.w3.org/2000/01/rdf-schema#label> "CANOPUS chemical class annotation" .
+<https://purl.org/emi#SiriusCanopusAnnotation> <http://www.w3.org/2002/07/owl#deprecated> "to delete?" .
 # 
 # https://purl.org/emi#Spec2VecDoc
 <https://purl.org/emi#Spec2VecDoc> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
@@ -3489,25 +3521,25 @@ _:genid101 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/
 # 
 # https://purl.org/emi#SpectrumAnnotation
 <https://purl.org/emi#SpectrumAnnotation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<https://purl.org/emi#SpectrumAnnotation> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid102 .
-_:genid102 <http://www.w3.org/2002/07/owl#allValuesFrom> <https://purl.org/emi#InformationSource> .
-_:genid102 <http://www.w3.org/2002/07/owl#onProperty> <http://www.w3.org/ns/prov#wasDerivedFrom> .
-_:genid102 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
-<https://purl.org/emi#SpectrumAnnotation> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid103 .
-_:genid103 <http://www.w3.org/2002/07/owl#allValuesFrom> <https://purl.org/emi#Analysis> .
-_:genid103 <http://www.w3.org/2002/07/owl#onProperty> <http://www.w3.org/ns/prov#wasGeneratedBy> .
-_:genid103 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://purl.org/emi#SpectrumAnnotation> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid99 .
+_:genid99 <http://www.w3.org/2002/07/owl#allValuesFrom> <https://purl.org/emi#InformationSource> .
+_:genid99 <http://www.w3.org/2002/07/owl#onProperty> <http://www.w3.org/ns/prov#wasDerivedFrom> .
+_:genid99 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://purl.org/emi#SpectrumAnnotation> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid100 .
+_:genid100 <http://www.w3.org/2002/07/owl#allValuesFrom> <https://purl.org/emi#Analysis> .
+_:genid100 <http://www.w3.org/2002/07/owl#onProperty> <http://www.w3.org/ns/prov#wasGeneratedBy> .
+_:genid100 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
 <https://purl.org/emi#SpectrumAnnotation> <http://purl.org/vocab/vann/example> "@prefix : <https://purl.org/emi/abox#> .\n@prefix emi: <https://purl.org/emi#> .\n:CANOPUS-mzspec%3AMSV000087728%3AVGF147_E06_features_ms2_neg.mgf%3Ascan%3A45 rdf:type emi:SpectrumAnnotation ." .
-<https://purl.org/emi#SpectrumAnnotation> <http://www.w3.org/2000/01/rdf-schema#comment> "A spectral annotation." .
+<https://purl.org/emi#SpectrumAnnotation> <http://www.w3.org/2000/01/rdf-schema#comment> "A spectral annotation" .
 <https://purl.org/emi#SpectrumAnnotation> <http://www.w3.org/2000/01/rdf-schema#label> "Spectrum annotation" .
 # 
 # https://purl.org/emi#StructuralAnnotation
 <https://purl.org/emi#StructuralAnnotation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <https://purl.org/emi#StructuralAnnotation> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://purl.org/emi#SpectrumAnnotation> .
-<https://purl.org/emi#StructuralAnnotation> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid104 .
-_:genid104 <http://www.w3.org/2002/07/owl#someValuesFrom> <https://purl.org/emi#InChIKey2D> .
-_:genid104 <http://www.w3.org/2002/07/owl#onProperty> <https://purl.org/emi#hasChemicalStructure> .
-_:genid104 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://purl.org/emi#StructuralAnnotation> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid101 .
+_:genid101 <http://www.w3.org/2002/07/owl#someValuesFrom> <https://purl.org/emi#InChIKey2D> .
+_:genid101 <http://www.w3.org/2002/07/owl#onProperty> <https://purl.org/emi#hasChemicalStructure> .
+_:genid101 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
 <https://purl.org/emi#StructuralAnnotation> <http://www.w3.org/2000/01/rdf-schema#comment> "This class is used to annotate a spectrum feature with a chemical representation structure as defined in the emi:ChemicalStructure. Prefer the  Chemical taxon annotation class, if the annotation is mainly to assign taxa to a spectrum feature." .
 <https://purl.org/emi#StructuralAnnotation> <http://www.w3.org/2000/01/rdf-schema#label> "Chemical structure annotation" .
 # 
@@ -3521,11 +3553,12 @@ _:genid104 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/
 <https://purl.org/emi#Taxon> <http://www.w3.org/2000/01/rdf-schema#comment> "Organism taxon. In the context of open research data, we recommend the use of Wikidata taxonomy as the classification and nomenclature for all of the organisms." .
 <https://purl.org/emi#Taxon> <http://www.w3.org/2000/01/rdf-schema#label> "Organism taxon" .
 # 
-# https://purl.org/emi#Trait
-<https://purl.org/emi#Trait> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<https://purl.org/emi#Trait> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.w3.org/ns/sosa/Result> .
-<https://purl.org/emi#Trait> <http://www.w3.org/2000/01/rdf-schema#comment> "A specific characteristic of an individual. Traits can be determined by genes, environmental factors or by a combination of both. Traits can be discrete (i.e., qualitative such as color) or continuous (quantitative such as height)." .
-<https://purl.org/emi#Trait> <http://www.w3.org/2000/01/rdf-schema#label> "Trait" .
+# https://purl.org/emi#WDChemical
+<https://purl.org/emi#WDChemical> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://purl.org/emi#WDChemical> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://purl.org/emi#XRef> .
+<https://purl.org/emi#WDChemical> <http://www.w3.org/2000/01/rdf-schema#comment> "Cross-reference to a chemical entity in Wikidata" .
+<https://purl.org/emi#WDChemical> <http://www.w3.org/2000/01/rdf-schema#label> "Cross-reference to a chemical entity in Wikidata" .
+<https://purl.org/emi#WDChemical> <http://www.w3.org/2002/07/owl#deprecated> "delete?" .
 # 
 # https://purl.org/emi#WDChemicalStructure
 <https://purl.org/emi#WDChemicalStructure> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
@@ -3533,23 +3566,29 @@ _:genid104 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/
 <https://purl.org/emi#WDChemicalStructure> <http://www.w3.org/2000/01/rdf-schema#comment> "A Wikidata chemical entry." .
 <https://purl.org/emi#WDChemicalStructure> <http://www.w3.org/2000/01/rdf-schema#label> "Wikidata chemical" .
 # 
+# https://purl.org/emi#XRef
+<https://purl.org/emi#XRef> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://purl.org/emi#XRef> <http://www.w3.org/2000/01/rdf-schema#comment> "Any cross-reference" .
+<https://purl.org/emi#XRef> <http://www.w3.org/2000/01/rdf-schema#label> "Any cross-reference" .
+<https://purl.org/emi#XRef> <http://www.w3.org/2002/07/owl#deprecated> "delete?" .
+# 
 # https://purl.org/npc#Class
 <https://purl.org/npc#Class> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <https://purl.org/npc#Class> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.w3.org/2004/02/skos/core#Concept> .
 <https://purl.org/npc#Class> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://purl.org/emi#ChemicalTaxon> .
-<https://purl.org/npc#Class> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid105 .
-_:genid105 <http://www.w3.org/2002/07/owl#someValuesFrom> <https://purl.org/npc#Superclass> .
-_:genid105 <http://www.w3.org/2002/07/owl#onProperty> <http://www.w3.org/2004/02/skos/core#broader> .
-_:genid105 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
-<https://purl.org/npc#Class> <http://www.w3.org/2002/07/owl#disjointWith> _:genid106 .
-_:genid106 <http://www.w3.org/2002/07/owl#unionOf> _:genid108 .
-_:genid108 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid107 .
-_:genid107 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
-_:genid107 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://purl.org/npc#Superclass> .
-_:genid107 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid108 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://purl.org/npc#Pathway> .
-_:genid108 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid106 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://purl.org/npc#Class> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid102 .
+_:genid102 <http://www.w3.org/2002/07/owl#someValuesFrom> <https://purl.org/npc#Superclass> .
+_:genid102 <http://www.w3.org/2002/07/owl#onProperty> <http://www.w3.org/2004/02/skos/core#broader> .
+_:genid102 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://purl.org/npc#Class> <http://www.w3.org/2002/07/owl#disjointWith> _:genid103 .
+_:genid103 <http://www.w3.org/2002/07/owl#unionOf> _:genid105 .
+_:genid105 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid104 .
+_:genid104 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid104 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://purl.org/npc#Superclass> .
+_:genid104 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid105 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://purl.org/npc#Pathway> .
+_:genid105 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid103 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <https://purl.org/npc#Class> <http://www.w3.org/2000/01/rdf-schema#comment> "The Superclasses are subdivided into Classes that represent specific compound families (e.g., erythromycins, penicillins, or cannabinoids), characteristic functional groups (e.g., chromones, azaphilones, indole alkaloids, or 3-spiro tetramic acids), or scaffold diversity within a Superclass (e.g., flavans, flavones, and chalcones from flavonoids)." .
 <https://purl.org/npc#Class> <http://www.w3.org/2000/01/rdf-schema#label> "Natural product class" .
 # 
@@ -3557,15 +3596,15 @@ _:genid106 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/
 <https://purl.org/npc#Pathway> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <https://purl.org/npc#Pathway> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.w3.org/2004/02/skos/core#Concept> .
 <https://purl.org/npc#Pathway> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://purl.org/emi#ChemicalTaxon> .
-<https://purl.org/npc#Pathway> <http://www.w3.org/2002/07/owl#disjointWith> _:genid109 .
-_:genid109 <http://www.w3.org/2002/07/owl#unionOf> _:genid111 .
-_:genid111 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid110 .
-_:genid110 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
-_:genid110 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://purl.org/npc#Superclass> .
-_:genid110 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid111 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://purl.org/npc#Class> .
-_:genid111 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid109 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://purl.org/npc#Pathway> <http://www.w3.org/2002/07/owl#disjointWith> _:genid106 .
+_:genid106 <http://www.w3.org/2002/07/owl#unionOf> _:genid108 .
+_:genid108 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid107 .
+_:genid107 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid107 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://purl.org/npc#Superclass> .
+_:genid107 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid108 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://purl.org/npc#Class> .
+_:genid108 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid106 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <https://purl.org/npc#Pathway> <http://www.w3.org/2000/01/rdf-schema#comment> "The highest level of a hierarchical chemical structure classification such as those defined with the NPClassifier, a deep-learning tool for the automated structural classification of natural products (NP) from their counted Morgan fingerprints. The Pathways of NPClassifier consist of seven categories: fatty acids, polyketides, shikimates–phenylpropanoids, terpenoids, alkaloids, amino acids/peptides, and carbohydrates." .
 <https://purl.org/npc#Pathway> <http://www.w3.org/2000/01/rdf-schema#label> "Natural product pathway" .
 # 
@@ -3573,19 +3612,19 @@ _:genid109 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/
 <https://purl.org/npc#Superclass> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <https://purl.org/npc#Superclass> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.w3.org/2004/02/skos/core#Concept> .
 <https://purl.org/npc#Superclass> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://purl.org/emi#ChemicalTaxon> .
-<https://purl.org/npc#Superclass> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid112 .
-_:genid112 <http://www.w3.org/2002/07/owl#someValuesFrom> <https://purl.org/npc#Pathway> .
-_:genid112 <http://www.w3.org/2002/07/owl#onProperty> <http://www.w3.org/2004/02/skos/core#broader> .
-_:genid112 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
-<https://purl.org/npc#Superclass> <http://www.w3.org/2002/07/owl#disjointWith> _:genid113 .
-_:genid113 <http://www.w3.org/2002/07/owl#unionOf> _:genid115 .
-_:genid115 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid114 .
-_:genid114 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
-_:genid114 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://purl.org/npc#Pathway> .
-_:genid114 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid115 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://purl.org/npc#Class> .
-_:genid115 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid113 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://purl.org/npc#Superclass> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid109 .
+_:genid109 <http://www.w3.org/2002/07/owl#someValuesFrom> <https://purl.org/npc#Pathway> .
+_:genid109 <http://www.w3.org/2002/07/owl#onProperty> <http://www.w3.org/2004/02/skos/core#broader> .
+_:genid109 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://purl.org/npc#Superclass> <http://www.w3.org/2002/07/owl#disjointWith> _:genid110 .
+_:genid110 <http://www.w3.org/2002/07/owl#unionOf> _:genid112 .
+_:genid112 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid111 .
+_:genid111 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid111 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://purl.org/npc#Pathway> .
+_:genid111 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid112 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://purl.org/npc#Class> .
+_:genid112 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid110 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <https://purl.org/npc#Superclass> <http://www.w3.org/2000/01/rdf-schema#comment> "The Superclasses represent subcategories within the Pathways. The categories in the Superclass originate from the general classes of metabolites (e.g., flavonoids, meroterpenoids, or steroids), the general chemical or molecular shapes (e.g., chromanes, phloroglucinols, or macrolides), or biosynthetic information (e.g., tryptophan alkaloids, aromatic polyketides, or pseudo alkaloids)." .
 <https://purl.org/npc#Superclass> <http://www.w3.org/2000/01/rdf-schema#label> "Natural product superclass" .
 # 
@@ -8804,10 +8843,10 @@ _:genid113 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/
 <https://purl.org/npc#TROPOLONES_AND_DERIVATIVES_%28SHIKIMATE%29> <http://www.w3.org/2004/02/skos/core#broader> <https://purl.org/npc#TROPOLONES> .
 <https://purl.org/npc#TROPOLONES_AND_DERIVATIVES_%28SHIKIMATE%29> <http://www.w3.org/2000/01/rdf-schema#label> "Tropolones and derivatives (Shikimate)" .
 # 
-_:genid116 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> .
-_:genid116 <http://xmlns.com/foaf/0.1/name> "W3C/OGC Spatial Data on the Web Working Group"@en .
-_:genid117 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> .
-_:genid117 <http://xmlns.com/foaf/0.1/name> "W3C/OGC Spatial Data on the Web Working Group"@en .
+_:genid113 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> .
+_:genid113 <http://xmlns.com/foaf/0.1/name> "W3C/OGC Spatial Data on the Web Working Group"@en .
+_:genid114 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> .
+_:genid114 <http://xmlns.com/foaf/0.1/name> "W3C/OGC Spatial Data on the Web Working Group"@en .
 # 
 # 
 # #################################################################
@@ -9289,10 +9328,10 @@ _:genid117 <http://xmlns.com/foaf/0.1/name> "W3C/OGC Spatial Data on the Web Wor
 <https://purl.org/emi#AnatomicalEntity> <http://www.w3.org/2000/01/rdf-schema#comment> "An anatomical entity can be an organism part (e.g. brain, blood, liver and so on) or a material anatomical entity such as a cell." .
 <https://purl.org/emi#AnatomicalEntity> <http://www.w3.org/2000/01/rdf-schema#label> "Anatomical entity"@en .
 # 
-<https://purl.org/emi#BiologicalSex> <http://www.w3.org/2000/01/rdf-schema#comment> "An organismal quality inhering in a bearer by virtue of the bearer's ability to undergo sexual reproduction in order to differentiate the individuals or types involved [source: http://purl.obolibrary.org/obo/PATO_0000047]. We recommend to use PATO ontology terms for inviduals of this class." .
+<https://purl.org/emi#BiologicalSex> <http://www.w3.org/2000/01/rdf-schema#comment> "An organismal quality inhering in a bearer by virtue of the bearer's ability to undergo sexual reproduction in order to differentiate the individuals or types involved [source: http://purl.obolibrary.org/obo/PATO_0000047]. We recommend to use PATO ontology terms for inviduals of this class" .
 <https://purl.org/emi#BiologicalSex> <http://www.w3.org/2000/01/rdf-schema#label> "biological sex"@en .
 # 
-<https://purl.org/emi#DevelopmentalStage> <http://www.w3.org/2000/01/rdf-schema#comment> "A developmental stage is spatiotemporal region encompassing some part of the life cycle of an organism, e.g., blastula stage. We recommend to use the developmental stage terms from UBERON of a source or target organism sample in an interaction system such as from GloBI." .
+<https://purl.org/emi#DevelopmentalStage> <http://www.w3.org/2000/01/rdf-schema#comment> "A developmental stage is spatiotemporal region encompassing some part of the life cycle of an organism, e.g. blastula stage. We recommend to use the developmental stage terms from UBERON of a source or target organism sample in an interaction system such as from GloBI." .
 <https://purl.org/emi#DevelopmentalStage> <http://www.w3.org/2000/01/rdf-schema#label> "Developmental stage" .
 # 
 # Generated by the OWL API (version 5.1.18) https://github.com/owlcs/owlapi/
